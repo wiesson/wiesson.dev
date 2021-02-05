@@ -1,0 +1,22 @@
+.badge {
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75em;
+  line-height: 1rem;
+  font-weight: 500;
+  align-items: center;
+  display: inline-flex;
+  border-radius: 9999px;
+  --bg-opacity: 1;
+  color: var(--primary-color);
+  background-color: var(--color-gray-light);
+}
+
+.badge:not(:last-child) {
+  margin-right: 0.25rem;
+}
+
+@media print {
+  .badge {
+    margin-bottom: 0.25rem;
+  }
+}

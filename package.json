@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "start": "wmr",
+    "build": "wmr build --prerender",
+    "serve": "wmr serve"
+  },
+  "eslintConfig": {
+    "extends": "preact"
+  },
+  "alias": {
+    "react": "preact/compat",
+    "react-dom": "preact/compat"
+  },
+  "dependencies": {
+    "@vercel/node": "^1.9.0",
+    "date-fns": "^2.17.0",
+    "preact-iso": "^0.3.0"
+  },
+  "devDependencies": {
+    "wmr": "^1.1.0"
+  }
+}
