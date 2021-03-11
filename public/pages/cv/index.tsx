@@ -14,9 +14,10 @@ const workExperience: Listing[] = [
       "JavaScript",
       "Tailwind",
       "Svelte",
-      "Skypack.dev",
+      "Vite.js",
       "Firebase",
       "Firestore",
+      "Algolia",
     ],
   },
   {
