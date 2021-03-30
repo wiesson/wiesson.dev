@@ -5,7 +5,7 @@ dependencies:
 devDependencies:
   cross-fetch: 3.1.2
   typescript: 4.2.3
-  wmr: 1.4.0
+  wmr: 1.4.2
 lockfileVersion: 5.2
 packages:
   /@types/node/14.14.37:
@@ -46,15 +46,6 @@ packages:
       node: '>=0.3.1'
     resolution:
       integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==
-  /fsevents/2.3.2:
-    dev: true
-    engines:
-      node: ^8.16.0 || ^10.6.0 || >=11.0.0
-    optional: true
-    os:
-      - darwin
-    resolution:
-      integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
   /make-error/1.3.6:
     dev: false
     resolution:
@@ -115,15 +106,11 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-qOcYwxaByStAWrBf4x0fibwZvMRG+r4cQoTjbPtUlrWjBHbmCAww1i448U0GJ+3cNNEtebDteo/cHOR3xJ4wEw==
-  /wmr/1.4.0:
+  /wmr/1.4.2:
     dev: true
-    engines:
-      node: '>=12'
     hasBin: true
-    optionalDependencies:
-      fsevents: 2.3.2
     resolution:
-      integrity: sha512-sG/Mro9sMk/JcZCEAv9Ci9rVh1QrpK5+e0KHXM0stCuLg9mOft03WQpXrsE6liuKfEZDGe1PEENJi+3zLMUkmw==
+      integrity: sha512-96QiS6flB++dEbCwub9aXPkB2afsb4aB+/diDFthK8p/ei2yKDK8+CwBXgVuOgJyYsbREtIw2Ly3t3+4KCaWJQ==
   /yn/3.1.1:
     dev: false
     engines:
@@ -136,4 +123,4 @@ specifiers:
   date-fns: ^2.19.0
   preact-iso: ^1.1.0
   typescript: ^4.2.3
-  wmr: ^1.4.0
+  wmr: ^1.4.2
