@@ -13,13 +13,13 @@
   },
   "dependencies": {
     "@vercel/node": "^1.9.1",
-    "date-fns": "^2.19.0",
-    "preact-iso": "^1.1.0"
+    "date-fns": "^2.20.0",
+    "preact-iso": "^1.1.1"
   },
   "devDependencies": {
-    "cross-fetch": "^3.1.2",
-    "typescript": "^4.2.3",
-    "wmr": "^1.4.2"
+    "cross-fetch": "^3.1.4",
+    "typescript": "^4.2.4",
+    "wmr": "^1.5.1"
   },
   "type": "module"
 }
