@@ -4,7 +4,7 @@ import CvListing, { Listing } from "../../components/CvListing";
 const workExperience: Listing[] = [
   {
     company: "Frontnow",
-    position: "Senior Software Engineer",
+    position: "Lead Software Engineer",
     location: "Düsseldorf, Berlin",
     type: "project",
     from: "2021-03-01",
@@ -18,6 +18,7 @@ const workExperience: Listing[] = [
       "Firebase",
       "Firestore",
       "Algolia",
+      "Tailwind",
     ],
   },
   {
