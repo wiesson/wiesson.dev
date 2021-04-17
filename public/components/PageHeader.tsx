@@ -76,6 +76,7 @@ const PageHeader = () => (
         <Badge>Next.js</Badge>
         <Badge>Preact</Badge>
         <Badge>TypeScript</Badge>
+        <Badge>Svelte</Badge>
         <Badge>Vue.js</Badge>
         <Badge>SVG</Badge>
         <Badge>HTML5</Badge>
