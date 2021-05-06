@@ -3,31 +3,31 @@ lockfileVersion: 5.3
 specifiers:
   '@vercel/node': ^1.10.0
   cross-fetch: ^3.1.4
-  date-fns: ^2.21.1
-  preact-iso: ^1.2.0
+  date-fns: ^2.21.2
+  preact-iso: ^2.0.1
   typescript: ^4.2.4
-  wmr: ^1.7.0
+  wmr: ^2.0.1
 
 dependencies:
   '@vercel/node': 1.10.0
-  date-fns: 2.21.1
-  preact-iso: 1.2.0
+  date-fns: 2.21.2
+  preact-iso: 2.0.1
 
 devDependencies:
   cross-fetch: 3.1.4
   typescript: 4.2.4
-  wmr: 1.7.0
+  wmr: 2.0.1
 
 packages:
 
-  /@types/node/15.0.1:
-    resolution: {integrity: sha512-TMkXt0Ck1y0KKsGr9gJtWGjttxlZnnvDtphxUOSd0bfaR6Q1jle+sPvrzNR1urqYTWMinoKvjKfXUGsumaO1PA==}
+  /@types/node/15.0.2:
+    resolution: {integrity: sha512-p68+a+KoxpoB47015IeYZYRrdqMUcpbK8re/zpFB8Ld46LHC1lPEbp3EXgkEhAYEcPvjJF6ZO+869SQ0aH1dcA==}
     dev: false
 
   /@vercel/node/1.10.0:
     resolution: {integrity: sha512-11FIFoF4v9m/jAOSamwBDMsS2yIDa0fSnVhR70bbcUdBcu3BGGMCpg+jpA6rvkQSOa/WbTRvvu9hFh5bOsZxrw==}
     dependencies:
-      '@types/node': 15.0.1
+      '@types/node': 15.0.2
       ts-node: 8.9.1_typescript@3.9.3
       typescript: 3.9.3
     dev: false
@@ -46,8 +46,8 @@ packages:
       node-fetch: 2.6.1
     dev: true
 
-  /date-fns/2.21.1:
-    resolution: {integrity: sha512-m1WR0xGiC6j6jNFAyW4Nvh4WxAi4JF4w9jRJwSI8nBmNcyZXPcP9VUQG+6gHQXAmqaGEKDKhOqAtENDC941UkA==}
+  /date-fns/2.21.2:
+    resolution: {integrity: sha512-FMkG7pIPx64mGIpS2LOb3Wp3O606H/hatoiz7G0oiYWai1izdM4tF1dd7QABv2NogkIDI4wxsfLLFQSuVvDHgA==}
     engines: {node: '>=0.11'}
     dev: false
 
@@ -72,8 +72,8 @@ packages:
     engines: {node: 4.x || >=6.0.0}
     dev: true
 
-  /preact-iso/1.2.0:
-    resolution: {integrity: sha512-0XCZ/DkmJfFEooCH6ZaqrwbAJ2IdwLmxIW+c3xna7irBt+VACkNRRh+Em23V/nkkK4jxkdJZgyECCbB5ABouJw==}
+  /preact-iso/2.0.1:
+    resolution: {integrity: sha512-Gfbs3u6On6zUl1cEzLvVMt58/BXZaOUa/mi8KsJox3Kq9vHhy5cYOdxm9tK4luU3I9t8jtcaXp+1sV+FIA31JA==}
     peerDependencies:
       preact: '>=10'
       preact-render-to-string: '>=5'
@@ -118,8 +118,8 @@ packages:
     hasBin: true
     dev: true
 
-  /wmr/1.7.0:
-    resolution: {integrity: sha512-o3j0ycWXoTczrI15YSJ8aEDZhTOoiBUDnwiUhs6bk7ZvrpVTVtdKRomHfWWGQQPk1De8bSGGnCIlhSpAFxLS7Q==}
+  /wmr/2.0.1:
+    resolution: {integrity: sha512-F/lhp2QG891Stfepr/++M9YOM64NQhFxNi4AsR4pbLRiBEXlo19GmKdjvWkjtSr+bmZZ9RrRZ0MwPi27VPOwYA==}
     engines: {node: '>=12.17.x'}
     hasBin: true
     optionalDependencies:

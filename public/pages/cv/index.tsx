@@ -9,7 +9,7 @@ const workExperience: Listing[] = [
     type: "project",
     from: "2021-03-01",
     to: "now",
-    tasks: [],
+    tasks: ["Entwicklung einer Plattform für Einkäufer und Lieferanten"],
     technologies: [
       "JavaScript",
       "Tailwind",
