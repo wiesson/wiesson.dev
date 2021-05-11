@@ -3,20 +3,20 @@ lockfileVersion: 5.3
 specifiers:
   '@vercel/node': ^1.10.0
   cross-fetch: ^3.1.4
-  date-fns: ^2.21.2
-  preact-iso: ^2.0.1
+  date-fns: ^2.21.3
+  preact-iso: ^2.0.2
   typescript: ^4.2.4
-  wmr: ^2.0.1
+  wmr: ^2.0.2
 
 dependencies:
   '@vercel/node': 1.10.0
-  date-fns: 2.21.2
-  preact-iso: 2.0.1
+  date-fns: 2.21.3
+  preact-iso: 2.0.2
 
 devDependencies:
   cross-fetch: 3.1.4
   typescript: 4.2.4
-  wmr: 2.0.1
+  wmr: 2.0.2
 
 packages:
 
@@ -46,8 +46,8 @@ packages:
       node-fetch: 2.6.1
     dev: true
 
-  /date-fns/2.21.2:
-    resolution: {integrity: sha512-FMkG7pIPx64mGIpS2LOb3Wp3O606H/hatoiz7G0oiYWai1izdM4tF1dd7QABv2NogkIDI4wxsfLLFQSuVvDHgA==}
+  /date-fns/2.21.3:
+    resolution: {integrity: sha512-HeYdzCaFflc1i4tGbj7JKMjM4cKGYoyxwcIIkHzNgCkX8xXDNJDZXgDDVchIWpN4eQc3lH37WarduXFZJOtxfw==}
     engines: {node: '>=0.11'}
     dev: false
 
@@ -72,8 +72,8 @@ packages:
     engines: {node: 4.x || >=6.0.0}
     dev: true
 
-  /preact-iso/2.0.1:
-    resolution: {integrity: sha512-Gfbs3u6On6zUl1cEzLvVMt58/BXZaOUa/mi8KsJox3Kq9vHhy5cYOdxm9tK4luU3I9t8jtcaXp+1sV+FIA31JA==}
+  /preact-iso/2.0.2:
+    resolution: {integrity: sha512-9Ct9MLRB6AnPaYZaylhOCVBnZlYZicK7LAsO01V8CbBwDLW2EJcs3rEZlnLvOhFdThtVh0mNXarKa8qHNrIs/w==}
     peerDependencies:
       preact: '>=10'
       preact-render-to-string: '>=5'
@@ -118,8 +118,8 @@ packages:
     hasBin: true
     dev: true
 
-  /wmr/2.0.1:
-    resolution: {integrity: sha512-F/lhp2QG891Stfepr/++M9YOM64NQhFxNi4AsR4pbLRiBEXlo19GmKdjvWkjtSr+bmZZ9RrRZ0MwPi27VPOwYA==}
+  /wmr/2.0.2:
+    resolution: {integrity: sha512-gUHT51dWovzI5zPYZmCD/X5vVY02VfCJttUMLFB9TT46xrmtSFm1EIfCX/e3LAnoHHHw0sCC6krK1wNWWFeB9A==}
     engines: {node: '>=12.17.x'}
     hasBin: true
     optionalDependencies:
