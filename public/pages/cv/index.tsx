@@ -3,6 +3,27 @@ import CvListing, { Listing } from "../../components/CvListing";
 
 const workExperience: Listing[] = [
   {
+    position: "Software Entwickler",
+    company: "Arne Wiese",
+    project: "maklerupdate.de",
+    location: "Düsseldorf",
+    type: "side",
+    from: "2021-01-01",
+    to: "now",
+    tasks: ["Entwicklung einer Immobilien-Plattform für Düsseldorf"],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Firebase",
+      "Firestore",
+      "Vercel",
+      "Apify",
+      "Google Big-Query",
+      "Algolia",
+    ],
+  },
+  {
     company: "Frontnow",
     position: "Lead Software Engineer",
     location: "Düsseldorf, Berlin",
