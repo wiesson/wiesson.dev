@@ -6,7 +6,7 @@ specifiers:
   date-fns: ^2.21.3
   preact-iso: ^2.0.2
   typescript: ^4.2.4
-  wmr: ^2.1.0
+  wmr: ^2.2.0
 
 dependencies:
   '@vercel/node': 1.10.0
@@ -16,7 +16,7 @@ dependencies:
 devDependencies:
   cross-fetch: 3.1.4
   typescript: 4.2.4
-  wmr: 2.1.0
+  wmr: 2.2.0
 
 packages:
 
@@ -118,8 +118,8 @@ packages:
     hasBin: true
     dev: true
 
-  /wmr/2.1.0:
-    resolution: {integrity: sha512-1c3pLWpN8mZS/32d2lUTnreCXZj+ZHsetM1gU9tHspnEKyk9M9++tthYaWF0rrr7P3KUuTmyx4O7j5qJq6hYiA==}
+  /wmr/2.2.0:
+    resolution: {integrity: sha512-PQbA953NiBm3fX10+DyOZNSIK48PiV98LhIHUvCyHGH8vhnfxd0x7l5JnGtx8JAHpFX6lQ6VOMABxaQRLDKTJA==}
     engines: {node: '>=12.17.x'}
     hasBin: true
     optionalDependencies:
