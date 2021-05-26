@@ -12,7 +12,7 @@
     "react-dom": "preact/compat"
   },
   "dependencies": {
-    "@vercel/node": "^1.10.0",
+    "@vercel/node": "^1.11.0",
     "date-fns": "^2.21.3",
     "preact-iso": "^2.0.2"
   },

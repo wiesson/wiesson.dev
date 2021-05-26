@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@vercel/node': ^1.10.0
+  '@vercel/node': ^1.11.0
   cross-fetch: ^3.1.4
   date-fns: ^2.21.3
   preact-iso: ^2.0.2
@@ -9,7 +9,7 @@ specifiers:
   wmr: ^2.2.0
 
 dependencies:
-  '@vercel/node': 1.10.0
+  '@vercel/node': 1.11.0
   date-fns: 2.21.3
   preact-iso: 2.0.2
 
@@ -20,14 +20,14 @@ devDependencies:
 
 packages:
 
-  /@types/node/15.3.1:
-    resolution: {integrity: sha512-weaeiP4UF4XgF++3rpQhpIJWsCTS4QJw5gvBhQu6cFIxTwyxWIe3xbnrY/o2lTCQ0lsdb8YIUDUvLR4Vuz5rbw==}
+  /@types/node/15.6.1:
+    resolution: {integrity: sha512-7EIraBEyRHEe7CH+Fm1XvgqU6uwZN8Q7jppJGcqjROMT29qhAuuOxYB1uEY5UMYQKEmA5D+5tBnhdaPXSsLONA==}
     dev: false
 
-  /@vercel/node/1.10.0:
-    resolution: {integrity: sha512-11FIFoF4v9m/jAOSamwBDMsS2yIDa0fSnVhR70bbcUdBcu3BGGMCpg+jpA6rvkQSOa/WbTRvvu9hFh5bOsZxrw==}
+  /@vercel/node/1.11.0:
+    resolution: {integrity: sha512-GmEUuOloy6Pdy5Qj5Zm7HmxcO/5VRLG99WUg15V7GD0fKq3sJtnCnzy4f1+9fpVbQGMefjy+pY1dWUhkB6YEGA==}
     dependencies:
-      '@types/node': 15.3.1
+      '@types/node': 15.6.1
       ts-node: 8.9.1_typescript@3.9.3
       typescript: 3.9.3
     dev: false
