@@ -316,7 +316,7 @@ const workExperience: Listing[] = [
   },
   {
     position: "Software Engineer",
-    company: "EIGHTY FOUR ROOMS GbR",
+    company: "Sebastian Schöllgen",
     project: "eightyfourrooms.com",
     location: "Düsseldorf",
     from: "2016-01-01",
