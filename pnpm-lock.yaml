@@ -4,8 +4,8 @@ specifiers:
   '@vercel/node': ^1.11.1
   date-fns: ^2.22.1
   preact-iso: ^2.0.3
-  typescript: ^4.3.4
-  wmr: ^3.1.1
+  typescript: ^4.3.5
+  wmr: ^3.2.0
 
 dependencies:
   '@vercel/node': 1.11.1
@@ -13,8 +13,8 @@ dependencies:
   preact-iso: 2.0.3
 
 devDependencies:
-  typescript: 4.3.4
-  wmr: 3.1.1
+  typescript: 4.3.5
+  wmr: 3.2.0
 
 packages:
 
@@ -99,14 +99,14 @@ packages:
     hasBin: true
     dev: false
 
-  /typescript/4.3.4:
-    resolution: {integrity: sha512-uauPG7XZn9F/mo+7MrsRjyvbxFpzemRjKEZXS4AK83oP2KKOJPvb+9cO/gmnv8arWZvhnjVOXz7B49m1l0e9Ew==}
+  /typescript/4.3.5:
+    resolution: {integrity: sha512-DqQgihaQ9cUrskJo9kIyW/+g0Vxsk8cDtZ52a3NGh0YNTfpUSArXSohyUGnvbPazEPLu398C0UxmKSOrPumUzA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
 
-  /wmr/3.1.1:
-    resolution: {integrity: sha512-+VhnFwkJ9f33YqgK+MkW3lyZWg/BZXTUOxmrvMc4epXNs9+tLYpotvLq4XPFn+NgxYnb9nJh24hfJj75W+Wt5w==}
+  /wmr/3.2.0:
+    resolution: {integrity: sha512-vKkS7KaS6OY5b6PHukGrTtWNYQvyS/WhRZkj1KiN3V6G0J0T1H3A5S9pyUkE9vaKt0U7EVJcYIA9b5T1EA5A0w==}
     engines: {node: '>=12.17.x'}
     hasBin: true
     optionalDependencies:
