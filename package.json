@@ -17,8 +17,9 @@
     "preact-iso": "^2.0.3"
   },
   "devDependencies": {
+    "critters": "^0.0.10",
     "typescript": "^4.3.5",
-    "wmr": "^3.4.0"
+    "wmr": "^3.4.1"
   },
   "type": "module"
 }
