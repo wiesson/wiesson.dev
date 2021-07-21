@@ -10,9 +10,7 @@ function inlineCss() {
       cwd = config.cwd;
     },
     async generateBundle(_, bundle) {
-      const critters = new Critters({
-        path: "",
-      });
+      const critters = new Critters({});
 
       // @ts-ignore
       critters.readFile = async (f) => {

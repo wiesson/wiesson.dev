@@ -7,14 +7,12 @@ import NotFound from "./pages/_404.js";
 export function App() {
   return (
     <LocationProvider>
-      <div class="container">
-        <ErrorBoundary>
-          <Router>
-            <About path="/" />
-            <NotFound default />
-          </Router>
-        </ErrorBoundary>
-      </div>
+      <ErrorBoundary>
+        <Router>
+          <About path="/" />
+          <NotFound default />
+        </Router>
+      </ErrorBoundary>
     </LocationProvider>
   );
 }
@@ -22,6 +20,6 @@ export function App() {
 hydrate(<App />);
 
 export async function prerender(data) {
-  const { default: prerender } = await import("preact-iso/prerender");
-  return await prerender(<App {...data} />);
+  const { default: ssr } = await import("preact-iso/prerender");
+  return await ssr(<App {...data} />);
 }
