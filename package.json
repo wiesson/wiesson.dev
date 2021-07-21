@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "wmr",
-    "build": "wmr build --prerender",
+    "build": "wmr build --prerender && node postProcess.js",
     "serve": "wmr serve"
   },
   "eslintConfig": {

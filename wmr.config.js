@@ -28,7 +28,4 @@ function inlineCss() {
 }
 
 // @ts-ignore
-export default defineConfig({
-  // @ts-ignore
-  plugins: [inlineCss()],
-});
+export default defineConfig({});
