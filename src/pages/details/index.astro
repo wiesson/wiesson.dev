@@ -1,9 +1,9 @@
 ---
 // Component Imports
-import Counter from '../components/Counter.jsx';
-import PageHeader from '../components/PageHeader.jsx';
-import CvListing from '../components/CvListing.jsx';
-import { workExperience, education } from "../data.ts";
+import Counter from '../../components/Counter.jsx';
+import PageHeader from '../../components/PageHeader.jsx';
+import CvListing from '../../components/CvListing.jsx';
+import { workExperience, education } from "../../data.ts";
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -28,14 +28,16 @@ import { workExperience, education } from "../data.ts";
     <CvListing
       title="Arbeitserfahrung"
       items={workExperience.filter((item) => item.type !== "side")}
+      showDetails
     />
 
     <CvListing
       title="Nebenprojekte"
       items={workExperience.filter((item) => item.type === "side")}
+      showDetails
     />
 
-    <CvListing title="Ausbildung" items={education} />
+    <CvListing title="Ausbildung" items={education} showDetails />
   </main>
   </body>
   </html>
