@@ -1,0 +1,45 @@
+---
+// Component Imports
+import Counter from '../components/Counter.jsx';
+import PageHeader from '../components/PageHeader.jsx';
+import CvListing from '../components/CvListing.jsx';
+import { workExperience, education } from "../data.ts";
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+  <html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Arne Wiese | Freier Entwickler mit Fokus auf Web-Technologien und APIs
+    </title>
+    <meta name="description" content="Fullstack · JavaScript · TypeScript · NodeJS · Python · Golang">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+  <main class="container">
+    <PageHeader />
+
+    <CvListing
+      title="Arbeitserfahrung"
+      items={workExperience.filter((item) => item.type !== "side")}
+    />
+
+    <CvListing
+      title="Nebenprojekte"
+      items={workExperience.filter((item) => item.type === "side")}
+    />
+
+    <CvListing title="Ausbildung" items={education} />
+
+    <Counter client:visible>
+      <h1>Hello Preact!</h1>
+    </Counter>
+  </main>
+  </body>
+  </html>

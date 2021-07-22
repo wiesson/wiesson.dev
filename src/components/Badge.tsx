@@ -1,3 +1,5 @@
+import { h, Fragment } from 'preact';
+
 import { FunctionComponent } from "preact";
 import styles from "./Badge.module.css";
 

@@ -1,7 +1,6 @@
-import PageHeader from "../../components/PageHeader";
-import CvListing, { Listing } from "../../components/CvListing";
+import { Listing } from "./components/CvListing";
 
-const workExperience: Listing[] = [
+export const workExperience: Listing[] = [
   {
     position: "Software Entwickler",
     company: "Arne Wiese",
@@ -389,7 +388,7 @@ const workExperience: Listing[] = [
   },
 ];
 
-const education: Listing[] = [
+export const education: Listing[] = [
   {
     title: "M. Sc in Energy Science and Technology",
     location: "Universität Bayreuth",
@@ -446,25 +445,3 @@ const education: Listing[] = [
     position: "",
   },
 ];
-
-const CvPage = () => {
-  return (
-    <>
-      <PageHeader />
-
-      <CvListing
-        title="Arbeitserfahrung"
-        items={workExperience.filter((item) => item.type !== "side")}
-      />
-
-      <CvListing
-        title="Nebenprojekte"
-        items={workExperience.filter((item) => item.type === "side")}
-      />
-
-      <CvListing title="Ausbildung" items={education} />
-    </>
-  );
-};
-
-export default CvPage;

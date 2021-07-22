@@ -1,3 +1,4 @@
+import { h, Fragment } from 'preact';
 import { FunctionComponent } from "preact";
 import { formatDays, formatYear } from "../utils/dateFormat";
 import Badge from "./Badge";
@@ -43,9 +44,7 @@ export const List = ({ items = [] }) => {
   );
 };
 
-const CvListing: FunctionComponent<Props> = ({ title, items }) => {
-  const showDetails = location.search.includes("showDetails");
-
+const CvListing: FunctionComponent<Props> = ({ title, items,  showDetails = false }) => {
   return (
     <section>
       <Title>{title}</Title>
