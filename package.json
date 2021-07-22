@@ -1,25 +1,17 @@
 {
+  "name": "@example/framework-preact",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "start": "wmr",
-    "build": "wmr build --prerender && node postProcess.js",
-    "serve": "wmr serve"
-  },
-  "eslintConfig": {
-    "extends": "preact"
-  },
-  "alias": {
-    "react": "preact/compat",
-    "react-dom": "preact/compat"
-  },
-  "dependencies": {
-    "@vercel/node": "^1.11.1",
-    "date-fns": "^2.22.1",
-    "preact-iso": "^2.0.3"
+    "start": "astro dev",
+    "build": "astro build && node postProcess.js"
   },
   "devDependencies": {
-    "critters": "^0.0.10",
-    "typescript": "^4.3.5",
-    "wmr": "^3.4.1"
+    "astro": "^0.17.3",
+    "critters": "^0.0.10"
+  },
+  "dependencies": {
+    "date-fns": "^2.22.1"
   },
   "type": "module"
 }
