@@ -9,14 +9,12 @@
   --bg-opacity: 1;
   color: var(--primary-color);
   background-color: var(--color-gray-light);
-}
-
-.badge:not(:last-child) {
-  margin-right: 0.25rem;
+  margin: 0.25rem;
 }
 
 @media print {
   .badge {
+    margin-top: 0;
     margin-bottom: 0.25rem;
   }
 }
