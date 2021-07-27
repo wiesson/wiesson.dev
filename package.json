@@ -7,7 +7,7 @@
     "build": "astro build && node postProcess.js"
   },
   "devDependencies": {
-    "astro": "^0.17.3",
+    "astro": "^0.18.0",
     "critters": "^0.0.10"
   },
   "dependencies": {
