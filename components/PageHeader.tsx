@@ -1,13 +1,12 @@
-import { h, Fragment } from 'preact';
 import styles from "./PageHeader.module.css";
 import Badge from "./Badge";
 
 const PageHeader = () => (
-  <header class={styles.pageHeader}>
-    <div class="grid grid-layout">
+  <header className={styles.pageHeader}>
+    <div className="grid grid-layout">
       <div>
         <img
-          class={styles.image}
+          className={styles.image}
           src="/assets/arne.jpg"
           alt="Arne Wiese"
           width="96"
@@ -16,17 +15,17 @@ const PageHeader = () => (
       </div>
       <div>
         <div>
-          <h1 class="text-2xl mb-0">Arne Wiese</h1>
-          <h2 class="text-xl mb-0">
+          <h1 className="text-2xl mb-0">Arne Wiese</h1>
+          <h2 className="text-xl mb-0">
             Freier Entwickler mit Fokus auf Web-Technologien und APIs
           </h2>
-          <h3 class="font-medium text-gray-500 mb-2">
+          <h3 className="font-medium text-gray-500 mb-2">
             Fullstack · JavaScript · TypeScript · NodeJS · Python · Golang
           </h3>
         </div>
-        <div class="text-sm">
+        <div className="text-sm">
           <p>
-            <a class="link" href="tel:+491751109743">
+            <a className="link" href="tel:+491751109743">
               +491751109743
             </a>{" "}
             · arne@wiese.me <br />
@@ -69,8 +68,8 @@ const PageHeader = () => (
         </div>
       </div>
     </div>
-    <dl class="grid grid-layout">
-      <dt class="text-gray-500 text-right">Frontend</dt>
+    <dl className="grid grid-layout">
+      <dt className="text-gray-500 text-right">Frontend</dt>
       <dd>
         <Badge>JavaScript</Badge>
         <Badge>React.js</Badge>
@@ -89,8 +88,8 @@ const PageHeader = () => (
         <Badge>Framer Motion</Badge>
       </dd>
     </dl>
-    <dl class="grid grid-layout">
-      <dt class="text-gray-500 text-right">Backend</dt>
+    <dl className="grid grid-layout">
+      <dt className="text-gray-500 text-right">Backend</dt>
       <dd>
         <Badge>Node.js</Badge>
         <Badge>Django</Badge>
@@ -101,8 +100,8 @@ const PageHeader = () => (
         <Badge>Golang</Badge>
       </dd>
     </dl>
-    <dl class="grid grid-layout">
-      <dt class="text-gray-500 text-right">Datenbanken</dt>
+    <dl className="grid grid-layout">
+      <dt className="text-gray-500 text-right">Datenbanken</dt>
       <dd>
         <Badge>Firebase</Badge>
         <Badge>Cloud Firestore</Badge>
@@ -111,8 +110,8 @@ const PageHeader = () => (
         <Badge>MongoDB</Badge>
       </dd>
     </dl>
-    <dl class="grid grid-layout">
-      <dt class="text-gray-500 text-right">etc</dt>
+    <dl className="grid grid-layout">
+      <dt className="text-gray-500 text-right">etc</dt>
       <dd>
         <Badge>Agile</Badge>
         <Badge>Docker</Badge>
@@ -130,3 +129,7 @@ const PageHeader = () => (
 );
 
 export default PageHeader;
+
+export const config = {
+  unstable_runtimeJS: false
+};

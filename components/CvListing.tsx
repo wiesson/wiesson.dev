@@ -1,6 +1,5 @@
-import { h, Fragment } from 'preact';
-import { FunctionComponent } from "preact";
-import { formatDays, formatYear } from "../utils/dateFormat";
+import { FC } from "react";
+import { formatDays, formatYear } from "@/utils/dateFormat";
 import Badge from "./Badge";
 
 export interface Listing {
@@ -19,23 +18,24 @@ export interface Listing {
 interface Props {
   title: string;
   items: Listing[];
+  showDetails?: boolean;
 }
 
-export const Title: FunctionComponent = ({ children }) => (
-  <div class="grid grid-layout">
+export const Title: FC = ({ children }) => (
+  <div className="grid grid-layout">
     <div />
-    <h2 class="text-xl page-title">{children}</h2>
+    <h2 className="text-xl page-title">{children}</h2>
   </div>
 );
 
-export const List = ({ items = [] }) => {
+export const List = ({ items = [] }: { items: string[] }) => {
   if (items.length === 1) {
-    return <div class="mb-2">{items[0]}</div>;
+    return <div className="mb-2">{items[0]}</div>;
   }
 
   return (
-    <div class="mb-2">
-      <ul class="list-disc mb-0">
+    <div className="mb-2">
+      <ul className="list-disc mb-0">
         {items.map((t) => (
           <li key={t}>{t}</li>
         ))}
@@ -44,7 +44,7 @@ export const List = ({ items = [] }) => {
   );
 };
 
-const CvListing: FunctionComponent<Props> = ({ title, items,  showDetails = false }) => {
+const CvListing = ({ title, items, showDetails = false }: Props) => {
   return (
     <section>
       <Title>{title}</Title>
@@ -60,13 +60,13 @@ const CvListing: FunctionComponent<Props> = ({ title, items,  showDetails = fals
 
         if (isEducation) {
           return (
-            <section class="section grid grid-layout gap-8 page-break-avoid">
-              <div class="text-gray-500 text-right">
+            <section className="section grid grid-layout gap-8 page-break-avoid">
+              <div className="text-gray-500 text-right">
                 {from} – {to}
               </div>
               <div>
-                <div class="font-weight-500">{e.title}</div>
-                <div class="text-gray-500 mb-2">{e.location}</div>
+                <div className="font-weight-500">{e.title}</div>
+                <div className="text-gray-500 mb-2">{e.location}</div>
                 {showDetails && <List items={e.tasks} />}
               </div>
             </section>
@@ -74,13 +74,16 @@ const CvListing: FunctionComponent<Props> = ({ title, items,  showDetails = fals
         }
 
         return (
-          <div class="section grid grid-layout page-break-avoid">
-            <div class="text-gray-500 text-right">{dates}</div>
+          <div
+            className="section grid grid-layout page-break-avoid"
+            key={e.title}
+          >
+            <div className="text-gray-500 text-right">{dates}</div>
             <div>
-              <header class="mb-2">
+              <header className="mb-2">
                 {showExtendedLayout ? (
                   <div>
-                    <span class="font-weight-500">{e.position}</span>
+                    <span className="font-weight-500">{e.position}</span>
                     {" · "}
                     {e.company}
                     {" · "}
@@ -103,7 +106,9 @@ const CvListing: FunctionComponent<Props> = ({ title, items,  showDetails = fals
                   </div>
                 )}
 
-                {showDetails && <div class="text-gray-500">{e.location}</div>}
+                {showDetails && (
+                  <div className="text-gray-500">{e.location}</div>
+                )}
               </header>
 
               {showDetails && <List items={e.tasks} />}
@@ -111,7 +116,7 @@ const CvListing: FunctionComponent<Props> = ({ title, items,  showDetails = fals
               {showDetails && (
                 <div>
                   {e.technologies.map((t) => (
-                    <Badge>{t}</Badge>
+                    <Badge key={t}>{t}</Badge>
                   ))}
                 </div>
               )}

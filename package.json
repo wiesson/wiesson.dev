@@ -1,17 +1,24 @@
 {
-  "name": "@example/framework-preact",
+  "name": "wiesson.dev",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "astro dev",
-    "build": "astro build && node postProcess.js"
-  },
-  "devDependencies": {
-    "astro": "^0.18.0",
-    "critters": "^0.0.10"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "date-fns": "^2.23.0"
+    "date-fns": "^2.25.0",
+    "next": "^12.0.2-canary.1",
+    "react": "alpha",
+    "react-dom": "alpha"
   },
-  "type": "module"
+  "devDependencies": {
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "critters": "^0.0.14",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4"
+  }
 }
