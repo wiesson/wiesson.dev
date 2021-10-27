@@ -1,4 +1,4 @@
-import { Listing } from "./components/CvListing";
+import type { Listing } from "./components/CvListing";
 
 export const workExperience: Listing[] = [
   {
