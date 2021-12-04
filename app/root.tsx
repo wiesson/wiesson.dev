@@ -7,6 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
   useCatch,
+  useMatches,
 } from "remix";
 import type { LinksFunction } from "remix";
 
@@ -101,6 +102,9 @@ function Document({
   children: React.ReactNode;
   title?: string;
 }) {
+  const matches = useMatches();
+  const includeScripts = matches.some((match) => match.handle?.hydrate);
+
   return (
     <html lang="en">
       <head>
@@ -113,7 +117,7 @@ function Document({
       <body>
         {children}
         <ScrollRestoration />
-        <Scripts />
+        {includeScripts && <Scripts />}
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
