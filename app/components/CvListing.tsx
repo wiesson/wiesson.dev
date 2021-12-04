@@ -1,19 +1,8 @@
 import { FC } from "react";
-import { formatDays, formatYear } from "@/utils/dateFormat";
-import Badge from "./Badge";
 
-export interface Listing {
-  company: string;
-  project?: string;
-  title?: string;
-  position: string;
-  location: string;
-  type: "project" | "permanent" | "side" | "education";
-  from: string;
-  to: string;
-  tasks: string[];
-  technologies: string[];
-}
+import Badge from "./Badge";
+import { Listing } from "~/types/Listing";
+import { formatDays, formatYear } from "~/utils/dateFormat";
 
 interface Props {
   title: string;
@@ -50,6 +39,7 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
       <Title>{title}</Title>
 
       {items.map((e) => {
+        const key = e.from + e.to + e.position;
         const isEducation = e.type === "education";
         const showExtendedLayout = e.type !== "side" && e.type !== "education";
         const from = showExtendedLayout
@@ -60,7 +50,10 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
 
         if (isEducation) {
           return (
-            <section className="section grid grid-layout gap-8 page-break-avoid">
+            <section
+              key={key}
+              className="section grid grid-layout gap-8 page-break-avoid"
+            >
               <div className="text-gray-500 text-right">
                 {from} – {to}
               </div>
@@ -76,7 +69,7 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
         return (
           <div
             className="section grid grid-layout page-break-avoid"
-            key={e.title}
+            key={key}
           >
             <div className="text-gray-500 text-right">{dates}</div>
             <div>

@@ -1,12 +1,11 @@
-import styles from "./PageHeader.module.css";
 import Badge from "./Badge";
 
 const PageHeader = () => (
-  <header className={styles.pageHeader}>
+  <header className="page-header">
     <div className="grid grid-layout">
       <div>
         <img
-          className={styles.image}
+          className="page-header__image"
           src="/assets/arne.jpg"
           alt="Arne Wiese"
           width="96"
@@ -129,7 +128,3 @@ const PageHeader = () => (
 );
 
 export default PageHeader;
-
-export const config = {
-  unstable_runtimeJS: false
-};

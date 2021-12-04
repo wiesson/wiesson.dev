@@ -1,20 +1,11 @@
-!/**/.gitkeep
-# Logs
-*.log
-npm-debug.log*
-.history/*
-
-# Coverage directory used by tools like istanbul
-coverage
-
 node_modules
-.vercel
-.next
-.idea
-.npm
-.DS_Store
-.cache
-dist
 
-.env
-toggl.http
+.cache
+.vercel
+.output
+
+public/build
+api/build
+.DS_Store
+
+.idea
