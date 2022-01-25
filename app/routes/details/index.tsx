@@ -1,5 +1,5 @@
 import type { MetaFunction, LoaderFunction } from "remix";
-import { useLoaderData, json, Link } from "remix";
+import { useLoaderData, json } from "remix";
 import CvListing from "~/components/CvListing";
 import { Listing } from "~/types/Listing";
 import PageHeader from "~/components/PageHeader";
@@ -46,5 +46,3 @@ export default function Index() {
     </>
   );
 }
-
-export const handle = { hydrate: true };

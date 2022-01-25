@@ -74,5 +74,3 @@ export default function Index() {
     </>
   );
 }
-
-export const handle = { hydrate: true };
