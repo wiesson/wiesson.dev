@@ -41,7 +41,9 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
       {items.map((e) => {
         const key = e.from + e.to + e.position;
         const isEducation = e.type === "education";
-        const showExtendedLayout = e.type !== "side" && e.type !== "education";
+        const showExtendedLayout = !(
+          e.type === "side" || e.type === "education"
+        );
         const from = showExtendedLayout
           ? formatDays(e.from)
           : formatYear(e.from);
@@ -60,17 +62,14 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
               <div>
                 <div className="font-weight-500">{e.title}</div>
                 <div className="text-gray-500 mb-2">{e.location}</div>
-                {showDetails && <List items={e.tasks} />}
+                {e.tasks && <List items={e.tasks} />}
               </div>
             </section>
           );
         }
 
         return (
-          <div
-            className="section grid grid-layout page-break-avoid"
-            key={key}
-          >
+          <div className="section grid grid-layout page-break-avoid" key={key}>
             <div className="text-gray-500 text-right">{dates}</div>
             <div>
               <header className="mb-2">
@@ -104,9 +103,8 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
                 )}
               </header>
 
-              {showDetails && <List items={e.tasks} />}
-
-              {showDetails && (
+              {e.tasks && <List items={e.tasks} />}
+              {e.technologies && (
                 <div>
                   {e.technologies.map((t) => (
                     <Badge key={t}>{t}</Badge>
