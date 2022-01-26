@@ -15,7 +15,7 @@ export function formatDays(date: string) {
 
 export function formatYear(date: string) {
   if (date === "now") {
-    return "heute";
+    return new Date().getFullYear();
   }
 
   return new Intl.DateTimeFormat("de-DE", {

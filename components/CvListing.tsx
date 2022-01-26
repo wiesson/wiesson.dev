@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { formatDays, formatYear } from "@/utils/dateFormat";
 import Badge from "./Badge";
 
@@ -21,109 +20,108 @@ interface Props {
   showDetails?: boolean;
 }
 
-export const Title: FC = ({ children }) => (
-  <div className="grid grid-layout">
-    <div />
-    <h2 className="text-xl page-title">{children}</h2>
-  </div>
-);
-
 export const List = ({ items = [] }: { items: string[] }) => {
   if (items.length === 1) {
-    return <div className="mb-2">{items[0]}</div>;
+    return <div className="ml-4 mb-4">{items[0]}</div>;
   }
 
   return (
-    <div className="mb-2">
-      <ul className="list-disc mb-0">
-        {items.map((t) => (
-          <li key={t}>{t}</li>
-        ))}
-      </ul>
-    </div>
+    <ul className="list-disc ml-4 mb-0">
+      {items.map((t) => (
+        <li key={t}>{t}</li>
+      ))}
+    </ul>
   );
 };
 
 const CvListing = ({ title, items, showDetails = false }: Props) => {
   return (
-    <section>
-      <Title>{title}</Title>
+    <section className="section">
+      <h3 className="section-title">{title}</h3>
 
-      {items.map((e) => {
-        const isEducation = e.type === "education";
-        const showExtendedLayout = e.type !== "side" && e.type !== "education";
-        const from = showExtendedLayout
-          ? formatDays(e.from)
-          : formatYear(e.from);
-        const to = showExtendedLayout ? formatDays(e.to) : formatYear(e.to);
-        const dates = from === to ? from : `${from} - ${to}`;
+      <div className="space-y-8">
+        {items.map((e) => {
+          const isEducation = e.type === "education";
+          const showExtendedLayout =
+            e.type !== "side" && e.type !== "education";
 
-        if (isEducation) {
+          const from = showExtendedLayout
+            ? formatDays(e.from)
+            : formatYear(e.from);
+
+          const to = showExtendedLayout ? formatDays(e.to) : formatYear(e.to);
+          const dates = from === to ? from : `${from} - ${to}`;
+
+          if (isEducation) {
+            return (
+              <section
+                className="page-break-avoid grid grid-cols-3 gap-4"
+                key={e.title}
+              >
+                <div className="text-gray-500 text-right col-span-1">
+                  {from} – {to}
+                </div>
+                <div className="col-span-2">
+                  <div className="font-weight-500">{e.title}</div>
+                  <div className="text-gray-500">{e.location}</div>
+                  {showDetails && <List items={e.tasks} />}
+                </div>
+              </section>
+            );
+          }
+
           return (
-            <section className="section grid grid-layout gap-8 page-break-avoid">
-              <div className="text-gray-500 text-right">
-                {from} – {to}
-              </div>
-              <div>
-                <div className="font-weight-500">{e.title}</div>
-                <div className="text-gray-500 mb-2">{e.location}</div>
+            <div
+              className="page-break-avoid grid grid-cols-3 gap-4"
+              key={e.title}
+            >
+              <div className="text-gray-500 text-right col-span-1">{dates}</div>
+              <div className="col-span-2 space-y-4">
+                <header className="mb-2">
+                  {showExtendedLayout ? (
+                    <div>
+                      <span className="font-weight-500">{e.position}</span>
+                      {" · "}
+                      {e.company}
+                      {" · "}
+                      <span className="text-gray-500">
+                        {e.type === "permanent"
+                          ? "festangestellt"
+                          : "freiberuflich"}
+                      </span>
+                    </div>
+                  ) : (
+                    <div>
+                      {e.project && (
+                        <>
+                          <span>{e.project}</span>
+                          <span>{" · "}</span>
+                        </>
+                      )}
+
+                      <span>{e.company}</span>
+                    </div>
+                  )}
+
+                  {showDetails && (
+                    <div className="text-gray-500">{e.location}</div>
+                  )}
+                </header>
+
                 {showDetails && <List items={e.tasks} />}
-              </div>
-            </section>
-          );
-        }
-
-        return (
-          <div
-            className="section grid grid-layout page-break-avoid"
-            key={e.title}
-          >
-            <div className="text-gray-500 text-right">{dates}</div>
-            <div>
-              <header className="mb-2">
-                {showExtendedLayout ? (
-                  <div>
-                    <span className="font-weight-500">{e.position}</span>
-                    {" · "}
-                    {e.company}
-                    {" · "}
-                    <span>
-                      {e.type === "permanent"
-                        ? "festangestellt"
-                        : "freiberuflich"}
-                    </span>
-                  </div>
-                ) : (
-                  <div>
-                    {e.project && (
-                      <>
-                        <span>{e.project}</span>
-                        <span>{" · "}</span>
-                      </>
-                    )}
-
-                    <span>{e.company}</span>
-                  </div>
-                )}
 
                 {showDetails && (
-                  <div className="text-gray-500">{e.location}</div>
+                  <div>
+                    {e.technologies.map((t) => (
+                      <Badge key={t}>{t}</Badge>
+                    ))}
+                  </div>
                 )}
-              </header>
-
-              {showDetails && <List items={e.tasks} />}
-
-              {showDetails && (
-                <div>
-                  {e.technologies.map((t) => (
-                    <Badge key={t}>{t}</Badge>
-                  ))}
-                </div>
-              )}
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </section>
   );
 };

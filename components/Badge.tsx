@@ -1,9 +1,7 @@
 import { FC } from "react";
 
-import styles from "./Badge.module.css";
-
 const Badge: FC = ({ children }) => {
-  return <span className={styles.badge}>{children}</span>;
+  return <span className="badge">{children}</span>;
 };
 
 export default Badge;

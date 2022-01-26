@@ -1,12 +1,12 @@
 import BaseLayout from "@/components/BaseLayout";
-import PageHeader from "@/components/PageHeader";
+import SiteHeader from "@/components/SiteHeader";
 import CvListing from "@/components/CvListing";
 import { education, workExperience } from "../data";
 
 function CvPage() {
   return (
     <BaseLayout>
-      <PageHeader />
+      <SiteHeader />
 
       <CvListing
         title="Arbeitserfahrung"
@@ -22,5 +22,9 @@ function CvPage() {
     </BaseLayout>
   );
 }
+
+export const config = {
+  unstable_runtimeJS: false,
+};
 
 export default CvPage;

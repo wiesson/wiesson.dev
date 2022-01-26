@@ -26,7 +26,7 @@ function BaseLayout({ children }: Props) {
         {isProd && <Script data-domain="arnewiese.de" src="/js/script.js" />}
       </Head>
 
-      <main className="container">{children}</main>
+      <main>{children}</main>
     </>
   );
 }
