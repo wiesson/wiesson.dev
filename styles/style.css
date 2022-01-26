@@ -29,6 +29,7 @@ body {
     1fr
     min(65ch, 100%)
     1fr;
+  @apply px-4 lg:px-0;
 }
 
 .section + .section {
@@ -77,6 +78,7 @@ a,
     font-size: 12px;
   }
 
+  /*
   .grid-layout {
     grid-template-columns: 9rem 1fr;
   }
@@ -87,5 +89,5 @@ a,
 
   .page-title {
     text-align: left;
-  }
+  } */
 }
