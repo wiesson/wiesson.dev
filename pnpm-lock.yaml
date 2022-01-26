@@ -5,13 +5,14 @@ specifiers:
   '@types/react-dom': ^17.0.11
   autoprefixer: ^10.4.2
   critters: ^0.0.16
-  date-fns: ^2.25.0
+  date-fns: ^2.28.0
   next: ^12.0.8
   postcss: ^8.4.5
   prettier: ^2.5.1
+  prettier-plugin-tailwindcss: ^0.1.4
   react: ^17.0.2
   react-dom: ^17.0.2
-  tailwindcss: ^3.0.16
+  tailwindcss: ^3.0.17
   typescript: ^4.5.5
 
 dependencies:
@@ -27,7 +28,8 @@ devDependencies:
   critters: 0.0.16
   postcss: 8.4.5
   prettier: 2.5.1
-  tailwindcss: 3.0.16_ef48b3b8837f8a23677bffe8f9cd866d
+  prettier-plugin-tailwindcss: 0.1.4_prettier@2.5.1
+  tailwindcss: 3.0.17_ef48b3b8837f8a23677bffe8f9cd866d
   typescript: 4.5.5
 
 packages:
@@ -919,6 +921,14 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
+  /prettier-plugin-tailwindcss/0.1.4_prettier@2.5.1:
+    resolution: {integrity: sha512-kt3YFWqxcG9+bilBI0hPF7RjQZNtgBRvjJZGw6B2MNAjPqlfcYIiZnNaIEnq4XimKLTzZYxz6jQnUXmSQ/5njg==}
+    peerDependencies:
+      prettier: '>=2.2.0'
+    dependencies:
+      prettier: 2.5.1
+    dev: true
+
   /prettier/2.5.1:
     resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
     engines: {node: '>=10.13.0'}
@@ -1114,8 +1124,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tailwindcss/3.0.16_ef48b3b8837f8a23677bffe8f9cd866d:
-    resolution: {integrity: sha512-1L8E5Wr+o1c4kxxObNz2owJe94a7BLEMV+2Lz6wzprJdcs3ENSRR9t4OZf2OqtRNS/q/zFPuOKoLtQoy3Lrhhw==}
+  /tailwindcss/3.0.17_ef48b3b8837f8a23677bffe8f9cd866d:
+    resolution: {integrity: sha512-OiHUsmOKQQEg/ocXaLIjk/kOz8EK2jF6iPuc1bQ4NsmhYl7sk70UDsGV02AJvBAAiJhinPCkDR8egT9qY+ulCw==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     peerDependencies:
