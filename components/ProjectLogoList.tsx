@@ -49,7 +49,7 @@ const ProjectLogoList = () => {
       {items.map((item) => (
         <div
           key={item.src}
-          className="group bg-gray-100 dark:bg-gray-500 rounded-lg flex items-center justify-center h-32 px-4"
+          className="group bg-gray-100 hover:bg-amber-300 dark:bg-gray-300 dark:hover:bg-amber-500 rounded-lg flex items-center justify-center h-32 px-4 transition transition-colors"
         >
           <a
             href={item.href + "?ref=arnewiese.de"}
@@ -59,7 +59,7 @@ const ProjectLogoList = () => {
             <img
               src={`/assets/customers/${item.src}`}
               alt={item.src.replace(".svg", "")}
-              className={`block opacity-100 group-hover:opacity-70 transition transition-opacity ${item.class}`}
+              className={`block ${item.class}`}
             />
           </a>
         </div>

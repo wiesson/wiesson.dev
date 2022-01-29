@@ -4,7 +4,6 @@
 
 :root {
   --primary-color: #000;
-  --secondary-color: tomato;
   --font-color: #424242;
   --bg-color: #fff;
   --color-text: rgba(75, 85, 99, 1);
@@ -13,7 +12,6 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --primary-color: #ffffff;
-    --secondary-color: #818cab;
     --font-color: rgba(243, 244, 246, 1);
     --bg-color: #161625;
   }
@@ -77,11 +75,11 @@ body {
   background-color: var(--bg-color);
 }
 
-/*
 a,
 .link {
-  color: var(--color-gray);
-} */
+  color: var(--font-color);
+  text-decoration: underline;
+}
 
 @media print {
   body {
