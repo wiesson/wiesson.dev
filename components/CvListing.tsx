@@ -1,5 +1,4 @@
 import { formatDays, formatYear } from "@/utils/dateFormat";
-import Badge from "./Badge";
 
 export interface Listing {
   company: string;
@@ -22,7 +21,7 @@ interface Props {
 
 export const List = ({ items = [] }: { items: string[] }) => {
   if (items.length === 1) {
-    return <div className="ml-4 mb-4">{items[0]}</div>;
+    return <div className="mb-4">{items[0]}</div>;
   }
 
   return (
@@ -58,7 +57,7 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
                 className="page-break-avoid grid grid-cols-3 gap-4"
                 key={e.title}
               >
-                <div className="text-gray-500 text-right col-span-1">
+                <div className="text-gray-500 text-right ">
                   {from} – {to}
                 </div>
                 <div className="col-span-2">
@@ -73,47 +72,31 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
           return (
             <div
               className="page-break-avoid grid grid-cols-3 gap-4"
-              key={e.title}
+              key={e.project + "-" + e.company}
             >
-              <div className="text-gray-500 text-right col-span-1">{dates}</div>
-              <div className="col-span-2 space-y-4">
+              <div className="col-span-1 text-gray-500 text-right">{dates}</div>
+              <div className="space-y-4 col-span-2">
                 <header className="mb-2">
-                  {showExtendedLayout ? (
-                    <div>
-                      <span className="font-weight-500">{e.position}</span>
-                      {" · "}
-                      {e.company}
-                      {" · "}
-                      <span className="text-gray-500">
-                        {e.type === "permanent"
-                          ? "festangestellt"
-                          : "freiberuflich"}
-                      </span>
-                    </div>
-                  ) : (
-                    <div>
-                      {e.project && (
-                        <>
-                          <span>{e.project}</span>
-                          <span>{" · "}</span>
-                        </>
-                      )}
-
-                      <span>{e.company}</span>
-                    </div>
-                  )}
+                  <div className="space-x-2">
+                    <span className="font-medium">
+                      {e.project || e.position}
+                    </span>
+                    <span className="text-gray-500">{e.company}</span>
+                  </div>
 
                   {showDetails && (
-                    <div className="text-gray-500">{e.location}</div>
+                    <div className="text-gray-500 text-sm">{e.location}</div>
                   )}
                 </header>
 
                 {showDetails && <List items={e.tasks} />}
 
                 {showDetails && (
-                  <div>
-                    {e.technologies.map((t) => (
-                      <Badge key={t}>{t}</Badge>
+                  <div className="float-left -mx-1">
+                    {e.technologies.map((text) => (
+                      <div key={text} className="badge m-1">
+                        {text}
+                      </div>
                     ))}
                   </div>
                 )}

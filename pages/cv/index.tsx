@@ -6,17 +6,20 @@ import { education, workExperience } from "../../data";
 function DetailCvPage() {
   return (
     <BaseLayout>
-      <SiteHeader />
-
       <section className="section space-y-8">
-        <p className="text-center">
-          <a className="link" href="tel:+491751109743">
-            +491751109743
-          </a>{" "}
-          · arne@wiese.me <br />
-          Niederkasseler Str. 55, 40547 Düsseldorf <br />
-          Deutsch (Muttersprache), Englisch (fließend)
-        </p>
+        <dl className="grid gap-8 grid-cols-3">
+          <dt className="text-gray-500 mb-4 col-span-1 text-right">
+            Allgemein
+          </dt>
+          <dd className="space-x-2 space-y-2 col-span-2">
+            <a className="link" href="tel:+491751109743">
+              +491751109743
+            </a>{" "}
+            · arne@wiese.me <br />
+            Niederkasseler Str. 55, 40547 Düsseldorf <br />
+            Deutsch (Muttersprache), Englisch (fließend)
+          </dd>
+        </dl>
 
         <dl className="grid gap-8 grid-cols-3">
           <dt className="text-gray-500 mb-4 col-span-1 text-right">Frontend</dt>
@@ -54,14 +57,14 @@ function DetailCvPage() {
       </section>
 
       <CvListing
-        title="Arbeitserfahrung"
-        items={workExperience.filter((item) => item.type !== "side")}
+        title="Projekte"
+        items={workExperience.filter((item) => item.type !== "permanent")}
         showDetails
       />
 
       <CvListing
-        title="Nebenprojekte"
-        items={workExperience.filter((item) => item.type === "side")}
+        title="Festanstellung"
+        items={workExperience.filter((item) => item.type === "permanent")}
         showDetails
       />
 

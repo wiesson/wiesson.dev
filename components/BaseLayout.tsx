@@ -1,5 +1,7 @@
 import React from "react";
 import Head from "next/head";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -25,7 +27,11 @@ function BaseLayout({ children }: Props) {
         {isProd && <script data-domain="arnewiese.de" src="/js/script.js" />}
       </Head>
 
-      <main>{children}</main>
+      <SiteHeader />
+
+      <main className="section">{children}</main>
+
+      <SiteFooter />
     </>
   );
 }

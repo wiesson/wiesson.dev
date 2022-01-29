@@ -23,6 +23,10 @@ body {
   @apply py-16;
 }
 
+#__next {
+  @apply space-y-24;
+}
+
 .section {
   display: grid;
   grid-template-columns:
@@ -45,8 +49,14 @@ body {
   grid-column: 1 / 4;
 }
 
+.section--wide {
+  grid-column: 1 / 4;
+  width: 100%;
+  @apply max-w-3xl mx-auto;
+}
+
 .section-title {
-  @apply text-xl leading-loose mb-4 text-gray-500 text-center;
+  @apply text-xl leading-loose mb-4 text-center;
 }
 
 p {
