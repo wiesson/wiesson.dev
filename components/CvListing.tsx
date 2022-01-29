@@ -54,13 +54,13 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
           if (isEducation) {
             return (
               <section
-                className="page-break-avoid grid grid-cols-3 gap-4"
+                className="page-break-avoid grid grid-cols-12 gap-4"
                 key={e.title}
               >
-                <div className="text-gray-500 text-right ">
+                <div className="text-gray-500 text-right col-span-3">
                   {from} – {to}
                 </div>
-                <div className="col-span-2">
+                <div className="col-span-9">
                   <div className="font-weight-500">{e.title}</div>
                   <div className="text-gray-500">{e.location}</div>
                   {showDetails && <List items={e.tasks} />}
@@ -71,17 +71,20 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
 
           return (
             <div
-              className="page-break-avoid grid grid-cols-3 gap-4"
+              className="page-break-avoid grid grid-cols-12 gap-4"
               key={e.project + "-" + e.company}
             >
-              <div className="col-span-1 text-gray-500 text-right">{dates}</div>
-              <div className="space-y-4 col-span-2">
+              <div className="col-span-3 text-sm text-gray-500 text-right">
+                {dates}
+              </div>
+              <div className="space-y-4 col-span-9">
                 <header className="mb-2">
                   <div className="space-x-2">
                     <span className="font-medium">
                       {e.project || e.position}
                     </span>
-                    <span className="text-gray-500">{e.company}</span>
+                    <span>-</span>
+                    <span>{e.company}</span>
                   </div>
 
                   {showDetails && (
