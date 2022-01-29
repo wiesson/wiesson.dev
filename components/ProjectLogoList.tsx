@@ -47,7 +47,7 @@ const ProjectLogoList = () => {
   return (
     <div className="section--wide grid grid-cols-2 md:grid-cols-4 gap-2">
       {items.map((item) => (
-        <div className="group bg-gray-100 rounded-lg flex items-center justify-center h-32 px-2">
+        <div className="group bg-gray-100 dark:bg-gray-500 rounded-lg flex items-center justify-center h-32 px-4">
           <a
             href={item.href + "?ref=arnewiese.de"}
             target="_blank"
