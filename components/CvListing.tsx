@@ -57,7 +57,7 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
                 className="page-break-avoid grid grid-cols-12 gap-4"
                 key={e.title}
               >
-                <div className="text-gray-500 text-right col-span-3">
+                <div className="text-gray-500 text-right col-span-3 pt-0.5">
                   {from} – {to}
                 </div>
                 <div className="col-span-9">
@@ -74,7 +74,7 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
               className="page-break-avoid grid grid-cols-12 gap-4"
               key={e.project + "-" + e.company}
             >
-              <div className="col-span-3 text-sm text-gray-500 text-right">
+              <div className="col-span-3 text-sm text-gray-500 text-right pt-0.5">
                 {dates}
               </div>
               <div className="space-y-4 col-span-9">
