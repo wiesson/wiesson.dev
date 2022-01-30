@@ -60,6 +60,7 @@ const ProjectLogoList = () => {
               src={`/assets/customers/${item.src}`}
               alt={item.src.replace(".svg", "")}
               className={`block ${item.class}`}
+              loading="lazy"
             />
           </a>
         </div>
