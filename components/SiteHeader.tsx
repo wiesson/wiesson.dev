@@ -5,13 +5,17 @@ const SiteHeader = () => (
     <div>
       <Link href="/">
         <a className="block mx-auto w-32 h-32">
-          <img
-            src="/assets/arne.jpg"
-            alt="Arne Wiese"
-            width="128"
-            height="128"
-            className="rounded-md w-32 h-32 block"
-          />
+          <picture>
+            <source srcSet="/assets/arne-384.avif" type="image/avif" />
+            <source srcSet="/assets/arne-384.webp" type="image/webp" />
+            <img
+              src="/assets/arne-384.jpg"
+              alt="Arne Wiese"
+              className="rounded-md w-32 h-32 block"
+              width="128"
+              height="128"
+            />
+          </picture>
         </a>
       </Link>
     </div>
