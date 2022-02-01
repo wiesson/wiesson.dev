@@ -27,7 +27,7 @@ export const workExperience: Listing[] = [
     ],
   },
   {
-    company: "Frontnow",
+    company: "FrontNow GmbH",
     position: "Lead Software Engineer",
     location: "Düsseldorf, Berlin",
     type: "project",

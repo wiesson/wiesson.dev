@@ -57,12 +57,12 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
                 className="page-break-avoid grid grid-cols-12 gap-4"
                 key={e.title}
               >
-                <div className="text-gray-500 text-right col-span-3 pt-0.5">
+                <div className="text-gray-500 text-right col-span-3 text-right">
                   {from} – {to}
                 </div>
                 <div className="col-span-9">
                   <div className="font-weight-500">{e.title}</div>
-                  <div className="text-gray-500">{e.location}</div>
+                  <div className="text-gray-500 text-sm mb-2">{e.location}</div>
                   {showDetails && <List items={e.tasks} />}
                 </div>
               </section>
@@ -74,19 +74,11 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
               className="page-break-avoid grid grid-cols-12 gap-4"
               key={e.project + "-" + e.company}
             >
-              <div className="col-span-3 text-sm text-gray-500 text-right pt-0.5">
-                {dates}
-              </div>
+              <div className="col-span-3 text-gray-500 text-right">{dates}</div>
               <div className="space-y-4 col-span-9">
                 <header className="mb-2">
-                  <div className="space-x-2">
-                    <span className="font-medium">
-                      {e.project || e.position}
-                    </span>
-                    <span>-</span>
-                    <span>{e.company}</span>
-                  </div>
-
+                  <div className="">{e.project || e.position}</div>
+                  <div className="text-sm text-gray-500">{e.company}</div>
                   {showDetails && (
                     <div className="text-gray-500 text-sm">{e.location}</div>
                   )}

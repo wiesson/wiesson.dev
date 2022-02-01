@@ -1,5 +1,4 @@
-import { formatDuration } from "date-fns";
-import { intervalToDuration } from "date-fns";
+import { intervalToDuration, formatDuration } from "date-fns";
 
 export function formatDays(date: string) {
   if (date === "now") {
@@ -15,7 +14,7 @@ export function formatDays(date: string) {
 
 export function formatYear(date: string) {
   if (date === "now") {
-    return new Date().getFullYear();
+    return "heute";
   }
 
   return new Intl.DateTimeFormat("de-DE", {
