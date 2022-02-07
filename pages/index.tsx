@@ -1,6 +1,4 @@
 import BaseLayout from "@/components/BaseLayout";
-import CvListing from "@/components/CvListing";
-import { education, workExperience } from "../data";
 import ProjectLogoList from "@/components/ProjectLogoList";
 
 function CvPage() {

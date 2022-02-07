@@ -25,6 +25,7 @@ function BaseLayout({ children }: Props) {
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
         {isProd && <script data-domain="arnewiese.de" src="/js/script.js" />}
+        <link rel="canonical" href="https://www.arnewiese.de" />
       </Head>
 
       <SiteHeader />

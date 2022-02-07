@@ -1,11 +1,15 @@
+import Head from "next/head";
 import BaseLayout from "@/components/BaseLayout";
-import SiteHeader from "@/components/SiteHeader";
-import CvListing from "../../components/CvListing";
+
+import CvListing from "@/components/CvListing";
 import { education, workExperience } from "../../data";
 
 function DetailCvPage() {
   return (
     <BaseLayout>
+      <Head>
+        <link rel="canonical" href="https://www.arnewiese.de/cv" />
+      </Head>
       <section className="section space-y-8">
         <dl className="grid gap-8 grid-cols-12">
           <dt className="text-gray-500 mb-4 col-span-3 text-right">
@@ -26,7 +30,7 @@ function DetailCvPage() {
           <dd className="space-x-2 space-y-2 col-span-9">
             JavaScript, React.js, Next.js, Preact, TypeScript, Svelte, Vue.js,
             SVG, HTML5, CSS3, Sass, Responsive Design, D3, Highcharts.js, Framer
-            Motion,
+            Motion
           </dd>
         </dl>
 
