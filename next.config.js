@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
-  experimental: { optimizeCss: true },
+  experimental: { optimizeCss: true, concurrentFeatures: true },
   images: {
     formats: ["image/avif", "image/webp"],
   },
