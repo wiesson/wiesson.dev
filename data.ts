@@ -3,14 +3,14 @@ import type { Listing } from "./components/CvListing";
 export const workExperience: Listing[] = [
   {
     company: "Parfümerie Douglas GmbH",
-    project: "Social Commerce",
+    project: "Douglas Social Commerce",
     position: "Senior Software Engineer",
     location: "Remote",
     type: "project",
     from: "2021-09-01",
     to: "now",
     tasks: [
-      "Integration des Livebuy.io Video Players für Livestreaming und Wiedergabe von Videos",
+      "Integration des Livebuy.io Video Players für Livestreaming und Wiedergabe von Videos in Shop Plattform",
       "Entwicklung Slide-Show Componente",
       "Performance Optimierung hinsichtlich Web Vitals",
       "Erstellung Video-Übersichtsseite mit Sortierung, Filterung und Facetierung",
