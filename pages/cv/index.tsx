@@ -8,7 +8,11 @@ function DetailCvPage() {
   return (
     <BaseLayout>
       <Head>
-        <link rel="canonical" href="https://www.arnewiese.de/cv" />
+        <link
+          rel="canonical"
+          href="https://www.arnewiese.de/cv"
+          key="canonical"
+        />
       </Head>
       <section className="section space-y-8">
         <dl className="grid gap-8 grid-cols-12">

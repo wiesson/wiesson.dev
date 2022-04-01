@@ -13,11 +13,12 @@ function BaseLayout({ children }: Props) {
   return (
     <>
       <Head>
-        <title>
+        <title key="title">
           Arne Wiese | Freier Entwickler mit Fokus auf Web-Technologien und APIs
         </title>
         <meta
           name="description"
+          key="description"
           content="Fullstack · JavaScript · TypeScript · NodeJS · Python · Golang"
         />
         <meta
@@ -25,12 +26,11 @@ function BaseLayout({ children }: Props) {
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
         {isProd && <script data-domain="arnewiese.de" src="/js/script.js" />}
-        <link rel="canonical" href="https://www.arnewiese.de" />
       </Head>
 
       <SiteHeader />
 
-      <main className="section">{children}</main>
+      <main className="section space-y-24">{children}</main>
 
       <SiteFooter />
     </>
