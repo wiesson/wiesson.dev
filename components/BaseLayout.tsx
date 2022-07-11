@@ -1,4 +1,4 @@
-import React from "react";
+import type { ReactNode } from "react";
 import Head from "next/head";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
@@ -6,7 +6,7 @@ import SiteHeader from "@/components/SiteHeader";
 const isProd = process.env.NODE_ENV === "production";
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 function BaseLayout({ children }: Props) {

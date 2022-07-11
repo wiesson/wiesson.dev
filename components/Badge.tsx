@@ -1,6 +1,10 @@
-import { FC } from "react";
+import type { ReactNode } from "react";
 
-const Badge: FC = ({ children }) => {
+interface Props {
+  children?: ReactNode;
+}
+
+const Badge = ({ children }: Props) => {
   return <span className="badge">{children}</span>;
 };
 
