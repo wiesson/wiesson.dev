@@ -1,5 +1,3 @@
-import React from "react";
-
 const items = [
   { class: "h-6", src: "douglas.svg", href: "https://www.douglas.de" },
   { class: "h-7", src: "frontnow.svg", href: "https://www.frontnow.com" },

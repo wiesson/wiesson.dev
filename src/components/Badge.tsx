@@ -1,7 +1,7 @@
-import type { ReactNode } from "react";
+import type { ComponentChildren } from "preact";
 
 interface Props {
-  children?: ReactNode;
+  children?: ComponentChildren;
 }
 
 const Badge = ({ children }: Props) => {

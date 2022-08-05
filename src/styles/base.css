@@ -21,10 +21,6 @@ body {
   @apply py-16;
 }
 
-#__next {
-  @apply space-y-24;
-}
-
 .section {
   display: grid;
   grid-template-columns:
@@ -79,6 +75,26 @@ a,
 .link {
   color: var(--font-color);
   text-decoration: underline;
+}
+
+.form-fieldset {
+  display: flex;
+  flex-direction: column;
+  @apply rounded-md border border-gray-300 px-3 py-2 focus-within:border-gray-900 focus-within:ring-1 focus-within:ring-gray-900;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  @apply rounded-md px-3 py-2 focus-within:border-gray-900 focus-within:ring-2 focus-within:ring-gray-900;
+}
+
+.form-label {
+  @apply block text-xs font-medium; /* text-gray-900 */
+}
+
+.form-item {
+  @apply bg-transparent block w-full border-0 p-0 placeholder-gray-500 focus:ring-0 sm:text-sm; /* text-gray-900 */
 }
 
 @media print {
