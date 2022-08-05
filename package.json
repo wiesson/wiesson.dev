@@ -13,7 +13,8 @@
     "@astrojs/preact": "^0.5.2",
     "astro": "^1.0.0-rc.5",
     "date-fns": "^2.29.1",
-    "preact": "^10.10.0"
+    "preact": "^10.10.0",
+    "preact-render-to-string": "^5.2.1"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^0.2.5",
