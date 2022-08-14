@@ -1,7 +1,7 @@
 ---
 import '../../styles/base.css'
 
-import BaseLayout from "@/components/BaseLayout";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import CvListing from "@/components/CvListing";
 import { education, workExperience } from "../../data.ts";
 ---
@@ -57,14 +57,14 @@ import { education, workExperience } from "../../data.ts";
     </dl>
   </section>
 
-  <CvListing 
-    title="Projekte" 
+  <CvListing
+    title="Projekte"
     items={workExperience.filter((item)=> item.type !== "permanent")}
     showDetails
   />
 
   <CvListing
-    title="Festanstellung" 
+    title="Festanstellung"
     items={workExperience.filter((item)=> item.type === "permanent")}
     showDetails
   />

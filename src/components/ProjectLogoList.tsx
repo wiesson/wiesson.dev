@@ -43,25 +43,22 @@ const items = [
 
 const ProjectLogoList = () => {
   return (
-    <div className="section--wide grid grid-cols-2 md:grid-cols-4 gap-2">
+    <div class="section--wide grid grid-cols-2 md:grid-cols-4 gap-2">
       {items.map((item) => (
-        <div
+        <a
           key={item.src}
-          className="group bg-gray-100 hover:bg-amber-300 dark:bg-gray-300 dark:hover:bg-amber-500 rounded-lg flex items-center justify-center h-32 px-4 transition transition-colors"
+          href={item.href + "?ref=arnewiese.de"}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group bg-gray-100 hover:bg-amber-300 dark:bg-gray-300 dark:hover:bg-amber-500 rounded-lg flex items-center justify-center h-32 px-4 transition transition-colors"
         >
-          <a
-            href={item.href + "?ref=arnewiese.de"}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={`/assets/customers/${item.src}`}
-              alt={item.src.replace(".svg", "")}
-              className={`block ${item.class}`}
-              loading="lazy"
-            />
-          </a>
-        </div>
+          <img
+            src={`/assets/customers/${item.src}`}
+            alt={item.src.replace(".svg", "")}
+            class={`block ${item.class} transition duration-1000 ease-out group-hover:scale-110`}
+            loading="lazy"
+          />
+        </a>
       ))}
     </div>
   );

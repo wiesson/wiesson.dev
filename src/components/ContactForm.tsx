@@ -1,12 +1,12 @@
 const ContactForm = () => {
   return (
-    <form action="/api/v1/contact" method="post" className="space-y-4">
-      <div className="form-fieldset">
-        <label className="form-label" htmlFor="name">
+    <form action="/api/v1/contact" method="post" class="space-y-4">
+      <div class="form-fieldset">
+        <label class="form-label" htmlFor="name">
           Name
         </label>
         <input
-          className="form-item"
+          class="form-item"
           type="text"
           name="name"
           id="name"
@@ -14,12 +14,12 @@ const ContactForm = () => {
         />
       </div>
 
-      <div className="form-fieldset">
-        <label className="form-label" htmlFor="phoneNumber">
+      <div class="form-fieldset">
+        <label class="form-label" htmlFor="phoneNumber">
           Telefonnumer
         </label>
         <input
-          className="form-item"
+          class="form-item"
           type="text"
           name="phoneNumber"
           id="phoneNumber"
@@ -27,12 +27,12 @@ const ContactForm = () => {
         />
       </div>
 
-      <div className="form-fieldset">
-        <label className="form-label" htmlFor="email">
+      <div class="form-fieldset">
+        <label class="form-label" htmlFor="email">
           Email
         </label>
         <input
-          className="form-item"
+          class="form-item"
           type="email"
           name="email"
           id="email"
@@ -40,18 +40,18 @@ const ContactForm = () => {
         />
       </div>
 
-      <div className="form-fieldset">
-        <label className="form-label" htmlFor="name">
+      <div class="form-fieldset">
+        <label class="form-label" htmlFor="name">
           Name
         </label>
-        <input className="form-item" type="text" name="name" id="name" />
+        <input class="form-item" type="text" name="name" id="name" />
       </div>
 
-      <div className="form-fieldset">
-        <label className="form-label" htmlFor="duration">
+      <div class="form-fieldset">
+        <label class="form-label" htmlFor="duration">
           Projektdauer
         </label>
-        <select className="form-item" name="duration" id="duration">
+        <select class="form-item" name="duration" id="duration">
           <option value="">Bitte wählen</option>
           <option value="2w">2 Wochen</option>
           <option value="1m">1 Monat</option>
@@ -60,11 +60,11 @@ const ContactForm = () => {
         </select>
       </div>
 
-      <div className="form-fieldset">
-        <label className="form-label" htmlFor="duration">
+      <div class="form-fieldset">
+        <label class="form-label" htmlFor="duration">
           Projektbudget
         </label>
-        <select className="form-item" name="budget" id="budget">
+        <select class="form-item" name="budget" id="budget">
           <option value="">Bitte wählen</option>
           <option value="<10800">{"<"} 10.000 EUR</option>
           <option value="10000">10.000 EUR</option>
@@ -76,11 +76,11 @@ const ContactForm = () => {
         </select>
       </div>
 
-      <div className="form-fieldset">
-        <label className="form-label" htmlFor="topic">
+      <div class="form-fieldset">
+        <label class="form-label" htmlFor="topic">
           Themengebiet
         </label>
-        <select className="form-item" name="topic" id="topic">
+        <select class="form-item" name="topic" id="topic">
           <option value="development">Entwicklung</option>
           <option value="support">Unterstützung</option>
           <option value="mvp">MVP Entwicklung</option>
@@ -88,12 +88,12 @@ const ContactForm = () => {
         </select>
       </div>
 
-      <div className="form-fieldset">
-        <label className="form-label" htmlFor="message">
+      <div class="form-fieldset">
+        <label class="form-label" htmlFor="message">
           Nachricht
         </label>
         <textarea
-          className="form-item"
+          class="form-item"
           name="message"
           id="message"
           rows={10}

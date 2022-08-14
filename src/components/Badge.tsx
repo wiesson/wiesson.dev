@@ -5,7 +5,7 @@ interface Props {
 }
 
 const Badge = ({ children }: Props) => {
-  return <span className="badge">{children}</span>;
+  return <span class="badge">{children}</span>;
 };
 
 export default Badge;

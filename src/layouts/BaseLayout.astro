@@ -1,0 +1,33 @@
+---
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader.astro";
+const isProd = import.meta.env.PROD;
+---
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>
+      Arne Wiese | Freier Entwickler mit Fokus auf Web-Technologien und
+      APIs
+    </title>
+    <meta
+      name="description"
+      content="Fullstack · JavaScript · TypeScript · NodeJS · Python · Golang"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+  </head>
+  <body>
+    <SiteHeader />
+
+    <main class="section space-y-24"><slot/></main>
+
+    <SiteFooter />
+
+    {isProd && <script data-domain="arnewiese.de" src="/js/script.js" />}
+  </body>
+</html>
+

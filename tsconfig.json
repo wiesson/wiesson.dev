@@ -9,6 +9,7 @@
     "types": ["astro/client"],
     "baseUrl": ".",
     "paths": {
+      "@/layouts/*": ["src/layouts/*"],
       "@/components/*": ["src/components/*"],
       "@/lib/*": ["src/lib/*"],
       "@/utils/*": ["src/utils/*"],

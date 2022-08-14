@@ -21,11 +21,11 @@ interface Props {
 
 export const List = ({ items = [] }: { items: string[] }) => {
   if (items.length === 1) {
-    return <div className="mb-4">{items[0]}</div>;
+    return <div class="mb-4">{items[0]}</div>;
   }
 
   return (
-    <ul className="list-disc ml-4 mb-0">
+    <ul class="list-disc ml-4 mb-0">
       {items.map((t) => (
         <li key={t}>{t}</li>
       ))}
@@ -35,10 +35,10 @@ export const List = ({ items = [] }: { items: string[] }) => {
 
 const CvListing = ({ title, items, showDetails = false }: Props) => {
   return (
-    <section className="section">
-      <h3 className="section-title">{title}</h3>
+    <section class="section">
+      <h3 class="section-title">{title}</h3>
 
-      <div className="space-y-8">
+      <div class="space-y-8">
         {items.map((e) => {
           const isEducation = e.type === "education";
           const showExtendedLayout =
@@ -54,15 +54,15 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
           if (isEducation) {
             return (
               <section
-                className="page-break-avoid grid grid-cols-12 gap-4"
+                class="page-break-avoid grid grid-cols-12 gap-4"
                 key={e.title}
               >
-                <div className="text-gray-500 text-right col-span-3 text-right">
+                <div class="text-gray-500 text-right col-span-3 text-right">
                   {from} – {to}
                 </div>
-                <div className="col-span-9">
-                  <div className="font-weight-500">{e.title}</div>
-                  <div className="text-gray-500 text-sm mb-2">{e.location}</div>
+                <div class="col-span-9">
+                  <div class="font-weight-500">{e.title}</div>
+                  <div class="text-gray-500 text-sm mb-2">{e.location}</div>
                   {showDetails && <List items={e.tasks} />}
                 </div>
               </section>
@@ -71,25 +71,25 @@ const CvListing = ({ title, items, showDetails = false }: Props) => {
 
           return (
             <div
-              className="page-break-avoid grid grid-cols-12 gap-4"
+              class="page-break-avoid grid grid-cols-12 gap-4"
               key={e.project + "-" + e.company}
             >
-              <div className="col-span-3 text-gray-500 text-right">{dates}</div>
-              <div className="space-y-4 col-span-9">
-                <header className="mb-2">
-                  <div className="">{e.project || e.position}</div>
-                  <div className="text-sm text-gray-500">{e.company}</div>
+              <div class="col-span-3 text-gray-500 text-right">{dates}</div>
+              <div class="space-y-4 col-span-9">
+                <header class="mb-2">
+                  <div class="">{e.project || e.position}</div>
+                  <div class="text-sm text-gray-500">{e.company}</div>
                   {showDetails && (
-                    <div className="text-gray-500 text-sm">{e.location}</div>
+                    <div class="text-gray-500 text-sm">{e.location}</div>
                   )}
                 </header>
 
                 {showDetails && <List items={e.tasks} />}
 
                 {showDetails && (
-                  <div className="float-left -mx-1">
+                  <div class="float-left -mx-1">
                     {e.technologies.map((text) => (
-                      <div key={text} className="badge m-1">
+                      <div key={text} class="badge m-1">
                         {text}
                       </div>
                     ))}

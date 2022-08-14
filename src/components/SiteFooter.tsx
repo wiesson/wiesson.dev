@@ -1,8 +1,8 @@
 const SiteFooter = () => {
   return (
-    <footer className="section space-y-4">
+    <footer class="section space-y-4">
       <div>
-        <h3 className="text-xl mb-4">Kontakt</h3>
+        <h3 class="text-xl mb-4">Kontakt</h3>
         <p>
           <a
             href="https://www.linkedin.com/in/arnewiese"
@@ -38,8 +38,8 @@ const SiteFooter = () => {
         </p>
       </div>
 
-      <div className="text-sm">
-        <div className="flex justify-between">
+      <div class="text-sm">
+        <div class="flex justify-between">
           <div>{new Date().getFullYear()}</div>
           <div>Düsseldorf, Deutschland</div>
         </div>
