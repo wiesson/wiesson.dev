@@ -17,6 +17,16 @@
   }
 }
 
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: var(--font-color);
+  background-color: var(--bg-color);
+}
+
 body {
   @apply py-16;
 }
@@ -53,22 +63,8 @@ body {
   @apply text-xl leading-loose mb-4 text-center;
 }
 
-p {
-  color: var(--color-text);
-}
-
 .badge {
   @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-300;
-}
-
-html,
-body {
-  margin: 0;
-  min-height: 100%;
-  font-family: system-ui, sans-serif;
-  line-height: 1.5;
-  color: var(--font-color);
-  background-color: var(--bg-color);
 }
 
 a,
@@ -101,17 +97,4 @@ a,
   body {
     font-size: 12px;
   }
-
-  /*
-  .grid-layout {
-    grid-template-columns: 9rem 1fr;
-  }
-
-  .page-break-avoid {
-    page-break-inside: avoid;
-  }
-
-  .page-title {
-    text-align: left;
-  } */
 }
