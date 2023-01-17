@@ -1,4 +1,5 @@
 const items = [
+  { class: "h-6", src: "tourvy.svg", href: "https://www.tourvy.de" },
   { class: "h-6", src: "douglas.svg", href: "https://www.douglas.de" },
   { class: "h-7", src: "frontnow.svg", href: "https://www.frontnow.com" },
   {
