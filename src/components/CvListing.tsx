@@ -1,21 +1,9 @@
 import { formatDays, formatYear } from "@/utils/dateFormat";
-
-export interface Listing {
-  company: string;
-  project?: string;
-  title?: string;
-  position: string;
-  location: string;
-  type: "project" | "permanent" | "side" | "education";
-  from: string;
-  to: string;
-  tasks: string[];
-  technologies: string[];
-}
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
   title: string;
-  items: Listing[];
+  items: CollectionEntry<"work">[];
   showDetails?: boolean;
 }
 
@@ -33,75 +21,75 @@ export const List = ({ items = [] }: { items: string[] }) => {
   );
 };
 
-const CvListing = ({ title, items, showDetails = false }: Props) => {
-  return (
-    <section class="section">
-      <h3 class="section-title">{title}</h3>
+const CvListing = ({ title, items, showDetails = false }: Props) => (
+  <section class="section">
+    <h3 class="section-title">{title}</h3>
 
-      <div class="space-y-8">
-        {items.map((e) => {
-          const isEducation = e.type === "education";
-          const showExtendedLayout =
-            e.type !== "side" && e.type !== "education";
+    <div class="space-y-8">
+      {items.map(({ data }) => {
+        const isEducation = data.type === "education";
+        const showExtendedLayout =
+          data.type !== "side" && data.type !== "education";
 
-          const from = showExtendedLayout
-            ? formatDays(e.from)
-            : formatYear(e.from);
+        const from = showExtendedLayout
+          ? formatDays(data.from)
+          : formatYear(data.from);
 
-          const to = showExtendedLayout ? formatDays(e.to) : formatYear(e.to);
-          const dates = from === to ? from : `${from} - ${to}`;
+        const to = showExtendedLayout
+          ? formatDays(data.to)
+          : formatYear(data.to);
+        const dates = from === to ? from : `${from} - ${to}`;
 
-          if (isEducation) {
-            return (
-              <section
-                class="page-break-avoid grid grid-cols-12 gap-4"
-                key={e.title}
-              >
-                <div class="text-gray-500 text-right col-span-3 text-right">
-                  {from} – {to}
-                </div>
-                <div class="col-span-9">
-                  <div class="font-weight-500">{e.title}</div>
-                  <div class="text-gray-500 text-sm mb-2">{e.location}</div>
-                  {showDetails && <List items={e.tasks} />}
-                </div>
-              </section>
-            );
-          }
-
+        if (isEducation) {
           return (
-            <div
+            <section
               class="page-break-avoid grid grid-cols-12 gap-4"
-              key={e.project + "-" + e.company}
+              key={data.title}
             >
-              <div class="col-span-3 text-gray-500 text-right">{dates}</div>
-              <div class="space-y-4 col-span-9">
-                <header class="mb-2">
-                  <div class="">{e.project || e.position}</div>
-                  <div class="text-sm text-gray-500">{e.company}</div>
-                  {showDetails && (
-                    <div class="text-gray-500 text-sm">{e.location}</div>
-                  )}
-                </header>
-
-                {showDetails && <List items={e.tasks} />}
-
-                {showDetails && (
-                  <div class="float-left -mx-1">
-                    {e.technologies.map((text) => (
-                      <div key={text} class="badge m-1">
-                        {text}
-                      </div>
-                    ))}
-                  </div>
-                )}
+              <div class="text-gray-500 text-right col-span-3 text-right">
+                {from} – {to}
               </div>
-            </div>
+              <div class="col-span-9">
+                <div class="font-weight-500">{data.title}</div>
+                <div class="text-gray-500 text-sm mb-2">{data.location}</div>
+                {showDetails && <List items={data.tasks} />}
+              </div>
+            </section>
           );
-        })}
-      </div>
-    </section>
-  );
-};
+        }
+
+        return (
+          <div
+            class="page-break-avoid grid grid-cols-12 gap-4"
+            key={data.project + "-" + data.company}
+          >
+            <div class="col-span-3 text-gray-500 text-right">{dates}</div>
+            <div class="space-y-4 col-span-9">
+              <header class="mb-2">
+                <div class="">{data.project || data.position}</div>
+                <div class="text-sm text-gray-500">{data.company}</div>
+                {showDetails && (
+                  <div class="text-gray-500 text-sm">{data.location}</div>
+                )}
+              </header>
+
+              {showDetails && <List items={data.tasks} />}
+
+              {showDetails && (
+                <div class="float-left -mx-1">
+                  {data.technologies?.map((text) => (
+                    <div key={text} class="badge m-1">
+                      {text}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+);
 
 export default CvListing;

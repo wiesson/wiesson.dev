@@ -1,0 +1,25 @@
+---
+company: Parfümerie Douglas GmbH
+project: Douglas Social Commerce
+position: Senior Software Engineer
+location: Remote
+from: 2021-09-01
+type: project
+to: now
+tasks:
+  - Integration des Livebuy.io Video Players für Livestreaming und Wiedergabe von Videos in Shop Plattform
+  - Entwicklung Slide-Show Componente
+  - Performance Optimierung hinsichtlich Web Vitals
+  - Erstellung Video-Übersichtsseite mit Sortierung, Filterung und Facetierung
+  - Weiterentwicklung und technische Abstimmung mit Partnern
+technologies:
+  - TypeScript
+  - React
+  - Redux
+  - React Testing Library
+  - Jest
+  - Figma
+  - Livebuy.io API
+contentType: work
+---
+

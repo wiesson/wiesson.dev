@@ -3,7 +3,10 @@ import '../../styles/base.css'
 
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import CvListing from "@/components/CvListing";
-import { education, workExperience } from "../../data.ts";
+import { getCollection } from 'astro:content';
+
+const cvWork = await getCollection('work');
+const cvEducation = await getCollection('education');
 ---
 
 <BaseLayout>
@@ -34,7 +37,7 @@ import { education, workExperience } from "../../data.ts";
     <dl class="grid gap-8 grid-cols-12">
       <dt class="text-gray-500 mb-4 col-span-3 text-right">Backend</dt>
       <dd class="space-x-2 space-y-2 col-span-9">
-        Node.js, Django, Python, GraphQL, REST, TypeScript, Golang,
+        Node.js, Django, Python, GraphQL, REST, TypeScript, Golang, Supabase
       </dd>
     </dl>
 
@@ -59,15 +62,17 @@ import { education, workExperience } from "../../data.ts";
 
   <CvListing
     title="Projekte"
-    items={workExperience.filter((item)=> item.type !== "permanent")}
+    items={cvWork.filter((item)=> item.data.type !== "permanent")}
     showDetails
   />
 
   <CvListing
     title="Festanstellung"
-    items={workExperience.filter((item)=> item.type === "permanent")}
+    items={cvWork.filter((item)=> item.data.type === "permanent")}
     showDetails
   />
 
-  <CvListing title="Ausbildung" items={education} showDetails />
+
+  <CvListing title="Ausbildung" items={cvEducation} showDetails />
+
 </BaseLayout>
