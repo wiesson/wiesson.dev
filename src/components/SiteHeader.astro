@@ -1,19 +1,19 @@
 ---
+import { Picture } from "@astrojs/image/components";
 ---
+
 <header class="section space-y-6 text-center">
   <div>
     <a href="/" class="block mx-auto w-32 h-32">
-      <picture>
-        <source srcset="/assets/arne-384.avif" type="image/avif" />
-        <source srcset="/assets/arne-384.webp" type="image/webp" />
-        <img
-          src="/assets/arne-384.jpg"
-          alt="Arne Wiese"
-          class="rounded-md w-32 h-32 block"
-          width="128"
-          height="128"
-        />
-      </picture>
+      <Picture
+        src="/assets/arne-neu-quadratisch.jpeg"
+        alt="Arne Wiese"
+        widths={[384, 576]}
+        aspectRatio="1:1"
+        class="rounded-md w-32 h-32 block"
+        width={160}
+        height={160}
+      />
     </a>
   </div>
 

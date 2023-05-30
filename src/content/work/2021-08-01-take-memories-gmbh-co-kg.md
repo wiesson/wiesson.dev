@@ -4,7 +4,8 @@ project: Entwicklung Reiseplanungssoftware
 position: Software Architect
 location: Meerbusch
 from: 2021-08-01
-type: project
+type: side
+projectType: project
 to: now
 tasks:
   - Entwicklung einer Plattform zur Erstellungen von individuellen Reiseangeboten

@@ -4,8 +4,9 @@ project:
 position: Lead Software Engineer
 location: Düsseldorf, Berlin
 from: 2021-03-01
-type: project
 to: 2022-02-01
+type: main
+projectType: project
 tasks:
   - Fullstack Entwicklung einer Plattform für Einkäufer und Lieferanten
   - Entwicklung HTTP-Crawler zum automatischen Abruf von Daten
@@ -13,7 +14,7 @@ tasks:
 technologies:
   - JavaScript
   - Tailwind
-  - Svelte
+  - Sveltekit
   - Vite.js
   - Firebase
   - Firestore

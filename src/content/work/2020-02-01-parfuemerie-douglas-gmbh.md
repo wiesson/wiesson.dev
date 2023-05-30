@@ -4,8 +4,9 @@ project: douglas.ch
 position: Software Engineer
 location: Düsseldorf
 from: 2020-02-01
-type: side
 to: 2020-03-01
+type: side
+projectType: project
 tasks:
   - Analyse und Fehlerbehebung der Tracking-Implementierung vom CH Onlineshop
 technologies:

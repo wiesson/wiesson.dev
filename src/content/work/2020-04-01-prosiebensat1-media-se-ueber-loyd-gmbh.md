@@ -4,8 +4,9 @@ project: maxis-zeitreisen.de
 position: Software Engineer
 location: Remote
 from: 2020-04-01
-type: side
 to: 2020-08-01
+type: side
+projectType: project
 tasks:
   - Aktualisierung der Website auf neue Vue.js-Version und Webpack-Konfiguration
   - Entfernung von Code/Style Dopplungen und Erstellung verschiedener Vue.js UI-Komponenten

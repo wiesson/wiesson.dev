@@ -4,8 +4,9 @@ project:
 position: Software Engineer
 location: Düsseldorf
 from: 2019-01-01
-type: side
 to: 2019-04-01
+type: side
+projectType: project
 tasks:
   - Entwicklung einer WebApp mit Fokus auf Darstellung von Kennzahlen mit dynamischen SVGs
   - Erstellung verschiedener Vue.js UI-Komponenten

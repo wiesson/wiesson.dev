@@ -4,8 +4,9 @@ project:
 position: Lead Frontend Engineer / Senior Software Engineer
 location: Köln, Hongkong, USA (Washington DC)
 from: 2017-02-01
-type: permanent
 to: 2019-07-01
+type: main
+projectType: permanent
 tasks:
   - Ab 02.2019 Lead Frontend Engineer
   - Entwicklung einer Plattform zur Verwaltung von weltweit eingesetzten IoT-Geräten zur Datenerfassung mit Schwerpunkt Energiedaten

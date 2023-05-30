@@ -4,8 +4,9 @@ project:
 position: Senior Frontend Developer
 location: Düsseldorf
 from: 2019-07-01
-type: permanent
 to: 2019-12-01
+type: main
+projectType: permanent
 tasks:
   - Integration gesponsorter Produkte in das Produkt-Listing
   - Integration der Douglas Beauty-Stories in das Produkt-Listing

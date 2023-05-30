@@ -1,6 +1,6 @@
-import { intervalToDuration, formatDuration } from "date-fns";
+// import { intervalToDuration, formatDuration } from "date-fns";
 
-export function formatDays(date: string) {
+export function formatDays(date: string | Date) {
   if (date === "now") {
     return "heute";
   }
@@ -12,7 +12,7 @@ export function formatDays(date: string) {
   }).format(d);
 }
 
-export function formatYear(date: string) {
+export function formatYear(date: string | Date) {
   if (date === "now") {
     return "heute";
   }
@@ -22,6 +22,7 @@ export function formatYear(date: string) {
   }).format(new Date(date));
 }
 
+/*
 export function formatTimeAgo(from: string, to: string) {
   const dateFrom = new Date(from);
   const dateTo = to === "now" ? new Date() : new Date(to);
@@ -40,3 +41,4 @@ function translateTimeAgo(ago: string) {
     .replace("years", "Jahre")
     .replace("year", "Jahr");
 }
+ */

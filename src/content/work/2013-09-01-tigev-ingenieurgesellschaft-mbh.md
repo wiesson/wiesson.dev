@@ -4,8 +4,9 @@ project:
 position: Software Engineer / Ingenieur Energiedatenmanagement
 location: Münster
 from: 2013-09-01
-type: permanent
 to: 2015-05-01
+type: main
+projectType: permanent
 tasks:
   - Fullstack Entwicklung eines webbasierten Energiedatenmanagementsystems
   - Planung von Messkonzepten zur Erfassung von Energiedaten

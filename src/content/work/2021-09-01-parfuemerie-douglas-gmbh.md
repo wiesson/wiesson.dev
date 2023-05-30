@@ -4,8 +4,9 @@ project: Douglas Social Commerce
 position: Senior Software Engineer
 location: Remote
 from: 2021-09-01
-type: project
-to: now
+to: 2022-11-01
+type: main
+projectType: project
 tasks:
   - Integration des Livebuy.io Video Players für Livestreaming und Wiedergabe von Videos in Shop Plattform
   - Entwicklung Slide-Show Componente

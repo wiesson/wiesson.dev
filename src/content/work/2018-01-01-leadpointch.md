@@ -4,8 +4,9 @@ project: juts.ch
 position: Software Engineer
 location: Remote
 from: 2018-01-01
-type: side
 to: 2018-11-01
+type: main
+projectType: project
 tasks:
   - Frontend Entwicklung einer Webapplikation zum Angebot und zur Abwicklung von „Foodboxen“ im Abonnement
   - Implementierung der regelmäßigen Zahlungsabwicklung mit Stripe und PayPal
