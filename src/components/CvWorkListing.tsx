@@ -1,3 +1,5 @@
+/** @jsxImportSource preact */
+
 import { formatDays, formatYear } from "@/utils/dateFormat";
 import type { CollectionEntry } from "astro:content";
 import ListingContent from "@/components/ListingContent";
@@ -49,7 +51,10 @@ const CvWorkListing = ({ title, items, showDetails = false }: Props) => (
                   <h3 class="text-xs">Technologien</h3>
                   <div class="float-left space-x-1">
                     {data.technologies?.map((text) => (
-                      <span key={text} class="text-xs text-gray-500">
+                      <span
+                        key={text}
+                        class="text-xs text-gray-500 dark:text-gray-300"
+                      >
                         {text}
                       </span>
                     ))}
