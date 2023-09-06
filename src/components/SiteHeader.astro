@@ -1,11 +1,11 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets"
 ---
 
 <header class="section space-y-6 text-center">
   <div>
     <a href="/" class="block mx-auto w-32 h-32">
-      <Picture
+      <Image
         src="/assets/arne-neu-quadratisch.jpeg"
         alt="Arne Wiese"
         widths={[384, 576]}

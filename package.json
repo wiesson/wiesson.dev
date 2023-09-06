@@ -10,22 +10,22 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/image": "^0.17.3",
-    "@astrojs/preact": "^2.2.2",
-    "astro": "^2.10.14",
+    "@astrojs/image": "^0.18.0",
+    "@astrojs/preact": "^3.0.0",
+    "astro": "^3.0.9",
     "preact": "^10.17.1",
     "preact-render-to-string": "^6.2.1"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^4.0.0",
-    "@tailwindcss/typography": "^0.5.9",
-    "@types/node": "^20.5.7",
+    "@astrojs/tailwind": "^5.0.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20.5.9",
     "autoprefixer": "^10.4.15",
     "critters": "^0.0.20",
-    "postcss": "^8.4.28",
-    "prettier": "^3.0.2",
+    "postcss": "^8.4.29",
+    "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.0",
-    "prettier-plugin-tailwindcss": "^0.5.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.2.2"
   },
