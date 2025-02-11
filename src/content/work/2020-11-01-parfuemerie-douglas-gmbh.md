@@ -8,17 +8,19 @@ to: 2021-09-01
 type: side
 projectType: project
 tasks:
-  - Konzeption und Entwicklung eines Produkttest-Services für voraussichtlich ca. 20.000 User pro Kampagne sowie Anbindung weiterer externer Services über Rest-APIs
-  - Integration eines mehrstufigen Registrierungsformulars für Produkttests in Onlineshop-Plattform (Backend und Frontend)
+  - Konzeption eines Produkttest-Services für 20.000+ User
+  - Integration eines mehrstufigen Registrierungsformulars
+  - Anbindung der BazaarVoice API
+  - Entwicklung der Backend-Schnittstellen
+  - Frontend-Implementierung der Produkttest-Flows
 technologies:
   - TypeScript
   - React
   - Jest
   - Enzyme
   - Next.js
-  - Postgres
+  - PostgreSQL
   - BazaarVoice API
   - Figma
 contentType: work
 ---
-

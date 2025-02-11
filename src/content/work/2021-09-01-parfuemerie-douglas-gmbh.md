@@ -8,11 +8,11 @@ to: 2022-11-01
 type: main
 projectType: project
 tasks:
-  - Integration des Livebuy.io Video Players für Livestreaming und Wiedergabe von Videos in Shop Plattform
-  - Entwicklung Slide-Show Componente
-  - Performance Optimierung hinsichtlich Web Vitals
-  - Erstellung Video-Übersichtsseite mit Sortierung, Filterung und Facetierung
-  - Weiterentwicklung und technische Abstimmung mit Partnern
+  - Integration des Livebuy.io Video-Players
+  - Entwicklung einer Slideshow-Komponente
+  - Optimierung der Web Vitals
+  - Implementierung der Video-Übersichtsseite
+  - Technische Abstimmung mit Partnern
 technologies:
   - TypeScript
   - React
@@ -23,4 +23,3 @@ technologies:
   - Livebuy.io API
 contentType: work
 ---
-

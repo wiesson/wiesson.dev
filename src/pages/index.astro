@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import ProjectLogoList from "@/components/ProjectLogoList.tsx";
+import {getCollection} from 'astro:content'
+
+const cvWork = await getCollection('work')
 ---
 
 <html lang="de">

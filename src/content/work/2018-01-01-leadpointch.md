@@ -8,10 +8,11 @@ to: 2018-11-01
 type: main
 projectType: project
 tasks:
-  - Frontend Entwicklung einer Webapplikation zum Angebot und zur Abwicklung von „Foodboxen“ im Abonnement
-  - Implementierung der regelmäßigen Zahlungsabwicklung mit Stripe und PayPal
-  - Unterstützung des Backend-Entwicklers beim Aufbau der REST-API mit Python/Django
-  - Aufbau CI/CD mit Bitbucket, Docker-Compose, Google Cloud und Netlify
+  - Frontend-Entwicklung einer Food-Box-Subscription-Plattform
+  - Integration von Stripe und PayPal für Abo-Zahlungen
+  - Unterstützung bei der Python/Django REST-API
+  - Aufbau der CI/CD-Pipeline mit Docker und Google Cloud
+  - Implementierung der Frontend-Komponenten mit React/Flow
 technologies:
   - JavaScript
   - React
@@ -19,11 +20,10 @@ technologies:
   - Redux
   - Python
   - Django
-  - Postgres
+  - PostgreSQL
   - Docker
   - Google Cloud
   - Stripe API
-  - Paypal API
+  - PayPal API
 contentType: work
 ---
-

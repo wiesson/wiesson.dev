@@ -8,6 +8,7 @@
     "jsx": "react",
     "types": ["astro/client"],
     "baseUrl": ".",
+    "allowImportingTsExtensions": true,
     "paths": {
       "@/layouts/*": ["src/layouts/*"],
       "@/components/*": ["src/components/*"],

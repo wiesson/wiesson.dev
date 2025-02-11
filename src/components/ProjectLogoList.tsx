@@ -6,7 +6,7 @@ const items = [
     src: "douglas-markting-solutions.png",
     href: "https://www.douglas-marketing-solutions.com/",
   },
-  { class: "h-7", src: "frontnow.svg", href: "https://www.frontnow.com" },
+  { class: "h-6", src: "frontnow.svg", href: "https://www.frontnow.com" },
   {
     class: "h-8",
     src: "take-memories.svg",
@@ -56,7 +56,7 @@ const ProjectLogoList = () => {
           href={item.href + "?ref=arnewiese.de"}
           target="_blank"
           rel="noopener noreferrer"
-          class="group bg-gray-100 hover:bg-amber-300 dark:bg-gray-300 dark:hover:bg-amber-500 rounded-lg flex items-center justify-center h-32 px-4 transition transition-colors"
+          class="group bg-gray-100 hover:bg-amber-300 dark:bg-gray-300 dark:hover:bg-amber-500 rounded-lg flex items-center justify-center h-32 px-4 transition-colors"
         >
           <img
             src={`/assets/customers/${item.src}`}

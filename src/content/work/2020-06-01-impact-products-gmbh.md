@@ -8,8 +8,10 @@ to: 2020-07-01
 type: side
 projectType: project
 tasks:
-  - Erstellung einer mehrsprachigen Landingpage nach Designvorgabe zur Sicherstellung des kurzfristig geplanten Go-Live
-  - Anbindung Newsletter-Funktionalität durch Shopify API zur Verknüpfung mit folgendem Shop-Projekt
+  - Entwicklung einer mehrsprachigen Landing Page
+  - Umsetzung nach Designvorgaben für Go-Live
+  - Integration der Shopify Newsletter-API
+  - Vorbereitung für Shop-Anbindung
 technologies:
   - TypeScript
   - Next.js
@@ -17,4 +19,3 @@ technologies:
   - Figma
 contentType: work
 ---
-

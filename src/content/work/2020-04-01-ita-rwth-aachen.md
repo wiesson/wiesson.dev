@@ -8,16 +8,19 @@ to: 2020-06-01
 type: side
 projectType: project
 tasks:
-  - Entwicklung einer gemeinnützigen Plattform zur Vermittlung von Schutzausrüstung zur Bewältigung der Covid-19 Krise mit der RWTH Aachen und zwei weiteren Entwicklern. (Zwischenzeitlich wurden über die Plattform mehrere Millionen Schutzausrüstungen (wie Masken) pro Tag angefragt)
+  - Entwicklung einer Plattform für Covid-19 Schutzausrüstung zur Abwicklung von großvolumigen Bestellungen
+  - Integration von GraphQL-Schnittstellen mit Hasura
+  - Implementierung der Vermittlungs-Logik
+  - Aufbau der Datenbank-Struktur
+  - Optimierung für hohe Anfragevolumen
 technologies:
   - React
   - TypeScript
   - Next.js
   - GraphQL
   - Hasura
-  - Postgres
+  - PostgreSQL
   - Vercel
   - DigitalOcean
 contentType: work
 ---
-

@@ -1,6 +1,6 @@
 ---
 company: FrontNow GmbH
-project: 
+project:
 position: Lead Software Engineer
 location: Düsseldorf, Berlin
 from: 2021-03-01
@@ -8,9 +8,11 @@ to: 2022-02-01
 type: main
 projectType: project
 tasks:
-  - Fullstack Entwicklung einer Plattform für Einkäufer und Lieferanten
-  - Entwicklung HTTP-Crawler zum automatischen Abruf von Daten
-  - Migration von Firebase/Firestore zu supabase.io (Postgres SQL)
+  - Fullstack-Entwicklung einer B2B-Plattform
+  - Entwicklung von HTTP-Crawlern für Datenerfassung
+  - Migration von Firebase zu Supabase (PostgreSQL)
+  - Implementierung von Volltextsuche mit Algolia
+  - Optimierung der Datenbank-Performance
 technologies:
   - JavaScript
   - Tailwind
@@ -19,8 +21,6 @@ technologies:
   - Firebase
   - Firestore
   - Algolia
-  - Tailwind
-  - Postgres
+  - PostgreSQL
 contentType: work
 ---
-

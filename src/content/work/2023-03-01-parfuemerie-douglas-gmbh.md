@@ -1,14 +1,21 @@
 ---
 company: Parfümerie Douglas GmbH
-project: Douglas Platform Tech Team 
+project: Douglas Platform Tech Team
 position: Senior Software Engineer
 location: Remote
 from: 2023-03-01
-to: now
+to: 2024-04-01
 type: main
 projectType: project
 tasks:
-  - DX
+  - Entwicklung und Pflege von Komponenten-Bibliotheken
+  - Performance-Monitoring und Optimierung der Plattform
+  - Erstellung von Frontend-Entwicklungsrichtlinien
+  - Erweiterung von Unit- und E2E-Test-Frameworks
+  - Technisches Mentoring für React-Entwickler
+  - Einführung von Code-Qualitätsstandards
+  - Optimierung der Build-Performance
+  - Technische Leitung von Architekturentscheidungen
 technologies:
   - TypeScript
   - React
@@ -18,4 +25,3 @@ technologies:
   - Figma
 contentType: work
 ---
-

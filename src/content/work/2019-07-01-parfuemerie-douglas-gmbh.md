@@ -1,6 +1,6 @@
 ---
 company: Parfümerie Douglas GmbH
-project: 
+project:
 position: Senior Frontend Developer
 location: Düsseldorf
 from: 2019-07-01
@@ -8,10 +8,11 @@ to: 2019-12-01
 type: main
 projectType: permanent
 tasks:
-  - Integration gesponsorter Produkte in das Produkt-Listing
-  - Integration der Douglas Beauty-Stories in das Produkt-Listing
-  - Organisation von Workshops zur Vermittlung von Wissen in JavaScript und React für internationales Team
-  - Recruitment und Onboarding neuer Entwickler
+  - Integration von gesponserten Produkten im Listing
+  - Entwicklung der Beauty-Stories Integration
+  - Organisation von JavaScript/React-Workshops
+  - Durchführung von technischen Bewerbungsgesprächen
+  - Onboarding neuer Entwickler im Team
 technologies:
   - TypeScript
   - React
@@ -25,4 +26,3 @@ technologies:
   - Figma
 contentType: work
 ---
-

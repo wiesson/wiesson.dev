@@ -8,17 +8,23 @@ to: now
 type: side
 projectType: project
 tasks:
-  - Fullstack Entwicklung einer Marketing-Plattform für Boutique-Hotels und Reiseguides
+  - Entwicklung einer Marketing-Plattform für Boutique-Hotels
+  - Implementierung eines Abo-Systems mit Stripe-Integration
+  - Aufbau eines CMS für Hotel- und Reise-Artikel
+  - Integration von KI für Content-Optimierung
+  - Entwicklung der Next.js Frontend-Architektur
+  - Implementierung der Django REST-API
+  - Performance-Optimierung für SEO
 technologies:
   - Next.js
   - TypeScript
   - CSS
   - Django
   - Python
-  - Postgres
+  - PostgreSQL
   - Vercel
   - Cloud Functions
   - Google Cloud
+  - Stripe API
 contentType: work
 ---
-

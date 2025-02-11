@@ -1,6 +1,6 @@
 ---
 company: Energybox Ltd
-project: 
+project:
 position: Lead Frontend Engineer
 location: Köln, Hongkong, USA (Washington DC)
 from: 2017-02-01
@@ -8,12 +8,12 @@ to: 2019-07-01
 type: main
 projectType: permanent
 tasks:
-  - Ab 02.2019 Lead Frontend Engineer
-  - Entwicklung einer Plattform zur Verwaltung von weltweit eingesetzten IoT-Geräten zur Datenerfassung mit Schwerpunkt Energiedaten
-  - Entwicklung Kundendashboard zur Einsicht von Messdaten und Kennzahlen
-  - Aufbau einer React Komponenten Bibliothek mit über 150 Komponenten
-  - DevOps u.a. Docker Swarm und AWS, CI/CD
-  - Aufbau und Moderation von agilen Entwicklungsprozessen
+  - Leitung des Frontend-Teams ab 02.2019
+  - Entwicklung einer IoT-Plattform für weltweites Energiedaten-Monitoring
+  - Aufbau einer React-Komponenten-Bibliothek mit 150+ Komponenten
+  - Implementierung von Kundendashboards für Messdaten-Visualisierung
+  - Einführung agiler Entwicklungsprozesse im internationalen Team
+  - DevOps-Implementierung mit Docker Swarm und AWS
 technologies:
   - TypeScript
   - MongoDB
@@ -23,4 +23,3 @@ technologies:
   - Scrum
 contentType: work
 ---
-
