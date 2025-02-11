@@ -14,7 +14,7 @@ const CvWorkListing = ({ title, items, showDetails = false }: Props) => (
   <section class="section space-y-8">
     <h3 class="text-sm">{title}</h3>
 
-    <div class="space-y-12">
+    <div class="space-y-8">
       {items.map(({ data }) => {
         const showExtendedLayout =
           data.type !== "side" && data.contentType !== "education";
@@ -36,12 +36,12 @@ const CvWorkListing = ({ title, items, showDetails = false }: Props) => (
             <div class="flex-shrink-0 w-40 text-gray-500">{dates}</div>
             <div class="space-y-2">
               <header>
-                <div class="font-medium">
-                  {data.project || data.position} / {data.company}
+                <div>
+                  {data.project || data.position}
+                  <span class="px-2">/</span>
+                  {data.company}
                 </div>
-                {showDetails && (
-                  <div class="text-gray-500 text-sm">{data.location}</div>
-                )}
+                <div class="text-gray-500 text-sm">{data.location}</div>
               </header>
 
               {showDetails && <ListingContent items={data.tasks} />}

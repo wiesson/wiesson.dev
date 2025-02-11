@@ -10,10 +10,10 @@ interface Props {
 
 const CvEducationListing = ({ title, items, showDetails = false }: Props) => (
   <div>
-    <section class="section space-y-8">
+    <section class="section space-y-4">
       <h3 class="text-sm">{title}</h3>
 
-      <div class="space-y-12">
+      <div class="space-y-8">
         {items.map(({ data }) => {
           const from = formatYear(data.from);
           const to = formatYear(data.to);

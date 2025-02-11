@@ -1,7 +1,7 @@
 ---
 company: TIGEV Ingenieurgesellschaft mbH
 project: 
-position: Software Engineer / Ingenieur Energiedatenmanagement
+position: Ingenieur Energiedatenmanagement
 location: Münster
 from: 2013-09-01
 to: 2015-05-01

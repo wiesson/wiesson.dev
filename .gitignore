@@ -19,3 +19,5 @@ dist
 .env
 toggl.http
 packages/*
+pocketbase/
+.astro

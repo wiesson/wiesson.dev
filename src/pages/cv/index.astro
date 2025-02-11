@@ -1,29 +1,31 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import CvWorkListing from "../../components/CvWorkListing";
-import CvEducationListing from "../../components/CvEducationListing";
-import { getCollection } from "astro:content";
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CvWorkListing from '../../components/CvWorkListing'
+import CvEducationListing from '../../components/CvEducationListing'
+import {getCollection} from 'astro:content'
 
-const cvWork = await getCollection("work");
-const cvEducation = await getCollection("education");
+const cvWork = await getCollection('work')
+const cvEducation = await getCollection('education')
+
+const now = new Date()
+
 cvWork.sort((a, b) => {
-  const dateAFrom = new Date(a.data.from);
-  const dateBFrom = new Date(b.data.from);
+  const toA = a.data.to === 'now' ? now : a.data.to;
+  const toB = b.data.to === 'now' ? now : b.data.to;
 
-  if(b.data.to === "now") {
-    return 0;
-  }
+  const dateAFrom = toA.getTime()
+  const dateBFrom = toB.getTime()
 
-  return dateBFrom.valueOf() - dateAFrom.valueOf();
-});
+  return dateBFrom - dateAFrom
+})
 ---
 
 <BaseLayout>
-  <section class="section space-y-12">
-    <dl class="flex gap-4 text-sm">
-      <dt class="text-gray-500 flex-shrink-0 w-40">Allgemein</dt>
-      <dd class="space-y-2">
-        <a class="link" href="tel:+491751109743"> +491751109743</a>{" "}
+  <section class='section space-y-12'>
+    <dl class='flex gap-4 text-sm'>
+      <dt class='text-gray-500 flex-shrink-0 w-40'>Allgemein</dt>
+      <dd class='space-y-2'>
+        <a class='link' href='tel:+491751109743'>+491751109743</a>{' '}
         · arne@wiese.me <br />
         Niederkasseler Str. 55, 40547 Düsseldorf <br />
         Deutsch (Muttersprache), Englisch (fließend)
@@ -66,14 +68,14 @@ cvWork.sort((a, b) => {
   </section>
 
   <CvWorkListing
-    title="Projekte & Festanstellungen"
-    items={cvWork.filter((item) => item.data.type === "main")}
+    title='Projekte & Festanstellungen'
+    items={cvWork.filter((item) => item.data.type === 'main')}
   />
 
   <CvWorkListing
-    title="Nebenprojekte"
-    items={cvWork.filter((item) => item.data.type === "side")}
+    title='Nebenprojekte'
+    items={cvWork.filter((item) => item.data.type === 'side')}
   />
 
-  <CvEducationListing title="Ausbildung" items={cvEducation} />
+  <CvEducationListing title='Ausbildung' items={cvEducation} />
 </BaseLayout>

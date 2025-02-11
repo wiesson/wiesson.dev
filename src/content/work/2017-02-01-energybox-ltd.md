@@ -1,7 +1,7 @@
 ---
 company: Energybox Ltd
 project: 
-position: Lead Frontend Engineer / Senior Software Engineer
+position: Lead Frontend Engineer
 location: Köln, Hongkong, USA (Washington DC)
 from: 2017-02-01
 to: 2019-07-01
