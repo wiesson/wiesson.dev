@@ -5,7 +5,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "types": ["astro/client"],
     "baseUrl": ".",
     "paths": {

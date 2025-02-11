@@ -33,7 +33,7 @@ const CvWorkListing = ({ title, items, showDetails = false }: Props) => (
             class="page-break-avoid flex gap-2 text-sm"
             key={data.project + "-" + data.company}
           >
-            <div class="flex-shrink-0 w-40 text-gray-500">{dates}</div>
+            <div class="shrink-0 w-40 text-gray-500">{dates}</div>
             <div class="space-y-2">
               <header>
                 <div>

@@ -23,7 +23,7 @@ const CvEducationListing = ({ title, items, showDetails = false }: Props) => (
               class="page-break-avoid flex gap-4 text-sm"
               key={data.title}
             >
-              <div class="text-gray-500 flex-shrink-0 w-40">
+              <div class="text-gray-500 shrink-0 w-40">
                 {from} – {to}
               </div>
               <div>
