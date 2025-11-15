@@ -1,12 +1,13 @@
 ---
 company: Sebastian Schöllgen
-project: eightyfourrooms.com
+project: 84rooms.com
 position: Software Engineer
 location: Düsseldorf
 from: 2016-01-01
-to: now
+to: 2025-06-01
 type: side
 projectType: project
+intro: Entwicklung und langfristige Betreuung einer Marketing-Plattform für Boutique-Hotels mit Stripe-Integration und KI-gestützter Content-Optimierung
 tasks:
   - Entwicklung einer Marketing-Plattform für Boutique-Hotels
   - Implementierung eines Abo-Systems mit Stripe-Integration

@@ -7,6 +7,7 @@ from: 2017-02-01
 to: 2019-07-01
 type: main
 projectType: permanent
+intro: Leitung des Frontend-Teams und Entwicklung einer IoT-Plattform für weltweites Energiedaten-Monitoring mit umfangreicher React-Komponenten-Bibliothek (150+ Komponenten)
 tasks:
   - Leitung des Frontend-Teams ab 02.2019
   - Entwicklung einer IoT-Plattform für weltweites Energiedaten-Monitoring

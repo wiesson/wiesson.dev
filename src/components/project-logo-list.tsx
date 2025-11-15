@@ -33,7 +33,7 @@ const items = [
   {
     class: "h-12",
     src: "84rooms.svg",
-    href: "https://www.eightyfourrooms.com",
+    href: "https://www.84rooms.com",
   },
   {
     class: "h-7",
@@ -49,14 +49,14 @@ const items = [
 
 const ProjectLogoList = () => {
   return (
-    <div class="section--wide grid grid-cols-2 md:grid-cols-4 gap-2">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
       {items.map((item) => (
         <a
           key={item.src}
           href={item.href + "?ref=arnewiese.de"}
           target="_blank"
           rel="noopener noreferrer"
-          class="group bg-gray-100 hover:bg-amber-300 dark:bg-gray-300 dark:hover:bg-amber-500 rounded-lg flex items-center justify-center h-32 px-4 transition-colors"
+          class="group bg-gray-100 hover:bg-amber-300 rounded-lg flex items-center justify-center h-32 px-4 transition-colors"
         >
           <img
             src={`/assets/customers/${item.src}`}

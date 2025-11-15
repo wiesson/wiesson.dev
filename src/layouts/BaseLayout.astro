@@ -1,10 +1,12 @@
 ---
+import CvHeader from "@/components/cv-header";
 import "../styles/base.css";
 
-import SiteFooter from "@/components/SiteFooter";
-import SiteHeader from "@/components/SiteHeader.astro";
+import SiteFooter from "@/components/site-footer";
+import SiteHeader from "@/components/site-header.astro";
 const isProd = import.meta.env.PROD;
 ---
+
 <html lang="de">
   <head>
     <meta charset="utf-8" />
@@ -22,13 +24,20 @@ const isProd = import.meta.env.PROD;
     />
   </head>
   <body>
-    <SiteHeader />
+    <CvHeader
+      name="Arne Wiese"
+      title="Senior AI Software Engineer"
+      location="Meerbusch, Germany"
+      intro="Fullstack · JavaScript · TypeScript · NodeJS · Python · Golang · AI-Agents & Datenintegration · AI-Integration"
+      email="arne@wiese.me"
+      website="arnewiese.de"
+      imageUrl="/assets/arne-neu-quadratisch.jpeg"
+    />
 
-    <main class="section space-y-24"><slot/></main>
+    <main class="section space-y-24"><slot /></main>
 
     <SiteFooter />
 
     {isProd && <script data-domain="arnewiese.de" src="/js/script.js" />}
   </body>
 </html>
-

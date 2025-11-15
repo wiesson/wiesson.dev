@@ -7,6 +7,7 @@ from: 2019-07-01
 to: 2019-12-01
 type: main
 projectType: permanent
+intro: Festanstellung als Senior Frontend Developer mit Fokus auf Feature-Entwicklung, technisches Mentoring und Team-Onboarding
 tasks:
   - Integration von gesponserten Produkten im Listing
   - Entwicklung der Beauty-Stories Integration

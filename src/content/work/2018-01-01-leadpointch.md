@@ -7,6 +7,7 @@ from: 2018-01-01
 to: 2018-11-01
 type: main
 projectType: project
+intro: Frontend-Entwicklung einer Food-Box-Subscription-Plattform mit Stripe und PayPal Integration für Abo-Zahlungen
 tasks:
   - Frontend-Entwicklung einer Food-Box-Subscription-Plattform
   - Integration von Stripe und PayPal für Abo-Zahlungen

@@ -1,22 +1,18 @@
 ---
-company: Parfümerie Douglas GmbH
-project: AI Advisor & AI Agent
+company: Frontnow GmbH
+project: AI Advisor & AI Agents
 position: Senior AI Software Engineer
-location: Remote
+location: Berlin, Remote
 from: 2024-04-01
-to: now
+to: 2025-09-01
 type: main
 projectType: project
+intro: Entwicklung eines KI-gestützten Produktanreicherungssystems, das für über 120.000 E-Commerce-Produkte fehlende Daten automatisch ergänzt und die Produktdatenqualität signifikant verbessert
 tasks:
-  - Entwicklung KI-gestützter Datenqualitäts-Workflows
-  - Frontend-Entwicklung für KI-Anwendungen
-  - Engineering von LLM-Prompt-Systemen
-  - Integration von Vektorsuche-Funktionalität
-  - Aufbau von KI-Datenverarbeitungspipelines
-  - Entwicklung von KI-Datenbank-Schemas
-  - Performance-Optimierung der KI-Systeme
-  - Implementierung von Datenvalidierungs-Workflows
-  - Integration mehrerer LLM-Provider
+  - "Entwicklung eines KI-gestützten Produktanreicherungssystems, das für u.a. 60.000 - 120.000+ E-Commerce-Produkte pro Shop fehlende Daten automatisch ergänzt und Produkttexte neu generiert"
+  - "Aufbau der kompletten Architektur - von Multi-Agent-Workflows und Prompt Engineering über Vektorsuche bis zur Svelte-Frontend-Oberfläche"
+  - "Integration mehrerer LLM-Provider (OpenAI GPT-4, Google Gemini) mit Quality-Gates für konsistente Datenqualität"
+  - "Direkte Kundenbetreuung: Anforderungsanalyse, iterative Feedback-Sessions und kontinuierliche Systemoptimierung"
 technologies:
   - TypeScript
   - Svelte

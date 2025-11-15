@@ -7,6 +7,7 @@ from: 2021-09-01
 to: 2022-11-01
 type: main
 projectType: project
+intro: Integration von Social Commerce Features mit Livebuy.io Video-Player und Optimierung der Web Vitals für verbesserte User Experience
 tasks:
   - Integration des Livebuy.io Video-Players
   - Entwicklung einer Slideshow-Komponente

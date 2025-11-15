@@ -13,7 +13,7 @@ const cvWorkCollection = defineCollection({
     company: z.string(),
     project: z.string().or(z.null()),
     position: z.string().or(z.null()),
-    location: z.string(),
+    location: z.string().or(z.null()),
     from: z.date(),
     to: z.date().or(z.enum(["now"])),
     type: z.enum(["main", "side"]),
@@ -21,6 +21,7 @@ const cvWorkCollection = defineCollection({
     tasks: z.array(z.string()),
     technologies: z.array(z.string()).or(z.any()),
     contentType: z.enum(["work", "education"]),
+    intro: z.string().or(z.null()),
   }),
 });
 

@@ -1,5 +1,5 @@
 ---
-company: FrontNow GmbH
+company: Frontnw GmbH
 project:
 position: Lead Software Engineer
 location: Düsseldorf, Berlin
@@ -7,6 +7,7 @@ from: 2021-03-01
 to: 2022-02-01
 type: main
 projectType: project
+intro: Leitung der Fullstack-Entwicklung einer B2B-Plattform mit erfolgreicher Migration von Firebase zu Supabase und Implementierung skalierbarer Datenerfassungssysteme
 tasks:
   - Fullstack-Entwicklung einer B2B-Plattform
   - Entwicklung von HTTP-Crawlern für Datenerfassung

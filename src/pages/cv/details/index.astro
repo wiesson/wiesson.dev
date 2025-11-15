@@ -1,70 +1,47 @@
 ---
-
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import CvWorkListing from "../../../components/CvWorkListing";
-import CvEducationListing from "../../../components/CvEducationListing";
+import CvHeader from "@/components/cv-header";
+import CvWorkListing from "../../../components/cv-work-listing";
+import CvEducationListing from "../../../components/cv-education-listing";
 import { getCollection } from "astro:content";
 
 const cvWork = await getCollection("work");
 const cvEducation = await getCollection("education");
 cvWork.sort((a, b) => {
-  const dateAFrom = new Date(a.data.from);
-  const dateBFrom = new Date(b.data.from);
+  // Handle "now" entries - current positions come first
+  const aIsNow = a.data.to === "now";
+  const bIsNow = b.data.to === "now";
 
-  if(b.data.to === "now") {
-    return 0;
+  if (aIsNow && !bIsNow) return -1;  // a comes first
+  if (!aIsNow && bIsNow) return 1;   // b comes first
+  if (aIsNow && bIsNow) {
+    // Both current - sort by start date descending
+    return new Date(b.data.from).valueOf() - new Date(a.data.from).valueOf();
   }
 
-  return dateBFrom.valueOf() - dateAFrom.valueOf();
+  // Neither is current - sort by end date descending
+  const dateATo = new Date(a.data.to);
+  const dateBTo = new Date(b.data.to);
+
+  if (dateBTo.valueOf() !== dateATo.valueOf()) {
+    return dateBTo.valueOf() - dateATo.valueOf();
+  }
+
+  // Tiebreaker: sort by start date descending
+  return new Date(b.data.from).valueOf() - new Date(a.data.from).valueOf();
 });
 ---
 
 <BaseLayout>
-  <section class="section space-y-24">
-    <dl class="flex gap-4 text-sm">
-      <dt class="text-gray-500 shrink-0 w-40">Allgemein</dt>
-      <dd class="space-y-2">
-        <a class="link" href="tel:+491751109743"> +491751109743</a>{" "}
-        · arne@wiese.me <br />
-        Niederkasseler Str. 55, 40547 Düsseldorf <br />
-        Deutsch (Muttersprache), Englisch (fließend)
-      </dd>
-    </dl>
-
-    <!-- <dl class="grid gap-8 grid-cols-12">
-      <dt class="text-gray-500 mb-4 col-span-3 text-right">Frontend</dt>
-      <dd class="space-x-2 space-y-2 col-span-9">
-        JavaScript, React.js, Next.js, Preact, TypeScript, Svelte, Vue.js,
-        SVG, HTML5, CSS3, Sass, Responsive Design, D3, Highcharts.js, Framer
-        Motion
-      </dd>
-    </dl>
-
-    <dl class="grid gap-8 grid-cols-12">
-      <dt class="text-gray-500 mb-4 col-span-3 text-right">Backend</dt>
-      <dd class="space-x-2 space-y-2 col-span-9">
-        Node.js, Django, Python, GraphQL, REST, TypeScript, Golang, Supabase
-      </dd>
-    </dl>
-
-    <dl class="grid gap-8 grid-cols-12">
-      <dt class="text-gray-500 mb-4 col-span-3 text-right">
-        Datenbanken
-      </dt>
-      <dd class="space-x-2 space-y-2 col-span-9">
-        Firebase, Cloud Firestore, PostgreSQL, MySQL, MongoDB,
-      </dd>
-    </dl>
-
-    <dl class="grid gap-8 grid-cols-12">
-      <dt class="text-gray-500 mb-4 col-span-3 text-right">
-        Sonstiges
-      </dt>
-      <dd class="space-x-2 space-y-2 col-span-9">
-        Agile, Docker, Git, TDD, CI, Scrum, Kanban, Figma, Sentry, GraphCMS,
-      </dd>
-    </dl>-->
-  </section>
+  <CvHeader
+    name="Arne Wiese"
+    title="Senior AI Software Engineer"
+    location="Meerbusch, Germany"
+    email="arne@wiese.me"
+    website="wiesson.dev"
+    imageUrl="/assets/arne-neu-quadratisch.jpeg"
+    client:load
+  />
 
   <CvWorkListing
     title="Projekte & Festanstellungen"

@@ -7,6 +7,7 @@ from: 2020-04-01
 to: 2020-06-01
 type: side
 projectType: project
+intro: Entwicklung einer Non-Profit-Plattform für Covid-19 Schutzausrüstung zur Abwicklung großvolumiger Bestellungen mit GraphQL und optimiert für hohes Anfragevolumen
 tasks:
   - Entwicklung einer Plattform für Covid-19 Schutzausrüstung zur Abwicklung von großvolumigen Bestellungen
   - Integration von GraphQL-Schnittstellen mit Hasura

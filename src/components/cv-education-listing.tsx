@@ -1,6 +1,6 @@
 import { CollectionEntry } from "astro:content";
 import { formatYear } from "@/utils/dateFormat";
-import ListingContent from "@/components/ListingContent";
+import ListingContent from "@/components/listing-content";
 
 interface Props {
   title: string;
@@ -11,7 +11,7 @@ interface Props {
 const CvEducationListing = ({ title, items, showDetails = false }: Props) => (
   <div>
     <section class="section space-y-4">
-      <h3 class="text-sm">{title}</h3>
+      <h3 class="cv-h2">{title}</h3>
 
       <div class="space-y-8">
         {items.map(({ data }) => {

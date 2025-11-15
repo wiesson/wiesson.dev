@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 
@@ -21,18 +21,14 @@
 }
 
 :root {
-  --primary-color: #000;
-  --font-color: #424242;
+  --primary-color: #111;
+  --font-color: #555;
   --bg-color: #fff;
-  --color-text: rgba(75, 85, 99, 1);
+  --color-text: #6d6d6d;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-color: #ffffff;
-    --font-color: rgba(243, 244, 246, 1);
-    --bg-color: #161625;
-  }
+html {
+  font-size: 16px; /* Explicit base font size */
 }
 
 html,
@@ -46,6 +42,7 @@ body {
 }
 
 body {
+  font-size: 1rem; /* 16px - default body text */
   @apply py-16;
 }
 
@@ -59,7 +56,13 @@ body {
 }
 
 .section + .section {
-  @apply mt-16;
+  margin-top: 60px; /* Figma: 55-70px between sections */
+}
+
+@media (min-width: 768px) {
+  .section + .section {
+    margin-top: 70px;
+  }
 }
 
 .section > * {
@@ -81,8 +84,59 @@ body {
   @apply text-xl leading-loose mb-4 text-center;
 }
 
+/* Grid layout utilities for marketing pages */
+.app-grid {
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(96rem, 100%)
+    1fr;
+}
+
+.app-grid > * {
+  grid-column: 2;
+}
+
+.app-text-column {
+  width: 100%;
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+  grid-column: 1 / 4;
+}
+
+.app-wide-column {
+  width: 100%;
+  max-width: 96ch;
+  margin-left: auto;
+  margin-right: auto;
+  grid-column: 1 / 4;
+}
+
+.app-full-column {
+  width: 100%;
+  grid-column: 1 / 4;
+}
+
 .badge {
-  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-300;
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  background-color: #f6f6f6;
+  color: #111;
+}
+
+/* Primary CTA Button */
+.button-cta {
+  @apply inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 transition-colors;
+}
+
+/* Smaller CTA variant for navigation */
+.button-cta-sm {
+  @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 transition-colors;
+}
+
+/* Secondary button variant */
+.button-secondary {
+  @apply inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md hover:bg-gray-50 transition-colors;
 }
 
 a,
@@ -109,6 +163,29 @@ a,
 
 .form-item {
   @apply bg-transparent block w-full border-0 p-0 placeholder-gray-500 focus:ring-0 sm:text-sm; /* text-gray-900 */
+}
+
+/* Professional CV Typography (Figma-style) */
+.cv-h1 {
+  @apply text-xl font-normal;
+  color: #111;
+}
+
+.cv-h2 {
+  @apply text-lg font-semibold;
+  color: #111;
+}
+
+.cv-text-primary {
+  color: #111;
+}
+
+.cv-text-secondary {
+  color: #555;
+}
+
+.cv-text-meta {
+  color: #6d6d6d;
 }
 
 @media print {
