@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import CvHeader from "@/components/cv-header";
-import CvWorkListing from "../../components/cv-work-listing";
-import CvEducationListing from "../../components/cv-education-listing";
+import CvWorkListing from "@/components/cv-work-listing";
+import CvEducationListing from "@/components/cv-education-listing";
 import { getCollection } from "astro:content";
 
 const cvWork = await getCollection("work");
@@ -25,11 +24,15 @@ cvWork.sort((a, b) => {
   <CvWorkListing
     title="Projekte & Festanstellungen"
     items={cvWork.filter((item) => item.data.type === "main")}
+    showIntro={true}
+    showDetails={true}
   />
 
   <CvWorkListing
     title="Nebenprojekte"
     items={cvWork.filter((item) => item.data.type === "side")}
+    showIntro={true}
+    showDetails={true}
   />
 
   <CvEducationListing title="Ausbildung" items={cvEducation} />
