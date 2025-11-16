@@ -74,7 +74,7 @@ const CvWorkListing = ({
                   <div class="cv-text-meta text-sm flex items-center gap-2">
                     {data.location}
                     {showBadges && (
-                      <span class="inline-flex items-center px-2 py-0.5 rounded text-xs bg-gray-100 text-gray-600">
+                      <span class="cv-badge">
                         {getBadgeLabel(data.type, data.projectType)}
                       </span>
                     )}
@@ -94,7 +94,7 @@ const CvWorkListing = ({
                     <h3 class="text-xs">Technologien</h3>
                     <div class="float-left space-x-1">
                       {data.technologies?.map((text: string) => (
-                        <span key={text} class="text-xs text-gray-500">
+                        <span key={text} class="cv-badge">
                           {text}
                         </span>
                       ))}

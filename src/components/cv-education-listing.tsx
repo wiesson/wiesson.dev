@@ -10,7 +10,7 @@ interface Props {
 
 const CvEducationListing = ({ title, items, showDetails = false }: Props) => (
   <div>
-    <section class="section space-y-4">
+    <section class="app-grid space-y-4">
       <h3 class="cv-h2">{title}</h3>
 
       <div class="space-y-8">

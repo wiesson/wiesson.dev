@@ -2,21 +2,6 @@ const SiteFooter = () => {
   return (
     <footer class="app-grid py-16">
       <div class="app-text-column">
-        {/* CTA Section */}
-        <div class="mb-12 pb-12 border-b border-gray-200">
-          <h3 class="cv-h2 mb-6">Lass uns zusammenarbeiten</h3>
-          <p class="text-gray-600 mb-6">
-            Hast du ein Projekt im Kopf? Ich freue mich darauf, von dir zu
-            hören.
-          </p>
-          <a
-            href="mailto:arne@wiese.me?subject=Projektanfrage"
-            class="button-cta"
-          >
-            Projekt besprechen
-          </a>
-        </div>
-
         {/* Contact & Social */}
         <div class="grid md:grid-cols-2 gap-8 mb-8">
           <div>

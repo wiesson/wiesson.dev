@@ -24,12 +24,12 @@ cvWork.sort((a, b) => {
   <CvWorkListing
     title="Projekte & Festanstellungen"
     items={cvWork.filter((item) => item.data.type === "main")}
+    showIntro
   />
 
   <CvWorkListing
     title="Nebenprojekte"
     items={cvWork.filter((item) => item.data.type === "side")}
+    showIntro
   />
-
-  <CvEducationListing title="Ausbildung" items={cvEducation} />
 </BaseLayout>
