@@ -19,7 +19,7 @@ const CvEducationListing = ({ title, items, showDetails = false }: Props) => (
 
         return (
           <section class="page-break-avoid flex gap-4 text-sm" key={data.title}>
-            <div class="cv-text-meta shrink-0 w-40">
+            <div class="cv-text-meta shrink-0 w-20 md:w-40">
               {from} – {to}
             </div>
             <div>
