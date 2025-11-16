@@ -140,7 +140,7 @@ body {
 
 body {
   font-size: 1rem; /* 16px - default body text */
-  @apply py-16;
+  @apply py-8 md:py-16;
 }
 
 /* Grid layout utilities for marketing pages */

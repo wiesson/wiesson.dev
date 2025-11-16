@@ -28,7 +28,7 @@ const CvWorkListing = ({
   showBadges = true,
   showIntro = false,
 }: Props) => (
-  <section class="py-16">
+  <section class="py-8 md:py-16">
     <div class="app-text-column">
       <h2 class="cv-h2 mb-6">{title}</h2>
 

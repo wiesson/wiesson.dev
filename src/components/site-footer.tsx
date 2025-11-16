@@ -1,6 +1,6 @@
 const SiteFooter = () => {
   return (
-    <footer class="app-grid py-16">
+    <footer class="app-grid py-12 md:py-16">
       <div class="app-text-column">
         {/* Contact & Social */}
         <div class="grid md:grid-cols-2 gap-8 mb-8">

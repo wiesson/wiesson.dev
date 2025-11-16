@@ -28,7 +28,7 @@ const CvHeader = ({
   const website = "wiesson.dev";
 
   return (
-    <header class="app-grid py-16">
+    <header class="app-grid py-8 md:py-16">
       <div class="app-text-column flex flex-col md:flex-row items-start gap-5 md:gap-6">
         {/* Circular Profile Photo */}
         <img
