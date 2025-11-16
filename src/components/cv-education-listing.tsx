@@ -9,34 +9,29 @@ interface Props {
 }
 
 const CvEducationListing = ({ title, items, showDetails = false }: Props) => (
-  <div>
-    <section class="app-grid space-y-4">
-      <h3 class="cv-h2">{title}</h3>
+  <section class="space-y-4">
+    <h3 class="cv-h2">{title}</h3>
 
-      <div class="space-y-8">
-        {items.map(({ data }) => {
-          const from = formatYear(data.from);
-          const to = formatYear(data.to);
+    <div class="space-y-8">
+      {items.map(({ data }) => {
+        const from = formatYear(data.from);
+        const to = formatYear(data.to);
 
-          return (
-            <section
-              class="page-break-avoid flex gap-4 text-sm"
-              key={data.title}
-            >
-              <div class="text-gray-500 shrink-0 w-40">
-                {from} – {to}
-              </div>
-              <div>
-                <div class="font-weight-500">{data.title}</div>
-                <div class="text-gray-500 text-sm mb-2">{data.location}</div>
-                {showDetails && <ListingContent items={data.tasks} />}
-              </div>
-            </section>
-          );
-        })}
-      </div>
-    </section>
-  </div>
+        return (
+          <section class="page-break-avoid flex gap-4 text-sm" key={data.title}>
+            <div class="cv-text-meta shrink-0 w-40">
+              {from} – {to}
+            </div>
+            <div>
+              <div class="font-weight-500">{data.title}</div>
+              <div class="cv-text-meta text-sm mb-2">{data.location}</div>
+              {showDetails && <ListingContent items={data.tasks} />}
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  </section>
 );
 
 export default CvEducationListing;

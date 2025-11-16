@@ -6,11 +6,11 @@ const SiteFooter = () => {
         <div class="grid md:grid-cols-2 gap-8 mb-8">
           <div>
             <h4 class="cv-h2 mb-4">Kontakt</h4>
-            <div class="space-y-2 text-gray-600">
+            <div class="space-y-2 cv-text-secondary">
               <p>
                 <a
                   href="mailto:arne@wiese.me"
-                  class="hover:text-gray-900 transition-colors"
+                  class="hover-foreground transition-colors"
                 >
                   arne@wiese.me
                 </a>
@@ -18,7 +18,7 @@ const SiteFooter = () => {
               <p>
                 <a
                   href="tel:+491751109743"
-                  class="hover:text-gray-900 transition-colors"
+                  class="hover-foreground transition-colors"
                 >
                   +49 175 1109743
                 </a>
@@ -35,7 +35,7 @@ const SiteFooter = () => {
                   href="https://www.linkedin.com/in/arnewiese"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="hover:text-gray-900 transition-colors"
+                  class="hover-foreground transition-colors"
                 >
                   LinkedIn
                 </a>
@@ -45,7 +45,7 @@ const SiteFooter = () => {
                   href="https://twitter.com/wiesson"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="hover:text-gray-900 transition-colors"
+                  class="hover-foreground transition-colors"
                 >
                   Twitter
                 </a>
@@ -55,7 +55,7 @@ const SiteFooter = () => {
                   href="https://www.github.com/wiesson"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="hover:text-gray-900 transition-colors"
+                  class="hover-foreground transition-colors"
                 >
                   Github
                 </a>
@@ -65,7 +65,7 @@ const SiteFooter = () => {
         </div>
 
         {/* Copyright */}
-        <div class="text-sm text-gray-500 pt-8 border-t border-gray-200">
+        <div class="text-sm cv-text-meta pt-8 border-t" style="border-color: var(--border);">
           <div class="flex flex-col md:flex-row justify-between items-center gap-4">
             <div>
               &copy; {new Date().getFullYear()} Arne Wiese. Alle Rechte

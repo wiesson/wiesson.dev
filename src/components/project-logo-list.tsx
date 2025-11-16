@@ -56,7 +56,7 @@ const ProjectLogoList = () => {
           href={item.href + "?ref=arnewiese.de"}
           target="_blank"
           rel="noopener noreferrer"
-          class="group bg-gray-100 hover:bg-amber-300 rounded-lg flex items-center justify-center h-32 px-4 transition-colors"
+          class="group hover-amber rounded-lg flex items-center justify-center h-32 px-4"
         >
           <img
             src={`/assets/customers/${item.src}`}

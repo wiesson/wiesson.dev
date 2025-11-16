@@ -40,12 +40,12 @@ const services = [
 ];
 ---
 
-<section id="services" class="app-grid py-24 scroll-mt-16 bg-gray-50">
-  <div class="max-w-6xl mx-auto">
+<section id="services" class="py-24 scroll-mt-16" style="background-color: var(--muted);">
+  <div class="app-wide-column">
     <!-- Section Title -->
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Services</h2>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+      <p class="text-lg cv-text-secondary max-w-2xl mx-auto">
         Von AI-Integration bis zur vollständigen Plattform-Entwicklung – ich
         unterstütze dich in allen Phasen deines Projekts.
       </p>
@@ -55,14 +55,14 @@ const services = [
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {
         services.map((service) => (
-          <div class="bg-white rounded-lg p-6 hover:shadow-lg transition-shadow">
+          <div class="rounded-lg p-6 hover:shadow-lg transition-shadow" style="background-color: var(--card);">
             <h3 class="cv-h2 mb-3">{service.title}</h3>
-            <p class="text-gray-600 mb-4 leading-relaxed">
+            <p class="cv-text-secondary mb-4 leading-relaxed">
               {service.description}
             </p>
             <div class="flex flex-wrap gap-2">
               {service.keywords.map((keyword) => (
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium cv-badge">
                   {keyword}
                 </span>
               ))}
@@ -74,7 +74,7 @@ const services = [
 
     <!-- CTA -->
     <div class="text-center mt-12">
-      <p class="text-gray-600 mb-4">Lass uns über dein Projekt sprechen</p>
+      <p class="cv-text-secondary mb-4">Lass uns über dein Projekt sprechen</p>
       <a href="mailto:arne@wiese.me?subject=Projektanfrage" class="button-cta">
         Kontakt aufnehmen
       </a>

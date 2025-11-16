@@ -28,7 +28,7 @@ const CvWorkListing = ({
   showBadges = true,
   showIntro = false,
 }: Props) => (
-  <section class="app-grid py-16">
+  <section class="py-16">
     <div class="app-text-column">
       <h2 class="cv-h2 mb-6">{title}</h2>
 
@@ -83,7 +83,7 @@ const CvWorkListing = ({
 
                 {showIntro && data.intro && (
                   <div class="prose prose-sm">
-                    <p class="text-gray-700">{data.intro}</p>
+                    <p class="cv-text-secondary">{data.intro}</p>
                   </div>
                 )}
 

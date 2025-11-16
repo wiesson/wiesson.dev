@@ -33,7 +33,9 @@ const isProd = import.meta.env.PROD;
       imageUrl="/assets/arne-neu-quadratisch.jpeg"
     />
 
-    <main class="app-grid px-4 space-y-24"><slot /></main>
+    <main class="app-grid space-y-24">
+      <slot />
+    </main>
 
     <SiteFooter />
 

@@ -2,6 +2,75 @@
 
 @plugin '@tailwindcss/typography';
 
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.269 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.371 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -16,15 +85,8 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--border);
   }
-}
-
-:root {
-  --primary-color: #111;
-  --font-color: #555;
-  --bg-color: #fff;
-  --color-text: #6d6d6d;
 }
 
 html {
@@ -37,8 +99,8 @@ body {
   min-height: 100%;
   font-family: system-ui, sans-serif;
   line-height: 1.5;
-  color: var(--font-color);
-  background-color: var(--bg-color);
+  color: var(--foreground);
+  background-color: var(--background);
 }
 
 body {
@@ -83,78 +145,134 @@ body {
 
 .badge {
   @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
-  background-color: #f6f6f6;
-  color: #111;
+  background-color: var(--muted);
+  color: var(--foreground);
 }
 
 /* Primary CTA Button */
 .button-cta {
-  @apply inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 transition-colors;
+  @apply inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md transition-colors;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.button-cta:hover {
+  background-color: var(--primary);
+  opacity: 0.9;
 }
 
 /* Smaller CTA variant for navigation */
 .button-cta-sm {
-  @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 transition-colors;
+  @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md transition-colors;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.button-cta-sm:hover {
+  background-color: var(--primary);
+  opacity: 0.9;
 }
 
 /* Secondary button variant */
 .button-secondary {
-  @apply inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md hover:bg-gray-50 transition-colors;
+  @apply inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-md transition-colors;
+  border-color: var(--border);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.button-secondary:hover {
+  background-color: var(--muted);
 }
 
 a,
 .link {
-  color: var(--font-color);
+  color: var(--foreground);
   text-decoration: underline;
+}
+
+a.hover-foreground {
+  color: var(--muted-foreground);
+}
+
+a.hover-foreground:hover {
+  color: var(--foreground);
+}
+
+.hover-amber {
+  background-color: var(--muted);
+  transition: background-color 0.2s;
+}
+
+.hover-amber:hover {
+  background-color: oklch(0.828 0.189 84.429);
 }
 
 .form-fieldset {
   display: flex;
   flex-direction: column;
-  @apply rounded-md border border-gray-300 px-3 py-2 focus-within:border-gray-900 focus-within:ring-1 focus-within:ring-gray-900;
+  @apply rounded-md px-3 py-2 focus-within:ring-1 transition-colors;
+  border-color: var(--border);
+}
+
+.form-fieldset:focus-within {
+  border-color: var(--ring);
+  --tw-ring-color: var(--ring);
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  @apply rounded-md px-3 py-2 focus-within:border-gray-900 focus-within:ring-2 focus-within:ring-gray-900;
+  @apply rounded-md px-3 py-2 focus-within:ring-2 transition-colors;
+  border-color: var(--border);
+}
+
+.form-group:focus-within {
+  border-color: var(--ring);
+  --tw-ring-color: var(--ring);
 }
 
 .form-label {
-  @apply block text-xs font-medium; /* text-gray-900 */
+  @apply block text-xs font-medium;
+  color: var(--foreground);
 }
 
 .form-item {
-  @apply bg-transparent block w-full border-0 p-0 placeholder-gray-500 focus:ring-0 sm:text-sm; /* text-gray-900 */
+  @apply bg-transparent block w-full border-0 p-0 focus:ring-0 sm:text-sm;
+  color: var(--foreground);
+}
+
+.form-item::placeholder {
+  color: var(--muted-foreground);
 }
 
 /* Professional CV Typography (Figma-style) */
 .cv-h1 {
   @apply text-xl font-normal;
-  color: #111;
+  color: var(--foreground);
 }
 
 .cv-h2 {
   @apply text-lg font-semibold;
-  color: #111;
+  color: var(--foreground);
 }
 
 .cv-text-primary {
-  color: #111;
+  color: var(--foreground);
 }
 
 .cv-text-secondary {
-  color: #555;
+  color: var(--muted-foreground);
 }
 
 .cv-text-meta {
-  color: #6d6d6d;
+  color: var(--muted-foreground);
 }
 
 .cv-badge {
   @apply inline-flex items-center px-2 py-0.5 rounded text-xs;
-  background-color: #f3f4f6;
-  color: #6d6d6d;
+  background-color: var(--muted);
+  color: var(--foreground);
 }
 
 @media print {

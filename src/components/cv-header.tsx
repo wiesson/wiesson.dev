@@ -40,35 +40,32 @@ const CvHeader = ({
         {/* Text Content */}
         <div class="flex flex-col gap-2">
           {/* Name */}
-          <h1 class="text-xl font-normal" style="color: #111;">
+          <h1 class="text-xl font-normal cv-text-primary">
             {name}
           </h1>
 
           {/* Title and Location */}
-          <p class="text-sm" style="color: #555;">
+          <p class="text-sm cv-text-secondary">
             {title}
             {location && ` · ${location}`}
           </p>
 
           {/* Education */}
           {showEducation && (
-            <p class="text-xs" style="color: #6D6D6D;">
+            <p class="text-xs cv-text-meta">
               {education}
             </p>
           )}
 
           {showIntro && (
-            <p class="text-sm" style="color: #555;">
+            <p class="text-sm cv-text-secondary">
               {intro}
             </p>
           )}
 
           {/* Contact Links */}
           {(showEmail || showWebsite) && (
-            <div
-              class="flex items-center gap-3 text-sm"
-              style="color: #6D6D6D;"
-            >
+            <div class="flex items-center gap-3 text-sm cv-text-meta">
               {showEmail && (
                 <>
                   <a href={`mailto:${email}`} class="hover:underline">
