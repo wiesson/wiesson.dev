@@ -7,12 +7,10 @@ from: 2024-04-01
 to: 2025-09-01
 type: main
 projectType: project
-intro: Entwicklung eines KI-gestützten Produktanreicherungssystems, das für über 120.000 E-Commerce-Produkte fehlende Daten automatisch ergänzt und die Produktdatenqualität signifikant verbessert
+intro: Entwicklung eines skalierbaren KI-Produktanreicherungssystems, das 100.000+ E-Commerce-Produkte pro Shop automatisch anreichert und manuelle Arbeitsprozesse für mehrere Production-Kunden erspart
 tasks:
-  - "Entwicklung eines KI-gestützten Produktanreicherungssystems, das für u.a. 60.000 - 120.000+ E-Commerce-Produkte pro Shop fehlende Daten automatisch ergänzt und Produkttexte neu generiert"
-  - "Aufbau der kompletten Architektur - von Multi-Agent-Workflows und Prompt Engineering über Vektorsuche bis zur Svelte-Frontend-Oberfläche"
-  - "Integration mehrerer LLM-Provider (OpenAI GPT-4, Google Gemini) mit Quality-Gates für konsistente Datenqualität"
-  - "Direkte Kundenbetreuung: Anforderungsanalyse, iterative Feedback-Sessions und kontinuierliche Systemoptimierung"
+  - "Entwicklung eines KI-Produktanreicherungssystems, das 100.000+ E-Commerce-Produkte pro Shop mit Multi-Agent-Workflows (OpenAI GPT-4, Google Gemini) und Vektorsuche automatisch anreichert und tausende manuelle Arbeitsstunden für mehrere Production-Kunden erspart"
+  - "Vollständige Implementierung der Systemarchitektur von Backend (TypeScript, PostgreSQL) über Quality-Gates bis zur Svelte-Frontend-Oberfläche sowie direkte Kundenbetreuung mit Anforderungsanalyse und iterativer Optimierung"
 technologies:
   - TypeScript
   - Svelte

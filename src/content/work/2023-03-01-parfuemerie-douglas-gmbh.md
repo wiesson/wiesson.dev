@@ -7,7 +7,7 @@ from: 2023-03-01
 to: 2024-04-01
 type: main
 projectType: project
-intro: Platform Engineering im zentralen Tech-Team für die Shop-Core-Infrastruktur, die Feature-Teams mit wiederverwendbaren Komponenten, Performance-Monitoring-Tools, Code-Quality-Standards und Mentoring unterstützte
+intro: Entwicklung und Pflege der zentralen Platform-Infrastruktur zur Unterstützung von Feature-Teams mit wiederverwendbaren Komponenten, Performance-Monitoring-Tools, Code-Quality-Standards und Mentoring
 tasks:
   - Entwicklung und Pflege von Komponenten-Bibliotheken
   - Performance-Monitoring und Optimierung der Plattform
