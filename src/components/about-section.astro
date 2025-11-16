@@ -1,88 +1,97 @@
 ---
-// About Section with freelance.de description
+// About Section Component - Recruiter-Focused
 ---
 
-<section id="about" class="app-grid py-16 scroll-mt-16">
+<section class="app-grid">
   <div class="app-text-column">
-    <!-- Section Title -->
-    <h2 class="cv-h2 mb-6">Über mich</h2>
-
-    <!-- Main Description -->
-    <div class="prose prose-sm max-w-none">
-      <p>
-        Als Senior AI Software Engineer mit über 10 Jahren Erfahrung in der
-        Softwareentwicklung unterstütze ich Unternehmen bei der digitalen
-        Transformation – von modernen Frontend-Architekturen bis zur Integration
-        künstlicher Intelligenz in bestehende Systeme.
-      </p>
-
-      <p>
-        Ich arbeite remote, kommuniziere direkt mit Stakeholdern und liefere
-        messbare Ergebnisse – von der ersten Konzeption bis zum erfolgreichen
-        Deployment.
-      </p>
-
-      <!-- <div class="bg-gray-50 rounded-lg p-6 md:p-8 my-8">
-        <h3 class="cv-h2 mb-4">Aktuelle Expertise</h3>
+    <div class="flex flex-col gap-6">
+      <!-- Opening Hook -->
+      <div class="text-base" style="color: #111;">
         <p class="leading-relaxed">
-          Derzeit entwickle ich KI-gestützte Produktanreicherungssysteme, die automatisch fehlende Daten für 60.000+ E-Commerce-Produkte ergänzen und Produkttexte neu generieren. Dabei kombiniere ich Multi-Agent-Workflows, Prompt Engineering und Vektorsuche mit modernen Frontend-Technologien, um skalierbare End-to-End-Lösungen zu schaffen.
+          Bringe AI-Produkte von der Idee zum Launch. Senior Engineer mit 10+
+          Jahren Erfahrung in MVP-Entwicklung, AI/LLM-Systemen und skalierbarer
+          Architektur. Verfügbar 20-40h/Woche – kurzfristig oder langfristig.
         </p>
       </div>
 
-      <div class="bg-gray-50 rounded-lg p-6 md:p-8 my-8">
-        <h3 class="cv-h2 mb-4">Mehrjährige E-Commerce-Erfahrung</h3>
-        <p class="leading-relaxed">
-          Von 2019 bis 2024 war ich für einen führenden europäischen Online-Händler in verschiedenen Rollen tätig – von der Entwicklung von Komponenten-Bibliotheken über Performance-Optimierungen bis zur technischen Leitung von Architekturentscheidungen. Ich kenne die spezifischen Herausforderungen großer Online-Shops: Skalierbarkeit, Web Vitals, Testing-Strategien und nahtlose Integration neuer Features in bestehende Systeme.
-        </p>
-      </div> -->
+      <!-- Core Expertise -->
+      <div>
+        <h2 class="cv-h2 mb-4">Was ich mitbringe</h2>
+        <ul class="space-y-3 text-sm" style="color: #555;">
+          <li class="flex gap-3">
+            <span class="text-base shrink-0">•</span>
+            <span
+              ><span class="cv-badge">Senior AI Engineer</span> Multi-Agent
+              LLM-Systeme, GPT/Gemini-Integration, Vector Search – vom Prototyp bis
+              Production</span
+            >
+          </li>
+          <li class="flex gap-3">
+            <span class="text-base shrink-0">•</span>
+            <span
+              ><span class="cv-badge">10+ Jahre Full-Stack</span> TypeScript,
+              React, Svelte, Next.js, Node.js, PostgreSQL – schnelle Iteration, nachhaltige
+              Architektur</span
+            >
+          </li>
+          <li class="flex gap-3">
+            <span class="text-base shrink-0">•</span>
+            <span
+              ><span class="cv-badge"
+                >Startup- und Enterprise-erfahren</span
+              >
+              Douglas, ProSiebenSat.1, und diverse Scale-ups: Frontnow, Energybox</span
+            >
+          </li>
+          <li class="flex gap-3">
+            <span class="text-base shrink-0">•</span>
+            <span
+              ><span class="cv-badge">Technical Leadership</span> Architektur-Entscheidungen,
+              Mentoring, Product-Level Thinking – kann hands-on entwickeln oder strategisch
+              führen</span
+            >
+          </li>
+        </ul>
+      </div>
 
-      <!-- What I Bring -->
-      <!-- <div class="mt-12">
-        <h3 class="cv-h2 mb-6">Was ich mitbringe</h3>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="space-y-2">
-            <div class="cv-h2">Volle Stack-Kompetenz</div>
-            <p class="text-sm text-gray-600">
-              TypeScript, React, Next.js, Svelte, Node.js, PostgreSQL
-            </p>
-          </div>
+      <!-- What I'm Looking For -->
+      <div>
+        <h2 class="cv-h2 mb-4">Was ich suche</h2>
+        <ul class="space-y-2 text-sm" style="color: #555;">
+          <li class="flex gap-3">
+            <span class="shrink-0">→</span>
+            <span>AI/LLM-Produktentwicklung oder Technical Leadership</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="shrink-0">→</span>
+            <span>Bevorzugt Freelance – Festanstellung nur als PM/PO/CTO</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="shrink-0">→</span>
+            <span
+              >Offen für Produkt-Partnerschaften auf Equity-Basis (Idee +
+              Marktzugang vs. Development)</span
+            >
+          </li>
+        </ul>
+      </div>
 
-          <div class="space-y-2">
-            <div class="cv-h2">AI/LLM-Integration</div>
-            <p class="text-sm text-gray-600">
-              OpenAI GPT-4, Google Gemini, Vektorsuche, RAG-Systeme
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="cv-h2">Performance & Quality</div>
-            <p class="text-sm text-gray-600">
-              Core Web Vitals-Optimierung, Testing-Frameworks, CI/CD
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="cv-h2">Leadership</div>
-            <p class="text-sm text-gray-600">
-              Technisches Mentoring, Architekturentscheidungen, Entwicklungsrichtlinien
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="cv-h2">Kundennähe</div>
-            <p class="text-sm text-gray-600">
-              Direkte Anforderungsanalyse, iterative Feedback-Sessions, agile Arbeitsweise
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="cv-h2">Messbare Ergebnisse</div>
-            <p class="text-sm text-gray-600">
-              Von der ersten Konzeption bis zum erfolgreichen Deployment
-            </p>
-          </div>
+      <!-- Availability -->
+      <dl
+        class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t"
+        style="border-color: #E5E5E5;"
+      >
+        <div>
+          <dt class="text-xs font-semibold uppercase cv-text-meta mb-1">
+            Verfügbarkeit
+          </dt>
+          <dd class="text-sm cv-text-secondary">20-40h/Woche</dd>
         </div>
-      </div> -->
+        <div>
+          <dt class="text-xs font-semibold uppercase cv-text-meta mb-1">Ab</dt>
+          <dd class="text-sm cv-text-secondary">kurzfristig verfügbar</dd>
+        </div>
+      </dl>
     </div>
   </div>
 </section>

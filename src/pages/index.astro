@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import AboutSection from "@/components/about-section.astro";
 import CvWorkListing from "@/components/cv-work-listing";
 import { getCollection } from "astro:content";
 import ProjectsSection from "@/components/projects-section.astro";
@@ -22,6 +23,8 @@ cvWork.sort((a, b) => {
 ---
 
 <BaseLayout>
+  <AboutSection />
+
   <CvWorkListing
     title="Projekte & Festanstellungen"
     items={cvWork.filter((item) => item.data.type === "main")}
