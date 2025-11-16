@@ -53,7 +53,7 @@ const CvWorkListing = ({
               class="page-break-avoid flex gap-4 text-sm"
               key={data.project + "-" + data.company}
             >
-              <div class="shrink-0 w-40 cv-text-meta">{dates}</div>
+              <div class="shrink-0 w-24 md:w-40 cv-text-meta">{dates}</div>
               <div class="space-y-2">
                 <header>
                   <div class="cv-text-primary font-medium">
