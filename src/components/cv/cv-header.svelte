@@ -23,13 +23,15 @@
 
   const education = "M.Sc. Energy Science and Technology";
   const intro =
-    "15+ Jahre Erfahrung in der Softwareentwicklung mit Fokus auf Full-Stack-Entwicklung, KI-Integration und technische Architektur";
+    "10+ Jahre Full-Stack-Entwicklung – spezialisiert auf pragmatische Lösungen, schnelle MVPs und KI-Integration";
   const email = "arne@wiese.me";
   const website = "wiesson.dev";
 </script>
 
 <header class="app-grid py-16">
-  <div class="app-text-column flex flex-col md:flex-row items-start gap-5 md:gap-6">
+  <div
+    class="app-text-column flex flex-col md:flex-row items-start gap-5 md:gap-6"
+  >
     <!-- Circular Profile Photo -->
     <img
       src={imageUrl}
@@ -47,7 +49,8 @@
       <!-- Title and Location -->
       <p class="text-sm cv-text-secondary">
         {title}
-        {#if location} · {location}{/if}
+        {#if location}
+          · {location}{/if}
       </p>
 
       <!-- Education -->
