@@ -1,6 +1,6 @@
 <script lang="ts">
   import { formatDays, formatYear } from "$utils/dateFormat";
-  import ListingContent from "$lib/components/listing-content.svelte";
+  import ListingContent from "$components/cv/listing-content.svelte";
   import type { CollectionEntry } from "astro:content";
 
   interface Props {

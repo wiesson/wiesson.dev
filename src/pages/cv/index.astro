@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "$layouts/base-layout.astro";
-import CvWorkListing from "$lib/components/cv-work-listing.svelte";
-import CvEducationListing from "$lib/components/cv-education-listing.svelte";
+import CvWorkListing from "$components/cv/cv-work-listing.svelte";
+import CvEducationListing from "$components/cv/cv-education-listing.svelte";
 import { getCollection } from "astro:content";
+import Button from "$lib/ui/button/button.svelte";
+import { Download } from "@lucide/svelte";
 
 const cvWork = await getCollection("work");
 const cvEducation = await getCollection("education");
@@ -21,6 +23,15 @@ cvWork.sort((a, b) => {
 ---
 
 <BaseLayout>
+  <div class="app-grid py-8">
+    <div class="app-text-column flex justify-end">
+      <Button href="/api/cv/pdf" variant="outline" size="sm">
+        <Download />
+        PDF herunterladen
+      </Button>
+    </div>
+  </div>
+
   <CvWorkListing
     title="Projekte & Festanstellungen"
     items={cvWork.filter((item) => item.data.type === "main")}
