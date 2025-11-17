@@ -34,6 +34,7 @@ export interface TypstEducationEntry {
 	from: string; // Formatted year (e.g., "2011")
 	to: string; // Formatted year (e.g., "2014")
 	dates: string; // Combined date string (e.g., "2011 - 2014")
+	intro?: string;
 	tasks: string[];
 }
 

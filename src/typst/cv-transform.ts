@@ -70,6 +70,7 @@ function transformEducationEntry(entry: CollectionEntry<'education'>): TypstEduc
 		from: fromFormatted,
 		to: toFormatted,
 		dates,
+		intro: entry.data.intro,
 		tasks: entry.data.tasks
 	};
 }

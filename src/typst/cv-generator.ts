@@ -126,6 +126,13 @@ function generateEducationEntryTypst(
         #text(size: 9pt)[${escapeTypstString(entry.location)}]
         `;
 
+  // Intro
+  if (entry.intro) {
+    result += `#v(0.3em)
+        #text(size: 9pt)[${escapeTypstString(entry.intro)}]
+        `;
+  }
+
   // Tasks - only show if showDetails is true
   if (showDetails && entry.tasks && entry.tasks.length > 0) {
     result += `#v(0.3em)
