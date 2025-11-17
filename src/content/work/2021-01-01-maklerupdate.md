@@ -2,7 +2,7 @@
 company: Arne Wiese
 project: maklerupdate.de
 position:
-location: Düsseldorf
+location:
 from: 2021-01-01
 to: 2022-01-01
 type: side

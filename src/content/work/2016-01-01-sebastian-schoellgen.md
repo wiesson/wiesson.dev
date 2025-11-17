@@ -1,8 +1,8 @@
 ---
 company: Sebastian Schöllgen
 project: 84rooms.com
-position: Software Engineer
-location: Düsseldorf
+position:
+location:
 from: 2016-01-01
 to: 2025-06-01
 type: side

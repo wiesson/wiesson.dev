@@ -1,8 +1,8 @@
 ---
 company: Parfümerie Douglas GmbH
 project: Beautytester Service
-position: Senior Software Engineer
-location: Remote
+position:
+location:
 from: 2020-11-01
 to: now
 type: side

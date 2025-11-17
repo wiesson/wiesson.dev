@@ -1,8 +1,8 @@
 ---
 company: Take Memories GmbH & Co. KG
 project: Websites
-position: Software Architect
-location: Meerbusch
+position:
+location:
 from: 2021-08-01
 type: side
 projectType: project

@@ -1,8 +1,8 @@
 ---
 company: MONDAY.ROCKS GmbH
 project:
-position: Software Engineer
-location: Düsseldorf
+position:
+location:
 from: 2019-01-01
 to: 2019-04-01
 type: side

@@ -1,8 +1,8 @@
 ---
 company: Stefan Wiese
 project: stefanwiese.com
-position: Lead Software Engineer
-location: Düsseldorf
+position:
+location:
 from: 2021-06-01
 to: 2021-06-01
 type: side
@@ -15,4 +15,3 @@ technologies:
   - Sveltekit
 contentType: work
 ---
-

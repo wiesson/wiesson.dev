@@ -1,8 +1,8 @@
 ---
 company: Cyberium GmbH
 project: Handelsblatt Social Media Monitor
-position: Software Engineer
-location: Düsseldorf
+position:
+location:
 from: 2020-04-01
 to: 2020-05-01
 type: side

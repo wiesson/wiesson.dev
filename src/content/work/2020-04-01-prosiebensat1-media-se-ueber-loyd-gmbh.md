@@ -1,8 +1,8 @@
 ---
 company: ProSiebenSat.1 Media SE (über Loyd Gmbh)
 project: maxis-zeitreisen.de
-position: Software Engineer
-location: Remote
+position:
+location:
 from: 2020-04-01
 to: 2020-08-01
 type: side

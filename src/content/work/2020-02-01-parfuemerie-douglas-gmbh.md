@@ -1,8 +1,8 @@
 ---
 company: Parfümerie Douglas GmbH
 project: douglas.ch
-position: Software Engineer
-location: Düsseldorf
+position:
+location:
 from: 2020-02-01
 to: 2020-03-01
 type: side

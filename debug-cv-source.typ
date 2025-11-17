@@ -70,7 +70,7 @@
         #linebreak()
         #text(size: 9pt)[Berlin, Remote]
         #v(0.3em)
-        #text(size: 9pt)[Entwicklung eines skalierbaren KI-Produktanreicherungssystems, das 100.000+ E-Commerce-Produkte pro Shop automatisch anreichert und manuelle Arbeitsprozesse für mehrere Production-Kunden erspart]
+        #text(size: 9pt)[Entwicklung eines skalierbaren KI-Produktanreicherungssystems, das 100.000+ E-Commerce-Produkte pro Shop automatisch anreichert und zeitaufwändige manuelle Prozesse automatisiert]
         #v(0.3em)
         #text(size: 8pt)[TypeScript, Svelte, OpenAI, Google Gemini, PostgreSQL, Vector Search]
               ]
@@ -379,10 +379,6 @@
       // Content column
       [
         #text(size: 10pt, weight: "medium")[Beautytester Service / Parfümerie Douglas GmbH]
-        #linebreak()
-        #text(size: 9pt)[Senior Software Engineer]
-        #linebreak()
-        #text(size: 9pt)[Remote]
         #v(0.3em)
         #text(size: 9pt)[Konzeption und Entwicklung eines Produkttest-Services für über 20.000 User mit mehrstufigem Registrierungsflow und BazaarVoice API-Integration]
         #v(0.3em)
@@ -459,10 +455,6 @@
       // Content column
       [
         #text(size: 10pt, weight: "medium")[84rooms.com / Sebastian Schöllgen]
-        #linebreak()
-        #text(size: 9pt)[Software Engineer]
-        #linebreak()
-        #text(size: 9pt)[Düsseldorf]
         #v(0.3em)
         #text(size: 9pt)[Entwicklung und langfristige Betreuung einer Marketing-Plattform für Boutique-Hotels mit Stripe-Integration und KI-gestützter Content-Optimierung]
         #v(0.3em)
@@ -487,10 +479,6 @@
       // Content column
       [
         #text(size: 10pt, weight: "medium")[Websites / Take Memories GmbH & Co. KG]
-        #linebreak()
-        #text(size: 9pt)[Software Architect]
-        #linebreak()
-        #text(size: 9pt)[Meerbusch]
         #v(0.3em)
         #text(size: 9pt)[Migration mehrerer WordPress-Websites zu Astro und PayloadCMS mit Fokus auf Zero-JavaScript-Ansatz für optimale Performance und SEO]
         #v(0.3em)
@@ -565,10 +553,6 @@
       // Content column
       [
         #text(size: 10pt, weight: "medium")[bonsai-bayreuth.de / Bonsai Bayreuth]
-        #linebreak()
-        #text(size: 9pt)[Lead Software Engineer]
-        #linebreak()
-        #text(size: 9pt)[Düsseldorf]
         #v(0.3em)
         #text(size: 9pt)[Entwicklung einer Landing Page mit Bestellsystem und CMS-Anbindung für Restaurant-Speisekarte]
         #v(0.3em)
@@ -593,10 +577,6 @@
       // Content column
       [
         #text(size: 10pt, weight: "medium")[stefanwiese.com / Stefan Wiese]
-        #linebreak()
-        #text(size: 9pt)[Lead Software Engineer]
-        #linebreak()
-        #text(size: 9pt)[Düsseldorf]
         #v(0.3em)
         #text(size: 9pt)[Entwicklung einer Landing Page mit SvelteKit]
         #v(0.3em)
@@ -621,10 +601,6 @@
       // Content column
       [
         #text(size: 10pt, weight: "medium")[maxis-zeitreisen.de / ProSiebenSat.1 Media SE (über Loyd Gmbh)]
-        #linebreak()
-        #text(size: 9pt)[Software Engineer]
-        #linebreak()
-        #text(size: 9pt)[Remote]
         #v(0.3em)
         #text(size: 9pt)[Modernisierung der Vue.js-Plattform mit Aktualisierung des Technologie-Stacks und Erstellung wiederverwendbarer UI-Komponenten]
         #v(0.3em)
@@ -649,10 +625,6 @@
       // Content column
       [
         #text(size: 10pt, weight: "medium")[upperhand.co / Impact Products GmbH]
-        #linebreak()
-        #text(size: 9pt)[Software Engineer]
-        #linebreak()
-        #text(size: 9pt)[Remote]
         #v(0.3em)
         #text(size: 9pt)[Entwicklung einer mehrsprachigen Landing Page mit Shopify-Integration für den Go-Live der E-Commerce-Plattform]
         #v(0.3em)
@@ -677,10 +649,6 @@
       // Content column
       [
         #text(size: 10pt, weight: "medium")[need-mask.com (non-profit) / ITA RWTH Aachen]
-        #linebreak()
-        #text(size: 9pt)[Software Entwickler]
-        #linebreak()
-        #text(size: 9pt)[Remote]
         #v(0.3em)
         #text(size: 9pt)[Entwicklung einer Non-Profit-Plattform für Covid-19 Schutzausrüstung zur Abwicklung großvolumiger Bestellungen mit GraphQL und optimiert für hohes Anfragevolumen]
         #v(0.3em)
@@ -705,10 +673,6 @@
       // Content column
       [
         #text(size: 10pt, weight: "medium")[Handelsblatt Social Media Monitor / Cyberium GmbH]
-        #linebreak()
-        #text(size: 9pt)[Software Engineer]
-        #linebreak()
-        #text(size: 9pt)[Düsseldorf]
         #v(0.3em)
         #text(size: 9pt)[Konzeption und Entwicklung eines Dashboards zum Vergleich von Social-Media-Kennzahlen von über 15 deutschen Banken und Versicherungen]
         #v(0.3em)
@@ -733,10 +697,6 @@
       // Content column
       [
         #text(size: 10pt, weight: "medium")[Helpathon / Ways GmbH]
-        #linebreak()
-        #text(size: 9pt)[Senior Software Engineer]
-        #linebreak()
-        #text(size: 9pt)[Remote]
         #v(0.3em)
         #text(size: 9pt)[Frontend-Entwicklung einer gemeinnützigen Plattform zur Visualisierung und Kategorisierung von Hilfsideen]
         #v(0.3em)
@@ -761,10 +721,6 @@
       // Content column
       [
         #text(size: 10pt, weight: "medium")[douglas.ch / Parfümerie Douglas GmbH]
-        #linebreak()
-        #text(size: 9pt)[Software Engineer]
-        #linebreak()
-        #text(size: 9pt)[Düsseldorf]
         #v(0.3em)
         #text(size: 9pt)[Analyse und Fehlerbehebung der Tracking-Implementierung für den Schweizer Onlineshop]
         #v(0.3em)
@@ -789,10 +745,6 @@
       // Content column
       [
         #text(size: 10pt, weight: "medium")[MONDAY.ROCKS GmbH]
-        #linebreak()
-        #text(size: 9pt)[Software Engineer]
-        #linebreak()
-        #text(size: 9pt)[Düsseldorf]
         #v(0.3em)
         #text(size: 9pt)[Entwicklung einer WebApp für dynamische Kennzahlen-Visualisierung mit interaktiven SVG-Grafiken und CI/CD-Pipeline-Integration]
         #v(0.3em)

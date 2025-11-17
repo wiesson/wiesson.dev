@@ -1,8 +1,8 @@
 ---
 company: Bonsai Bayreuth
 project: bonsai-bayreuth.de
-position: Lead Software Engineer
-location: Düsseldorf
+position:
+location:
 from: 2021-06-01
 to: 2021-08-01
 type: side
@@ -15,4 +15,3 @@ technologies:
   - Sveltekit
 contentType: work
 ---
-

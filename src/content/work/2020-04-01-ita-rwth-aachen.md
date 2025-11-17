@@ -1,8 +1,8 @@
 ---
 company: ITA RWTH Aachen
 project: need-mask.com (non-profit)
-position: Software Entwickler
-location: Remote
+position:
+location:
 from: 2020-04-01
 to: 2020-06-01
 type: side

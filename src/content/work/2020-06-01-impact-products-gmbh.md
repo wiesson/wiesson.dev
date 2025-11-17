@@ -1,8 +1,8 @@
 ---
 company: Impact Products GmbH
 project: upperhand.co
-position: Software Engineer
-location: Remote
+position:
+location:
 from: 2020-06-01
 to: 2020-07-01
 type: side

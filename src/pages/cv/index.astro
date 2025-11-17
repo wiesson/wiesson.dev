@@ -36,14 +36,14 @@ cvWork.sort((a, b) => {
     title="Projekte & Festanstellungen"
     items={cvWork.filter((item) => item.data.type === "main")}
     showIntro={true}
-    showDetails={true}
+    showDetails={false}
   />
 
   <CvWorkListing
     title="Nebenprojekte"
     items={cvWork.filter((item) => item.data.type === "side")}
     showIntro={true}
-    showDetails={true}
+    showDetails={false}
   />
 
   <CvEducationListing title="Ausbildung" items={cvEducation} />
