@@ -1,0 +1,179 @@
+---
+import BaseLayout from "$layouts/base-layout.astro";
+import PricingSection from "$components/marketing/pricing-section.svelte";
+import ExamplesGrid from "$components/marketing/examples-grid.svelte";
+import ProcessSection from "$components/marketing/process-section.svelte";
+import FaqSection from "$components/marketing/faq-section.svelte";
+import ServiceCard from "$components/marketing/service-card.svelte";
+import { getServiceBySlug, services } from "$data/services";
+import { Badge } from "$lib/ui/badge";
+import { Award, Users, ArrowRight } from "@lucide/svelte";
+import Button from "$lib/ui/button/button.svelte";
+
+const service = getServiceBySlug("consulting-retainers");
+if (!service) throw new Error("Service not found");
+
+const relatedServices = services.filter((s) => s.id !== service.id).slice(0, 3);
+---
+
+<BaseLayout
+  title={`${service.title} - Arne Wiese`}
+  description={service.description}
+>
+  <!-- Hero Section -->
+  <section class="app-grid pt-24 pb-16">
+    <div class="app-text-column text-center">
+      <div
+        class="mb-6 mx-auto flex size-16 items-center justify-center rounded-full bg-primary/10"
+      >
+        <Award class="size-8 text-primary" />
+      </div>
+
+      {
+        service.badge && (
+          <Badge variant="default" class="mb-4">
+            {service.badge}
+          </Badge>
+        )
+      }
+
+      <h1
+        class="mb-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
+      >
+        {service.title}
+      </h1>
+
+      <p class="mb-6 max-w-2xl mx-auto text-xl text-muted-foreground">
+        {service.description}
+      </p>
+
+      <div class="mb-8">
+        <Badge variant="outline" class="text-lg px-4 py-2">
+          {service.price}
+        </Badge>
+      </div>
+
+      <div class="flex flex-wrap gap-4 justify-center">
+        <Button href="mailto:arne@wiese.me">
+          Retainer besprechen
+          <ArrowRight />
+        </Button>
+        <a href="#pricing" class="button-secondary"> Pakete & Preise </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="app-grid py-16" style="background-color: var(--muted);">
+      <div class="app-text-column mb-12 text-center">
+        <h2 class="cv-h1 mb-2">Was ist enthalten?</h2>
+        <p class="text-muted-foreground">
+          Von Support & Maintenance bis zu strategischem CTO-as-a-Service
+        </p>
+      </div>
+
+      <div class="app-wide-column">
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {
+            service.features.map((feature) => (
+              <div
+                class="flex items-start gap-3 rounded-lg p-4"
+                style="background-color: var(--card); border: 1px solid var(--border);"
+              >
+                <Users class="size-5 text-primary mt-0.5 flex-shrink-0" />
+                <span class="text-sm font-medium">{feature}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <div id="pricing">
+      <PricingSection
+        bundles={service.bundledServices}
+        title="Pakete & Pricing"
+        description="Flexible monatliche Retainer oder einmalige Consulting-Projekte"
+        client:load
+      />
+    </div>
+
+    <!-- Examples -->
+    <ExamplesGrid
+      examples={service.examples}
+      title="Beispiel-Projekte"
+      description="Von CTO-as-a-Service bis zu AI Audits – so könnte die Zusammenarbeit aussehen"
+      client:visible
+    />
+
+    <!-- Process -->
+    <ProcessSection
+      steps={service.process}
+      title="So läuft die Zusammenarbeit"
+      description="Von der ersten Beratung bis zu monatlichen Strategie-Reviews"
+      client:visible
+    />
+
+    <!-- FAQ -->
+    <FaqSection
+      faqs={service.faqs}
+      title="Häufige Fragen zu Retainern & Consulting"
+      client:visible
+    />
+
+    <!-- Related Services -->
+    <section class="app-grid py-20" style="background-color: var(--muted);">
+      <div class="app-text-column mb-12 text-center">
+        <h2 class="cv-h1 mb-2">Weitere Services</h2>
+        <p class="text-muted-foreground">
+          Andere Bereiche, die dich interessieren könnten
+        </p>
+      </div>
+
+      <div class="app-wide-column">
+        <div class="grid gap-6 md:grid-cols-3">
+          {
+            relatedServices.map((relatedService) => (
+              <ServiceCard
+                title={relatedService.title}
+                description={relatedService.subtitle}
+                price={relatedService.price}
+                features={relatedService.features.slice(0, 4)}
+                href={relatedService.href}
+                icon={relatedService.icon}
+                badge={relatedService.badge}
+                client:load
+              />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="app-grid py-20">
+    <div class="app-text-column text-center">
+      <h2 class="mb-4 text-3xl font-bold">
+        Lass uns über deine Anforderungen sprechen
+      </h2>
+      <p class="mb-8 text-lg text-muted-foreground">
+        Kostenloses Beratungsgespräch (30 min) – wir besprechen deine Ziele,
+        dein Team-Setup und finden das passende Retainer-Modell oder
+        Consulting-Format.
+      </p>
+
+      <div class="flex flex-col justify-center gap-4 sm:flex-row">
+        <Button href="mailto:arne@wiese.me">
+          Kontakt aufnehmen
+          <ArrowRight />
+        </Button>
+        <a href="/services" class="button-secondary"> Alle Services </a>
+      </div>
+
+      <p class="mt-8 text-sm text-muted-foreground">
+        arne@wiese.me • Antwort innerhalb 24h
+      </p>
+    </div>
+  </section>
+</BaseLayout>

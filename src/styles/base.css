@@ -1,78 +1,83 @@
 @import "tailwindcss";
 
-@plugin '@tailwindcss/typography';
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.13 0.028 261.692);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.13 0.028 261.692);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.13 0.028 261.692);
+  --primary: oklch(0.21 0.034 264.665);
+  --primary-foreground: oklch(0.985 0.002 247.839);
+  --secondary: oklch(0.967 0.003 264.542);
+  --secondary-foreground: oklch(0.21 0.034 264.665);
+  --muted: oklch(0.967 0.003 264.542);
+  --muted-foreground: oklch(0.551 0.027 264.364);
+  --accent: oklch(0.967 0.003 264.542);
+  --accent-foreground: oklch(0.21 0.034 264.665);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: oklch(0.928 0.006 264.531);
+  --input: oklch(0.928 0.006 264.531);
+  --ring: oklch(0.707 0.022 261.325);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: oklch(0.985 0.002 247.839);
+  --sidebar-foreground: oklch(0.13 0.028 261.692);
+  --sidebar-primary: oklch(0.21 0.034 264.665);
+  --sidebar-primary-foreground: oklch(0.985 0.002 247.839);
+  --sidebar-accent: oklch(0.967 0.003 264.542);
+  --sidebar-accent-foreground: oklch(0.21 0.034 264.665);
+  --sidebar-border: oklch(0.928 0.006 264.531);
+  --sidebar-ring: oklch(0.707 0.022 261.325);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.269 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.371 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: oklch(0.13 0.028 261.692);
+  --foreground: oklch(0.985 0.002 247.839);
+  --card: oklch(0.21 0.034 264.665);
+  --card-foreground: oklch(0.985 0.002 247.839);
+  --popover: oklch(0.21 0.034 264.665);
+  --popover-foreground: oklch(0.985 0.002 247.839);
+  --primary: oklch(0.928 0.006 264.531);
+  --primary-foreground: oklch(0.21 0.034 264.665);
+  --secondary: oklch(0.278 0.033 256.848);
+  --secondary-foreground: oklch(0.985 0.002 247.839);
+  --muted: oklch(0.278 0.033 256.848);
+  --muted-foreground: oklch(0.707 0.022 261.325);
+  --accent: oklch(0.278 0.033 256.848);
+  --accent-foreground: oklch(0.985 0.002 247.839);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --ring: oklch(0.551 0.027 264.364);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar: oklch(0.21 0.034 264.665);
+  --sidebar-foreground: oklch(0.985 0.002 247.839);
   --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0.002 247.839);
+  --sidebar-accent: oklch(0.278 0.033 256.848);
+  --sidebar-accent-foreground: oklch(0.985 0.002 247.839);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
 @theme inline {
-  /* Map shadcn CSS variables to Tailwind color utilities */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -106,44 +111,55 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--border);
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-html {
-  font-size: 16px; /* Explicit base font size */
-}
+/* ============================================================================
+   Grid Layout System
+   ============================================================================
 
-html,
-body {
-  margin: 0;
-  min-height: 100%;
-  font-family: system-ui, sans-serif;
-  line-height: 1.5;
-  color: var(--foreground);
-  background-color: var(--background);
-}
+   Architecture:
+   - 3-column CSS Grid: [1fr] [content max 96rem] [1fr]
+   - Direct children default to center column (column 2)
+   - Width classes break out to span all columns, then constrain with max-width
 
-body {
-  font-size: 1rem; /* 16px - default body text */
-  @apply py-16;
-}
+   CONVENTION: Every top-level section should start with .app-grid
 
-/* Grid layout utilities for marketing pages */
+   Pattern A: Single-width content
+   --------------------------------
+   <section class="app-grid">
+     <div class="app-text-column">
+       <!-- All content at optimal reading width (65ch) -->
+     </div>
+   </section>
+
+   Pattern B: Mixed-width content
+   --------------------------------
+   <section class="app-grid">
+     <div class="app-text-column">
+       <h2>Narrow heading</h2>
+     </div>
+     <div class="app-wide-column">
+       <!-- Wide grid/cards (96ch) -->
+     </div>
+   </section>
+
+   Pattern C: Full-width backgrounds
+   --------------------------------
+   <section class="app-grid bg-gray-50">
+     <div class="app-full-column">
+       <!-- Background spans full viewport width -->
+     </div>
+   </section>
+
+   ============================================================================ */
+
 .app-grid {
   display: grid;
   grid-template-columns:
@@ -153,10 +169,12 @@ body {
   @apply px-4;
 }
 
+/* Default: all direct children go to center column */
 .app-grid > * {
   grid-column: 2;
 }
 
+/* Text-optimized width: 65ch (~840px) for optimal readability */
 .app-text-column {
   width: 100%;
   max-width: 65ch;
@@ -165,6 +183,7 @@ body {
   grid-column: 1 / 4;
 }
 
+/* Wide layout: 96ch (~1280px) for grids, cards, logo lists */
 .app-wide-column {
   width: 100%;
   max-width: 96ch;
@@ -173,115 +192,12 @@ body {
   grid-column: 1 / 4;
 }
 
+/* Full width: spans entire viewport (for backgrounds, edge-to-edge content) */
 .app-full-column {
   width: 100%;
   grid-column: 1 / 4;
 }
 
-.badge {
-  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
-  background-color: var(--muted);
-  color: var(--foreground);
-}
-
-/* Primary CTA Button */
-.button-cta {
-  @apply inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md transition-colors;
-  background-color: var(--primary);
-  color: var(--primary-foreground);
-}
-
-.button-cta:hover {
-  background-color: var(--primary);
-  opacity: 0.9;
-}
-
-/* Smaller CTA variant for navigation */
-.button-cta-sm {
-  @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md transition-colors;
-  background-color: var(--primary);
-  color: var(--primary-foreground);
-}
-
-.button-cta-sm:hover {
-  background-color: var(--primary);
-  opacity: 0.9;
-}
-
-/* Secondary button variant */
-.button-secondary {
-  @apply inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-md transition-colors;
-  border-color: var(--border);
-  background-color: var(--background);
-  color: var(--foreground);
-}
-
-.button-secondary:hover {
-  background-color: var(--muted);
-}
-
-a,
-.link {
-  color: var(--foreground);
-  text-decoration: underline;
-}
-
-a.hover-foreground {
-  color: var(--muted-foreground);
-}
-
-a.hover-foreground:hover {
-  color: var(--foreground);
-}
-
-.hover-amber {
-  background-color: var(--muted);
-  transition: background-color 0.2s;
-}
-
-.hover-amber:hover {
-  background-color: oklch(0.828 0.189 84.429);
-}
-
-.form-fieldset {
-  display: flex;
-  flex-direction: column;
-  @apply rounded-md px-3 py-2 focus-within:ring-1 transition-colors;
-  border-color: var(--border);
-}
-
-.form-fieldset:focus-within {
-  border-color: var(--ring);
-  --tw-ring-color: var(--ring);
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  @apply rounded-md px-3 py-2 focus-within:ring-2 transition-colors;
-  border-color: var(--border);
-}
-
-.form-group:focus-within {
-  border-color: var(--ring);
-  --tw-ring-color: var(--ring);
-}
-
-.form-label {
-  @apply block text-xs font-medium;
-  color: var(--foreground);
-}
-
-.form-item {
-  @apply bg-transparent block w-full border-0 p-0 focus:ring-0 sm:text-sm;
-  color: var(--foreground);
-}
-
-.form-item::placeholder {
-  color: var(--muted-foreground);
-}
-
-/* Professional CV Typography (Figma-style) */
 .cv-h1 {
   @apply text-xl font-normal;
   color: var(--foreground);

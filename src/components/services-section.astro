@@ -1,4 +1,6 @@
 ---
+import Button from "$lib/ui/button/button.svelte";
+
 // Services Section
 const services = [
   {
@@ -40,7 +42,7 @@ const services = [
 ];
 ---
 
-<section id="services" class="py-24 scroll-mt-16" style="background-color: var(--muted);">
+<section id="services" class="app-grid py-24 scroll-mt-16" style="background-color: var(--muted);">
   <div class="app-wide-column">
     <!-- Section Title -->
     <div class="text-center mb-16">
@@ -75,9 +77,9 @@ const services = [
     <!-- CTA -->
     <div class="text-center mt-12">
       <p class="cv-text-secondary mb-4">Lass uns über dein Projekt sprechen</p>
-      <a href="mailto:arne@wiese.me?subject=Projektanfrage" class="button-cta">
+      <Button href="mailto:arne@wiese.me?subject=Projektanfrage">
         Kontakt aufnehmen
-      </a>
+      </Button>
     </div>
   </div>
 </section>

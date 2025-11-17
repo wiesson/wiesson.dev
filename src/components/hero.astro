@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import Button from "$lib/ui/button/button.svelte";
 ---
 
 <section class="app-grid py-24 md:py-32">
@@ -52,9 +53,9 @@ import { Image } from "astro:assets";
 
     <!-- CTA Buttons -->
     <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-      <a href="mailto:arne@wiese.me?subject=Projektanfrage" class="button-cta">
+      <Button href="mailto:arne@wiese.me?subject=Projektanfrage">
         Projekt besprechen
-      </a>
+      </Button>
       <a href="/cv" class="button-secondary"> Lebenslauf ansehen </a>
     </div>
   </div>

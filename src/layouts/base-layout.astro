@@ -1,9 +1,9 @@
 ---
-import CvHeader from "@/components/cv-header";
 import "../styles/base.css";
 
-import SiteFooter from "@/components/site-footer";
-import SiteHeader from "@/components/site-header.astro";
+import CvHeader from "$lib/components/cv-header.svelte";
+import SiteFooter from "$lib/components/site-footer.svelte";
+
 const isProd = import.meta.env.PROD;
 ---
 
@@ -33,7 +33,7 @@ const isProd = import.meta.env.PROD;
       imageUrl="/assets/arne-neu-quadratisch.jpeg"
     />
 
-    <main class="app-grid space-y-24">
+    <main class="space-y-24">
       <slot />
     </main>
 

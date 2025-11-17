@@ -1,0 +1,151 @@
+---
+import BaseLayout from "$layouts/base-layout.astro";
+import ServiceCard from "$components/marketing/service-card.svelte";
+import ProcessSection from "$components/marketing/process-section.svelte";
+import { services } from "$data/services";
+import { Badge } from "$lib/ui/badge";
+import { Card, CardContent } from "$lib/ui/card";
+import { Zap, Clock, MessageCircle, Headphones } from "@lucide/svelte";
+import Button from "$lib/ui/button/button.svelte";
+
+const addOns = [
+  {
+    icon: Zap,
+    title: "Express Delivery",
+    description: "+25% für schnellere Lieferung (wo möglich)",
+  },
+  {
+    icon: MessageCircle,
+    title: "Dedicated Slack Channel",
+    description: "Inkludiert ab 15.000 € Projektvolumen",
+  },
+  {
+    icon: Headphones,
+    title: "Training & Handover",
+    description: "1.500 € pro Tag (optional)",
+  },
+  {
+    icon: Clock,
+    title: "Hosting & Maintenance",
+    description: "Ab 500 €/Monat (je nach Komplexität)",
+  },
+];
+
+const processSteps = [
+  "Discovery Call (30 min, kostenlos): Anforderungen, Ziele & Erfolgsmetriken",
+  "Scope & Proposal (1-2 Tage): Konzept, Tech Stack, Timeline & Kostenvoranschlag",
+  "Kick-Off & Anzahlung (50%): Zugriff auf Systeme, detailliertes Planning",
+  "Entwicklung: Iterative Sprints mit regelmäßigen Updates & Demos",
+  "Delivery & Handover (50% Rest): Testing, Dokumentation, Training, Go-Live",
+];
+---
+
+<BaseLayout
+  title="Services & Pakete - Arne Wiese"
+  description="Von AI-Entwicklung bis Technical Leadership – maßgeschneiderte Software-Engineering Services für Startups & Scale-ups"
+>
+  <!-- Hero Section -->
+  <section class="app-grid pt-24 pb-16">
+    <div class="app-text-column text-center">
+    <Badge variant="outline" class="mb-6 inline-flex items-center gap-2">
+      <span>Services & Pakete</span>
+    </Badge>
+
+    <h1
+      class="mb-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
+    >
+      Software-Engineering für moderne Startups
+    </h1>
+
+    <p class="mb-6 max-w-2xl mx-auto text-xl text-muted-foreground">
+      Von schnellen MVP-Sprints bis zu kompletten AI-Plattformen – ich helfe
+      dir, deine Idee in Production zu bringen.
+    </p>
+
+    <p class="mb-8 max-w-2xl mx-auto text-base text-muted-foreground">
+      10+ Jahre Full-Stack Development, spezialisiert auf AI-Integration, Data
+      Engineering & SaaS Platforms.
+    </p>
+
+    <div class="flex flex-wrap gap-4 justify-center">
+      <Button href="mailto:arne@wiese.me">
+        Kostenloses Beratungsgespräch
+      </Button>
+      <a href="#services" class="button-secondary"> Services ansehen </a>
+    </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section id="services" class="app-grid pb-20">
+    <div class="app-wide-column">
+      <div class="grid gap-6 md:grid-cols-2">
+      {
+        services.map((service) => (
+          <ServiceCard
+            title={service.title}
+            description={service.subtitle}
+            price={service.price}
+            features={service.features.slice(0, 5)}
+            href={service.href}
+            icon={service.icon}
+            badge={service.badge}
+            client:load
+          />
+        ))
+      }
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <ProcessSection steps={processSteps} client:visible />
+
+  <!-- Add-ons Section -->
+  <section class="py-20 app-grid" style="background-color: var(--muted);">
+    <div class="app-text-column mb-12 text-center">
+      <h2 class="cv-h1 mb-2">Add-ons & Extras</h2>
+      <p class="text-muted-foreground">
+        Zusätzliche Services für noch mehr Flexibilität
+      </p>
+    </div>
+
+    <div class="app-wide-column">
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {
+          addOns.map((addon) => (
+            <Card client:load>
+              <CardContent class="pt-6 text-center" client:load>
+                <div class="mx-auto mb-3 flex size-12 items-center justify-center rounded-lg bg-primary/10">
+                  <addon.icon class="size-6 text-primary" />
+                </div>
+                <h3 class="mb-2 font-semibold">{addon.title}</h3>
+                <p class="text-sm text-muted-foreground">{addon.description}</p>
+              </CardContent>
+            </Card>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="app-grid py-20">
+    <div class="app-text-column text-center">
+    <h2 class="mb-4 text-3xl font-bold">Bereit loszulegen?</h2>
+    <p class="mb-8 text-lg text-muted-foreground">
+      Lass uns in einem kostenlosen Gespräch herausfinden, wie ich dir helfen
+      kann.
+    </p>
+
+    <div class="flex flex-col justify-center gap-4 sm:flex-row">
+      <Button href="mailto:arne@wiese.me">Kontakt aufnehmen</Button>
+      <a href="/cv" class="button-secondary"> Mehr über mich </a>
+    </div>
+
+    <p class="mt-8 text-sm text-muted-foreground">
+      Keine versteckten Kosten • Transparente Preise • 10+ Jahre Erfahrung
+    </p>
+    </div>
+  </section>
+</BaseLayout>

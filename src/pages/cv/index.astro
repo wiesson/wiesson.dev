@@ -1,7 +1,7 @@
 ---
-import BaseLayout from "@/layouts/base-layout.astro";
-import CvWorkListing from "@/components/cv-work-listing";
-import CvEducationListing from "@/components/cv-education-listing";
+import BaseLayout from "$layouts/base-layout.astro";
+import CvWorkListing from "$lib/components/cv-work-listing.svelte";
+import CvEducationListing from "$lib/components/cv-education-listing.svelte";
 import { getCollection } from "astro:content";
 
 const cvWork = await getCollection("work");

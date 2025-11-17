@@ -1,11 +1,10 @@
 ---
-import BaseLayout from "@/layouts/base-layout.astro";
-import AboutSection from "@/components/about-section.astro";
-import CvWorkListing from "@/components/cv-work-listing";
+import BaseLayout from "$layouts/base-layout.astro";
+import AboutSection from "$components/about-section.astro";
+import CvWorkListing from "$lib/components/cv-work-listing.svelte";
 import { getCollection } from "astro:content";
-import ProjectsSection from "@/components/projects-section.astro";
-import ServicesSection from "@/components/services-section.astro";
-import TechnologiesSection from "@/components/technologies-section.astro";
+import ProjectsSection from "$components/projects-section.astro";
+import TechnologiesSection from "$components/technologies-section.astro";
 
 const cvWork = await getCollection("work");
 
