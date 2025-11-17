@@ -32,6 +32,7 @@ const cvEducationCollection = defineCollection({
     from: z.date(),
     to: z.date().or(z.enum(["now"])),
     type: z.enum(["education"]),
+    intro: z.string(),
     tasks: z.array(z.string()),
     contentType: z.enum(["work", "education"]),
   }),
