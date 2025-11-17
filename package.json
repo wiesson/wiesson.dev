@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/svelte": "^7.2.2",
+    "@astrojs/vercel": "^9.0.0",
     "@lucide/astro": "^0.553.0",
     "astro": "^5.15.8",
     "svelte": "^5.43.8",
