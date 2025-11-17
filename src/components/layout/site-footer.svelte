@@ -3,7 +3,7 @@
     <!-- Contact & Social -->
     <div class="grid md:grid-cols-2 gap-8 mb-8">
       <div>
-        <h4 class="cv-h2 mb-4">Kontakt</h4>
+        <h2 class="title mb-4">Kontakt</h2>
         <div class="space-y-2 cv-text-secondary">
           <p>
             <a
@@ -26,7 +26,7 @@
       </div>
 
       <div>
-        <h4 class="cv-h2 mb-4">Social</h4>
+        <h2 class="title mb-4">Social</h2>
         <div class="space-y-2">
           <p>
             <a

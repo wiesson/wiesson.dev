@@ -21,7 +21,7 @@
 
 <section class="app-grid py-20" style="background-color: var(--background);">
   <div class="app-text-column mb-12 text-center">
-    <h2 class="cv-h1 mb-2">{title}</h2>
+    <h2 class="heading mb-2">{title}</h2>
     {#if description}
       <p class="text-muted-foreground">{description}</p>
     {/if}

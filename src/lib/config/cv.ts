@@ -19,7 +19,7 @@ export const cvProfile: CvProfile = {
   location: "Meerbusch",
   education: "M.Sc. Energy Science and Technology",
   intro:
-    "15+ Jahre Erfahrung in der Softwareentwicklung mit Fokus auf Full-Stack-Entwicklung, KI-Integration und technische Architektur",
+    "10+ Jahre Full-Stack-Entwicklung – spezialisiert auf pragmatische Lösungen, schnelle MVPs und KI-Integration",
   email: "arne@wiese.me",
   website: "wiesson.dev",
 };

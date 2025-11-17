@@ -93,14 +93,14 @@ const technologies = {
 <section id="technologies" class="app-grid py-16 scroll-mt-16">
   <div class="app-wide-column">
     <!-- Section Title -->
-    <h2 class="cv-h2 mb-6">Technologien & Skills</h2>
+    <h2 class="title mb-6">Technologien & Skills</h2>
 
     <!-- Technologies Grid -->
     <div class="space-y-12">
       {
         Object.entries(technologies).map(([category, techs]) => (
           <div>
-            <h3 class="cv-h2 mb-4">{category}</h3>
+            <h3 class="title mb-4">{category}</h3>
             <div class="flex flex-wrap gap-2">
               {techs.map((tech) => (
                 <span class="cv-badge">{tech}</span>

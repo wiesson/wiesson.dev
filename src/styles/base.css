@@ -203,6 +203,18 @@ body {
   grid-column: 1 / 4;
 }
 
+/* Generic heading classes for all sections */
+.title {
+  @apply text-lg font-semibold;
+  color: var(--foreground);
+}
+
+.heading {
+  @apply text-xl font-normal;
+  color: var(--foreground);
+}
+
+/* CV-specific heading styles (deprecated - use .title and .heading instead) */
 .cv-h1 {
   @apply text-xl font-normal;
   color: var(--foreground);
