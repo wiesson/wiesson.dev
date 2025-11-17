@@ -3,10 +3,10 @@ import tailwind from "@tailwindcss/vite";
 import { fileURLToPath } from "url";
 
 import svelte from "@astrojs/svelte";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 
 export default defineConfig({
-  output: "hybrid",
+  output: "static",
   adapter: vercel(),
   integrations: [tailwind(), svelte()],
   vite: {
