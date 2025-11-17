@@ -78,7 +78,7 @@
 
             {#if showIntro && data.intro}
               <div class="prose prose-sm">
-                <p class="cv-text-secondary">{data.intro}</p>
+                <p>{data.intro}</p>
               </div>
             {/if}
 
