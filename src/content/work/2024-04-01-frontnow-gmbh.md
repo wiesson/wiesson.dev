@@ -2,7 +2,7 @@
 company: Frontnow GmbH
 project: AI Advisor & AI Agents
 position: Senior AI Software Engineer
-location: Berlin, Remote
+location: Überwiegend remote, gelegentlich in Berlin
 from: 2024-04-01
 to: 2025-09-01
 type: main

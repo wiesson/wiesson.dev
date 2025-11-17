@@ -2,7 +2,7 @@
 company: Frontnw GmbH
 project:
 position: Lead Software Engineer
-location: Düsseldorf, Berlin
+location: Überwiegend remote, gelegentlich in Berlin
 from: 2021-03-01
 to: 2022-02-01
 type: main

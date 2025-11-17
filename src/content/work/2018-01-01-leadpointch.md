@@ -2,7 +2,7 @@
 company: leadpoint.ch
 project: juts.ch
 position: Software Engineer
-location: Zürich (CH), Remote
+location: Remote, gelegentlich in Zürich (CH)
 from: 2018-01-01
 to: 2018-11-01
 type: main
