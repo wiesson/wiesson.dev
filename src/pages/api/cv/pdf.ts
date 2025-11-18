@@ -15,14 +15,18 @@ export const prerender = false;
 
 export const GET: APIRoute = async ({ url }) => {
   try {
-    // Load CV data from Astro content collections
+    // Get language parameter (default: 'de')
+    const lang = url.searchParams.get("lang") || "de";
+    const isEnglish = lang === "en";
+
+    // Load CV data from appropriate content collections based on language
     const [workEntries, educationEntries] = await Promise.all([
-      getCollection("work"),
-      getCollection("education"),
+      getCollection(isEnglish ? "work-en" : "work"),
+      getCollection(isEnglish ? "education-en" : "education"),
     ]);
 
-    // Transform to Typst format
-    const cvData = transformCvToTypst(workEntries, educationEntries);
+    // Transform to Typst format with language parameter
+    const cvData = transformCvToTypst(workEntries, educationEntries, lang);
 
     // Check format query parameter
     const format = url.searchParams.get("format");
@@ -35,10 +39,11 @@ export const GET: APIRoute = async ({ url }) => {
     // If format=typst, return Typst source code
     if (format === "typst") {
       const typstSource = await generateCvTypstSource(cvData, showDetails);
+      const typstFilename = `cv-source-${lang}.typ`;
       return new Response(typstSource, {
         headers: {
           "Content-Type": "text/plain; charset=utf-8",
-          "Content-Disposition": 'inline; filename="cv-source.typ"',
+          "Content-Disposition": `inline; filename="${typstFilename}"`,
         },
       });
     }
@@ -61,10 +66,12 @@ export const GET: APIRoute = async ({ url }) => {
         ? "no-cache, no-store, must-revalidate"
         : "private, max-age=3600";
 
+    const pdfFilename = `cv-arne-wiese-${lang}.pdf`;
+
     return new Response(pdfBuffer as any, {
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": 'inline; filename="cv-arne-wiese.pdf"',
+        "Content-Disposition": `inline; filename="${pdfFilename}"`,
         "Cache-Control": cacheControl,
         Pragma: "no-cache",
         Expires: "0",

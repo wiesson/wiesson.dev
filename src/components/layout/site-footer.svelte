@@ -1,9 +1,26 @@
+<script lang="ts">
+  import { getTranslations, getLocalizedPath, type Locale } from "../../i18n";
+  import Button from "$lib/ui/button/button.svelte";
+  import { Download } from "@lucide/svelte";
+
+  interface Props {
+    lang?: Locale;
+    currentPath?: string;
+  }
+
+  let { lang = "de", currentPath = "/" }: Props = $props();
+  const t = getTranslations(lang);
+
+  // Get the base path without language prefix for language switching
+  const basePath = lang === 'en' ? currentPath.replace(/^\/en/, '') : currentPath;
+</script>
+
 <footer class="app-grid py-16">
   <div class="app-text-column">
     <!-- Contact & Social -->
     <div class="grid md:grid-cols-2 gap-8 mb-8">
       <div>
-        <h2 class="title mb-4">Kontakt</h2>
+        <h2 class="title mb-4">{t.footer.contact}</h2>
         <div class="space-y-2 cv-text-secondary">
           <p>
             <a
@@ -26,7 +43,7 @@
       </div>
 
       <div>
-        <h2 class="title mb-4">Social</h2>
+        <h2 class="title mb-4">{t.footer.social}</h2>
         <div class="space-y-2">
           <p>
             <a
@@ -62,14 +79,43 @@
       </div>
     </div>
 
-    <!-- Copyright -->
-    <div class="text-sm cv-text-meta pt-8 border-t" style="border-color: var(--border);">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-        <div>
-          &copy; {new Date().getFullYear()} Arne Wiese. Alle Rechte
-          vorbehalten.
+    <!-- Copyright, Language Switcher & CV Downloads -->
+    <div class="text-sm pt-8 border-t" style="border-color: var(--border);">
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-6">
+        <!-- Language Switcher -->
+        <div class="flex gap-2">
+          <Button
+            href={getLocalizedPath(basePath, "de")}
+            variant={lang === "de" ? "default" : "outline"}
+            size="sm"
+          >
+            {t.languages.de}
+          </Button>
+          <Button
+            href={getLocalizedPath(basePath, "en")}
+            variant={lang === "en" ? "default" : "outline"}
+            size="sm"
+          >
+            {t.languages.en}
+          </Button>
         </div>
-        <div>Meerbusch, Deutschland</div>
+
+        <!-- Copyright -->
+        <div class="cv-text-meta text-center">
+          &copy; {new Date().getFullYear()} Arne Wiese. {t.footer.allRightsReserved}.
+        </div>
+
+        <!-- CV Downloads -->
+        <div class="flex gap-2">
+          <Button href="/api/cv/pdf?lang=de" variant="outline" size="sm">
+            <Download />
+            {t.buttons.downloadPdfDe}
+          </Button>
+          <Button href="/api/cv/pdf?lang=en" variant="outline" size="sm">
+            <Download />
+            {t.buttons.downloadPdfEn}
+          </Button>
+        </div>
       </div>
     </div>
   </div>

@@ -5,11 +5,11 @@ import CvWorkListing from "$components/cv/cv-work-listing.svelte";
 import { getCollection } from "astro:content";
 import ProjectsSection from "$components/sections/projects-section.astro";
 import TechnologiesSection from "$components/sections/technologies-section.astro";
-import { getTranslations } from "../i18n";
+import { getTranslations } from "../../i18n";
 
-const lang = "de";
+const lang = "en";
 const t = getTranslations(lang);
-const cvWork = await getCollection("work");
+const cvWork = await getCollection("work-en");
 
 const now = new Date();
 

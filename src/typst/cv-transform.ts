@@ -4,25 +4,27 @@
 
 import type { CollectionEntry } from 'astro:content';
 import type { TypstCvData, TypstWorkEntry, TypstEducationEntry } from './cv-types.js';
-import { cvProfile } from '../lib/config/cv.js';
+import { getCvProfile } from '../lib/config/cv.js';
 
 /**
- * Format date to German locale (DD.MM.YYYY for full dates, YYYY for years)
+ * Format date with language support (DD.MM.YYYY for full dates, YYYY for years)
  */
-function formatDate(date: Date | string | 'now', format: 'days' | 'year' = 'days'): string {
+function formatDate(date: Date | string | 'now', format: 'days' | 'year' = 'days', lang: string = 'de'): string {
 	if (date === 'now') {
-		return format === 'days' ? 'heute' : new Date().getFullYear().toString();
+		const presentText = lang === 'en' ? 'present' : 'heute';
+		return format === 'days' ? presentText : new Date().getFullYear().toString();
 	}
 
 	const d = typeof date === 'string' ? new Date(date) : date;
-	
+	const locale = lang === 'en' ? 'en-US' : 'de-DE';
+
 	if (format === 'year') {
-		return new Intl.DateTimeFormat('de-DE', {
+		return new Intl.DateTimeFormat(locale, {
 			year: 'numeric'
 		}).format(d);
 	}
-	
-	return new Intl.DateTimeFormat('de-DE', {
+
+	return new Intl.DateTimeFormat(locale, {
 		year: 'numeric',
 		month: '2-digit'
 	}).format(d);
@@ -31,11 +33,11 @@ function formatDate(date: Date | string | 'now', format: 'days' | 'year' = 'days
 /**
  * Transform work entry from Astro content collection to Typst format
  */
-function transformWorkEntry(entry: CollectionEntry<'work'>): TypstWorkEntry {
+function transformWorkEntry(entry: CollectionEntry<'work'> | CollectionEntry<'work-en'>, lang: string = 'de'): TypstWorkEntry {
 	const now = new Date();
 	const toDate = entry.data.to === 'now' ? now : entry.data.to;
-	const fromFormatted = formatDate(entry.data.from, 'days');
-	const toFormatted = formatDate(toDate, 'days');
+	const fromFormatted = formatDate(entry.data.from, 'days', lang);
+	const toFormatted = formatDate(toDate, 'days', lang);
 	const dates = fromFormatted === toFormatted ? fromFormatted : `${fromFormatted} - ${toFormatted}`;
 
 	return {
@@ -57,11 +59,11 @@ function transformWorkEntry(entry: CollectionEntry<'work'>): TypstWorkEntry {
 /**
  * Transform education entry from Astro content collection to Typst format
  */
-function transformEducationEntry(entry: CollectionEntry<'education'>): TypstEducationEntry {
+function transformEducationEntry(entry: CollectionEntry<'education'> | CollectionEntry<'education-en'>, lang: string = 'de'): TypstEducationEntry {
 	const now = new Date();
 	const toDate = entry.data.to === 'now' ? now : entry.data.to;
-	const fromFormatted = formatDate(entry.data.from, 'year');
-	const toFormatted = formatDate(toDate, 'year');
+	const fromFormatted = formatDate(entry.data.from, 'year', lang);
+	const toFormatted = formatDate(toDate, 'year', lang);
 	const dates = fromFormatted === toFormatted ? fromFormatted : `${fromFormatted} – ${toFormatted}`;
 
 	return {
@@ -79,10 +81,12 @@ function transformEducationEntry(entry: CollectionEntry<'education'>): TypstEduc
  * Transform CV data from Astro content collections to Typst format
  */
 export function transformCvToTypst(
-	workEntries: CollectionEntry<'work'>[],
-	educationEntries: CollectionEntry<'education'>[]
+	workEntries: CollectionEntry<'work'>[] | CollectionEntry<'work-en'>[],
+	educationEntries: CollectionEntry<'education'>[] | CollectionEntry<'education-en'>[],
+	lang: string = 'de'
 ): TypstCvData {
 	const now = new Date();
+	const locale = lang === 'en' ? 'en-US' : 'de-DE';
 
 	// Sort work entries by date (newest first)
 	const sortedWork = [...workEntries].sort((a, b) => {
@@ -94,16 +98,17 @@ export function transformCvToTypst(
 	// Separate main and side work
 	const mainWork = sortedWork
 		.filter((entry) => entry.data.type === 'main')
-		.map(transformWorkEntry);
+		.map((entry) => transformWorkEntry(entry, lang));
 
 	const sideWork = sortedWork
 		.filter((entry) => entry.data.type === 'side')
-		.map(transformWorkEntry);
+		.map((entry) => transformWorkEntry(entry, lang));
 
 	// Transform education entries
-	const education = educationEntries.map(transformEducationEntry);
+	const education = educationEntries.map((entry) => transformEducationEntry(entry, lang));
 
-	// Build profile from config
+	// Build profile from config with language support
+	const cvProfile = getCvProfile(lang);
 	const profile = {
 		name: cvProfile.name,
 		title: cvProfile.title,
@@ -119,7 +124,7 @@ export function transformCvToTypst(
 		mainWork,
 		sideWork,
 		education,
-		locale: 'de-DE'
+		locale
 	};
 }
 

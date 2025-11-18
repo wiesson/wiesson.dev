@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Start",
+    "cv": "Lebenslauf",
+    "services": "Leistungen"
+  },
+  "buttons": {
+    "downloadPdf": "PDF herunterladen",
+    "downloadPdfDe": "PDF (DE)",
+    "downloadPdfEn": "PDF (EN)"
+  },
+  "languages": {
+    "de": "Deutsch",
+    "en": "English"
+  },
+  "sections": {
+    "about": "Über mich",
+    "projects": "Kunden & Projekte",
+    "technologies": "Technologien & Skills",
+    "workExperience": "Projekte & Festanstellungen",
+    "sideProjects": "Nebenprojekte",
+    "education": "Ausbildung"
+  },
+  "cv": {
+    "technologies": "Technologien",
+    "permanent": "Festanstellung",
+    "freelance": "Freiberuflich",
+    "sideProject": "Nebenprojekt"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "social": "Social",
+    "allRightsReserved": "Alle Rechte vorbehalten",
+    "location": "Meerbusch, Deutschland"
+  },
+  "about": {
+    "title": "Über mich",
+    "whatIBring": "Was ich mitbringe",
+    "whatISeek": "Was ich suche",
+    "availability": "Verfügbarkeit",
+    "availabilityHours": "20-40h/Woche",
+    "availabilityStatus": "kurzfristig verfügbar"
+  },
+  "meta": {
+    "title": "Arne Wiese | Freier Entwickler für Web-Technologien, APIs und KI-Lösungen",
+    "description": "Senior AI Software Engineer mit 10+ Jahren Erfahrung in Full-Stack-Entwicklung, spezialisiert auf pragmatische Lösungen, schnelle MVPs und KI-Integration"
+  }
+}

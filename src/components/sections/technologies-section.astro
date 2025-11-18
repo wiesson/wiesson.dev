@@ -1,4 +1,13 @@
 ---
+import { getTranslations, type Locale } from "../../i18n";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "de" } = Astro.props;
+const t = getTranslations(lang);
+
 // Technologies Section
 const technologies = {
   Frontend: [
@@ -93,7 +102,7 @@ const technologies = {
 <section id="technologies" class="app-grid py-16 scroll-mt-16">
   <div class="app-wide-column">
     <!-- Section Title -->
-    <h2 class="title mb-6">Technologien & Skills</h2>
+    <h2 class="title mb-6">{t.sections.technologies}</h2>
 
     <!-- Technologies Grid -->
     <div class="space-y-12">

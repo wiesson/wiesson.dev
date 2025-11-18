@@ -42,4 +42,6 @@ export const collections = {
   blog: blogCollection,
   work: cvWorkCollection,
   education: cvEducationCollection,
+  "work-en": cvWorkCollection,
+  "education-en": cvEducationCollection,
 };

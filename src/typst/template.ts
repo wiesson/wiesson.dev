@@ -255,13 +255,16 @@ export async function generateCvTypstSource(
     "./cv-generator.js"
   );
 
-  // Generate complete Typst source directly
-  const typstSource = generateSource(data, showBullets);
+  // Extract language from locale (e.g., 'en-US' -> 'en', 'de-DE' -> 'de')
+  const lang = data.locale.split('-')[0];
+
+  // Generate complete Typst source directly with language support
+  const typstSource = generateSource(data, showBullets, lang);
 
   // Debug: write generated source to file in development for inspection
   if (process.env.NODE_ENV === "development") {
     const { writeFile } = await import("fs/promises");
-    const debugPath = join(process.cwd(), "debug-cv-source.typ");
+    const debugPath = join(process.cwd(), `debug-cv-source-${lang}.typ`);
     await writeFile(debugPath, typstSource);
     console.log("Generated Typst source written to", debugPath);
   }

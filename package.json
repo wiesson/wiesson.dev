@@ -11,15 +11,15 @@
   },
   "dependencies": {
     "@astrojs/svelte": "^7.2.2",
-    "@astrojs/vercel": "^9.0.0",
-    "@lucide/astro": "^0.553.0",
-    "astro": "^5.15.8",
-    "svelte": "^5.43.8",
+    "@astrojs/vercel": "^9.0.1",
+    "@lucide/astro": "^0.554.0",
+    "astro": "^5.15.9",
+    "svelte": "^5.43.11",
     "zod": "^4.1.12"
   },
   "devDependencies": {
     "@internationalized/date": "^3.10.0",
-    "@lucide/svelte": "^0.553.0",
+    "@lucide/svelte": "^0.554.0",
     "@myriaddreamin/typst-ts-node-compiler": "0.7.0-rc1",
     "@tailwindcss/postcss": "^4.1.17",
     "@tailwindcss/typography": "^0.5.19",

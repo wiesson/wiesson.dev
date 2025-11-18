@@ -2,10 +2,12 @@
   import { formatDays, formatYear } from "$utils/dateFormat";
   import ListingContent from "$components/cv/listing-content.svelte";
   import type { CollectionEntry } from "astro:content";
+  import { getTranslations, type Locale } from "../../i18n";
 
   interface Props {
     title: string;
-    items: CollectionEntry<"work">[];
+    items: CollectionEntry<"work"> | CollectionEntry<"work-en">[];
+    lang?: Locale;
     showDetails?: boolean;
     showYearsOnly?: boolean;
     showBadges?: boolean;
@@ -15,16 +17,19 @@
   let {
     title,
     items,
+    lang = "de",
     showDetails = false,
     showYearsOnly = false,
     showBadges = true,
     showIntro = false,
   }: Props = $props();
 
+  const t = getTranslations(lang);
+
   const getBadgeLabel = (type: string, projectType: string): string => {
-    if (type === "main" && projectType === "permanent") return "Festanstellung";
-    if (type === "main" && projectType === "project") return "Freiberuflich";
-    if (type === "side") return "Nebenprojekt";
+    if (type === "main" && projectType === "permanent") return t.cv.permanent;
+    if (type === "main" && projectType === "project") return t.cv.freelance;
+    if (type === "side") return t.cv.sideProject;
     return "";
   };
 </script>
@@ -48,7 +53,7 @@
         {@const dates = from === to ? from : `${from} - ${to}`}
 
         <div class="page-break-avoid flex gap-4 text-sm">
-          <div class="shrink-0 w-40 cv-text-meta">{dates}</div>
+          <div class="shrink-0 w-32 cv-text-meta">{dates}</div>
           <div class="space-y-2">
             <header>
               <div class="cv-text-primary font-medium">
@@ -88,7 +93,7 @@
 
             {#if showDetails}
               <div>
-                <h3 class="text-xs">Technologien</h3>
+                <h3 class="text-xs">{t.cv.technologies}</h3>
                 <div class="float-left space-x-1">
                   {#each data.technologies ?? [] as text (text)}
                     <span class="cv-badge">

@@ -7,7 +7,7 @@ from: 2013-09-01
 to: 2015-05-01
 type: main
 projectType: permanent
-intro: Entwicklung eines webbasierten Energiedatenmanagement-Systems mit Datenvisualisierung und Anbindung von Messgeräten und Sensoren
+intro: Festanstellung als Ingenieur Energiedatenmanagement mit Entwicklung eines webbasierten Energiedatenmanagement-Systems mit Datenvisualisierung und Anbindung von Messgeräten und Sensoren
 tasks:
   - Entwicklung eines webbasierten Energiedatenmanagement-Systems
   - Konzeption und Planung von Messkonzepten

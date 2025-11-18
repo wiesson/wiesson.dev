@@ -7,7 +7,7 @@ from: 2025-05-01
 to: now
 type: side
 projectType: project
-intro: Plattform zur automatischen Überwachung von 400+ Maklern im Großraum Düsseldorf, die durch KI-gestützte Property-Extraction und tägliches Crawling manuelle Website-Checks vollständig ersetzt
+intro: "Plattform zur automatischen Überwachung von 50+ Maklern im Großraum Düsseldorf (Ziel: 400), die durch KI-gestützte Property-Extraction und tägliches Crawling manuelle Website-Checks vollständig ersetzt"
 tasks:
   - "Entwicklung einer vollautomatisierten Immobilien-Monitoring-Plattform (SvelteKit 5 + Supabase + Inngest) mit produktionsreifem Prototyp für 5 aktive Makler und 63 überwachte Properties – automatisches Crawling 3x täglich, Change-Detection-System und Daily-Digest-Emails"
   - "Implementierung einer Multi-Strategie Property-Extraction mit LLM-gestützter DOM-Selector-Discovery (GPT-5, Claude), JSON-API-Detection für React-SPAs und Heuristic-Fallbacks– automatische Methoden-Selektion basierend auf Site-Typ"

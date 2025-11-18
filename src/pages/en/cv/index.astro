@@ -5,12 +5,12 @@ import CvEducationListing from "$components/cv/cv-education-listing.svelte";
 import { getCollection } from "astro:content";
 import Button from "$lib/ui/button/button.svelte";
 import { Download } from "@lucide/svelte";
-import { getTranslations } from "../../i18n";
+import { getTranslations } from "../../../i18n";
 
-const lang = "de";
+const lang = "en";
 const t = getTranslations(lang);
-const cvWork = await getCollection("work");
-const cvEducation = await getCollection("education");
+const cvWork = await getCollection("work-en");
+const cvEducation = await getCollection("education-en");
 
 const now = new Date();
 

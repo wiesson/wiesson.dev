@@ -3,21 +3,25 @@ import "../styles/base.css";
 
 import CvHeader from "$components/cv/cv-header.svelte";
 import SiteFooter from "$components/layout/site-footer.svelte";
+import { getTranslations } from "../i18n";
+import type { Locale } from "../i18n";
 
 const isProd = import.meta.env.PROD;
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "de" } = Astro.props;
+const t = getTranslations(lang);
 ---
 
-<html lang="de">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>
-      Arne Wiese | Freier Entwickler für Web-Technologien, APIs und KI-Lösungen
-    </title>
-    <meta
-      name="description"
-      content="Fullstack · JavaScript · TypeScript · NodeJS · Python · Golang"
-    />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
@@ -27,17 +31,18 @@ const isProd = import.meta.env.PROD;
     <CvHeader
       name="Arne Wiese"
       title="Senior AI Software Engineer"
-      location="Meerbusch, Deutschland"
+      location={lang === "en" ? "Meerbusch, Germany" : "Meerbusch, Deutschland"}
       email="arne@wiese.me"
       website="arnewiese.de"
       imageUrl="/assets/arne-neu-quadratisch.jpeg"
+      lang={lang}
     />
 
     <main class="app-grid space-y-12 md:space-y-24">
       <slot />
     </main>
 
-    <SiteFooter />
+    <SiteFooter lang={lang} currentPath={Astro.url.pathname} />
 
     {isProd && <script data-domain="arnewiese.de" src="/js/script.js" />}
   </body>

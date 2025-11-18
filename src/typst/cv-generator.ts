@@ -156,13 +156,31 @@ function generateEducationEntryTypst(
 }
 
 /**
+ * Translation map for section titles
+ */
+const sectionTitles = {
+  de: {
+    mainWork: "Projekte & Festanstellungen",
+    sideWork: "Nebenprojekte",
+    education: "Ausbildung",
+  },
+  en: {
+    mainWork: "Projects & Full-time Positions",
+    sideWork: "Side Projects",
+    education: "Education",
+  },
+};
+
+/**
  * Generate complete Typst source code for CV
  */
 export function generateCvTypstSource(
   data: TypstCvData,
-  showDetails: boolean = false
+  showDetails: boolean = false,
+  lang: string = "de"
 ): string {
   const profile = data.profile;
+  const titles = sectionTitles[lang as keyof typeof sectionTitles] || sectionTitles.de;
 
   let typstSource = `#set page(
   paper: "a4",
@@ -241,7 +259,7 @@ export function generateCvTypstSource(
   // Main Work Section
   if (data.mainWork && data.mainWork.length > 0) {
     typstSource += `// Main Work Section
-#text(size: 12pt, weight: "semibold")[Projekte & Festanstellungen]
+#text(size: 12pt, weight: "semibold")[${escapeTypstString(titles.mainWork)}]
 #v(0.5em)
 
 `;
@@ -261,7 +279,7 @@ export function generateCvTypstSource(
   // Side Work Section
   if (data.sideWork && data.sideWork.length > 0) {
     typstSource += `// Side Work Section
-#text(size: 12pt, weight: "semibold")[Nebenprojekte]
+#text(size: 12pt, weight: "semibold")[${escapeTypstString(titles.sideWork)}]
 #v(0.5em)
 
 `;
@@ -281,7 +299,7 @@ export function generateCvTypstSource(
   // Education Section
   if (data.education && data.education.length > 0) {
     typstSource += `// Education Section
-#text(size: 12pt, weight: "semibold")[Ausbildung]
+#text(size: 12pt, weight: "semibold")[${escapeTypstString(titles.education)}]
 #v(0.5em)
 
 `;

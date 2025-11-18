@@ -9,6 +9,13 @@ export default defineConfig({
   output: "static",
   adapter: vercel(),
   integrations: [tailwind(), svelte()],
+  i18n: {
+    defaultLocale: "de",
+    locales: ["de", "en"],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   vite: {
     resolve: {
       alias: {

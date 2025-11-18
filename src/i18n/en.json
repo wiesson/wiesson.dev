@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Home",
+    "cv": "Resume",
+    "services": "Services"
+  },
+  "buttons": {
+    "downloadPdf": "Download PDF",
+    "downloadPdfDe": "PDF (DE)",
+    "downloadPdfEn": "PDF (EN)"
+  },
+  "languages": {
+    "de": "German",
+    "en": "English"
+  },
+  "sections": {
+    "about": "About",
+    "projects": "Clients & Projects",
+    "technologies": "Technologies & Skills",
+    "workExperience": "Projects & Full-time Positions",
+    "sideProjects": "Side Projects",
+    "education": "Education"
+  },
+  "cv": {
+    "technologies": "Technologies",
+    "permanent": "Permanent Position",
+    "freelance": "Freelance",
+    "sideProject": "Side Project"
+  },
+  "footer": {
+    "contact": "Contact",
+    "social": "Social",
+    "allRightsReserved": "All rights reserved",
+    "location": "Meerbusch, Germany"
+  },
+  "about": {
+    "title": "About",
+    "whatIBring": "What I bring",
+    "whatISeek": "What I'm looking for",
+    "availability": "Availability",
+    "availabilityHours": "20-40h/week",
+    "availabilityStatus": "available immediately"
+  },
+  "meta": {
+    "title": "Arne Wiese | Freelance Developer for Web Technologies, APIs and AI Solutions",
+    "description": "Senior AI Software Engineer with 10+ years of experience in full-stack development, specialized in pragmatic solutions, rapid MVPs and AI integration"
+  }
+}

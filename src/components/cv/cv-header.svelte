@@ -1,9 +1,13 @@
 <script lang="ts">
+  import { getCvProfile } from "../../lib/config/cv";
+  import type { Locale } from "../../i18n";
+
   interface Props {
     name: string;
     title: string;
     location?: string;
     imageUrl: string;
+    lang?: Locale;
     showEducation?: boolean;
     showIntro?: boolean;
     showEmail?: boolean;
@@ -15,17 +19,18 @@
     title,
     location,
     imageUrl,
+    lang = "de",
     showEducation = true,
     showIntro = true,
     showEmail = true,
     showWebsite = true,
   }: Props = $props();
 
-  const education = "M.Sc. Energy Science and Technology";
-  const intro =
-    "10+ Jahre Full-Stack-Entwicklung – spezialisiert auf pragmatische Lösungen, schnelle MVPs und KI-Integration";
-  const email = "arne@wiese.me";
-  const website = "wiesson.dev";
+  const profile = getCvProfile(lang);
+  const education = profile.education;
+  const intro = profile.intro;
+  const email = profile.email;
+  const website = profile.website;
 </script>
 
 <header class="app-grid py-16">
