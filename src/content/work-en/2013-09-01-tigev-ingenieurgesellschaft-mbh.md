@@ -7,7 +7,7 @@ from: 2013-09-01
 to: 2015-05-01
 type: main
 projectType: permanent
-intro: Development of a web-based energy data management system with data visualization and integration of measuring devices and sensors
+intro: Permanent position as Energy Data Management Engineer developing a web-based energy data management system with data visualization and integration of measuring devices and sensors
 tasks:
   - Development of a web-based energy data management system
   - Conception and planning of measurement concepts

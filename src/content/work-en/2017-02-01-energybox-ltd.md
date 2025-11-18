@@ -7,7 +7,7 @@ from: 2017-02-01
 to: 2019-07-01
 type: main
 projectType: permanent
-intro: Leading the frontend team and developing an IoT platform for worldwide energy data monitoring with an extensive React component library (150+ components)
+intro: Permanent position as Lead Frontend Engineer leading the frontend team and developing an IoT platform for worldwide energy data monitoring with an extensive React component library (150+ components)
 tasks:
   - Leading the frontend team from 02.2019
   - Development of an IoT platform for worldwide energy data monitoring
