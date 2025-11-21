@@ -13,8 +13,8 @@
     "@astrojs/svelte": "^7.2.2",
     "@astrojs/vercel": "^9.0.1",
     "@lucide/astro": "^0.554.0",
-    "astro": "^5.15.9",
-    "svelte": "^5.43.11",
+    "astro": "^5.16.0",
+    "svelte": "^5.43.14",
     "zod": "^4.1.12"
   },
   "devDependencies": {
@@ -26,7 +26,7 @@
     "@tailwindcss/vite": "^4.1.17",
     "@tanstack/table-core": "^8.21.3",
     "@types/node": "^24.10.1",
-    "bits-ui": "^2.14.3",
+    "bits-ui": "^2.14.4",
     "clsx": "^2.1.1",
     "mode-watcher": "^1.1.0",
     "paneforge": "^1.0.2",
