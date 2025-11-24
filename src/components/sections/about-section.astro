@@ -96,41 +96,45 @@ const { lang = "de" } = Astro.props;
       <div>
         <h2 class="title mb-4">{lang === "de" ? "Was ich suche" : "What I'm looking for"}</h2>
         {lang === "de" ? (
-          <ul class="space-y-2 text-sm">
-            <li class="flex gap-3">
-              <span class="shrink-0">→</span>
-              <span>AI/LLM-Produktentwicklung oder Technical Leadership</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="shrink-0">→</span>
-              <span>Bevorzugt Freelance – Festanstellung nur als PM/PO/CTO</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="shrink-0">→</span>
-              <span>
-                Offen für Produkt-Partnerschaften auf Equity-Basis (Idee +
-                Marktzugang vs. Development)
-              </span>
-            </li>
-          </ul>
+          <div class="space-y-4">
+            <ul class="space-y-2 text-sm">
+              <li class="flex gap-3">
+                <span class="shrink-0">→</span>
+                <span>AI/LLM-Produktentwicklung oder Technical Leadership</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="shrink-0">→</span>
+                <span>Freelance, 20-40h/Woche, kurzfristig verfügbar</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="shrink-0">→</span>
+                <span>Offen für Produkt-Partnerschaften auf Equity-Basis</span>
+              </li>
+            </ul>
+            <p class="text-sm">
+              Auch offen für Festanstellung in strategischen Rollen (Product Lead, CTO, Head of Engineering)
+            </p>
+          </div>
         ) : (
-          <ul class="space-y-2 text-sm">
-            <li class="flex gap-3">
-              <span class="shrink-0">→</span>
-              <span>AI/LLM product development or technical leadership</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="shrink-0">→</span>
-              <span>Preferably freelance – permanent position only as PM/PO/CTO</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="shrink-0">→</span>
-              <span>
-                Open to product partnerships on equity basis (idea +
-                market access vs. development)
-              </span>
-            </li>
-          </ul>
+          <div class="space-y-4">
+            <ul class="space-y-2 text-sm">
+              <li class="flex gap-3">
+                <span class="shrink-0">→</span>
+                <span>AI/LLM product development or technical leadership</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="shrink-0">→</span>
+                <span>Freelance, 20-40h/week, available immediately</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="shrink-0">→</span>
+                <span>Open to product partnerships on equity basis</span>
+              </li>
+            </ul>
+            <p class="text-sm">
+              Also open to permanent positions in strategic roles (Product Lead, CTO, Head of Engineering)
+            </p>
+          </div>
         )}
       </div>
 
