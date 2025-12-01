@@ -5,6 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --font-display: "Geist", system-ui, -apple-system, sans-serif;
+  --font-body: "Geist", system-ui, -apple-system, sans-serif;
+
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.13 0.028 261.692);
@@ -117,6 +120,15 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
   }
 }
 
@@ -205,12 +217,14 @@ body {
 
 /* Generic heading classes for all sections */
 .title {
-  @apply text-lg font-semibold text-center;
+  @apply text-lg font-semibold text-left;
+  font-family: var(--font-display);
   color: var(--foreground);
 }
 
 .heading {
   @apply text-xl font-normal;
+  font-family: var(--font-display);
   color: var(--foreground);
 }
 
@@ -238,9 +252,89 @@ body {
 }
 
 .cv-badge {
-  @apply inline-flex items-center px-2 py-0.5 rounded text-xs;
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs;
   background-color: var(--muted);
   color: var(--foreground);
+  border: 1px solid transparent;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.cv-badge:hover {
+  background-color: oklch(from var(--muted) calc(l - 0.03) c h);
+  border-color: var(--border);
+}
+
+/* ============================================================================
+   Hover Micro-interactions
+   ============================================================================ */
+
+/* Animated underline that slides in from left */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.25s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Refined card hover - subtle border shift, no vertical movement */
+.card-hover {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  border-color: oklch(from var(--border) calc(l - 0.08) c h);
+  box-shadow: 0 2px 8px -2px oklch(0 0 0 / 0.08);
+}
+
+/* Image hover - subtle scale */
+.img-hover {
+  transition: transform 0.3s ease;
+}
+
+.img-hover:hover {
+  transform: scale(1.02);
+}
+
+/* Tech scroll container - horizontal scroll on mobile with fade */
+.tech-scroll-container > div {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tech-scroll-container > div::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .tech-scroll-container {
+    mask-image: linear-gradient(
+      to right,
+      black calc(100% - 1.5rem),
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      black calc(100% - 1.5rem),
+      transparent 100%
+    );
+  }
 }
 
 @media print {

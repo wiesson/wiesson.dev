@@ -101,20 +101,22 @@ const technologies = {
 ---
 
 <section id="technologies" class="app-grid py-16 scroll-mt-16">
-  <div class="app-wide-column">
+  <div class="app-text-column">
     <!-- Section Title -->
-    <h2 class="title mb-6">{t.sections.technologies}</h2>
+    <h2 class="title mb-8">{t.sections.technologies}</h2>
 
     <!-- Technologies Grid -->
-    <div class="space-y-12">
+    <div class="space-y-6">
       {
         Object.entries(technologies).map(([category, techs]) => (
           <div>
-            <h3 class="title mb-4">{category}</h3>
-            <div class="flex flex-wrap gap-2">
-              {techs.map((tech) => (
-                <span class="cv-badge">{tech}</span>
-              ))}
+            <h3 class="text-sm font-semibold cv-text-secondary mb-3">{category}</h3>
+            <div class="tech-scroll-container">
+              <div class="flex gap-2 overflow-x-auto pb-2 md:flex-wrap md:overflow-visible md:pb-0">
+                {techs.map((tech) => (
+                  <span class="cv-badge shrink-0">{tech}</span>
+                ))}
+              </div>
             </div>
           </div>
         ))

@@ -49,20 +49,40 @@
   ];
 </script>
 
-<div class="grid grid-cols-2 md:grid-cols-4 gap-2">
-  {#each items as item (item.src)}
-    <a
-      href={item.href + "?ref=arnewiese.de"}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="group bg-muted hover:bg-primary/25 transition-colors duration-300 rounded-lg flex items-center justify-center h-32 px-4"
-    >
-      <img
-        src={`/assets/customers/${item.src}`}
-        alt={item.src.replace(".svg", "")}
-        class={`block ${item.class} transition duration-1000 ease-out group-hover:scale-110`}
-        loading="lazy"
-      />
-    </a>
-  {/each}
+<!-- Horizontal scroll on mobile, grid on desktop -->
+<div class="logo-scroll-container relative">
+  <div class="flex md:grid md:grid-cols-4 gap-2 overflow-x-auto md:overflow-visible pb-2 md:pb-0 scroll-smooth snap-x snap-mandatory md:snap-none">
+    {#each items as item (item.src)}
+      <a
+        href={item.href + "?ref=arnewiese.de"}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group shrink-0 w-28 md:w-auto snap-start bg-muted rounded-lg flex items-center justify-center h-20 px-3 border border-transparent card-hover"
+      >
+        <img
+          src={`/assets/customers/${item.src}`}
+          alt={item.src.replace(".svg", "")}
+          class="block max-h-8 w-auto object-contain transition duration-300 ease-out group-hover:scale-105"
+          loading="lazy"
+        />
+      </a>
+    {/each}
+  </div>
 </div>
+
+<style>
+  .logo-scroll-container > div {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .logo-scroll-container > div::-webkit-scrollbar {
+    display: none;
+  }
+  /* Fade mask only on mobile */
+  @media (max-width: 767px) {
+    .logo-scroll-container {
+      mask-image: linear-gradient(to right, black calc(100% - 2rem), transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, black calc(100% - 2rem), transparent 100%);
+    }
+  }
+</style>

@@ -55,11 +55,9 @@ const projectUrls: Record<string, string | null> = {
 ---
 
 <section class="app-grid py-12">
-  <div class="app-text-column mb-6">
-    <h2 class="title">{t.sections.featuredProjects}</h2>
-  </div>
-  <div class="app-wide-column">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+  <div class="app-text-column">
+    <h2 class="title mb-6">{t.sections.featuredProjects}</h2>
+    <div class="space-y-4">
       {
         uniqueProjects.slice(0, 3).map((project) => {
           const slug = featuredSlugs.find(
@@ -71,53 +69,51 @@ const projectUrls: Record<string, string | null> = {
           const isComingSoon = slug && projectUrls[slug] === null;
 
           return (
-            <div class="group block bg-card rounded-xl overflow-hidden border border-border transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5">
-              <div class="p-4 space-y-2">
-                <div class="flex items-center justify-between gap-2">
-                  <h3 class="font-semibold text-foreground">
-                    {project.data.project}
-                  </h3>
-                  {isComingSoon ? (
-                    <span class="text-[10px] font-medium px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
-                      {lang === "de" ? "Bald verfügbar" : "Coming soon"}
-                    </span>
-                  ) : url ? (
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-muted-foreground hover:text-foreground transition-colors shrink-0"
-                      aria-label={`Visit ${project.data.project}`}
+            <div class="p-4 rounded-lg border border-border bg-card card-hover">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <h3 class="font-semibold text-foreground">
+                  {project.data.project}
+                </h3>
+                {isComingSoon ? (
+                  <span class="cv-badge text-[10px]">
+                    {lang === "de" ? "Bald" : "Soon"}
+                  </span>
+                ) : url ? (
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-muted-foreground hover:text-foreground transition-colors shrink-0"
+                    aria-label={`Visit ${project.data.project}`}
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      <svg
-                        class="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                    </a>
-                  ) : null}
-                </div>
-                {project.data.intro && (
-                  <p class="text-sm text-muted-foreground line-clamp-3">
-                    {project.data.intro}
-                  </p>
-                )}
-                {project.data.technologies && (
-                  <div class="flex flex-wrap gap-1 pt-2">
-                    {project.data.technologies.slice(0, 4).map((tech) => (
-                      <span class="cv-badge text-[10px]">{tech}</span>
-                    ))}
-                  </div>
-                )}
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </a>
+                ) : null}
               </div>
+              {project.data.intro && (
+                <p class="text-sm text-muted-foreground line-clamp-2">
+                  {project.data.intro}
+                </p>
+              )}
+              {project.data.technologies && (
+                <div class="flex flex-wrap gap-1 mt-3">
+                  {project.data.technologies.slice(0, 4).map((tech) => (
+                    <span class="cv-badge text-[10px]">{tech}</span>
+                  ))}
+                </div>
+              )}
             </div>
           );
         })

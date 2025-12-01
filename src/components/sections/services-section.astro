@@ -35,16 +35,14 @@ const services = [
 ---
 
 <section class="app-grid py-12">
-  <div class="app-text-column mb-6">
-    <h2 class="title">{t.sections.services}</h2>
-  </div>
-  <div class="app-wide-column">
+  <div class="app-text-column">
+    <h2 class="title mb-6">{t.sections.services}</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       {
         services.map((service) => (
-          <div class="p-6 rounded-xl border border-border bg-card">
-            <div class="flex size-12 items-center justify-center rounded-full bg-muted mb-3">
-              <service.icon class="size-6" />
+          <div class="p-5 rounded-lg border border-border bg-card card-hover">
+            <div class="flex size-10 items-center justify-center rounded-full bg-muted mb-3">
+              <service.icon class="size-5" />
             </div>
             <h3 class="font-semibold text-foreground mb-2">{service.title}</h3>
             <p class="text-sm text-muted-foreground">{service.description}</p>

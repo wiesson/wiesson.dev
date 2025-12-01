@@ -3,8 +3,6 @@ import BaseLayout from "$layouts/base-layout.astro";
 import CvWorkListing from "$components/cv/cv-work-listing.svelte";
 import CvEducationListing from "$components/cv/cv-education-listing.svelte";
 import { getCollection } from "astro:content";
-import Button from "$lib/ui/button/button.svelte";
-import { Download } from "@lucide/svelte";
 import { getTranslations } from "../../i18n";
 
 const lang = "de";
@@ -25,20 +23,12 @@ cvWork.sort((a, b) => {
 });
 ---
 
-<BaseLayout lang={lang}>
-  <div class="app-grid py-8">
-    <div class="app-text-column flex justify-end gap-2">
-      <Button href="/api/cv/pdf?lang=de" variant="outline" size="sm">
-        <Download />
-        {t.buttons.downloadPdfDe}
-      </Button>
-      <Button href="/api/cv/pdf?lang=en" variant="outline" size="sm">
-        <Download />
-        {t.buttons.downloadPdfEn}
-      </Button>
-    </div>
-  </div>
-
+<BaseLayout
+  lang={lang}
+  headerType="page"
+  pageTitle={t.nav.cv}
+  showDownloads={true}
+>
   <CvWorkListing
     title={t.sections.workExperience}
     items={cvWork.filter((item) => item.data.type === "main")}
