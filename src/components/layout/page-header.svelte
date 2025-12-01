@@ -5,6 +5,7 @@
     lang?: Locale;
     title?: string;
     backHref?: string;
+    backLabel?: string;
     showDownloads?: boolean;
   }
 
@@ -12,10 +13,12 @@
     lang = "de",
     title = "",
     backHref = "/",
+    backLabel,
     showDownloads = false
   }: Props = $props();
 
   const t = getTranslations(lang);
+  const displayBackLabel = backLabel || t.nav.home;
 </script>
 
 <header class="app-grid py-6">
@@ -28,7 +31,7 @@
           class="flex items-center gap-2 text-sm cv-text-secondary hover:text-foreground transition-colors"
         >
           <span aria-hidden="true">←</span>
-          <span>{t.nav.home}</span>
+          <span>{displayBackLabel}</span>
         </a>
         {#if title}
           <span class="cv-text-meta">·</span>

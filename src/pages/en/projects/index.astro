@@ -1,0 +1,76 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "$layouts/base-layout.astro";
+import { getTranslations } from "../../../i18n";
+
+const lang = "en";
+const t = getTranslations(lang);
+
+const projects = await getCollection("projects-en");
+
+// Sort by featured first, then alphabetically
+const sortedProjects = projects.sort((a, b) => {
+  if (a.data.featured && !b.data.featured) return -1;
+  if (!a.data.featured && b.data.featured) return 1;
+  return a.data.title.localeCompare(b.data.title);
+});
+
+const statusLabels: Record<string, string> = {
+  live: "Live",
+  beta: "Beta",
+  archived: "Archived",
+  "coming-soon": "Soon",
+};
+---
+
+<BaseLayout lang={lang} headerType="page" pageTitle={t.sections.featuredProjects}>
+  <section class="app-grid py-8">
+    <div class="app-text-column">
+      <h1 class="text-2xl font-semibold text-foreground mb-6">{t.sections.featuredProjects}</h1>
+      <div class="space-y-4">
+        {sortedProjects.map((project) => (
+          <a
+            href={`/en/projects/${project.id.replace(/\.md$/, "")}`}
+            class="block p-4 rounded-lg border border-border bg-card card-hover"
+          >
+            <div class="flex items-start justify-between gap-3">
+              <div class="space-y-1 min-w-0">
+                <h2 class="font-semibold text-foreground truncate">{project.data.title}</h2>
+                <p class="text-sm cv-text-secondary line-clamp-2">{project.data.intro}</p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                {project.data.status && (
+                  <span class="cv-badge text-xs">
+                    {statusLabels[project.data.status] || project.data.status}
+                  </span>
+                )}
+                <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+            {project.data.technologies && project.data.technologies.length > 0 && (
+              <div class="flex flex-wrap gap-1 mt-3">
+                {project.data.technologies.slice(0, 4).map((tech) => (
+                  <span class="cv-badge text-[10px]">{tech}</span>
+                ))}
+                {project.data.technologies.length > 4 && (
+                  <span class="cv-badge text-[10px]">+{project.data.technologies.length - 4}</span>
+                )}
+              </div>
+            )}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

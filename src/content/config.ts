@@ -42,10 +42,49 @@ const cvEducationCollection = defineCollection({
   }),
 });
 
+const projectsCollection = defineCollection({
+  schema: z.object({
+    // Required
+    title: z.string(),
+    intro: z.string(),
+
+    // Optional - Business Value (for clients)
+    problem: z.string().optional(),
+    solution: z.string().optional(),
+    results: z
+      .array(
+        z.object({
+          metric: z.string(),
+          value: z.string(),
+        })
+      )
+      .optional(),
+
+    // Optional - Technical Depth (for builders)
+    architecture: z.string().optional(),
+    challenges: z.array(z.string()).optional(),
+    learnings: z.array(z.string()).optional(),
+
+    // Metadata
+    technologies: z.array(z.string()).optional(),
+    role: z.string().optional(),
+    timeline: z.string().optional(),
+    url: z.string().optional(),
+    status: z.enum(["live", "beta", "archived", "coming-soon"]).optional(),
+    featured: z.boolean().optional(),
+
+    // Media
+    cover: z.string().optional(),
+    screenshots: z.array(z.string()).optional(),
+  }),
+});
+
 export const collections = {
   blog: blogCollection,
   work: cvWorkCollection,
   education: cvEducationCollection,
   "work-en": cvWorkCollection,
   "education-en": cvEducationCollection,
+  projects: projectsCollection,
+  "projects-en": projectsCollection,
 };

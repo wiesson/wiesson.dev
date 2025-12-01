@@ -65,6 +65,17 @@
       "description": "Development of Minimum Viable Products and SaaS extensions: from validation to paying customer."
     }
   },
+  "project": {
+    "backToProjects": "Projects",
+    "problem": "The Problem",
+    "solution": "The Solution",
+    "results": "Results",
+    "architecture": "Architecture",
+    "challenges": "Challenges",
+    "learnings": "Learnings",
+    "screenshots": "Screenshots",
+    "viewProject": "View project"
+  },
   "meta": {
     "title": "Arne Wiese | Freelance Developer for Web Technologies, APIs and SaaS Solutions",
     "description": "Senior Software Engineer with 10+ years of experience in full-stack development, specialized in pragmatic solutions, rapid MVPs and system architecture"

@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import ProjectLayout from "$layouts/project-layout.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.id.replace(/\.md$/, "") },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<ProjectLayout
+  title={project.data.title}
+  intro={project.data.intro}
+  problem={project.data.problem}
+  solution={project.data.solution}
+  results={project.data.results}
+  architecture={project.data.architecture}
+  challenges={project.data.challenges}
+  learnings={project.data.learnings}
+  technologies={project.data.technologies}
+  role={project.data.role}
+  timeline={project.data.timeline}
+  url={project.data.url}
+  status={project.data.status}
+  cover={project.data.cover}
+  screenshots={project.data.screenshots}
+  lang="de"
+>
+  {project.body && (
+    <section class="app-grid">
+      <div class="app-text-column prose prose-sm">
+        <Content />
+      </div>
+    </section>
+  )}
+</ProjectLayout>

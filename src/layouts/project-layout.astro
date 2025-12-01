@@ -1,0 +1,264 @@
+---
+import "../styles/base.css";
+
+import PageHeader from "$components/layout/page-header.svelte";
+import SiteFooter from "$components/layout/site-footer.svelte";
+import { getTranslations } from "../i18n";
+import type { Locale } from "../i18n";
+
+interface Result {
+  metric: string;
+  value: string;
+}
+
+interface Props {
+  title: string;
+  intro: string;
+  problem?: string;
+  solution?: string;
+  results?: Result[];
+  architecture?: string;
+  challenges?: string[];
+  learnings?: string[];
+  technologies?: string[];
+  role?: string;
+  timeline?: string;
+  url?: string;
+  status?: "live" | "beta" | "archived" | "coming-soon";
+  cover?: string;
+  screenshots?: string[];
+  lang?: Locale;
+}
+
+const {
+  title,
+  intro,
+  problem,
+  solution,
+  results,
+  architecture,
+  challenges,
+  learnings,
+  technologies,
+  role,
+  timeline,
+  url,
+  status,
+  cover,
+  screenshots,
+  lang = "de",
+} = Astro.props;
+
+const isProd = import.meta.env.PROD;
+const t = getTranslations(lang);
+
+const statusLabels: Record<string, { de: string; en: string }> = {
+  live: { de: "Live", en: "Live" },
+  beta: { de: "Beta", en: "Beta" },
+  archived: { de: "Archiviert", en: "Archived" },
+  "coming-soon": { de: "Bald", en: "Soon" },
+};
+
+const statusLabel = status ? statusLabels[status]?.[lang] || status : null;
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title} | {t.meta.title}</title>
+    <meta name="description" content={intro} />
+    {cover && <meta property="og:image" content={cover} />}
+  </head>
+  <body>
+    <PageHeader
+      lang={lang}
+      title={title}
+      backHref={lang === "de" ? "/projects" : "/en/projects"}
+      backLabel={t.project.backToProjects}
+    />
+
+    <main class="space-y-8 md:space-y-12">
+      <!-- Hero Section -->
+      <section class="app-grid">
+        <div class="app-text-column">
+          <div class="flex items-start justify-between gap-4">
+            <div class="space-y-2">
+              <h1 class="text-2xl font-semibold text-foreground">{title}</h1>
+              <p class="text-base cv-text-secondary">{intro}</p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              {statusLabel && (
+                <span class="cv-badge text-xs">{statusLabel}</span>
+              )}
+              {url && (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label={`Visit ${title}`}
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              )}
+            </div>
+          </div>
+
+          <!-- Meta row -->
+          {(role || timeline) && (
+            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-4 text-sm cv-text-meta">
+              {role && <span>{role}</span>}
+              {role && timeline && <span>·</span>}
+              {timeline && <span>{timeline}</span>}
+            </div>
+          )}
+
+          <!-- Technologies -->
+          {technologies && technologies.length > 0 && (
+            <div class="tech-scroll-container mt-4">
+              <div class="flex gap-1.5 overflow-x-auto pb-1 snap-x snap-mandatory">
+                {technologies.map((tech) => (
+                  <span class="cv-badge text-xs shrink-0 snap-start">{tech}</span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <!-- Cover Image -->
+      {cover && (
+        <section class="app-grid">
+          <div class="app-wide-column">
+            <img
+              src={cover}
+              alt={title}
+              class="w-full rounded-lg border border-border img-hover"
+              loading="lazy"
+            />
+          </div>
+        </section>
+      )}
+
+      <!-- Problem Section -->
+      {problem && (
+        <section class="app-grid">
+          <div class="app-text-column">
+            <h2 class="title mb-3">{t.project.problem}</h2>
+            <p class="text-sm cv-text-secondary leading-relaxed">{problem}</p>
+          </div>
+        </section>
+      )}
+
+      <!-- Solution Section -->
+      {solution && (
+        <section class="app-grid">
+          <div class="app-text-column">
+            <h2 class="title mb-3">{t.project.solution}</h2>
+            <p class="text-sm cv-text-secondary leading-relaxed">{solution}</p>
+          </div>
+        </section>
+      )}
+
+      <!-- Results Section -->
+      {results && results.length > 0 && (
+        <section class="app-grid">
+          <div class="app-text-column">
+            <h2 class="title mb-4">{t.project.results}</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {results.map((result) => (
+                <div class="p-4 rounded-lg border border-border bg-card">
+                  <div class="text-xl font-semibold text-foreground">{result.value}</div>
+                  <div class="text-xs cv-text-meta mt-1">{result.metric}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <!-- Architecture Section -->
+      {architecture && (
+        <section class="app-grid">
+          <div class="app-text-column">
+            <h2 class="title mb-3">{t.project.architecture}</h2>
+            <p class="text-sm cv-text-secondary leading-relaxed">{architecture}</p>
+          </div>
+        </section>
+      )}
+
+      <!-- Challenges Section -->
+      {challenges && challenges.length > 0 && (
+        <section class="app-grid">
+          <div class="app-text-column">
+            <h2 class="title mb-3">{t.project.challenges}</h2>
+            <ul class="space-y-2">
+              {challenges.map((challenge) => (
+                <li class="text-sm cv-text-secondary leading-relaxed flex gap-2">
+                  <span class="text-muted-foreground shrink-0">•</span>
+                  <span>{challenge}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      <!-- Learnings Section -->
+      {learnings && learnings.length > 0 && (
+        <section class="app-grid">
+          <div class="app-text-column">
+            <h2 class="title mb-3">{t.project.learnings}</h2>
+            <ul class="space-y-2">
+              {learnings.map((learning) => (
+                <li class="text-sm cv-text-secondary leading-relaxed flex gap-2">
+                  <span class="text-muted-foreground shrink-0">•</span>
+                  <span>{learning}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      <!-- Screenshots Gallery -->
+      {screenshots && screenshots.length > 0 && (
+        <section class="app-grid">
+          <div class="app-wide-column">
+            <h2 class="title mb-4">{t.project.screenshots}</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {screenshots.map((screenshot, i) => (
+                <img
+                  src={screenshot}
+                  alt={`${title} screenshot ${i + 1}`}
+                  class="w-full rounded-lg border border-border img-hover"
+                  loading="lazy"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <!-- Markdown Content Slot -->
+      <slot />
+    </main>
+
+    <SiteFooter lang={lang} currentPath={Astro.url.pathname} />
+
+    {isProd && <script data-domain="arnewiese.de" src="/js/script.js" />}
+  </body>
+</html>
+
+<style>
+  .tech-scroll-container > div {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .tech-scroll-container > div::-webkit-scrollbar {
+    display: none;
+  }
+</style>

@@ -65,6 +65,17 @@
       "description": "Entwicklung von Minimum Viable Products und SaaS-Erweiterungen: Von der Validierung bis zum zahlenden Kunden."
     }
   },
+  "project": {
+    "backToProjects": "Projekte",
+    "problem": "Das Problem",
+    "solution": "Die Lösung",
+    "results": "Ergebnisse",
+    "architecture": "Architektur",
+    "challenges": "Herausforderungen",
+    "learnings": "Learnings",
+    "screenshots": "Screenshots",
+    "viewProject": "Projekt ansehen"
+  },
   "meta": {
     "title": "Arne Wiese | Freier Entwickler für Web-Technologien, APIs und SaaS-Lösungen",
     "description": "Senior Software Engineer mit 10+ Jahren Erfahrung in Full-Stack-Entwicklung, spezialisiert auf pragmatische Lösungen, schnelle MVPs und System-Architektur"
