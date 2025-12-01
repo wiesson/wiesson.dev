@@ -19,7 +19,10 @@
     "technologies": "Technologies & Skills",
     "workExperience": "Projects & Full-time Positions",
     "sideProjects": "Side Projects",
-    "education": "Education"
+    "education": "Education",
+    "services": "Services",
+    "featuredProjects": "Featured Projects",
+    "viewAllProjects": "All projects"
   },
   "cv": {
     "technologies": "Technologies",
@@ -35,14 +38,35 @@
   },
   "about": {
     "title": "About",
+    "tagline": "One contact, complete delivery",
+    "description": "I build web applications and SaaS products from initial idea to production-ready systems. Lean collaboration, direct communication, fast iteration – over 10 years of experience with TypeScript, React, Svelte, and Node.js.",
     "whatIBring": "What I bring",
     "whatISeek": "What I'm looking for",
     "availability": "Availability",
     "availabilityHours": "20-40h/week",
-    "availabilityStatus": "available immediately"
+    "availabilityStatus": "available immediately",
+    "viewFullCv": "View full resume"
+  },
+  "services": {
+    "systemPlanning": {
+      "title": "System Planning",
+      "description": "Architecture design for new projects: tech stack selection, data modeling, API design, and infrastructure planning."
+    },
+    "systemAudit": {
+      "title": "System Audit",
+      "description": "Analysis of existing systems: performance bottlenecks, security risks, technical debt, and scalability."
+    },
+    "roadmapCleanup": {
+      "title": "Roadmap & Cleanup",
+      "description": "Technical roadmap for grown codebases: prioritized modernization, step-by-step migration, documentation."
+    },
+    "mvpSaas": {
+      "title": "MVP & SaaS",
+      "description": "Development of Minimum Viable Products and SaaS extensions: from validation to paying customer."
+    }
   },
   "meta": {
-    "title": "Arne Wiese | Freelance Developer for Web Technologies, APIs and AI Solutions",
-    "description": "Senior AI Software Engineer with 10+ years of experience in full-stack development, specialized in pragmatic solutions, rapid MVPs and AI integration"
+    "title": "Arne Wiese | Freelance Developer for Web Technologies, APIs and SaaS Solutions",
+    "description": "Senior Software Engineer with 10+ years of experience in full-stack development, specialized in pragmatic solutions, rapid MVPs and system architecture"
   }
 }

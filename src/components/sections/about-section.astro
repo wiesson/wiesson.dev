@@ -1,154 +1,122 @@
 ---
-// About Section Component - Recruiter-Focused
 import type { Locale } from "../../i18n";
+import { getTranslations, getLocalizedPath } from "../../i18n";
 
 interface Props {
   lang?: Locale;
 }
 
 const { lang = "de" } = Astro.props;
+const t = getTranslations(lang);
 ---
 
 <section class="app-grid">
   <div class="app-text-column">
     <div class="flex flex-col gap-6">
       <!-- Opening Hook -->
-      <div class="text-base">
-        {lang === "de" ? (
-          <p class="leading-relaxed">
-            Ich bringe AI-Produkte von der Idee zum Launch. Senior Engineer mit 10+
-            Jahren Full-Stack-Entwicklung – spezialisiert auf pragmatische Lösungen,
-            schnelle MVPs und KI-Integration. Verfügbar 20-40h/Woche – kurzfristig oder langfristig.
-          </p>
-        ) : (
-          <p class="leading-relaxed">
-            I bring AI products from idea to launch. Senior Engineer with 10+
-            years of full-stack development – specialized in pragmatic solutions,
-            rapid MVPs, and AI integration. Available 20-40h/week – short-term or long-term.
-          </p>
-        )}
+      <div>
+        <p class="text-lg font-semibold mb-2">
+          {t.about.tagline}
+        </p>
+        <p class="text-base leading-relaxed">
+          {t.about.description}
+        </p>
       </div>
 
       <!-- Core Expertise -->
       <div>
-        <h2 class="title mb-4">{lang === "de" ? "Was ich mitbringe" : "What I bring"}</h2>
-        {lang === "de" ? (
-          <ul class="space-y-3 text-sm">
-            <li class="flex gap-3">
-              <span>
-                <span class="cv-badge">Senior AI Engineer</span> Multi-Agent LLM-Systeme,
-                GPT/Gemini-Integration, Vector Search – vom Prototyp bis Production
-              </span>
-            </li>
-            <li class="flex gap-3">
-              <span>
-                <span class="cv-badge">10+ Jahre Full-Stack</span> TypeScript, React,
-                Svelte, Next.js, Node.js, PostgreSQL – schnelle Iteration, nachhaltige
-                Architektur
-              </span>
-            </li>
-            <li class="flex gap-3">
-              <span>
-                <span class="cv-badge">Startup- und Enterprise-erfahren</span>
-                Douglas, sipgate, und diverse Scale-ups: Frontnow, Energybox
-              </span>
-            </li>
-            <li class="flex gap-3">
-              <span>
-                <span class="cv-badge">Technical Leadership</span> Architektur-Entscheidungen,
-                Mentoring, Product-Level Thinking – kann hands-on entwickeln oder strategisch
-                führen
-              </span>
-            </li>
-          </ul>
-        ) : (
-          <ul class="space-y-3 text-sm">
-            <li class="flex gap-3">
-              <span>
-                <span class="cv-badge">Senior AI Engineer</span> Multi-agent LLM systems,
-                GPT/Gemini integration, vector search – from prototype to production
-              </span>
-            </li>
-            <li class="flex gap-3">
-              <span>
-                <span class="cv-badge">10+ Years Full-Stack</span> TypeScript, React,
-                Svelte, Next.js, Node.js, PostgreSQL – rapid iteration, sustainable
-                architecture
-              </span>
-            </li>
-            <li class="flex gap-3">
-              <span>
-                <span class="cv-badge">Startup & Enterprise Experience</span>
-                Douglas, sipgate, and various scale-ups: Frontnow, Energybox
-              </span>
-            </li>
-            <li class="flex gap-3">
-              <span>
-                <span class="cv-badge">Technical Leadership</span> Architecture decisions,
-                mentoring, product-level thinking – can develop hands-on or lead strategically
-              </span>
-            </li>
-          </ul>
-        )}
-      </div>
-
-      <!-- What I'm Looking For -->
-      <div>
-        <h2 class="title mb-4">{lang === "de" ? "Was ich suche" : "What I'm looking for"}</h2>
-        {lang === "de" ? (
-          <ul class="space-y-2 text-sm">
-            <li class="flex gap-3">
-              <span class="shrink-0">→</span>
-              <span>AI/LLM-Produktentwicklung oder Technical Leadership</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="shrink-0">→</span>
-              <span>Bevorzugt Freelance – Festanstellung nur als PM/PO/CTO</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="shrink-0">→</span>
-              <span>
-                Offen für Produkt-Partnerschaften auf Equity-Basis (Idee +
-                Marktzugang vs. Development)
-              </span>
-            </li>
-          </ul>
-        ) : (
-          <ul class="space-y-2 text-sm">
-            <li class="flex gap-3">
-              <span class="shrink-0">→</span>
-              <span>AI/LLM product development or technical leadership</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="shrink-0">→</span>
-              <span>Preferably freelance – permanent position only as PM/PO/CTO</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="shrink-0">→</span>
-              <span>
-                Open to product partnerships on equity basis (idea +
-                market access vs. development)
-              </span>
-            </li>
-          </ul>
-        )}
+        <h2 class="title mb-4">{t.about.whatIBring}</h2>
+        {
+          lang === "de" ? (
+            <ul class="space-y-3 text-sm">
+              <li class="flex gap-3">
+                <span>
+                  <span class="cv-badge">10+ Jahre Full-Stack</span> TypeScript,
+                  React, Svelte, Next.js, Node.js, PostgreSQL – schnelle
+                  Iteration, nachhaltige Architektur
+                </span>
+              </li>
+              <li class="flex gap-3">
+                <span>
+                  <span class="cv-badge">Architektur & System-Design</span> Vom
+                  Prototyp bis Production – skalierbare APIs, saubere
+                  Datenmodelle, wartbarer Code
+                </span>
+              </li>
+              <li class="flex gap-3">
+                <span>
+                  <span class="cv-badge">Startup- und Enterprise-erfahren</span>
+                  Douglas, sipgate, und diverse Scale-ups: Frontnow, Energybox
+                </span>
+              </li>
+              <li class="flex gap-3">
+                <span>
+                  <span class="cv-badge">Technical Leadership</span>{" "}
+                  Architektur-Entscheidungen, Mentoring, Product-Level Thinking
+                  – kann hands-on entwickeln oder strategisch führen
+                </span>
+              </li>
+            </ul>
+          ) : (
+            <ul class="space-y-3 text-sm">
+              <li class="flex gap-3">
+                <span>
+                  <span class="cv-badge">10+ Years Full-Stack</span> TypeScript,
+                  React, Svelte, Next.js, Node.js, PostgreSQL – rapid iteration,
+                  sustainable architecture
+                </span>
+              </li>
+              <li class="flex gap-3">
+                <span>
+                  <span class="cv-badge">Architecture & System Design</span>{" "}
+                  From prototype to production – scalable APIs, clean data
+                  models, maintainable code
+                </span>
+              </li>
+              <li class="flex gap-3">
+                <span>
+                  <span class="cv-badge">Startup & Enterprise Experience</span>
+                  Douglas, sipgate, and various scale-ups: Frontnow, Energybox
+                </span>
+              </li>
+              <li class="flex gap-3">
+                <span>
+                  <span class="cv-badge">Technical Leadership</span>{" "}
+                  Architecture decisions, mentoring, product-level thinking –
+                  can develop hands-on or lead strategically
+                </span>
+              </li>
+            </ul>
+          )
+        }
       </div>
 
       <!-- Availability -->
       <dl class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t">
         <div>
           <dt class="text-xs font-semibold uppercase cv-text-meta mb-1">
-            {lang === "de" ? "Verfügbarkeit" : "Availability"}
+            {t.about.availability}
           </dt>
-          <dd>{lang === "de" ? "20-40h/Woche" : "20-40h/week"}</dd>
+          <dd>{t.about.availabilityHours}</dd>
         </div>
         <div>
           <dt class="text-xs font-semibold uppercase cv-text-meta mb-1">
             {lang === "de" ? "Ab" : "From"}
           </dt>
-          <dd>{lang === "de" ? "kurzfristig verfügbar" : "available immediately"}</dd>
+          <dd>{t.about.availabilityStatus}</dd>
         </div>
       </dl>
+
+      <!-- Ghost Button to CV -->
+      <div class="pt-2">
+        <a
+          href={getLocalizedPath("cv", lang)}
+          class="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        >
+          {t.about.viewFullCv}
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>

@@ -19,7 +19,10 @@
     "technologies": "Technologien & Skills",
     "workExperience": "Projekte & Festanstellungen",
     "sideProjects": "Nebenprojekte",
-    "education": "Ausbildung"
+    "education": "Ausbildung",
+    "services": "Leistungen",
+    "featuredProjects": "Eigene Projekte",
+    "viewAllProjects": "Alle Projekte"
   },
   "cv": {
     "technologies": "Technologien",
@@ -35,14 +38,35 @@
   },
   "about": {
     "title": "Über mich",
+    "tagline": "Ein Ansprechpartner, vollständige Umsetzung",
+    "description": "Ich entwickle Webapplikationen und SaaS-Produkte von der ersten Idee bis zum produktionsreifen System. Schlanke Zusammenarbeit, direkte Kommunikation, schnelle Iteration – über 10 Jahre Erfahrung mit TypeScript, React, Svelte und Node.js.",
     "whatIBring": "Was ich mitbringe",
     "whatISeek": "Was ich suche",
     "availability": "Verfügbarkeit",
     "availabilityHours": "20-40h/Woche",
-    "availabilityStatus": "kurzfristig verfügbar"
+    "availabilityStatus": "kurzfristig verfügbar",
+    "viewFullCv": "Ganzen Lebenslauf"
+  },
+  "services": {
+    "systemPlanning": {
+      "title": "System-Planung",
+      "description": "Architektur-Entwurf für neue Projekte: Tech-Stack-Auswahl, Datenmodellierung, API-Design und Infrastruktur-Planung."
+    },
+    "systemAudit": {
+      "title": "System-Audit",
+      "description": "Analyse bestehender Systeme: Performance-Bottlenecks, Security-Risiken, technische Schulden und Skalierbarkeit."
+    },
+    "roadmapCleanup": {
+      "title": "Roadmap & Cleanup",
+      "description": "Technische Roadmap für gewachsene Codebases: Priorisierte Modernisierung, schrittweise Migration, Dokumentation."
+    },
+    "mvpSaas": {
+      "title": "MVP & SaaS",
+      "description": "Entwicklung von Minimum Viable Products und SaaS-Erweiterungen: Von der Validierung bis zum zahlenden Kunden."
+    }
   },
   "meta": {
-    "title": "Arne Wiese | Freier Entwickler für Web-Technologien, APIs und KI-Lösungen",
-    "description": "Senior AI Software Engineer mit 10+ Jahren Erfahrung in Full-Stack-Entwicklung, spezialisiert auf pragmatische Lösungen, schnelle MVPs und KI-Integration"
+    "title": "Arne Wiese | Freier Entwickler für Web-Technologien, APIs und SaaS-Lösungen",
+    "description": "Senior Software Engineer mit 10+ Jahren Erfahrung in Full-Stack-Entwicklung, spezialisiert auf pragmatische Lösungen, schnelle MVPs und System-Architektur"
   }
 }

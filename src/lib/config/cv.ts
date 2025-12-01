@@ -16,11 +16,11 @@ export interface CvProfile {
 // German version (default)
 export const cvProfile: CvProfile = {
   name: "Arne Wiese",
-  title: "Senior AI Software Engineer",
+  title: "Senior Software Engineer",
   location: "Meerbusch",
   education: "M.Sc. Energy Science and Technology",
   intro:
-    "10+ Jahre Full-Stack-Entwicklung – spezialisiert auf pragmatische Lösungen, schnelle MVPs und KI-Integration",
+    "10+ Jahre Full-Stack-Entwicklung – spezialisiert auf pragmatische Lösungen, schnelle MVPs und System-Architektur",
   email: "arne@wiese.me",
   website: "wiesson.dev",
 };
@@ -28,11 +28,11 @@ export const cvProfile: CvProfile = {
 // English version
 export const cvProfileEn: CvProfile = {
   name: "Arne Wiese",
-  title: "Senior AI Software Engineer",
+  title: "Senior Software Engineer",
   location: "Meerbusch",
   education: "M.Sc. Energy Science and Technology",
   intro:
-    "10+ years of full-stack development – specialized in pragmatic solutions, rapid MVPs, and AI integration",
+    "10+ years of full-stack development – specialized in pragmatic solutions, rapid MVPs, and system architecture",
   email: "arne@wiese.me",
   website: "wiesson.dev",
 };

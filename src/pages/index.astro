@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "$layouts/base-layout.astro";
 import AboutSection from "$components/sections/about-section.astro";
+import ServicesSection from "$components/sections/services-section.astro";
+import FeaturedProjectsSection from "$components/sections/featured-projects-section.astro";
 import CvWorkListing from "$components/cv/cv-work-listing.svelte";
 import { getCollection } from "astro:content";
 import ProjectsSection from "$components/sections/projects-section.astro";
@@ -22,28 +24,40 @@ cvWork.sort((a, b) => {
 
   return dateBFrom - dateAFrom;
 });
+
+// Limit to 5 most recent main projects for frontpage
+const recentMainWork = cvWork
+  .filter((item) => item.data.type === "main")
+  .slice(0, 5);
 ---
 
 <BaseLayout lang={lang}>
   <AboutSection lang={lang} />
 
+  <ServicesSection lang={lang} />
+
+  <FeaturedProjectsSection lang={lang} />
+
   <CvWorkListing
     title={t.sections.workExperience}
-    items={cvWork.filter((item) => item.data.type === "main")}
+    items={recentMainWork}
     lang={lang}
     showIntro
     showBadges={false}
     showYearsOnly={true}
   />
 
-  <CvWorkListing
-    title={t.sections.sideProjects}
-    items={cvWork.filter((item) => item.data.type === "side")}
-    lang={lang}
-    showIntro
-    showBadges={false}
-    showYearsOnly={true}
-  />
+  <div class="app-grid">
+    <div class="app-text-column">
+      <a
+        href="/cv"
+        class="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+      >
+        {t.sections.viewAllProjects}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
 
   <TechnologiesSection lang={lang} />
   <ProjectsSection lang={lang} />
