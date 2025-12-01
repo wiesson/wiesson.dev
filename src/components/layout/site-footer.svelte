@@ -16,11 +16,11 @@
 </script>
 
 <footer class="app-grid py-16">
-  <div class="app-text-column">
-    <!-- Contact & Social -->
-    <div class="grid md:grid-cols-2 gap-8 mb-8">
+  <div class="app-wide-column">
+    <!-- Contact, Location & Social -->
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
       <div>
-        <h2 class="title mb-4">{t.footer.contact}</h2>
+        <h2 class="title text-left mb-4">{t.footer.contact}</h2>
         <div class="space-y-2 cv-text-secondary">
           <p>
             <a
@@ -38,12 +38,16 @@
               +49 175 1109743
             </a>
           </p>
-          <p>Heinenkamp 2a, 40670 Meerbusch</p>
         </div>
       </div>
 
       <div>
-        <h2 class="title mb-4">{t.footer.social}</h2>
+        <h2 class="title text-left mb-4">{t.footer.location}</h2>
+        <p class="cv-text-secondary">40670 Meerbusch</p>
+      </div>
+
+      <div>
+        <h2 class="title text-left mb-4">{t.footer.social}</h2>
         <div class="space-y-2">
           <p>
             <a

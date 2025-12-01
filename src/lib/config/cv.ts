@@ -16,7 +16,7 @@ export interface CvProfile {
 // German version (default)
 export const cvProfile: CvProfile = {
   name: "Arne Wiese",
-  title: "Senior Software Engineer",
+  title: "Freelancer & Consultant",
   location: "Meerbusch",
   education: "M.Sc. Energy Science and Technology",
   intro:
@@ -28,7 +28,7 @@ export const cvProfile: CvProfile = {
 // English version
 export const cvProfileEn: CvProfile = {
   name: "Arne Wiese",
-  title: "Senior Software Engineer",
+  title: "Freelancer & Consultant",
   location: "Meerbusch",
   education: "M.Sc. Energy Science and Technology",
   intro:

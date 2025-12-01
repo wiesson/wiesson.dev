@@ -205,7 +205,7 @@ body {
 
 /* Generic heading classes for all sections */
 .title {
-  @apply text-lg font-semibold;
+  @apply text-lg font-semibold text-center;
   color: var(--foreground);
 }
 

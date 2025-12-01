@@ -16,7 +16,7 @@ tasks:
 technologies:
   - TanStack Router
   - TanStack Query
-  - Convex
+  - Supabase
   - TypeScript
   - shadcn/ui
   - Tailwind CSS

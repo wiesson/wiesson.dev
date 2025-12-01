@@ -34,17 +34,17 @@
     "contact": "Contact",
     "social": "Social",
     "allRightsReserved": "All rights reserved",
-    "location": "Meerbusch, Germany"
+    "location": "Location"
   },
   "about": {
     "title": "About",
     "tagline": "One contact, complete delivery",
-    "description": "I build web applications and SaaS products from initial idea to production-ready systems. Lean collaboration, direct communication, fast iteration – over 10 years of experience with TypeScript, React, Svelte, and Node.js.",
+    "description": "I build web applications and SaaS products from initial idea to production-ready systems. Lean collaboration, direct communication, fast iteration – over 10 years of experience with TypeScript, React, Node.js, and AI integrations.",
     "whatIBring": "What I bring",
     "whatISeek": "What I'm looking for",
     "availability": "Availability",
     "availabilityHours": "20-40h/week",
-    "availabilityStatus": "available immediately",
+    "availabilityStatus": "Flexible availability",
     "viewFullCv": "View full resume"
   },
   "services": {

@@ -34,17 +34,17 @@
     "contact": "Kontakt",
     "social": "Social",
     "allRightsReserved": "Alle Rechte vorbehalten",
-    "location": "Meerbusch, Deutschland"
+    "location": "Standort"
   },
   "about": {
     "title": "Über mich",
     "tagline": "Ein Ansprechpartner, vollständige Umsetzung",
-    "description": "Ich entwickle Webapplikationen und SaaS-Produkte von der ersten Idee bis zum produktionsreifen System. Schlanke Zusammenarbeit, direkte Kommunikation, schnelle Iteration – über 10 Jahre Erfahrung mit TypeScript, React, Svelte und Node.js.",
+    "description": "Ich entwickle Webapplikationen und SaaS-Produkte von der ersten Idee bis zum produktionsreifen System. Schlanke Zusammenarbeit, direkte Kommunikation, schnelle Iteration – über 10 Jahre Erfahrung mit TypeScript, React, Node.js und KI-Integrationen.",
     "whatIBring": "Was ich mitbringe",
     "whatISeek": "Was ich suche",
     "availability": "Verfügbarkeit",
     "availabilityHours": "20-40h/Woche",
-    "availabilityStatus": "kurzfristig verfügbar",
+    "availabilityStatus": "Flexibel verfügbar",
     "viewFullCv": "Ganzen Lebenslauf"
   },
   "services": {

@@ -1,6 +1,7 @@
 ---
 import type { Locale } from "../../i18n";
 import { getTranslations } from "../../i18n";
+import { Blocks, SearchCheck, Route, Rocket } from "@lucide/astro";
 
 interface Props {
   lang?: Locale;
@@ -11,18 +12,22 @@ const t = getTranslations(lang);
 
 const services = [
   {
+    icon: Blocks,
     title: t.services.systemPlanning.title,
     description: t.services.systemPlanning.description,
   },
   {
+    icon: SearchCheck,
     title: t.services.systemAudit.title,
     description: t.services.systemAudit.description,
   },
   {
+    icon: Route,
     title: t.services.roadmapCleanup.title,
     description: t.services.roadmapCleanup.description,
   },
   {
+    icon: Rocket,
     title: t.services.mvpSaas.title,
     description: t.services.mvpSaas.description,
   },
@@ -38,6 +43,9 @@ const services = [
       {
         services.map((service) => (
           <div class="p-6 rounded-xl border border-border bg-card">
+            <div class="flex size-12 items-center justify-center rounded-full bg-muted mb-3">
+              <service.icon class="size-6" />
+            </div>
             <h3 class="font-semibold text-foreground mb-2">{service.title}</h3>
             <p class="text-sm text-muted-foreground">{service.description}</p>
           </div>

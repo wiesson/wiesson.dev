@@ -15,8 +15,9 @@ tasks:
   - "Architecture of a type-safe monorepo infrastructure (Drizzle ORM MCP server integration) with event-driven background jobs (Inngest), JSONB schema for flexible property storage, and PostGIS integration across 15+ database tables"
 technologies:
   - SvelteKit + Svelte 5
-  - TypeScript
   - Supabase (PostgreSQL + PostGIS)
+  - TanStack Query
+  - TypeScript
   - Drizzle ORM
   - OpenAI GPT-5 + Claude
   - Inngest (Background Jobs)
