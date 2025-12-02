@@ -1,0 +1,23 @@
+# Arne Wiese - Freelancer & Consultant
+
+> Full-stack engineer with 10+ years experience, specializing in AI integration, e-commerce platforms, and rapid MVP development.
+
+## CV / Resume
+
+- [CV (Markdown for LLMs)](/api/cv/llm?lang=en): Full work history, skills, and experience in LLM-optimized format
+- [CV Compact](/api/cv/llm?lang=en&detail=compact): Shorter version without task details
+- [CV German](/api/cv/llm?lang=de): German version
+- [CV PDF](/api/cv/pdf?lang=en): Downloadable PDF
+
+## About
+
+- Location: Meerbusch, Germany
+- Email: arne@wiese.me
+- Website: https://wiesson.dev
+
+## Expertise
+
+- **AI/LLM Integration**: OpenAI GPT-4, Google Gemini, multi-agent systems, vector search
+- **Frontend**: TypeScript, React, Svelte/SvelteKit, Tailwind CSS
+- **Backend**: Node.js, PostgreSQL, Firebase, Supabase
+- **E-commerce**: 5+ years at Douglas, checkout systems, component libraries
