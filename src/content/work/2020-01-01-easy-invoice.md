@@ -1,13 +1,14 @@
 ---
 company: Arne Wiese
-project: Easy Invoice
+project: Kontor
 position:
 location:
 from: 2020-01-01
 to: now
 type: side
 projectType: project
-intro: "Seit 2020 genutztes persönliches Rechnungstool, das nach mehreren Refactorings nun als SaaS für deutsche Freelancer und Kleinunternehmer verfügbar ist – vollständige Rechnungsverwaltung mit Ausgabenverfolgung und Team-Kollaboration für 8€/Monat"
+url: https://getkontor.app
+intro: "Seit 2020 genutztes persönliches Rechnungstool – 2025 rebranded zu Kontor (kein guter Domain-Name für 'Easy Invoice' verfügbar, 'Kontor' klingt vertrauenswürdig). Vollständige Rechnungsverwaltung mit Ausgabenverfolgung und Team-Kollaboration für deutsche Freelancer und Kleinunternehmer, 8€/Monat"
 tasks:
   - "Evolution eines persönlichen Tools über 5 Jahre: vom einfachen Invoice-Generator zur vollwertigen SaaS-Plattform mit mehreren Tech-Stack-Iterationen (zuletzt TanStack Router + Convex + shadcn/ui)"
   - "Entwicklung einer vollständigen Rechnungsplattform mit Invoice-Editor (Positionen, Steuersätze, Rabatte), automatischer Nummernvergabe, Status-Tracking (Entwurf/Gesendet/Bezahlt/Überfällig) und PDF-Export"

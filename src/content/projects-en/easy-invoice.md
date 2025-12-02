@@ -1,10 +1,11 @@
 ---
-title: Easy Invoice
-intro: SaaS invoicing tool for German freelancers and small businesses – complete invoice management with expense tracking and team collaboration for 8€/month
-status: coming-soon
+title: Kontor
+intro: SaaS invoicing tool for German freelancers and small businesses – complete invoice management with expense tracking and team collaboration for 8€/month. Rebranded from "Easy Invoice" to "Kontor" in 2025 (trustworthy name, better domain availability)
+status: live
 featured: true
 role: Founder & Lead Developer
 timeline: 2020 - present
+url: https://getkontor.app
 
 technologies:
   - TanStack Router
@@ -23,7 +24,7 @@ problem: |
   German freelancers struggle with cluttered, bloated tools like Lexoffice or sevDesk. Most don't need full accounting – just quick invoices, expense tracking, and a year-end overview for their tax advisor. Existing tools cost 15-40€/month for features nobody uses.
 
 solution: |
-  Easy Invoice is the invoicing tool I've been using myself since 2020 – now available as SaaS for others. Focus on the essentials: create invoices in under a minute, categorize expenses, monthly reports. No accounting overhead, no hidden costs. 8€/month flat, unlimited team members.
+  Kontor is the invoicing tool I've been using myself since 2020 – now available as SaaS for others. Focus on the essentials: create invoices in under a minute, categorize expenses, monthly reports. No accounting overhead, no hidden costs. 8€/month flat, unlimited team members.
 
 results:
   - value: "5 years"
@@ -47,4 +48,5 @@ learnings:
   - "Building your own tools pays off: 5 years of use = deep understanding of real user problems"
   - "AI features are fun and add real value: auto-tagging, text generation, proofreading – even a wingman for finding fair hourly rates"
   - "DACH market has special requirements: QR codes for bank transfers, IBAN validation, German spelling in templates"
+  - "Rebranding from 'Easy Invoice' to 'Kontor': No suitable domain available, and 'Kontor' sounds more trustworthy for a financial tool"
 ---

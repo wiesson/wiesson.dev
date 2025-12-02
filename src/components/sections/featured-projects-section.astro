@@ -18,10 +18,12 @@ const allWork = await getCollection(collectionName);
 const featuredSlugs = ["maklerupdate", "easy-invoice", "tourvy"];
 const featuredProjects = allWork.filter((item) => {
   const slug = item.id.toLowerCase();
+  const projectName = item.data.project?.toLowerCase() || "";
   return featuredSlugs.some(
     (featured) =>
       slug.includes(featured) ||
-      item.data.project?.toLowerCase().includes(featured)
+      projectName.includes(featured) ||
+      (featured === "easy-invoice" && projectName.includes("kontor"))
   );
 });
 
@@ -38,7 +40,7 @@ const seenProjects = new Set<string>();
 for (const project of featuredProjects) {
   const projectName = project.data.project?.toLowerCase() || "";
   const key = featuredSlugs.find(
-    (s) => projectName.includes(s) || project.id.includes(s)
+    (s) => projectName.includes(s) || project.id.includes(s) || (s === "easy-invoice" && projectName.includes("kontor"))
   );
   if (key && !seenProjects.has(key)) {
     seenProjects.add(key);
@@ -46,10 +48,10 @@ for (const project of featuredProjects) {
   }
 }
 
-// Project URLs (null = coming soon)
+// Project URLs
 const projectUrls: Record<string, string | null> = {
   maklerupdate: "https://maklerupdate.de",
-  "easy-invoice": null, // coming soon
+  "easy-invoice": "https://getkontor.app",
   tourvy: "https://tourvy.com",
 };
 ---

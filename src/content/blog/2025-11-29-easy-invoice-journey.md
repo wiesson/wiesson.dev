@@ -1,10 +1,11 @@
 ---
-title: "5 Jahre eigenes Tool, jetzt SaaS: Die Easy Invoice Story"
-description: Wie aus einem persönlichen Rechnungstool nach 5 Jahren und mehreren Refactorings ein SaaS für Freelancer wurde.
+title: "Von Easy Invoice zu Kontor: 5 Jahre eigenes Tool, jetzt SaaS"
+description: Wie aus einem persönlichen Rechnungstool nach 5 Jahren und mehreren Refactorings ein SaaS für Freelancer wurde – und warum es jetzt Kontor heißt.
 tags:
   - SaaS
   - Product Development
   - Freelancing
+  - Rebranding
 publishedAt: 2025-11-29
 ---
 
@@ -34,9 +35,17 @@ Das Tool wuchs. Wurde nützlicher. Blieb aber mein persönliches Werkzeug.
 
 Gleichzeitig dachte ich: Warum nutze nur ich das? Das Problem – teure, überladene Rechnungstools – haben doch alle Freelancer.
 
-Also beschloss ich: Easy Invoice wird öffentlich.
+Also beschloss ich: Das Tool wird öffentlich.
 
-## Was Easy Invoice heute kann
+## Der Name: Von Easy Invoice zu Kontor
+
+Bei der Vorbereitung für den Launch stand ich vor einem Problem: Kein guter Domain-Name für "Easy Invoice" war verfügbar. easyinvoice.de? Vergeben. easy-invoice.de? Auch weg. Jede brauchbare Variante war entweder teuer oder besetzt.
+
+Nach einigem Nachdenken kam ich auf "Kontor". Das Wort hat Geschichte – es bezeichnete früher Handelsniederlassungen und Kontore von Kaufleuten. Es klingt seriös, vertrauenswürdig, deutsch. Genau das, was man von einem Finanztool für den DACH-Markt erwartet.
+
+getkontor.app war frei. Der Name passt. Aus Easy Invoice wurde Kontor.
+
+## Was Kontor heute kann
 
 - **Rechnungen erstellen** mit allem, was dazugehört: Positionen, Steuersätze, Rabatte, automatische Nummernvergabe
 - **Status-Tracking**: Entwurf, Gesendet, Bezahlt, Überfällig
@@ -54,7 +63,7 @@ Ich nutze das Tool selbst. Es muss funktionieren, nicht verkaufen.
 
 Die meisten Konkurrenten laden Features drauf, die 90% der Freelancer nie brauchen. Buchhaltung, DATEV-Export, komplexe Workflows. Das kostet Entwicklung. Das kostet Support. Das kostet Geld.
 
-Easy Invoice macht eine Sache gut: Rechnungen und Ausgaben für Freelancer. Nicht mehr, nicht weniger.
+Kontor macht eine Sache gut: Rechnungen und Ausgaben für Freelancer. Nicht mehr, nicht weniger.
 
 8€ deckt die Serverkosten und lässt mir etwas übrig. Fair für beide Seiten.
 
@@ -68,4 +77,4 @@ Aber erstmal: Nutzer finden. Feedback sammeln. Besser werden.
 
 ---
 
-**Testen?** [easyinvoice.de](https://easyinvoice.de) – kostenlos starten, 8€/Monat wenn es passt.
+**Testen?** [getkontor.app](https://getkontor.app) – kostenlos starten, 8€/Monat wenn es passt.
