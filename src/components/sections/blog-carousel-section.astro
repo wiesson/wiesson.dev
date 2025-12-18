@@ -1,6 +1,6 @@
 ---
 import BlogCard from "$components/blog/blog-card.astro";
-import BlogCarousel from "$components/blog/blog-carousel.svelte";
+import ResponsiveCardList from "$components/layout/responsive-card-list.svelte";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -10,26 +10,22 @@ interface Props {
 
 const { posts, title = "Blog" } = Astro.props;
 
-// Extract date from filename if not in frontmatter
-const getDateFromFilename = (id: string): Date | undefined => {
-  const match = id.match(/^(\d{4}-\d{2}-\d{2})/);
-  if (match) {
-    return new Date(match[1]);
-  }
-  return undefined;
+// Extract date from file path if not in frontmatter
+const getDateFromFilePath = (filePath: string): Date | undefined => {
+  const match = filePath.match(/(\d{4}-\d{2}-\d{2})/);
+  return match ? new Date(match[1]) : undefined;
 };
 
 // Filter out drafts and sort by date (newest first)
 const sortedPosts = [...posts]
   .filter((post) => !post.data.draft)
   .sort((a, b) => {
-    const dateA = a.data.publishedAt || getDateFromFilename(a.id) || new Date(0);
-    const dateB = b.data.publishedAt || getDateFromFilename(b.id) || new Date(0);
+    const dateA =
+      a.data.publishedAt || getDateFromFilePath(a.filePath || "") || new Date(0);
+    const dateB =
+      b.data.publishedAt || getDateFromFilePath(b.filePath || "") || new Date(0);
     return dateB.getTime() - dateA.getTime();
   });
-
-// Generate slug from entry id (remove date prefix and .md extension)
-const getSlug = (id: string) => id.replace(/^\d{4}-\d{2}-\d{2}-/, "").replace(/\.md$/, "");
 ---
 
 <section class="app-grid scroll-mt-16">
@@ -37,17 +33,17 @@ const getSlug = (id: string) => id.replace(/^\d{4}-\d{2}-\d{2}-/, "").replace(/\
     <h2 class="title">{title}</h2>
   </div>
   <div class="app-full-column">
-    <BlogCarousel client:idle>
-      {sortedPosts.map((post) => (
+    <ResponsiveCardList client:idle>
+      {sortedPosts.slice(0, 3).map((post) => (
         <BlogCard
           title={post.data.title}
           description={post.data.description}
           image={post.data.image}
-          href={`/blog/${getSlug(post.id)}`}
-          date={post.data.publishedAt || getDateFromFilename(post.id)}
+          href={`/blog/${post.id}`}
+          date={post.data.publishedAt || getDateFromFilePath(post.filePath || "")}
           tags={post.data.tags}
         />
       ))}
-    </BlogCarousel>
+    </ResponsiveCardList>
   </div>
 </section>

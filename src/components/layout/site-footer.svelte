@@ -8,7 +8,7 @@
 
   let { lang = "de", currentPath = "/" }: Props = $props();
 
-  const basePath = lang === 'en' ? currentPath.replace(/^\/en/, '') : currentPath;
+  const basePath = $derived(lang === 'en' ? currentPath.replace(/^\/en/, '') : currentPath);
 </script>
 
 <footer class="app-grid py-8 mt-12">

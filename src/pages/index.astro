@@ -7,11 +7,13 @@ import CvWorkListing from "$components/cv/cv-work-listing.svelte";
 import { getCollection } from "astro:content";
 import ProjectsSection from "$components/sections/projects-section.astro";
 import TechnologiesSection from "$components/sections/technologies-section.astro";
+// import BlogCarouselSection from "$components/sections/blog-carousel-section.astro";
 import { getTranslations } from "../i18n";
 
 const lang = "de";
 const t = getTranslations(lang);
 const cvWork = await getCollection("work");
+// const blogPosts = await getCollection("blog");
 
 const now = new Date();
 
@@ -29,6 +31,14 @@ cvWork.sort((a, b) => {
 const recentMainWork = cvWork
   .filter((item) => item.data.type === "main")
   .slice(0, 5);
+
+const totalProjects = cvWork.filter((item) => item.data.type === "main").length;
+const startYear =
+  cvWork.length > 0
+    ? new Date(
+        Math.min(...cvWork.map((w) => new Date(w.data.from).getTime()))
+      ).getFullYear()
+    : new Date().getFullYear();
 ---
 
 <BaseLayout lang={lang}>
@@ -38,26 +48,24 @@ const recentMainWork = cvWork
 
   <FeaturedProjectsSection lang={lang} />
 
+  <!-- Blog section hidden for now -->
+  <!-- <BlogCarouselSection posts={blogPosts} title="Blog" /> -->
+
   <CvWorkListing
     title={t.sections.workExperience}
+    subtitle={t.sections.workExperienceSubtitle
+      .replace("{count}", totalProjects.toString())
+      .replace("{year}", startYear.toString())}
     items={recentMainWork}
     lang={lang}
     showIntro
     showBadges={false}
     showYearsOnly={true}
+    viewAllLink={{
+      href: "/cv",
+      label: t.sections.viewAllProjects,
+    }}
   />
-
-  <div class="app-grid">
-    <div class="app-text-column">
-      <a
-        href="/cv"
-        class="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-      >
-        {t.sections.viewAllProjects}
-        <span aria-hidden="true">→</span>
-      </a>
-    </div>
-  </div>
 
   <TechnologiesSection lang={lang} />
   <ProjectsSection lang={lang} />

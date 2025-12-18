@@ -5,8 +5,8 @@
     CardDescription,
     CardHeader,
     CardTitle,
-  } from "$lib/ui/card";
-  import { Badge } from "$lib/ui/badge";
+  } from "$lib/components/ui/card";
+  import { Badge } from "$lib/components/ui/badge";
   import { CheckCircle2, Clock, Euro } from "@lucide/svelte";
   import type { BundledService } from "$data/services";
 

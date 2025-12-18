@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '$lib/ui/card';
-	import { Badge } from '$lib/ui/badge';
-	import { Button } from '$lib/ui/button';
+	import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '$lib/components/ui/card';
+	import { Badge } from '$lib/components/ui/badge';
+	import { Button } from '$lib/components/ui/button';
 	import { CheckCircle2, ArrowRight } from '@lucide/svelte';
 	import type { ComponentType } from 'svelte';
 

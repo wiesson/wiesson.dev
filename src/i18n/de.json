@@ -18,6 +18,7 @@
     "projects": "Kunden & Projekte",
     "technologies": "Technologien & Skills",
     "workExperience": "Projekte & Festanstellungen",
+    "workExperienceSubtitle": "{count} Projekte seit {year}",
     "sideProjects": "Nebenprojekte",
     "education": "Ausbildung",
     "services": "Leistungen",

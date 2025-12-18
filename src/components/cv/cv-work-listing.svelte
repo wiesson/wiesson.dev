@@ -6,25 +6,32 @@
 
   interface Props {
     title: string;
-    items: CollectionEntry<"work"> | CollectionEntry<"work-en">[];
+    subtitle?: string;
+    items: (CollectionEntry<"work"> | CollectionEntry<"work-en">)[];
     lang?: Locale;
     showDetails?: boolean;
     showYearsOnly?: boolean;
     showBadges?: boolean;
     showIntro?: boolean;
+    viewAllLink?: {
+      href: string;
+      label: string;
+    };
   }
 
   let {
     title,
+    subtitle,
     items,
     lang = "de",
     showDetails = false,
     showYearsOnly = false,
     showBadges = true,
     showIntro = false,
+    viewAllLink,
   }: Props = $props();
 
-  const t = getTranslations(lang);
+  const t = $derived(getTranslations(lang));
 
   const getBadgeLabel = (type: string, projectType: string): string => {
     if (type === "main" && projectType === "permanent") return t.cv.permanent;
@@ -36,7 +43,12 @@
 
 <section class="py-16">
   <div class="app-text-column">
-    <h2 class="cv-h2 mb-6">{title}</h2>
+    <div class="mb-8">
+      <h2 class="cv-h2 mb-1">{title}</h2>
+      {#if subtitle}
+        <p class="text-sm text-muted-foreground">{subtitle}</p>
+      {/if}
+    </div>
 
     <div class="space-y-8">
       {#each items as { data } (data.project + "-" + data.company)}
@@ -107,5 +119,17 @@
         </div>
       {/each}
     </div>
+
+    {#if viewAllLink}
+      <div class="mt-12">
+        <a
+          href={viewAllLink.href}
+          class="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        >
+          {viewAllLink.label}
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    {/if}
   </div>
 </section>

@@ -15,7 +15,7 @@ const collectionName = lang === "de" ? "work" : "work-en";
 const allWork = await getCollection(collectionName);
 
 // Filter for specific featured projects
-const featuredSlugs = ["maklerupdate", "easy-invoice", "tourvy"];
+const featuredSlugs = ["kuvio", "maklerupdate", "easy-invoice", "tourvy"];
 const featuredProjects = allWork.filter((item) => {
   const slug = item.id.toLowerCase();
   const projectName = item.data.project?.toLowerCase() || "";
@@ -50,6 +50,7 @@ for (const project of featuredProjects) {
 
 // Project URLs
 const projectUrls: Record<string, string | null> = {
+  kuvio: "https://kuvio.studio",
   maklerupdate: "https://maklerupdate.de",
   "easy-invoice": "https://getkontor.app",
   tourvy: "https://tourvy.com",
@@ -61,7 +62,7 @@ const projectUrls: Record<string, string | null> = {
     <h2 class="title mb-6">{t.sections.featuredProjects}</h2>
     <div class="space-y-4">
       {
-        uniqueProjects.slice(0, 3).map((project) => {
+        uniqueProjects.slice(0, 4).map((project) => {
           const slug = featuredSlugs.find(
             (s) =>
               project.data.project?.toLowerCase().includes(s) ||

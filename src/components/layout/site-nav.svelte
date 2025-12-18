@@ -9,8 +9,8 @@
   }
 
   let { lang = "de", showNav = true, showIntro = true }: Props = $props();
-  const t = getTranslations(lang);
-  const profile = getCvProfile(lang);
+  const t = $derived(getTranslations(lang));
+  const profile = $derived(getCvProfile(lang));
 </script>
 
 <header class="app-grid py-6">

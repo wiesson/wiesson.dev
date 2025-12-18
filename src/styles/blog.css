@@ -15,13 +15,21 @@
   grid-column: 2;
 }
 
-/* Breakout: Wide elements (images, code blocks) */
+/* Breakout: Code blocks stay wide for readability */
+.blog-article > pre {
+  grid-column: 1 / -1;
+  max-width: min(96ch, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* Subtle breakout: Images slightly wider than text (~32px each side) */
 .blog-article .breakout,
-.blog-article > pre,
 .blog-article > figure,
 .blog-article > .wide {
   grid-column: 1 / -1;
-  max-width: min(96ch, 100%);
+  max-width: calc(65ch + 4rem);
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -68,9 +76,12 @@
   color: var(--muted-foreground);
 }
 
-/* Cover Image */
+/* Cover Image - subtle breakout beyond text column */
 .blog-cover {
-  width: 100%;
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
+  margin-right: -2rem;
+  max-width: calc(65ch + 4rem);
   aspect-ratio: 21 / 9;
   object-fit: cover;
   border-radius: var(--radius-lg);
@@ -153,7 +164,7 @@
 /* Pull Quotes */
 .blog-prose blockquote {
   position: relative;
-  margin: 2rem 0;
+  margin-bottom: 1.25rem;
   padding: 1.5rem 0 1.5rem 1.5rem;
   border-left: 3px solid var(--primary);
   font-style: italic;
@@ -174,7 +185,7 @@
   overflow-x: auto;
   font-size: 0.875rem;
   line-height: 1.7;
-  margin: 1.5rem 0;
+  margin-bottom: 1.25rem;
 }
 
 .blog-prose code {
@@ -194,11 +205,11 @@
   max-width: 100%;
   height: auto;
   border-radius: var(--radius-lg);
-  margin: 1.5rem 0;
+  margin-bottom: 1.25rem;
 }
 
 .blog-prose figure {
-  margin: 2rem 0;
+  margin-bottom: 1.25rem;
 }
 
 .blog-prose figcaption {
@@ -219,7 +230,7 @@
 .blog-prose table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5rem 0;
+  margin-bottom: 1.25rem;
   font-size: 0.875rem;
 }
 
@@ -333,14 +344,14 @@
 
 @media (min-width: 1024px) {
   .blog-layout {
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 1fr 220px;
     gap: 3rem;
   }
 }
 
 @media (min-width: 1280px) {
   .blog-layout {
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 1fr 260px;
     gap: 4rem;
   }
 }

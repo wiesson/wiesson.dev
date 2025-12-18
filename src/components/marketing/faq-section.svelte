@@ -4,7 +4,7 @@
     AccordionItem,
     AccordionTrigger,
     AccordionContent,
-  } from "$lib/ui/accordion";
+  } from "$lib/components/ui/accordion";
   import type { FAQ } from "$data/services";
 
   type Props = {

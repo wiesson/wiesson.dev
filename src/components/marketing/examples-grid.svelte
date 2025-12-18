@@ -5,8 +5,8 @@
     CardDescription,
     CardHeader,
     CardTitle,
-  } from "$lib/ui/card";
-  import { Badge } from "$lib/ui/badge";
+  } from "$lib/components/ui/card";
+  import { Badge } from "$lib/components/ui/badge";
   import { TrendingUp } from "@lucide/svelte";
   import type { Example } from "$data/services";
 

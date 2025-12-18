@@ -17,8 +17,8 @@
     showDownloads = false
   }: Props = $props();
 
-  const t = getTranslations(lang);
-  const displayBackLabel = backLabel || t.nav.home;
+  const t = $derived(getTranslations(lang));
+  const displayBackLabel = $derived(backLabel || t.nav.home);
 </script>
 
 <header class="app-grid py-6">

@@ -2,17 +2,18 @@
 import "../styles/base.css";
 import "../styles/blog.css";
 
+import { Image } from "astro:assets";
 import CvHeader from "$components/cv/cv-header.svelte";
 import SiteFooter from "$components/layout/site-footer.svelte";
 import TableOfContents from "$components/blog/table-of-contents.svelte";
 import { getTranslations } from "../i18n";
 import type { Locale } from "../i18n";
-import type { MarkdownHeading } from "astro";
+import type { MarkdownHeading, ImageMetadata } from "astro";
 
 interface Props {
   title: string;
   description?: string;
-  image?: string;
+  image?: ImageMetadata;
   publishedAt?: Date;
   updatedAt?: Date;
   tags?: string[];
@@ -58,10 +59,13 @@ const formatDate = (date: Date) => {
 <html lang={lang}>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <title>{title} | {t.meta.title}</title>
     <meta name="description" content={description || t.meta.description} />
-    {image && <meta property="og:image" content={image} />}
+    {image && <meta property="og:image" content={image.src} />}
   </head>
   <body>
     <CvHeader
@@ -81,47 +85,53 @@ const formatDate = (date: Date) => {
           <header class="blog-hero">
             <h1 class="blog-hero-title">{title}</h1>
             <div class="blog-hero-meta">
-              {publishedAt && (
-                <time datetime={publishedAt.toISOString()}>
-                  {formatDate(publishedAt)}
-                </time>
-              )}
-              {tags.length > 0 && (
-                <div class="blog-hero-tags">
-                  {tags.map((tag) => (
-                    <span class="blog-hero-tag">{tag}</span>
-                  ))}
-                </div>
-              )}
+              {
+                publishedAt && (
+                  <time datetime={publishedAt.toISOString()}>
+                    {formatDate(publishedAt)}
+                  </time>
+                )
+              }
+              {
+                tags.length > 0 && (
+                  <div class="blog-hero-tags">
+                    {tags.map((tag) => (
+                      <span class="blog-hero-tag">{tag}</span>
+                    ))}
+                  </div>
+                )
+              }
             </div>
-            {image && (
-              <img src={image} alt="" class="blog-cover" />
-            )}
+            {image && <Image src={image} alt="" class="blog-cover" />}
           </header>
 
           <!-- Mobile ToC -->
-          {showToc && (
-            <details class="blog-toc-mobile">
-              <summary>Inhaltsverzeichnis</summary>
-              <TableOfContents headings={tocHeadings} client:idle />
-            </details>
-          )}
+          {
+            showToc && (
+              <details class="blog-toc-mobile">
+                <summary>Inhaltsverzeichnis</summary>
+                <TableOfContents headings={tocHeadings} client:idle />
+              </details>
+            )
+          }
         </div>
 
         <!-- Article Layout with Sidebar -->
         <div class="app-wide-column">
           <div class="blog-layout">
-            <!-- Desktop ToC Sidebar -->
-            {showToc && (
-              <aside class="blog-toc-sidebar">
-                <TableOfContents headings={tocHeadings} client:idle />
-              </aside>
-            )}
-
             <!-- Article Content -->
             <div class="blog-article blog-prose">
               <slot />
             </div>
+
+            <!-- Desktop ToC Sidebar (right side) -->
+            {
+              showToc && (
+                <aside class="blog-toc-sidebar">
+                  <TableOfContents headings={tocHeadings} client:idle />
+                </aside>
+              )
+            }
           </div>
         </div>
       </article>
