@@ -12,10 +12,30 @@
 </script>
 
 <footer class="app-grid py-8 mt-12">
-  <div class="app-text-column">
+  <div class="app-text-column space-y-4">
+    <!-- Profile info -->
+    <div class="space-y-1 text-sm cv-text-secondary">
+      <p>
+        {lang === "de" ? "Freelancer & Consultant" : "Freelancer & Consultant"} · {lang === "de" ? "Meerbusch, Deutschland" : "Meerbusch, Germany"}
+      </p>
+      <p class="cv-text-meta">
+        M.Sc. Energy Science and Technology
+      </p>
+      <p class="cv-text-meta">
+        {lang === "de"
+          ? "10+ Jahre Full-Stack-Entwicklung – spezialisiert auf pragmatische Lösungen, schnelle MVPs und System-Architektur"
+          : "10+ years full-stack development – specialized in pragmatic solutions, rapid MVPs and system architecture"}
+      </p>
+    </div>
+
+    <!-- Links -->
     <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm cv-text-meta">
       <a href="mailto:arne@wiese.me" class="hover:text-foreground transition-colors">
         arne@wiese.me
+      </a>
+      <span>·</span>
+      <a href="https://wiesson.dev" class="hover:text-foreground transition-colors">
+        wiesson.dev
       </a>
       <span>·</span>
       <a

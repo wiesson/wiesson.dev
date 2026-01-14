@@ -1,12 +1,11 @@
 ---
 import BaseLayout from "$layouts/base-layout.astro";
-import AboutSection from "$components/sections/about-section.astro";
 import ServicesSection from "$components/sections/services-section.astro";
 import FeaturedProjectsSection from "$components/sections/featured-projects-section.astro";
 import CvWorkListing from "$components/cv/cv-work-listing.svelte";
-import { getCollection } from "astro:content";
-import ProjectsSection from "$components/sections/projects-section.astro";
 import TechnologiesSection from "$components/sections/technologies-section.astro";
+import ProjectsSection from "$components/sections/projects-section.astro";
+import { getCollection } from "astro:content";
 import { getTranslations } from "../../i18n";
 
 const lang = "en";
@@ -18,46 +17,87 @@ const now = new Date();
 cvWork.sort((a, b) => {
   const toA = a.data.to === "now" ? now : a.data.to;
   const toB = b.data.to === "now" ? now : b.data.to;
-
-  const dateAFrom = toA.getTime();
-  const dateBFrom = toB.getTime();
-
-  return dateBFrom - dateAFrom;
+  return toB.getTime() - toA.getTime();
 });
 
-// Limit to 5 most recent main projects for frontpage
 const recentMainWork = cvWork
   .filter((item) => item.data.type === "main")
   .slice(0, 5);
+
+const totalProjects = cvWork.filter((item) => item.data.type === "main").length;
+const startYear = cvWork.length > 0
+  ? new Date(Math.min(...cvWork.map((w) => new Date(w.data.from).getTime()))).getFullYear()
+  : new Date().getFullYear();
 ---
 
 <BaseLayout lang={lang}>
-  <AboutSection lang={lang} />
+  <!-- CV link - absolute top right -->
+  <a
+    href="/en/cv"
+    class="fixed top-4 right-4 text-sm text-muted-foreground hover:text-foreground transition-colors z-50"
+  >
+    {t.nav.cv}
+  </a>
+
+  <!-- Prose intro section -->
+  <section class="app-grid">
+    <article class="app-text-column prose dark:prose-invert prose-neutral max-w-none leading-relaxed">
+      <p>
+        I'm a freelance software developer building web applications and SaaS
+        products. I also consult on architecture decisions, technical audits,
+        and modernizing legacy systems. In recent years I've worked with <a
+          href="https://frontnow.com"
+          target="_blank"
+          rel="noopener"
+          class="underline">Frontnow</a
+        >, <a
+          href="https://douglas.de"
+          target="_blank"
+          rel="noopener"
+          class="underline">Parfümerie Douglas</a
+        >, <a
+          href="https://carauktion.de"
+          target="_blank"
+          rel="noopener"
+          class="underline">carauktion</a
+        > and <a
+          href="https://sipgate.de"
+          target="_blank"
+          rel="noopener"
+          class="underline">sipgate</a
+        >.
+      </p>
+
+      <p>
+        In late 2025 I founded <a
+          href="https://nordwerk.studio"
+          target="_blank"
+          rel="noopener"
+          class="underline">Studio Nordwerk</a
+        >, an AI and software studio focused on pragmatic SaaS solutions and
+        rapid MVPs.
+      </p>
+    </article>
+  </section>
 
   <ServicesSection lang={lang} />
-
   <FeaturedProjectsSection lang={lang} />
 
   <CvWorkListing
     title={t.sections.workExperience}
+    subtitle={t.sections.workExperienceSubtitle
+      .replace("{count}", totalProjects.toString())
+      .replace("{year}", startYear.toString())}
     items={recentMainWork}
     lang={lang}
     showIntro
     showBadges={false}
     showYearsOnly={true}
+    viewAllLink={{
+      href: "/en/cv",
+      label: t.sections.viewAllProjects,
+    }}
   />
-
-  <div class="app-grid">
-    <div class="app-text-column">
-      <a
-        href="/en/cv"
-        class="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-      >
-        {t.sections.viewAllProjects}
-        <span aria-hidden="true">→</span>
-      </a>
-    </div>
-  </div>
 
   <TechnologiesSection lang={lang} />
   <ProjectsSection lang={lang} />
