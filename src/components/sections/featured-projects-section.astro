@@ -12,7 +12,15 @@ const t = getTranslations(lang);
 
 // Get work collection based on language
 const collectionName = lang === "de" ? "work" : "work-en";
+const projectsCollectionName = lang === "de" ? "projects" : "projects-en";
 const allWork = await getCollection(collectionName);
+const allProjects = await getCollection(projectsCollectionName);
+
+// Map project slugs to their status
+const projectStatusMap: Record<string, string> = {};
+for (const proj of allProjects) {
+  projectStatusMap[proj.id] = proj.data.status || "live";
+}
 
 // Filter for specific featured projects
 const featuredSlugs = ["kuvio", "maklerupdate", "easy-invoice", "tourvy"];
@@ -55,6 +63,16 @@ const projectUrls: Record<string, string | null> = {
   "easy-invoice": "https://getkontor.app",
   tourvy: "https://tourvy.com",
 };
+
+// Status labels
+const statusLabels: Record<string, { de: string; en: string }> = {
+  live: { de: "Live", en: "Live" },
+  beta: { de: "Beta", en: "Beta" },
+  mvp: { de: "MVP", en: "MVP" },
+  "in-development": { de: "In Entwicklung", en: "In Development" },
+  archived: { de: "Archiviert", en: "Archived" },
+  "coming-soon": { de: "Bald", en: "Soon" },
+};
 ---
 
 <section class="app-grid py-12">
@@ -69,7 +87,8 @@ const projectUrls: Record<string, string | null> = {
               project.id.includes(s)
           );
           const externalUrl = slug ? projectUrls[slug] : undefined;
-          const isComingSoon = slug && projectUrls[slug] === null;
+          const projectStatus = slug ? projectStatusMap[slug] : null;
+          const statusLabel = projectStatus ? statusLabels[projectStatus]?.[lang] : null;
           const detailUrl = lang === "de" ? `/projects/${slug}` : `/en/projects/${slug}`;
 
           return (
@@ -80,9 +99,9 @@ const projectUrls: Record<string, string | null> = {
                     {project.data.project}
                   </h3>
                   <div class="flex items-center gap-2 shrink-0">
-                    {isComingSoon && (
-                      <span class="cv-badge text-[10px]">
-                        {lang === "de" ? "Bald" : "Soon"}
+                    {statusLabel && projectStatus && (
+                      <span class={`cv-badge cv-badge-${projectStatus} text-[10px]`}>
+                        {statusLabel}
                       </span>
                     )}
                     {externalUrl && (

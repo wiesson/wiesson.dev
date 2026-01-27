@@ -268,6 +268,33 @@ body {
   border-color: var(--border);
 }
 
+/* Status Badge Variants */
+.cv-badge-live {
+  background-color: oklch(0.92 0.08 145);
+  color: oklch(0.35 0.12 145);
+}
+.cv-badge-beta {
+  background-color: oklch(0.92 0.08 85);
+  color: oklch(0.38 0.12 85);
+}
+.cv-badge-mvp {
+  background-color: oklch(0.92 0.06 260);
+  color: oklch(0.4 0.1 260);
+}
+.cv-badge-in-development {
+  background-color: oklch(0.92 0.06 260);
+  color: oklch(0.4 0.1 260);
+}
+.cv-badge-coming-soon {
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+}
+.cv-badge-archived {
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+  opacity: 0.7;
+}
+
 /* ============================================================================
    Hover Micro-interactions
    ============================================================================ */

@@ -1,8 +1,8 @@
 ---
 title: maklerupdate.de
-intro: Automatische Überwachung von 50+ Immobilienmaklern im Großraum Düsseldorf – KI-gestützte Property-Extraction und tägliches Crawling ersetzen manuelle Website-Checks
+intro: Persönliches Tool zur automatischen Überwachung von Makler-Websites im Großraum Düsseldorf. Crawlt Websites, extrahiert Properties per KI, sendet tägliche E-Mail-Updates.
 url: https://maklerupdate.de
-status: live
+status: mvp
 featured: true
 role: Gründer & Lead Developer
 timeline: 2021 - heute

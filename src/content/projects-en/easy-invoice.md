@@ -1,52 +1,75 @@
 ---
 title: Kontor
-intro: SaaS invoicing tool for German freelancers and small businesses – complete invoice management with expense tracking and team collaboration for 8€/month. Rebranded from "Easy Invoice" to "Kontor" in 2025 (trustworthy name, better domain availability)
-status: live
-featured: true
-role: Founder & Lead Developer
-timeline: 2020 - present
+intro: Invoicing software for German freelancers. Invoices, expenses, tax preparation.
 url: https://getkontor.app
+status: beta
+featured: true
+role: Founder & Solo Developer
+timeline: 2024 - present
 
 technologies:
+  - React 19
+  - TanStack Start
   - TanStack Router
   - TanStack Query
-  - Supabase
-  - PostgreSQL
-  - TypeScript
-  - React
+  - Electric SQL
+  - Supabase (PostgreSQL)
+  - Tailwind CSS 4
   - shadcn/ui
-  - Tailwind CSS
-  - Resend
-  - PDF Generation
-  - Vercel
+  - OpenAI API
+  - Typst (PDF Generation)
+  - Zod
+  - TypeScript
 
 problem: |
-  German freelancers struggle with cluttered, bloated tools like Lexoffice or sevDesk. Most don't need full accounting – just quick invoices, expense tracking, and a year-end overview for their tax advisor. Existing tools cost 15-40€/month for features nobody uses.
+  German freelancers and self-employed professionals often manage their finances with Word templates, Excel spreadsheets, and email folders. This leads to:
+
+  - Manual errors in VAT calculations
+  - Forgotten invoices and missing payment tracking
+  - Time spent on tax preparation (income statement, VAT returns)
+  - Data silos without cashflow overview
+
+  Existing solutions are often bloated, expensive, or not tailored to German requirements (small business regulation, GoBD compliance).
 
 solution: |
-  Kontor is the invoicing tool I've been using myself since 2020 – now available as SaaS for others. Focus on the essentials: create invoices in under a minute, categorize expenses, monthly reports. No accounting overhead, no hidden costs. 8€/month flat, unlimited team members.
+  A focused web application for the German market:
+
+  - Invoice creation with automatic VAT calculation and QR code for bank transfers
+  - Expense management with AI-powered categorization
+  - Cashflow dashboard with real-time updates via Electric SQL
+  - Tax preparation: income statement and VAT return overviews
+  - Tax advisor portal for delegated access
+
+  The tech stack prioritizes fast UX through optimistic updates and push-based synchronization instead of polling.
 
 results:
-  - value: "5 years"
-    metric: Tested in personal use
-  - value: "8€/month"
-    metric: Flat rate, no limits
-  - value: "<1 min"
-    metric: Time to finished invoice
+  - value: "12"
+    metric: Features implemented
+  - value: "3"
+    metric: Features in Early Access
+  - value: "50+"
+    metric: Database migrations
 
 architecture: |
-  Full-stack TypeScript with TanStack Router for client-side routing and TanStack Query for optimistic data fetching. Supabase (hosted in Frankfurt) as backend for GDPR compliance and low latency in the DACH region. Server-side PDF generation with print-optimized layout, email delivery via Resend.
+  **Multi-Tenancy:** Organizations as root entity with Row-Level Security in PostgreSQL. Each workspace has its own settings for tax configuration.
+
+  **Real-Time Sync:** Electric SQL replaces traditional polling. Changes are pushed to all connected clients via WebSocket. TanStack Query caches locally, Electric synchronizes server state.
+
+  **Tax Compliance:** Invoices are immutable after creation (database triggers). Money amounts are stored as cents (integers). Sequential invoice numbers with unique constraint per organization.
+
+  **AI Integration:** OpenAI for expense categorization and natural language queries of business data. RAG approach for German tax law planned.
 
 challenges:
-  - "5 years of tech stack evolution: From Firebase via Convex back to Supabase – each refactoring brought new insights"
-  - "PDF layout: Pixel-perfect invoices that look the same on every printer, with automatic page break logic"
-  - "German tax compliance: Reverse charge, small business regulation, correct VAT calculation based on customer country"
-  - "Multi-tenant team system: Simple role system (Owner/Admin/Member) per organization"
+  - "Electric SQL Integration: Supabase Edge Functions required as proxy for HTTP/2 WebSocket support"
+  - "GoBD Compliance: Enforcing invoice immutability at database level without losing flexibility for cancellations"
+  - "Multi-Tenancy with RLS: Complex PostgreSQL policies for workspace isolation without performance penalties"
+  - "Tax Logic: Correctly implementing small business regulation, various VAT rates, reverse charge"
+  - "Offline-First Architecture: Conflict resolution for simultaneous team edits"
 
 learnings:
-  - "Convex has fantastic DX, but for the German market GDPR compliance matters more – back to Supabase with EU hosting in Frankfurt"
-  - "Building your own tools pays off: 5 years of use = deep understanding of real user problems"
-  - "AI features are fun and add real value: auto-tagging, text generation, proofreading – even a wingman for finding fair hourly rates"
-  - "DACH market has special requirements: QR codes for bank transfers, IBAN validation, German spelling in templates"
-  - "Rebranding from 'Easy Invoice' to 'Kontor': No suitable domain available, and 'Kontor' sounds more trustworthy for a financial tool"
+  - "Electric SQL and TanStack DB enable true real-time UX without building WebSocket infrastructure yourself"
+  - "Row-Level Security in PostgreSQL is powerful, but policy logic must be planned from the start"
+  - "Domain-Driven Design pays off with complex tax logic - separated contexts for Invoicing, Expenses, Tax"
+  - "Optimistic updates require careful rollback strategies for server errors"
+  - "German tax regulations are complex - close collaboration with tax advisor for correct implementation"
 ---

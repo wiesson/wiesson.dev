@@ -1,52 +1,75 @@
 ---
 title: Kontor
-intro: SaaS-Rechnungstool für deutsche Freelancer und Kleinunternehmer – vollständige Rechnungsverwaltung mit Ausgabenverfolgung und Team-Kollaboration für 8€/Monat. 2025 rebranded von "Easy Invoice" zu "Kontor" (vertrauenswürdiger Name, bessere Domain-Verfügbarkeit)
-status: live
-featured: true
-role: Gründer & Lead Developer
-timeline: 2020 - heute
+intro: Rechnungssoftware für deutsche Freelancer. Rechnungen, Ausgaben, Steuervorbereitung.
 url: https://getkontor.app
+status: beta
+featured: true
+role: Gründer & Solo Developer
+timeline: 2024 - heute
 
 technologies:
+  - React 19
+  - TanStack Start
   - TanStack Router
   - TanStack Query
-  - Supabase
-  - PostgreSQL
-  - TypeScript
-  - React
+  - Electric SQL
+  - Supabase (PostgreSQL)
+  - Tailwind CSS 4
   - shadcn/ui
-  - Tailwind CSS
-  - Resend
-  - PDF Generation
-  - Vercel
+  - OpenAI API
+  - Typst (PDF-Generierung)
+  - Zod
+  - TypeScript
 
 problem: |
-  Deutsche Freelancer kämpfen mit unübersichtlichen, überladenen Tools wie Lexoffice oder sevDesk. Die meisten brauchen keine vollständige Buchhaltung – nur schnelle Rechnungen, Ausgaben tracken und am Jahresende einen Überblick für den Steuerberater. Bestehende Tools kosten 15-40€/Monat für Features, die niemand nutzt.
+  Deutsche Freelancer und Selbstständige verwalten ihre Finanzen oft mit Word-Vorlagen, Excel-Tabellen und E-Mail-Ordnern. Das führt zu:
+
+  - Manuelle Fehler bei MwSt-Berechnungen
+  - Vergessene Rechnungen und fehlende Zahlungsnachverfolgung
+  - Zeitaufwand bei der Steuervorbereitung (EÜR, UStVA)
+  - Datensilos ohne Überblick über Cashflow
+
+  Existierende Lösungen sind oft überladen, teuer oder nicht auf deutsche Anforderungen (Kleinunternehmerregelung, GoBD) ausgerichtet.
 
 solution: |
-  Kontor ist das Rechnungstool, das ich seit 2020 selbst nutze – jetzt als SaaS für andere. Fokus auf das Wesentliche: Rechnungen erstellen in unter einer Minute, Ausgaben kategorisieren, monatliche Reports. Kein Buchhaltungs-Overhead, keine versteckten Kosten. 8€/Monat flat, unlimitierte Team-Mitglieder.
+  Eine fokussierte Webanwendung für den deutschen Markt:
+
+  - Rechnungserstellung mit automatischer MwSt-Berechnung und QR-Code für Überweisungen
+  - Ausgabenverwaltung mit KI-gestützter Kategorisierung
+  - Cashflow-Dashboard mit Echtzeit-Updates über Electric SQL
+  - Steuervorbereitung: EÜR- und UStVA-Übersichten
+  - Steuerberater-Portal für delegierten Zugriff
+
+  Der Tech-Stack priorisiert schnelle UX durch optimistische Updates und Push-basierte Synchronisierung statt Polling.
 
 results:
-  - value: "5 Jahre"
-    metric: In eigener Nutzung getestet
-  - value: "8€/Monat"
-    metric: Flat-Rate, keine Limits
-  - value: "<1 Min"
-    metric: Zeit bis zur fertigen Rechnung
+  - value: "12"
+    metric: Features implementiert
+  - value: "3"
+    metric: Features in Early Access
+  - value: "50+"
+    metric: Datenbank-Migrationen
 
 architecture: |
-  Full-Stack TypeScript mit TanStack Router für Client-Side Routing und TanStack Query für optimistisches Data Fetching. Supabase (gehostet in Frankfurt) als Backend für DSGVO-Konformität und schnelle Latenzen im DACH-Raum. PDF-Generierung serverseitig mit Print-optimiertem Layout, E-Mail-Versand über Resend.
+  **Multi-Tenancy:** Organizations als Root-Entity mit Row-Level Security in PostgreSQL. Jeder Workspace hat eigene Settings für Steuerkonfiguration.
+
+  **Real-Time Sync:** Electric SQL ersetzt traditionelles Polling. Änderungen werden per WebSocket an alle verbundenen Clients gepusht. TanStack Query cached lokal, Electric synchronisiert den Server-State.
+
+  **Steuer-Compliance:** Rechnungen sind nach Erstellung unveränderbar (Trigger in der DB). Geldbeträge werden als Cents (Integer) gespeichert. Fortlaufende Rechnungsnummern mit Unique Constraint pro Organisation.
+
+  **KI-Integration:** OpenAI für Ausgaben-Kategorisierung und natürlichsprachliche Abfragen der Geschäftsdaten. RAG-Ansatz für deutsches Steuerrecht geplant.
 
 challenges:
-  - "5 Jahre Tech-Stack Evolution: Von Firebase über Convex zurück zu Supabase – jedes Refactoring brachte neue Erkenntnisse"
-  - "PDF-Layout: Pixel-perfekte Rechnungen, die auf jedem Drucker gleich aussehen, mit automatischer Seitenumbruch-Logik"
-  - "Deutsche Steuer-Compliance: Reverse-Charge, Kleinunternehmerregelung, korrekte USt-Berechnung je nach Kundenland"
-  - "Multi-Tenant Team-System: Einfaches Rollen-System (Owner/Admin/Member) pro Organisation"
+  - "Electric SQL Integration: Supabase Edge Functions als Proxy notwendig für HTTP/2 WebSocket-Support"
+  - "GoBD-Compliance: Unveränderbarkeit von Rechnungen auf Datenbankebene erzwingen, ohne Flexibilität für Stornos zu verlieren"
+  - "Multi-Tenancy mit RLS: Komplexe PostgreSQL Policies für Workspace-Isolation ohne Performance-Einbußen"
+  - "Steuerlogik: Kleinunternehmerregelung, verschiedene MwSt-Sätze, Reverse Charge korrekt abbilden"
+  - "Offline-First Architektur: Konfliktauflösung bei gleichzeitigen Änderungen im Team"
 
 learnings:
-  - "Convex hat fantastische DX, aber für den deutschen Markt ist DSGVO-Konformität wichtiger – zurück zu Supabase mit EU-Hosting in Frankfurt"
-  - "Eigene Tools bauen lohnt sich: 5 Jahre Nutzung = tiefes Verständnis für echte User-Probleme"
-  - "AI-Features machen Spaß und bringen echten Mehrwert: Auto-Tagging, Texte schreiben, Korrekturlesen – bis hin zum Wingman für faire Stundensätze"
-  - "DACH-Markt hat spezielle Anforderungen: QR-Codes für Überweisungen, IBAN-Validierung, deutsche Rechtschreibung in Templates"
-  - "Rebranding von 'Easy Invoice' zu 'Kontor': Kein passender Domain-Name verfügbar, und 'Kontor' klingt vertrauenswürdiger für ein Finanztool"
+  - "Electric SQL und TanStack DB ermöglichen echte Real-Time UX ohne WebSocket-Infrastruktur selbst zu bauen"
+  - "Row-Level Security in PostgreSQL ist mächtig, aber die Policy-Logik muss von Anfang an geplant werden"
+  - "Domain-Driven Design zahlt sich bei komplexer Steuerlogik aus - separierte Contexts für Invoicing, Expenses, Tax"
+  - "Optimistische Updates erfordern sorgfältige Rollback-Strategien bei Server-Fehlern"
+  - "Deutsche Steuervorschriften sind komplex - enge Zusammenarbeit mit Steuerberater für korrekte Implementierung"
 ---

@@ -1,8 +1,8 @@
 ---
 title: Kuvio Studio
-intro: AI-powered image editing for real estate professionals, architects, and furniture makers – Virtual Staging, Declutter, and atmosphere transformations in seconds instead of days
+intro: Experimental AI application for image editing. Virtual Staging, Declutter, and atmosphere transformations for real estate photos using Google Gemini.
 url: https://kuvio.studio
-status: beta
+status: mvp
 featured: true
 role: Founder & Lead Developer
 timeline: 2024 - present

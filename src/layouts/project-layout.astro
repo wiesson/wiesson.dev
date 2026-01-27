@@ -24,7 +24,7 @@ interface Props {
   role?: string;
   timeline?: string;
   url?: string;
-  status?: "live" | "beta" | "archived" | "coming-soon";
+  status?: "live" | "beta" | "mvp" | "in-development" | "archived" | "coming-soon";
   cover?: string;
   screenshots?: string[];
   lang?: Locale;
@@ -55,6 +55,8 @@ const t = getTranslations(lang);
 const statusLabels: Record<string, { de: string; en: string }> = {
   live: { de: "Live", en: "Live" },
   beta: { de: "Beta", en: "Beta" },
+  mvp: { de: "MVP", en: "MVP" },
+  "in-development": { de: "In Entwicklung", en: "In Development" },
   archived: { de: "Archiviert", en: "Archived" },
   "coming-soon": { de: "Bald", en: "Soon" },
 };
@@ -88,8 +90,8 @@ const statusLabel = status ? statusLabels[status]?.[lang] || status : null;
               <p class="text-base cv-text-secondary">{intro}</p>
             </div>
             <div class="flex items-center gap-2 shrink-0">
-              {statusLabel && (
-                <span class="cv-badge text-xs">{statusLabel}</span>
+              {statusLabel && status && (
+                <span class={`cv-badge cv-badge-${status} text-xs`}>{statusLabel}</span>
               )}
               {url && (
                 <a

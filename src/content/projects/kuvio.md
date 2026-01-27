@@ -1,8 +1,8 @@
 ---
 title: Kuvio Studio
-intro: KI-gestützte Bildbearbeitung für Immobilienprofis, Architekten und Möbelbauer – Virtual Staging, Declutter und Atmosphären-Transformationen in Sekunden statt Tagen
+intro: Experimentelle KI-Anwendung für Bildbearbeitung. Virtual Staging, Declutter und Atmosphären-Transformationen für Immobilienfotos mit Google Gemini.
 url: https://kuvio.studio
-status: beta
+status: mvp
 featured: true
 role: Gründer & Lead Developer
 timeline: 2025 - heute

@@ -68,7 +68,7 @@ const projectsSchema = z.object({
   role: z.string().optional(),
   timeline: z.string().optional(),
   url: z.string().optional(),
-  status: z.enum(["live", "beta", "archived", "coming-soon"]).optional(),
+  status: z.enum(["live", "beta", "mvp", "in-development", "archived", "coming-soon"]).optional(),
   featured: z.boolean().optional(),
   cover: z.string().optional(),
   screenshots: z.array(z.string()).optional(),

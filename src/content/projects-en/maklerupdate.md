@@ -1,8 +1,8 @@
 ---
 title: maklerupdate.de
-intro: Automatic monitoring of 50+ real estate agents in the Düsseldorf area – AI-powered property extraction and daily crawling replace manual website checks
+intro: Personal tool for automatic monitoring of real estate agent websites in the Düsseldorf area. Crawls websites, extracts properties via AI, sends daily email updates.
 url: https://maklerupdate.de
-status: live
+status: mvp
 featured: true
 role: Founder & Lead Developer
 timeline: 2021 - present
