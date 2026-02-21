@@ -17,12 +17,12 @@
     "about": "Über mich",
     "projects": "Kunden & Projekte",
     "technologies": "Technologien & Skills",
-    "workExperience": "Projekte & Festanstellungen",
+    "workExperience": "Projekte",
     "workExperienceSubtitle": "{count} Projekte seit {year}",
     "sideProjects": "Nebenprojekte",
     "education": "Ausbildung",
     "services": "Leistungen",
-    "featuredProjects": "Eigene Projekte",
+    "featuredProjects": "Eigene Produkte",
     "viewAllProjects": "Alle Projekte"
   },
   "cv": {

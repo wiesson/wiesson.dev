@@ -160,12 +160,12 @@ function generateEducationEntryTypst(
  */
 const sectionTitles = {
   de: {
-    mainWork: "Projekte & Festanstellungen",
+    mainWork: "Projekte",
     sideWork: "Nebenprojekte",
     education: "Ausbildung",
   },
   en: {
-    mainWork: "Projects & Full-time Positions",
+    mainWork: "Projects",
     sideWork: "Side Projects",
     education: "Education",
   },

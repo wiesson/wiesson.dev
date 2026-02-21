@@ -12,13 +12,11 @@ technologies:
   - TanStack Start
   - TanStack Router
   - TanStack Query
-  - Electric SQL
-  - Supabase (PostgreSQL)
+  - Convex
   - Tailwind CSS 4
   - shadcn/ui
   - OpenAI API
   - Typst (PDF Generation)
-  - Zod
   - TypeScript
 
 problem: |
@@ -36,11 +34,11 @@ solution: |
 
   - Invoice creation with automatic VAT calculation and QR code for bank transfers
   - Expense management with AI-powered categorization
-  - Cashflow dashboard with real-time updates via Electric SQL
+  - Cashflow dashboard with real-time updates via Convex
   - Tax preparation: income statement and VAT return overviews
   - Tax advisor portal for delegated access
 
-  The tech stack prioritizes fast UX through optimistic updates and push-based synchronization instead of polling.
+  Originally built with Electric SQL and PostgreSQL – the switch to Convex was made to more tightly integrate AI workflows into the data layer and leverage Convex's reactive backend.
 
 results:
   - value: "12"
@@ -51,24 +49,24 @@ results:
     metric: Database migrations
 
 architecture: |
-  **Multi-Tenancy:** Organizations as root entity with Row-Level Security in PostgreSQL. Each workspace has its own settings for tax configuration.
+  **Multi-Tenancy:** Organizations as root entity in Convex. Each workspace has its own settings for tax configuration.
 
-  **Real-Time Sync:** Electric SQL replaces traditional polling. Changes are pushed to all connected clients via WebSocket. TanStack Query caches locally, Electric synchronizes server state.
+  **Real-Time Sync:** Convex as reactive backend replaces traditional polling. Changes are automatically pushed to all connected clients. TanStack Query caches locally, Convex synchronizes server state.
 
-  **Tax Compliance:** Invoices are immutable after creation (database triggers). Money amounts are stored as cents (integers). Sequential invoice numbers with unique constraint per organization.
+  **Tax Compliance:** Invoices are immutable after creation. Money amounts are stored as cents (integers). Sequential invoice numbers with unique constraint per organization.
 
-  **AI Integration:** OpenAI for expense categorization and natural language queries of business data. RAG approach for German tax law planned.
+  **AI Integration:** OpenAI for expense categorization and natural language queries of business data. Convex Actions enable seamless AI workflows directly in the data layer.
 
 challenges:
-  - "Electric SQL Integration: Supabase Edge Functions required as proxy for HTTP/2 WebSocket support"
-  - "GoBD Compliance: Enforcing invoice immutability at database level without losing flexibility for cancellations"
-  - "Multi-Tenancy with RLS: Complex PostgreSQL policies for workspace isolation without performance penalties"
+  - "Migration Electric SQL → Convex: Complete data layer rebuild to more tightly integrate AI workflows"
+  - "GoBD Compliance: Enforcing invoice immutability without losing flexibility for cancellations"
+  - "Multi-Tenancy: Workspace isolation in Convex without performance penalties"
   - "Tax Logic: Correctly implementing small business regulation, various VAT rates, reverse charge"
-  - "Offline-First Architecture: Conflict resolution for simultaneous team edits"
+  - "Real-Time Sync: Conflict resolution for simultaneous team edits"
 
 learnings:
-  - "Electric SQL and TanStack DB enable true real-time UX without building WebSocket infrastructure yourself"
-  - "Row-Level Security in PostgreSQL is powerful, but policy logic must be planned from the start"
+  - "Electric SQL + Postgres was solid, but Convex's reactive backend and integrated AI Actions justified the switch"
+  - "Convex simplifies real-time drastically – no WebSocket setup, no polling, no cache invalidation"
   - "Domain-Driven Design pays off with complex tax logic - separated contexts for Invoicing, Expenses, Tax"
   - "Optimistic updates require careful rollback strategies for server errors"
   - "German tax regulations are complex - close collaboration with tax advisor for correct implementation"

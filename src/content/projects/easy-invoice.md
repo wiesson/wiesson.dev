@@ -12,13 +12,11 @@ technologies:
   - TanStack Start
   - TanStack Router
   - TanStack Query
-  - Electric SQL
-  - Supabase (PostgreSQL)
+  - Convex
   - Tailwind CSS 4
   - shadcn/ui
   - OpenAI API
   - Typst (PDF-Generierung)
-  - Zod
   - TypeScript
 
 problem: |
@@ -36,11 +34,11 @@ solution: |
 
   - Rechnungserstellung mit automatischer MwSt-Berechnung und QR-Code für Überweisungen
   - Ausgabenverwaltung mit KI-gestützter Kategorisierung
-  - Cashflow-Dashboard mit Echtzeit-Updates über Electric SQL
+  - Cashflow-Dashboard mit Echtzeit-Updates über Convex
   - Steuervorbereitung: EÜR- und UStVA-Übersichten
   - Steuerberater-Portal für delegierten Zugriff
 
-  Der Tech-Stack priorisiert schnelle UX durch optimistische Updates und Push-basierte Synchronisierung statt Polling.
+  Ursprünglich mit Electric SQL und PostgreSQL gebaut – der Wechsel zu Convex erfolgte, um KI-Workflows enger in die Datenschicht zu integrieren und von Convex' reaktivem Backend zu profitieren.
 
 results:
   - value: "12"
@@ -51,24 +49,24 @@ results:
     metric: Datenbank-Migrationen
 
 architecture: |
-  **Multi-Tenancy:** Organizations als Root-Entity mit Row-Level Security in PostgreSQL. Jeder Workspace hat eigene Settings für Steuerkonfiguration.
+  **Multi-Tenancy:** Organizations als Root-Entity in Convex. Jeder Workspace hat eigene Settings für Steuerkonfiguration.
 
-  **Real-Time Sync:** Electric SQL ersetzt traditionelles Polling. Änderungen werden per WebSocket an alle verbundenen Clients gepusht. TanStack Query cached lokal, Electric synchronisiert den Server-State.
+  **Real-Time Sync:** Convex als reaktives Backend ersetzt traditionelles Polling. Änderungen werden automatisch an alle verbundenen Clients gepusht. TanStack Query cached lokal, Convex synchronisiert den Server-State.
 
-  **Steuer-Compliance:** Rechnungen sind nach Erstellung unveränderbar (Trigger in der DB). Geldbeträge werden als Cents (Integer) gespeichert. Fortlaufende Rechnungsnummern mit Unique Constraint pro Organisation.
+  **Steuer-Compliance:** Rechnungen sind nach Erstellung unveränderbar. Geldbeträge werden als Cents (Integer) gespeichert. Fortlaufende Rechnungsnummern mit Unique Constraint pro Organisation.
 
-  **KI-Integration:** OpenAI für Ausgaben-Kategorisierung und natürlichsprachliche Abfragen der Geschäftsdaten. RAG-Ansatz für deutsches Steuerrecht geplant.
+  **KI-Integration:** OpenAI für Ausgaben-Kategorisierung und natürlichsprachliche Abfragen der Geschäftsdaten. Convex Actions ermöglichen nahtlose KI-Workflows direkt in der Datenschicht.
 
 challenges:
-  - "Electric SQL Integration: Supabase Edge Functions als Proxy notwendig für HTTP/2 WebSocket-Support"
-  - "GoBD-Compliance: Unveränderbarkeit von Rechnungen auf Datenbankebene erzwingen, ohne Flexibilität für Stornos zu verlieren"
-  - "Multi-Tenancy mit RLS: Komplexe PostgreSQL Policies für Workspace-Isolation ohne Performance-Einbußen"
+  - "Migration Electric SQL → Convex: Datenschicht komplett umgebaut, um KI-Workflows enger zu integrieren"
+  - "GoBD-Compliance: Unveränderbarkeit von Rechnungen erzwingen, ohne Flexibilität für Stornos zu verlieren"
+  - "Multi-Tenancy: Workspace-Isolation in Convex ohne Performance-Einbußen"
   - "Steuerlogik: Kleinunternehmerregelung, verschiedene MwSt-Sätze, Reverse Charge korrekt abbilden"
-  - "Offline-First Architektur: Konfliktauflösung bei gleichzeitigen Änderungen im Team"
+  - "Real-Time Sync: Konfliktauflösung bei gleichzeitigen Änderungen im Team"
 
 learnings:
-  - "Electric SQL und TanStack DB ermöglichen echte Real-Time UX ohne WebSocket-Infrastruktur selbst zu bauen"
-  - "Row-Level Security in PostgreSQL ist mächtig, aber die Policy-Logik muss von Anfang an geplant werden"
+  - "Electric SQL + Postgres war solide, aber Convex' reaktives Backend und integrierte KI-Actions haben den Wechsel gerechtfertigt"
+  - "Convex vereinfacht Real-Time drastisch – kein WebSocket-Setup, kein Polling, kein Cache-Invalidation"
   - "Domain-Driven Design zahlt sich bei komplexer Steuerlogik aus - separierte Contexts für Invoicing, Expenses, Tax"
   - "Optimistische Updates erfordern sorgfältige Rollback-Strategien bei Server-Fehlern"
   - "Deutsche Steuervorschriften sind komplex - enge Zusammenarbeit mit Steuerberater für korrekte Implementierung"
