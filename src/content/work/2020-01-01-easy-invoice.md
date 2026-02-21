@@ -15,15 +15,16 @@ tasks:
   - "Implementierung von Expense-Tracking mit Kategorisierung (12 Kategorien), Steuerabzugsfähigkeit-Markierung und Financial Dashboard mit Umsatz-Übersicht, Top-Kunden und Monatsberichten"
   - "Aufbau einer Multi-User Team-Funktionalität mit Rollen-System (Owner/Admin/Member) – optimiert für DACH-Markt mit Reverse-Charge-Unterstützung und QR-Code-Integration"
 technologies:
+  - TanStack Start
   - TanStack Router
   - TanStack Query
-  - Supabase
+  - Convex
   - TypeScript
   - shadcn/ui
   - Tailwind CSS
   - React
   - Resend
-  - PDF Generation
+  - Typst (PDF)
   - Vercel
 contentType: work
 ---

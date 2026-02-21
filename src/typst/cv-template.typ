@@ -60,7 +60,7 @@
 // Main Work Section
 #let main_work = cv-data.at("main-work")
 #if main_work.len() > 0 [
-  #text(size: 12pt, weight: "semibold")[Projekte & Festanstellungen]
+  #text(size: 12pt, weight: "semibold")[Projekte]
   #v(0.5em)
   
   #for entry in main_work [

@@ -11,9 +11,7 @@ technologies:
   - TanStack Start
   - React
   - TypeScript
-  - Drizzle ORM
-  - PostgreSQL
-  - Supabase
+  - Convex
   - Google Gemini
   - Tailwind CSS v4
   - shadcn/ui
@@ -35,7 +33,7 @@ results:
     metric: Average Generation Time
 
 architecture: |
-  Full-stack TypeScript with TanStack Start for SSR and Server Functions. Google Gemini as primary AI model for image generation. Supabase for auth, storage, and PostgreSQL database – all hosted in Germany. Credit-based billing with transparent pay-per-use structure.
+  Full-stack TypeScript with TanStack Start for SSR and Server Functions. Google Gemini as primary AI model for image generation. Convex as reactive backend for data and file storage. Credit-based billing with transparent pay-per-use structure. Hosted in Germany, GDPR-compliant.
 
 challenges:
   - "Prompt engineering for consistent results: Each transformation needs precise prompts that work reliably across different input images"

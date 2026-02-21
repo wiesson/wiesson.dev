@@ -8,18 +8,14 @@ role: Gründer & Lead Developer
 timeline: 2021 - heute
 
 technologies:
-  - SvelteKit
-  - Svelte 5
-  - Supabase
-  - PostgreSQL
-  - PostGIS
+  - TanStack Start
+  - React
   - TanStack Query
+  - Convex
   - TypeScript
-  - Drizzle ORM
   - OpenAI GPT
   - Claude
   - Inngest
-  - Deno
   - Firecrawl
   - Tailwind CSS v4
   - Vercel
@@ -39,7 +35,7 @@ results:
     metric: Manueller Aufwand
 
 architecture: |
-  SvelteKit 5 Frontend mit Supabase/PostgreSQL Backend. PostGIS für geografische Queries (Umkreissuche). Multi-Strategie Property-Extraction: LLM-gestützte DOM-Selector-Discovery für statische Sites, JSON-API-Detection für React-SPAs, Heuristic-Fallbacks. Event-driven Background Jobs über Inngest mit automatischem Retry und Monitoring.
+  TanStack Start Frontend mit Convex als reaktives Backend. Multi-Strategie Property-Extraction: LLM-gestützte DOM-Selector-Discovery für statische Sites, JSON-API-Detection für React-SPAs, Heuristic-Fallbacks. Event-driven Background Jobs über Inngest mit automatischem Retry und Monitoring.
 
 challenges:
   - "Heterogene Makler-Websites: Jede Site hat andere Struktur – vom WordPress-Theme bis zur Custom React-App"
@@ -50,6 +46,6 @@ challenges:
 learnings:
   - "LLMs sind erstaunlich gut darin, HTML-Strukturen zu verstehen und Selektoren vorzuschlagen"
   - "Firecrawl nimmt viel Pain aus dem Crawling: JavaScript-Rendering, Anti-Bot-Bypassing, strukturierte Markdown-Ausgabe"
-  - "Deno CLI ist perfekt für Admin-Tools: Type-Safety, keine node_modules, läuft überall"
-  - "PostGIS + Drizzle = Type-safe geografische Queries ohne SQL-Strings"
+  - "Migration von SvelteKit zu TanStack Start: Konsistenter Stack über alle Projekte vereinfacht Wartung erheblich"
+  - "Convex Actions eignen sich perfekt für KI-gestützte Extraction-Pipelines mit automatischem Retry"
 ---

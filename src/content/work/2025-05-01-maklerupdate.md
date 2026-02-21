@@ -9,19 +9,17 @@ type: side
 projectType: project
 intro: "Plattform zur automatischen Überwachung von 50+ Maklern im Großraum Düsseldorf (Ziel: 400), die durch KI-gestützte Property-Extraction und tägliches Crawling manuelle Website-Checks vollständig ersetzt"
 tasks:
-  - "Entwicklung einer vollautomatisierten Immobilien-Monitoring-Plattform (SvelteKit 5 + Supabase + Inngest) mit produktionsreifem Prototyp für 5 aktive Makler und 63 überwachte Properties – automatisches Crawling 3x täglich, Change-Detection-System und Daily-Digest-Emails"
-  - "Implementierung einer Multi-Strategie Property-Extraction mit LLM-gestützter DOM-Selector-Discovery (GPT-5, Claude), JSON-API-Detection für React-SPAs und Heuristic-Fallbacks– automatische Methoden-Selektion basierend auf Site-Typ"
-  - "Aufbau von Deno-CLI-Tools für kompletten Broker-Onboarding-Workflow (Add, Validate, Discover Selectors, Test, Activate) und Admin-Dashboard (SvelteKit) für Property-Preview, URL-Management und Subscriber-Verwaltung"
-  - "Architektur einer type-safe Monorepo-Infrastruktur (Drizzle ORM MCP-Server-Integration) mit Event-driven Background Jobs (Inngest), JSONB-Schema für flexible Property-Storage und PostGIS-Integration über 15+ Database-Tabellen"
+  - "Entwicklung einer vollautomatisierten Immobilien-Monitoring-Plattform (TanStack Start + Convex + Inngest) mit produktionsreifem Prototyp für 5 aktive Makler und 63 überwachte Properties – automatisches Crawling 3x täglich, Change-Detection-System und Daily-Digest-Emails"
+  - "Implementierung einer Multi-Strategie Property-Extraction mit LLM-gestützter DOM-Selector-Discovery (GPT-5.1, Claude), JSON-API-Detection für React-SPAs und Heuristic-Fallbacks – automatische Methoden-Selektion basierend auf Site-Typ"
+  - "Migration von SvelteKit zu TanStack Start + React für konsistenten Stack über alle Projekte, Convex als reaktives Backend für Real-Time Updates und KI-Workflows"
+  - "Architektur einer type-safe Infrastruktur mit Event-driven Background Jobs (Inngest), Convex Actions für KI-gestützte Extraction-Pipelines und automatischem Retry"
 technologies:
-  - SvelteKit + Svelte 5
-  - Supabase (PostgreSQL + PostGIS)
+  - TanStack Start + React
+  - Convex
   - TanStack Query
   - TypeScript
-  - Drizzle ORM
-  - OpenAI GPT-5 + Claude
+  - OpenAI GPT-5.1 + Claude
   - Inngest (Background Jobs)
-  - Deno (CLI)
   - Firecrawl API
   - MCP Servers
   - Tailwind CSS v4

@@ -8,18 +8,14 @@ role: Founder & Lead Developer
 timeline: 2021 - present
 
 technologies:
-  - SvelteKit
-  - Svelte 5
-  - Supabase
-  - PostgreSQL
-  - PostGIS
+  - TanStack Start
+  - React
   - TanStack Query
+  - Convex
   - TypeScript
-  - Drizzle ORM
   - OpenAI GPT
   - Claude
   - Inngest
-  - Deno
   - Firecrawl
   - Tailwind CSS v4
   - Vercel
@@ -39,7 +35,7 @@ results:
     metric: Manual effort
 
 architecture: |
-  SvelteKit 5 frontend with Supabase/PostgreSQL backend. PostGIS for geographic queries (radius search). Multi-strategy property extraction: LLM-powered DOM selector discovery for static sites, JSON API detection for React SPAs, heuristic fallbacks. Event-driven background jobs via Inngest with automatic retry and monitoring.
+  TanStack Start frontend with Convex as reactive backend. Multi-strategy property extraction: LLM-powered DOM selector discovery for static sites, JSON API detection for React SPAs, heuristic fallbacks. Event-driven background jobs via Inngest with automatic retry and monitoring.
 
 challenges:
   - "Heterogeneous agent websites: Every site has different structure – from WordPress themes to custom React apps"
@@ -50,6 +46,6 @@ challenges:
 learnings:
   - "LLMs are surprisingly good at understanding HTML structures and suggesting selectors"
   - "Firecrawl removes a lot of pain from crawling: JavaScript rendering, anti-bot bypassing, structured markdown output"
-  - "Deno CLI is perfect for admin tools: Type safety, no node_modules, runs everywhere"
-  - "PostGIS + Drizzle = Type-safe geographic queries without SQL strings"
+  - "Migrating from SvelteKit to TanStack Start: Consistent stack across all projects significantly simplifies maintenance"
+  - "Convex Actions are perfect for AI-powered extraction pipelines with automatic retry"
 ---
