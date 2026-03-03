@@ -127,16 +127,9 @@ const statusLabels: Record<string, { de: string; en: string }> = {
                 </div>
               </div>
               {project.data.intro && (
-                <p class="text-sm text-muted-foreground line-clamp-2">
+                <p class="text-sm text-muted-foreground">
                   {project.data.intro}
                 </p>
-              )}
-              {project.data.technologies && (
-                <div class="flex flex-wrap gap-1 mt-3">
-                  {project.data.technologies.slice(0, 4).map((tech) => (
-                    <span class="cv-badge text-[10px]">{tech}</span>
-                  ))}
-                </div>
               )}
             </div>
           );
@@ -145,12 +138,3 @@ const statusLabels: Record<string, { de: string; en: string }> = {
     </div>
   </div>
 </section>
-
-<style>
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-</style>
