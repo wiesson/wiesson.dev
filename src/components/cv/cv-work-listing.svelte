@@ -41,7 +41,7 @@
   };
 </script>
 
-<section class="py-16">
+<section class="app-grid py-16">
   <div class="app-text-column">
     <div class="mb-8">
       <h2 class="cv-h2 mb-1">{title}</h2>
