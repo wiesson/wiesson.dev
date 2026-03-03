@@ -198,8 +198,6 @@ body {
   max-width: 65ch;
   margin-left: 0;
   margin-right: auto;
-  grid-column: 1 / 4;
-  padding-left: max(1rem, calc((100vw - 96rem) / 2 + 1rem));
 }
 
 /* Wide layout: 96ch (~1280px) for grids, cards, logo lists */
@@ -208,13 +206,12 @@ body {
   max-width: 96ch;
   margin-left: auto;
   margin-right: auto;
-  grid-column: 1 / 4;
 }
 
 /* Full width: spans entire viewport (for backgrounds, edge-to-edge content) */
 .app-full-column {
   width: 100%;
-  grid-column: 1 / 4;
+  grid-column: 1 / -1;
 }
 
 /* Generic heading classes for all sections */
