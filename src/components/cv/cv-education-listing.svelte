@@ -12,7 +12,7 @@
   let { title, items, showDetails = false }: Props = $props();
 </script>
 
-<section class="py-16">
+<section class="app-grid py-16">
   <div class="app-text-column">
     <h2 class="cv-h2 mb-6">{title}</h2>
 
