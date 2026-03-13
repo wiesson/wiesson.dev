@@ -3,9 +3,9 @@ import "../styles/base.css";
 import "../styles/blog.css";
 
 import { Image } from "astro:assets";
-import CvHeader from "$components/cv/cv-header.svelte";
-import SiteFooter from "$components/layout/site-footer.svelte";
-import TableOfContents from "$components/blog/table-of-contents.svelte";
+import CvHeader from "$components/cv/cv-header.astro";
+import SiteFooter from "$components/layout/site-footer.astro";
+import TableOfContents from "$components/blog/table-of-contents.astro";
 import { getTranslations } from "../i18n";
 import type { Locale } from "../i18n";
 import type { MarkdownHeading, ImageMetadata } from "astro";
@@ -110,7 +110,7 @@ const formatDate = (date: Date) => {
             showToc && (
               <details class="blog-toc-mobile">
                 <summary>Inhaltsverzeichnis</summary>
-                <TableOfContents headings={tocHeadings} client:idle />
+                <TableOfContents headings={tocHeadings} />
               </details>
             )
           }
@@ -128,7 +128,7 @@ const formatDate = (date: Date) => {
             {
               showToc && (
                 <aside class="blog-toc-sidebar">
-                  <TableOfContents headings={tocHeadings} client:idle />
+                  <TableOfContents headings={tocHeadings} />
                 </aside>
               )
             }

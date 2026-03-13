@@ -4,10 +4,8 @@
 
 ## CV / Resume
 
-- [CV (Markdown for LLMs)](/api/cv/llm?lang=en): Full work history, skills, and experience in LLM-optimized format
-- [CV Compact](/api/cv/llm?lang=en&detail=compact): Shorter version without task details
-- [CV German](/api/cv/llm?lang=de): German version
-- [CV PDF](/api/cv/pdf?lang=en): Downloadable PDF
+- [CV (Markdown for LLMs)](/cv/llm/en.md): Full work history, skills, and experience in LLM-optimized format
+- [CV German](/cv/llm/de.md): German version
 
 ## About
 

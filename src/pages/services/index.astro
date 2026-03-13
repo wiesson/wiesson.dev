@@ -1,12 +1,14 @@
 ---
 import BaseLayout from "$layouts/base-layout.astro";
-import ServiceCard from "$components/marketing/service-card.svelte";
-import ProcessSection from "$components/marketing/process-section.svelte";
+import ServiceCard from "$components/marketing/service-card.astro";
+import ProcessSection from "$components/marketing/process-section.astro";
 import { services } from "$data/services";
-import { Badge } from "$lib/components/ui/badge";
-import { Card, CardContent } from "$lib/components/ui/card";
-import { Zap, Clock, MessageCircle, Headphones } from "@lucide/svelte";
-import Button from "$lib/components/ui/button/button.svelte";
+import Badge from "$components/ui/badge.astro";
+import Button from "$components/ui/button.astro";
+import Zap from "@lucide/astro/icons/zap";
+import Clock from "@lucide/astro/icons/clock";
+import MessageCircle from "@lucide/astro/icons/message-circle";
+import Headphones from "@lucide/astro/icons/headphones";
 
 const addOns = [
   {
@@ -90,7 +92,6 @@ const processSteps = [
             href={service.href}
             icon={service.icon}
             badge={service.badge}
-            client:load
           />
         ))
       }
@@ -99,7 +100,7 @@ const processSteps = [
   </section>
 
   <!-- Process Section -->
-  <ProcessSection steps={processSteps} client:visible />
+  <ProcessSection steps={processSteps} />
 
   <!-- Add-ons Section -->
   <section class="py-20 app-grid" style="background-color: var(--muted);">
@@ -114,15 +115,15 @@ const processSteps = [
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {
           addOns.map((addon) => (
-            <Card client:load>
-              <CardContent class="pt-6 text-center" client:load>
+            <div class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm">
+              <div class="px-6 pt-6 text-center">
                 <div class="mx-auto mb-3 flex size-12 items-center justify-center rounded-lg bg-primary/10">
                   <addon.icon class="size-6 text-primary" />
                 </div>
                 <h3 class="mb-2 font-semibold">{addon.title}</h3>
                 <p class="text-sm text-muted-foreground">{addon.description}</p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))
         }
       </div>

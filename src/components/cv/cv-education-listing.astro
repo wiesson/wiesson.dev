@@ -1,0 +1,46 @@
+---
+import { formatYear } from "$utils/dateFormat";
+import ListingContent from "$components/cv/listing-content.astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  title: string;
+  items: CollectionEntry<"education">[];
+  showDetails?: boolean;
+}
+
+const { title, items, showDetails = false } = Astro.props;
+---
+
+<section class="app-grid py-16">
+  <div class="app-text-column">
+    <h2 class="cv-h2 mb-6">{title}</h2>
+
+    <div class="space-y-8">
+      {items.map(({ data }) => {
+        const from = formatYear(data.from);
+        const to = formatYear(data.to);
+
+        return (
+          <section class="page-break-avoid flex gap-4 text-sm">
+            <div class="cv-text-meta shrink-0 w-40">
+              {from} – {to}
+            </div>
+            <div>
+              <div class="font-weight-500">{data.title}</div>
+              <div class="cv-text-meta text-sm mb-2">{data.location}</div>
+
+              {data.intro && (
+                <div class="prose prose-sm">
+                  <p>{data.intro}</p>
+                </div>
+              )}
+
+              {showDetails && <ListingContent items={data.tasks} />}
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  </div>
+</section>

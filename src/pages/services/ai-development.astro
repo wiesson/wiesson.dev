@@ -1,14 +1,16 @@
 ---
 import BaseLayout from "$layouts/base-layout.astro";
-import PricingSection from "$components/marketing/pricing-section.svelte";
-import ExamplesGrid from "$components/marketing/examples-grid.svelte";
-import ProcessSection from "$components/marketing/process-section.svelte";
-import FaqSection from "$components/marketing/faq-section.svelte";
-import ServiceCard from "$components/marketing/service-card.svelte";
+import PricingSection from "$components/marketing/pricing-section.astro";
+import ExamplesGrid from "$components/marketing/examples-grid.astro";
+import ProcessSection from "$components/marketing/process-section.astro";
+import FaqSection from "$components/marketing/faq-section.astro";
+import ServiceCard from "$components/marketing/service-card.astro";
 import { getServiceBySlug, services } from "$data/services";
-import { Badge } from "$lib/components/ui/badge";
-import { Bot, Sparkles, ArrowRight } from "@lucide/svelte";
-import Button from "$lib/components/ui/button/button.svelte";
+import Badge from "$components/ui/badge.astro";
+import Bot from "@lucide/astro/icons/bot";
+import Sparkles from "@lucide/astro/icons/sparkles";
+import ArrowRight from "@lucide/astro/icons/arrow-right";
+import Button from "$components/ui/button.astro";
 
 const service = getServiceBySlug("ai-development");
 if (!service) throw new Error("Service not found");
@@ -95,7 +97,6 @@ const relatedServices = services.filter((s) => s.id !== service.id).slice(0, 3);
       bundles={service.bundledServices}
       title="Pakete & Pricing"
       description="Wähle das passende Paket für dein Projekt – von schnellen Sprints bis zu kompletten Systemen"
-      client:load
     />
   </div>
 
@@ -104,7 +105,6 @@ const relatedServices = services.filter((s) => s.id !== service.id).slice(0, 3);
     examples={service.examples}
     title="Beispiel-Projekte"
     description="Reale Projekte aus dem AI-Bereich – so könnte deine Lösung aussehen"
-    client:visible
   />
 
   <!-- Process -->
@@ -112,14 +112,12 @@ const relatedServices = services.filter((s) => s.id !== service.id).slice(0, 3);
     steps={service.process}
     title="So läuft die Zusammenarbeit"
     description="Vom ersten Gespräch bis zum Go-Live – transparent & strukturiert"
-    client:visible
   />
 
   <!-- FAQ -->
   <FaqSection
     faqs={service.faqs}
     title="Häufige Fragen zu AI Development"
-    client:visible
   />
 
   <!-- Related Services -->
@@ -143,7 +141,6 @@ const relatedServices = services.filter((s) => s.id !== service.id).slice(0, 3);
               href={relatedService.href}
               icon={relatedService.icon}
               badge={relatedService.badge}
-              client:load
             />
           ))
         }

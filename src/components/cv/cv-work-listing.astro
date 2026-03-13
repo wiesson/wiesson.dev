@@ -1,0 +1,132 @@
+---
+import { formatDays, formatYear } from "$utils/dateFormat";
+import ListingContent from "$components/cv/listing-content.astro";
+import type { CollectionEntry } from "astro:content";
+import { getTranslations, type Locale } from "../../i18n";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  items: (CollectionEntry<"work"> | CollectionEntry<"work-en">)[];
+  lang?: Locale;
+  showDetails?: boolean;
+  showYearsOnly?: boolean;
+  showBadges?: boolean;
+  showIntro?: boolean;
+  viewAllLink?: {
+    href: string;
+    label: string;
+  };
+}
+
+const {
+  title,
+  subtitle,
+  items,
+  lang = "de",
+  showDetails = false,
+  showYearsOnly = false,
+  showBadges = true,
+  showIntro = false,
+  viewAllLink,
+} = Astro.props;
+
+const t = getTranslations(lang);
+
+const getBadgeLabel = (type: string, projectType: string): string => {
+  if (type === "main" && projectType === "permanent") return t.cv.permanent;
+  if (type === "main" && projectType === "project") return t.cv.freelance;
+  if (type === "side") return t.cv.sideProject;
+  return "";
+};
+---
+
+<section class="app-grid py-16">
+  <div class="app-text-column">
+    <div class="mb-8">
+      <h2 class="cv-h2 mb-1">{title}</h2>
+      {subtitle && <p class="text-sm text-muted-foreground">{subtitle}</p>}
+    </div>
+
+    <div class="space-y-8">
+      {items.map(({ data }) => {
+        const showExtendedLayout =
+          !showYearsOnly &&
+          data.type !== "side" &&
+          data.contentType !== "education";
+        const from = showExtendedLayout
+          ? formatDays(data.from)
+          : formatYear(data.from);
+        const to = showExtendedLayout
+          ? formatDays(data.to)
+          : formatYear(data.to);
+        const dates = from === to ? from : `${from} - ${to}`;
+
+        return (
+          <div class="page-break-avoid flex gap-4 text-sm">
+            <div class="shrink-0 w-32 cv-text-meta">{dates}</div>
+            <div class="space-y-2">
+              <header>
+                <div class="cv-text-primary font-medium">
+                  {data.project && (
+                    <span>
+                      {data.project}
+                      <span class="cv-text-meta px-2">/</span>
+                    </span>
+                  )}
+                  {data.company}
+                </div>
+                {data.position && (
+                  <div class="cv-text-meta text-sm flex items-center gap-2">
+                    {data.position}
+                  </div>
+                )}
+                <div class="cv-text-meta text-sm flex items-center gap-2">
+                  {data.location}
+                  {showBadges && (
+                    <span class="cv-badge">
+                      {getBadgeLabel(data.type, data.projectType)}
+                    </span>
+                  )}
+                </div>
+              </header>
+
+              {showIntro && data.intro && (
+                <div class="prose prose-sm">
+                  <p>{data.intro}</p>
+                </div>
+              )}
+
+              {showDetails && <ListingContent items={data.tasks} />}
+
+              {showDetails && (
+                <div>
+                  <h3 class="text-xs">{t.cv.technologies}</h3>
+                  <div class="float-left space-x-1">
+                    {(data.technologies ?? []).map((text: string) => (
+                      <span class="cv-badge">
+                        {text}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    {viewAllLink && (
+      <div class="mt-12">
+        <a
+          href={viewAllLink.href}
+          class="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        >
+          {viewAllLink.label}
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    )}
+  </div>
+</section>

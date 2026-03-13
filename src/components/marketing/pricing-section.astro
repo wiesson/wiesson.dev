@@ -1,0 +1,54 @@
+---
+import CircleCheck from '@lucide/astro/icons/circle-check';
+import Clock from '@lucide/astro/icons/clock';
+import Euro from '@lucide/astro/icons/euro';
+import Badge from '$components/ui/badge.astro';
+import type { BundledService } from "$data/services";
+
+interface Props {
+  bundles: BundledService[];
+  title?: string;
+  description?: string;
+}
+
+const { bundles, title = "Pakete & Pricing", description } = Astro.props;
+---
+
+<section class="app-grid py-20" style="background-color: var(--background);">
+  <div class="app-text-column mb-12 text-center">
+    <h2 class="heading mb-2">{title}</h2>
+    {description && <p class="text-muted-foreground">{description}</p>}
+  </div>
+
+  <div class="app-wide-column">
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {bundles.map((bundle) => (
+        <div class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm">
+          <div class="grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6">
+            <div class="mb-3 flex items-center justify-between">
+              <Badge variant="outline" class="flex items-center gap-1">
+                <Euro class="size-3" />
+                <span>{bundle.price}</span>
+              </Badge>
+              <Badge variant="secondary" class="flex items-center gap-1">
+                <Clock class="size-3" />
+                <span>{bundle.duration}</span>
+              </Badge>
+            </div>
+            <div class="font-semibold leading-none text-xl">{bundle.name}</div>
+          </div>
+          <div class="px-6 flex-1">
+            <ul class="space-y-2">
+              {bundle.features.map((feature) => (
+                <li class="flex items-start gap-2 text-sm">
+                  <CircleCheck class="mt-0.5 size-4 shrink-0 text-primary" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

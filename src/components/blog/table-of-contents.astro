@@ -1,0 +1,71 @@
+---
+interface Heading {
+  id: string;
+  text: string;
+  level: number;
+}
+
+interface Props {
+  headings: Heading[];
+  class?: string;
+}
+
+const { headings, class: className = "" } = Astro.props;
+---
+
+<nav class={`blog-toc ${className}`} aria-label="Inhaltsverzeichnis">
+  <p class="blog-toc-title">Inhalt</p>
+  <ul class="blog-toc-list">
+    {headings.map((heading) => (
+      <li style={`padding-left: ${(heading.level - 2) * 1}rem`}>
+        <a href={`#${heading.id}`} data-toc-link data-heading-id={heading.id}>
+          {heading.text}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          document.querySelectorAll('[data-toc-link]').forEach((link) => {
+            link.classList.remove('active');
+          });
+          const activeLink = document.querySelector(`[data-heading-id="${entry.target.id}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+        }
+      }
+    },
+    {
+      rootMargin: "-80px 0px -80% 0px",
+      threshold: 0,
+    }
+  );
+
+  document.querySelectorAll('[data-toc-link]').forEach((link) => {
+    const id = (link as HTMLElement).dataset.headingId;
+    if (id) {
+      const element = document.getElementById(id);
+      if (element) {
+        observer.observe(element);
+      }
+    }
+
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const headingId = (link as HTMLElement).dataset.headingId;
+      if (headingId) {
+        const element = document.getElementById(headingId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          history.pushState(null, '', `#${headingId}`);
+        }
+      }
+    });
+  });
+</script>

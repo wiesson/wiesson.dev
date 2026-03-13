@@ -1,14 +1,16 @@
 ---
 import BaseLayout from "$layouts/base-layout.astro";
-import PricingSection from "$components/marketing/pricing-section.svelte";
-import ExamplesGrid from "$components/marketing/examples-grid.svelte";
-import ProcessSection from "$components/marketing/process-section.svelte";
-import FaqSection from "$components/marketing/faq-section.svelte";
-import ServiceCard from "$components/marketing/service-card.svelte";
+import PricingSection from "$components/marketing/pricing-section.astro";
+import ExamplesGrid from "$components/marketing/examples-grid.astro";
+import ProcessSection from "$components/marketing/process-section.astro";
+import FaqSection from "$components/marketing/faq-section.astro";
+import ServiceCard from "$components/marketing/service-card.astro";
 import { getServiceBySlug, services } from "$data/services";
-import { Badge } from "$lib/components/ui/badge";
-import { Award, Users, ArrowRight } from "@lucide/svelte";
-import Button from "$lib/components/ui/button/button.svelte";
+import Badge from "$components/ui/badge.astro";
+import Award from "@lucide/astro/icons/award";
+import Users from "@lucide/astro/icons/users";
+import ArrowRight from "@lucide/astro/icons/arrow-right";
+import Button from "$components/ui/button.astro";
 
 const service = getServiceBySlug("consulting-retainers");
 if (!service) throw new Error("Service not found");
@@ -95,7 +97,6 @@ const relatedServices = services.filter((s) => s.id !== service.id).slice(0, 3);
         bundles={service.bundledServices}
         title="Pakete & Pricing"
         description="Flexible monatliche Retainer oder einmalige Consulting-Projekte"
-        client:load
       />
     </div>
 
@@ -104,7 +105,6 @@ const relatedServices = services.filter((s) => s.id !== service.id).slice(0, 3);
       examples={service.examples}
       title="Beispiel-Projekte"
       description="Von CTO-as-a-Service bis zu AI Audits – so könnte die Zusammenarbeit aussehen"
-      client:visible
     />
 
     <!-- Process -->
@@ -112,14 +112,12 @@ const relatedServices = services.filter((s) => s.id !== service.id).slice(0, 3);
       steps={service.process}
       title="So läuft die Zusammenarbeit"
       description="Von der ersten Beratung bis zu monatlichen Strategie-Reviews"
-      client:visible
     />
 
     <!-- FAQ -->
     <FaqSection
       faqs={service.faqs}
       title="Häufige Fragen zu Retainern & Consulting"
-      client:visible
     />
 
     <!-- Related Services -->
@@ -143,7 +141,6 @@ const relatedServices = services.filter((s) => s.id !== service.id).slice(0, 3);
                 href={relatedService.href}
                 icon={relatedService.icon}
                 badge={relatedService.badge}
-                client:load
               />
             ))
           }

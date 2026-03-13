@@ -1,0 +1,21 @@
+---
+interface Props {
+  items: string[];
+}
+
+const { items = [] } = Astro.props;
+---
+
+{items.length === 1 ? (
+  <div class="prose prose-sm">
+    <p>{items[0]}</p>
+  </div>
+) : (
+  <div class="prose prose-sm">
+    <ul>
+      {items.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+)}

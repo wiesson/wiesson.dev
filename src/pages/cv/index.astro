@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "$layouts/base-layout.astro";
-import CvWorkListing from "$components/cv/cv-work-listing.svelte";
-import CvEducationListing from "$components/cv/cv-education-listing.svelte";
+import CvWorkListing from "$components/cv/cv-work-listing.astro";
+import CvEducationListing from "$components/cv/cv-education-listing.astro";
 import { getCollection } from "astro:content";
 import { getTranslations } from "../../i18n";
 
@@ -27,7 +27,6 @@ cvWork.sort((a, b) => {
   lang={lang}
   headerType="page"
   pageTitle={t.nav.cv}
-  showDownloads={true}
 >
   <CvWorkListing
     title={t.sections.workExperience}

@@ -1,0 +1,62 @@
+---
+import Phone from '@lucide/astro/icons/phone';
+import FileText from '@lucide/astro/icons/file-text';
+import Rocket from '@lucide/astro/icons/rocket';
+import Code from '@lucide/astro/icons/code';
+import CircleCheck from '@lucide/astro/icons/circle-check';
+
+interface Props {
+  steps: string[];
+  title?: string;
+  description?: string;
+}
+
+const { steps, title = 'So läuft die Zusammenarbeit', description } = Astro.props;
+
+const icons = [Phone, FileText, Rocket, Code, CircleCheck];
+---
+
+<section class="app-grid py-20" style="background-color: var(--background);">
+  <div class="app-text-column mb-12 text-center">
+    <h2 class="heading mb-2">{title}</h2>
+    {description && <p class="text-muted-foreground">{description}</p>}
+  </div>
+
+  <div class="app-wide-column">
+    <div class="relative">
+      <!-- Timeline line (hidden on mobile) -->
+      <div
+        class="absolute left-8 top-12 bottom-12 w-0.5 hidden md:block"
+        style="background-color: var(--border);"
+      ></div>
+
+      <!-- Process steps -->
+      <div class="space-y-8">
+        {steps.map((step, index) => {
+          const IconComponent = icons[index];
+          return (
+            <div class="flex gap-6 relative">
+              <!-- Step number/icon -->
+              <div
+                class="flex size-16 flex-shrink-0 items-center justify-center rounded-full text-lg font-bold"
+                style="background-color: var(--primary); color: var(--primary-foreground);"
+              >
+                {IconComponent ? <IconComponent class="size-6" /> : <span>{index + 1}</span>}
+              </div>
+
+              <!-- Step content -->
+              <div class="flex-1 pt-3">
+                <div
+                  class="rounded-lg p-4"
+                  style="background-color: var(--card); border: 1px solid var(--border);"
+                >
+                  <p class="font-medium">{step}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>

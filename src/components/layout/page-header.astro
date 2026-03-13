@@ -1,0 +1,31 @@
+---
+import { getTranslations, getLocalizedPath, type Locale } from "../../i18n";
+
+interface Props {
+  lang?: Locale;
+  title?: string;
+  backHref?: string;
+  backLabel?: string;
+}
+
+const { lang = "de", title = "", backHref = "/", backLabel } = Astro.props;
+
+const t = getTranslations(lang);
+const displayBackLabel = backLabel || t.nav.home;
+---
+
+<header class="app-grid py-6">
+  <div class="app-text-column">
+    <div class="flex items-center gap-4">
+      <a
+        href={getLocalizedPath(backHref, lang)}
+        class="flex items-center gap-2 text-sm cv-text-secondary hover:text-foreground transition-colors"
+      >
+        <span aria-hidden="true">←</span>
+        <span>{displayBackLabel}</span>
+      </a>
+      {title && <span class="cv-text-meta">·</span>}
+      {title && <span class="text-sm font-medium">{title}</span>}
+    </div>
+  </div>
+</header>

@@ -1,9 +1,9 @@
 ---
 import "../styles/base.css";
 
-import SiteNav from "$components/layout/site-nav.svelte";
-import PageHeader from "$components/layout/page-header.svelte";
-import SiteFooter from "$components/layout/site-footer.svelte";
+import SiteNav from "$components/layout/site-nav.astro";
+import PageHeader from "$components/layout/page-header.astro";
+import SiteFooter from "$components/layout/site-footer.astro";
 import { getTranslations } from "../i18n";
 import type { Locale } from "../i18n";
 
@@ -15,14 +15,12 @@ interface Props {
   lang?: Locale;
   headerType?: HeaderType;
   pageTitle?: string;
-  showDownloads?: boolean;
 }
 
 const {
   lang = "de",
   headerType = "nav",
   pageTitle = "",
-  showDownloads = false
 } = Astro.props;
 const t = getTranslations(lang);
 ---
@@ -50,7 +48,6 @@ const t = getTranslations(lang);
       <PageHeader
         lang={lang}
         title={pageTitle}
-        showDownloads={showDownloads}
       />
     )}
 

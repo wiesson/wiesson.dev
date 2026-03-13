@@ -1,6 +1,3 @@
-import { Bot, Database, Layers, Award, Zap, Download, FileText, Workflow, Building2, BarChart3, Code2, Rocket, TrendingUp, Wrench, Target, Users } from '@lucide/svelte';
-import type { ComponentType } from 'svelte';
-
 export interface BundledService {
 	name: string;
 	price: string;
@@ -26,7 +23,7 @@ export interface Service {
 	title: string;
 	subtitle: string;
 	description: string;
-	icon: ComponentType;
+	icon: string;
 	price: string;
 	priceRange: { min: number; max: number; unit: string } | { value: number; unit: string };
 	features: string[];
@@ -45,7 +42,7 @@ export const services: Service[] = [
 		title: 'AI Development & Automation',
 		subtitle: 'Intelligente Systeme für komplexe Aufgaben',
 		description: 'Multi-Agent-Systeme, LLM-Integration & Custom Workflows – von der Feature-Entwicklung bis zum kompletten AI-System',
-		icon: Bot,
+		icon: 'bot',
 		price: '4.500 € - 45.000 €',
 		priceRange: { min: 4500, max: 45000, unit: '€' },
 		features: [
@@ -171,7 +168,7 @@ export const services: Service[] = [
 		title: 'Data Extraction & Intelligence',
 		subtitle: 'Automatisierte Datenextraktion & Verarbeitung',
 		description: 'Web Scraping, Document Parsing & Data Pipelines – von einmaligen Snapshots bis zu kontinuierlichen Datenströmen',
-		icon: Database,
+		icon: 'database',
 		price: '6.000 € - 18.000 € oder 3.000 €/Monat',
 		priceRange: { min: 6000, max: 18000, unit: '€' },
 		features: [
@@ -270,7 +267,7 @@ export const services: Service[] = [
 		title: 'SaaS & Platform Development',
 		subtitle: 'Production-Ready Plattformen & Dashboards',
 		description: 'Von Custom Dashboards bis zur kompletten SaaS-Plattform – Backend, Frontend, Billing, Deployment',
-		icon: Layers,
+		icon: 'layers',
 		price: '5.000 € - 55.000 €',
 		priceRange: { min: 5000, max: 55000, unit: '€' },
 		features: [
@@ -372,7 +369,7 @@ export const services: Service[] = [
 		title: 'Technical Leadership & Retainers',
 		subtitle: 'Ongoing Support & Strategic Tech Leadership',
 		description: 'Von Support & Maintenance bis zu CTO-as-a-Service – kontinuierliche Entwicklung, Optimierung und strategische Beratung',
-		icon: Award,
+		icon: 'award',
 		price: '2.500 € - 12.000 €/Monat',
 		priceRange: { min: 2500, max: 12000, unit: '€/Monat' },
 		features: [

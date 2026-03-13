@@ -13,10 +13,10 @@ pnpm run preview # Preview production build
 
 ## Architecture
 
-**Astro 5 site with Svelte 5 components, Tailwind CSS v4, and i18n (de/en)**
+**Astro 6 site with Svelte 5 components, Tailwind CSS v4, and i18n (de/en)**
 
 ### Tech Stack
-- Astro 5 (static output) with Vercel adapter
+- Astro 6 (fully static output) on Cloudflare Pages
 - Svelte 5 for interactive components
 - Tailwind CSS v4 with shadcn-svelte UI components (bits-ui)
 - TypeScript with path aliases: `$lib`, `$components`, `$utils`, `$types`, `$data`, `$layouts`

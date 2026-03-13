@@ -2,13 +2,8 @@ import { defineConfig } from "astro/config";
 import tailwind from "@tailwindcss/vite";
 import { fileURLToPath } from "url";
 
-import svelte from "@astrojs/svelte";
-import vercel from "@astrojs/vercel";
-
 export default defineConfig({
   output: "static",
-  adapter: vercel(),
-  integrations: [tailwind(), svelte()],
   i18n: {
     defaultLocale: "de",
     locales: ["de", "en"],
@@ -17,6 +12,7 @@ export default defineConfig({
     },
   },
   vite: {
+    plugins: [tailwind()],
     resolve: {
       alias: {
         $lib: fileURLToPath(new URL("./src/lib", import.meta.url)),

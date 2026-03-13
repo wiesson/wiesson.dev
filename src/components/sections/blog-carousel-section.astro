@@ -1,6 +1,6 @@
 ---
 import BlogCard from "$components/blog/blog-card.astro";
-import ResponsiveCardList from "$components/layout/responsive-card-list.svelte";
+import ResponsiveCardList from "$components/layout/responsive-card-list.astro";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -33,7 +33,7 @@ const sortedPosts = [...posts]
     <h2 class="title">{title}</h2>
   </div>
   <div class="app-full-column">
-    <ResponsiveCardList client:idle>
+    <ResponsiveCardList>
       {sortedPosts.slice(0, 3).map((post) => (
         <BlogCard
           title={post.data.title}
