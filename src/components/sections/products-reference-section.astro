@@ -1,0 +1,31 @@
+---
+import type { Locale } from "../../i18n";
+import { getTranslations } from "../../i18n";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "de" } = Astro.props;
+const t = getTranslations(lang);
+---
+
+<section class="app-grid py-10">
+  <div class="app-text-column">
+    <div class="quiet-callout">
+      <h2 class="title">{t.products.title}</h2>
+      <p class="text-muted-foreground text-sm leading-relaxed">
+        {t.products.description}
+      </p>
+      <a
+        href="https://nordwerk.studio"
+        target="_blank"
+        rel="noopener"
+        class="text-foreground link-underline inline-flex w-fit items-center gap-2 text-sm font-medium"
+      >
+        {t.products.linkLabel}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>

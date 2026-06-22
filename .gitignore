@@ -8,6 +8,7 @@ npm-debug.log*
 coverage
 
 node_modules
+.pnpm-store/
 .vercel
 .next
 .idea

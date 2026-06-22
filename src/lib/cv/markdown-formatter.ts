@@ -18,7 +18,7 @@ export interface MarkdownOptions {
  */
 export function formatCvAsMarkdown(
   cvData: TypstCvData,
-  options: MarkdownOptions = { detail: "full" }
+  options: MarkdownOptions = { detail: "full" },
 ): string {
   const { profile, mainWork, sideWork, education } = cvData;
   const { detail } = options;
@@ -89,25 +89,18 @@ function formatProfile(profile: TypstProfile): string[] {
   return lines;
 }
 
-function formatWorkEntry(
-  entry: TypstWorkEntry,
-  detail: "full" | "compact"
-): string[] {
+function formatWorkEntry(entry: TypstWorkEntry, detail: "full" | "compact"): string[] {
   const lines: string[] = [];
 
   // Header with company and project
-  const title = entry.project
-    ? `### ${entry.company} | ${entry.project}`
-    : `### ${entry.company}`;
+  const title = entry.project ? `### ${entry.company} | ${entry.project}` : `### ${entry.company}`;
   lines.push(title);
 
   // Metadata
   if (entry.position) lines.push(`**Position:** ${entry.position}`);
   lines.push(`**Period:** ${entry.dates}`);
   if (entry.location) lines.push(`**Location:** ${entry.location}`);
-  lines.push(
-    `**Type:** ${entry.projectType === "permanent" ? "Permanent" : "Project-based"}`
-  );
+  lines.push(`**Type:** ${entry.projectType === "permanent" ? "Permanent" : "Project-based"}`);
   lines.push("");
 
   // Intro
@@ -137,10 +130,7 @@ function formatWorkEntry(
   return lines;
 }
 
-function formatEducationEntry(
-  entry: TypstEducationEntry,
-  detail: "full" | "compact"
-): string[] {
+function formatEducationEntry(entry: TypstEducationEntry, detail: "full" | "compact"): string[] {
   const lines: string[] = [];
 
   lines.push(`### ${entry.title}`);

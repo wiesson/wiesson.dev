@@ -1,10 +1,9 @@
 ---
 import BaseLayout from "$layouts/base-layout.astro";
 import ServicesSection from "$components/sections/services-section.astro";
-import FeaturedProjectsSection from "$components/sections/featured-projects-section.astro";
+import ProductsReferenceSection from "$components/sections/products-reference-section.astro";
 import CvWorkListing from "$components/cv/cv-work-listing.astro";
 import TechnologiesSection from "$components/sections/technologies-section.astro";
-import ProjectsSection from "$components/sections/projects-section.astro";
 import { getCollection } from "astro:content";
 import { getTranslations } from "../i18n";
 
@@ -23,62 +22,72 @@ cvWork.sort((a, b) => {
 const recentMainWork = cvWork
   .filter((item) => item.data.type === "main")
   .slice(0, 5);
-
 ---
 
 <BaseLayout lang={lang}>
   <!-- Lebenslauf link - absolute top right -->
   <a
     href="/cv"
-    class="fixed top-4 right-4 text-sm text-muted-foreground hover:text-foreground transition-colors z-50"
+    class="text-muted-foreground hover:text-foreground link-underline fixed top-4 right-4 z-50 text-sm font-medium transition-colors"
   >
     {t.nav.cv}
   </a>
 
-  <!-- Prose intro section -->
-  <section class="app-grid">
-    <article class="app-text-column prose dark:prose-invert prose-neutral max-w-none leading-relaxed">
-      <p>
-        Ich bin freiberuflicher Softwareentwickler und entwickle Webapplikationen
-        und SaaS-Produkte. Zudem berate ich bei Architektur-Entscheidungen,
-        technischen Audits und der Modernisierung bestehender Systeme. In den
-        letzten Jahren habe ich u.a. bei <a
-          href="https://frontnow.com"
-          target="_blank"
-          rel="noopener"
-          class="underline">Frontnow</a
-        >, <a
-          href="https://douglas.de"
-          target="_blank"
-          rel="noopener"
-          class="underline">Parfümerie Douglas</a
-        >, <a
-          href="https://carauktion.de"
-          target="_blank"
-          rel="noopener"
-          class="underline">carauktion</a
-        > und <a
-          href="https://sipgate.de"
-          target="_blank"
-          rel="noopener"
-          class="underline">sipgate</a
-        > gearbeitet.
-      </p>
+  <section class="app-grid hero-section">
+    <article class="app-text-column">
+      <div class="space-y-6">
+        <h1 class="hero-title">
+          Freier Entwickler für Web-Technologien, APIs und KI-Lösungen
+        </h1>
 
-      <p>
-        Ende 2025 habe ich <a
-          href="https://nordwerk.studio"
-          target="_blank"
-          rel="noopener"
-          class="underline">Studio Nordwerk</a
-        > gegründet, ein AI- und Software-Studio für pragmatische SaaS-Lösungen und
-        schnelle MVPs.
-      </p>
+        <div class="hero-copy space-y-5">
+          <p>
+            Ich bin freiberuflicher Softwareentwickler und entwickle
+            Webapplikationen und SaaS-Produkte. Zudem berate ich bei
+            Architektur-Entscheidungen, technischen Audits und der
+            Modernisierung bestehender Systeme.
+          </p>
+
+          <p>
+            In den letzten Jahren habe ich u.a. bei <a
+              href="https://frontnow.com"
+              target="_blank"
+              rel="noopener"
+              class="link-underline">Frontnow</a
+            >, <a
+              href="https://douglas.de"
+              target="_blank"
+              rel="noopener"
+              class="link-underline">Parfümerie Douglas</a
+            >, <a
+              href="https://carauktion.de"
+              target="_blank"
+              rel="noopener"
+              class="link-underline">carauktion</a
+            > und <a
+              href="https://sipgate.de"
+              target="_blank"
+              rel="noopener"
+              class="link-underline">sipgate</a
+            > gearbeitet.
+          </p>
+
+          <p>
+            Ende 2025 habe ich <a
+              href="https://nordwerk.studio"
+              target="_blank"
+              rel="noopener"
+              class="link-underline">Studio Nordwerk</a
+            > gegründet, ein AI- und Software-Studio für pragmatische SaaS-Lösungen
+            und schnelle MVPs.
+          </p>
+        </div>
+      </div>
     </article>
   </section>
 
   <ServicesSection lang={lang} />
-  <FeaturedProjectsSection lang={lang} />
+  <ProductsReferenceSection lang={lang} />
 
   <CvWorkListing
     title={t.sections.workExperience}
@@ -89,10 +98,9 @@ const recentMainWork = cvWork
     showYearsOnly={true}
     viewAllLink={{
       href: "/cv",
-      label: t.sections.viewAllProjects,
+      label: t.about.viewFullCv,
     }}
   />
 
   <TechnologiesSection lang={lang} />
-  <ProjectsSection lang={lang} />
 </BaseLayout>

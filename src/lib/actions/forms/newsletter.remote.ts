@@ -12,14 +12,16 @@ export const subscribeNewsletter = {
         const submit = async () => {
           // TODO: Implement actual newsletter subscription logic here
           // For now, just simulate success
-          console.warn('Newsletter subscription stub - implement actual logic in newsletter.remote.ts');
-          await new Promise(resolve => setTimeout(resolve, 500));
+          console.warn(
+            "Newsletter subscription stub - implement actual logic in newsletter.remote.ts",
+          );
+          await new Promise((resolve) => setTimeout(resolve, 500));
           subscribeNewsletter.result = { success: true };
         };
 
         await callback({ submit });
-      }
+      },
     };
   },
-  result: null as { success: boolean } | null
+  result: null as { success: boolean } | null,
 };

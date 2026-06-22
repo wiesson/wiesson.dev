@@ -6,9 +6,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 pnpm install     # Install dependencies
-pnpm run dev     # Start dev server
+pnpm run dev     # Start dev server via portless at https://arnewiese.localhost
+pnpm run dev:app # Start Astro directly without portless
 pnpm run build   # Build for production
 pnpm run preview # Preview production build
+vp install       # Install Vite+ managed dependencies
+vp check         # Format/lint/typecheck via Vite+
+vp build         # Build via Vite+
 ```
 
 ## Architecture
@@ -16,24 +20,25 @@ pnpm run preview # Preview production build
 **Astro 6 site with Svelte 5 components, Tailwind CSS v4, and i18n (de/en)**
 
 ### Tech Stack
+
 - Astro 6 (fully static output) on Cloudflare Pages
 - Svelte 5 for interactive components
 - Tailwind CSS v4 with shadcn-svelte UI components (bits-ui)
 - TypeScript with path aliases: `$lib`, `$components`, `$utils`, `$types`, `$data`, `$layouts`
 
 ### Project Structure
+
 - `src/pages/` - Astro pages. German routes at root, English under `/en/`
-- `src/layouts/` - Base layouts (base-layout.astro, blog-layout.astro)
+- `src/layouts/` - Base layouts (base-layout.astro)
 - `src/components/` - Mixed Astro and Svelte components
   - `cv/` - CV-related components
   - `sections/` - Page section components
   - `marketing/` - Service/marketing components
-  - `blog/` - Blog components
   - `layout/` - Site header/footer
 - `src/lib/ui/` - shadcn-svelte UI component library
-- `src/content/` - Astro content collections (blog, work, education with i18n variants)
+- `src/content/` - Astro content collections (work, education with i18n variants)
 - `src/i18n/` - Translations (de.json, en.json) with utility functions
-- `src/styles/` - Global CSS (base.css, blog.css)
+- `src/styles/` - Global CSS (base.css)
 
 ### Layout System
 
@@ -50,8 +55,8 @@ Convention: Every top-level section starts with `.app-grid`.
 
 ### Content Collections
 
-Defined in `src/content/config.ts`:
-- `blog` - Blog posts with title, description, tags, dates, draft flag
+Defined in `src/content.config.ts`:
+
 - `work` / `work-en` - Work experience entries
 - `education` / `education-en` - Education entries
 
@@ -67,3 +72,4 @@ Defined in `src/content/config.ts`:
 - Tailwind v4 with CSS variables for theming (light/dark)
 - `cn()` utility in `$lib/utils.ts` for class merging
 - Color scheme defined via CSS custom properties in base.css
+- Formatting is split pragmatically: keep Prettier with `prettier-plugin-astro` for `.astro` files, and use Vite+ (`vp check`) for JS/TS linting, type checks, and supported formatting. This avoids relying on oxfmt for Astro markup until it formats the project reliably.

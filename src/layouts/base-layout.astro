@@ -15,22 +15,27 @@ interface Props {
   lang?: Locale;
   headerType?: HeaderType;
   pageTitle?: string;
+  title?: string;
+  description?: string;
 }
 
 const {
   lang = "de",
   headerType = "nav",
   pageTitle = "",
+  title,
+  description,
 } = Astro.props;
 const t = getTranslations(lang);
+const metaTitle = title ?? t.meta.title;
+const metaDescription = description ?? t.meta.description;
 ---
 
 <html lang={lang}>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{t.meta.title}</title>
-    <meta name="description" content={t.meta.description} />
+    <title>{metaTitle}</title>
+    <meta name="description" content={metaDescription} />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
@@ -38,18 +43,13 @@ const t = getTranslations(lang);
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     {headerType === "nav" && <SiteNav lang={lang} />}
-    {headerType === "page" && (
-      <PageHeader
-        lang={lang}
-        title={pageTitle}
-      />
-    )}
+    {headerType === "page" && <PageHeader lang={lang} title={pageTitle} />}
 
     <main class="space-y-8 md:space-y-16">
       <slot />

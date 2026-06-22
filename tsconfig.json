@@ -2,20 +2,20 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "types": ["astro/client"],
-    "baseUrl": ".",
+    "types": ["astro/client", "@cloudflare/workers-types", "node"],
+    "noEmit": true,
     "allowImportingTsExtensions": true,
     "paths": {
-      "$lib/*": ["src/lib/*"],
-      "$components/*": ["src/components/*"],
-      "$utils/*": ["src/utils/*"],
-      "$types/*": ["src/types/*"],
-      "$data/*": ["src/data/*"],
-      "$layouts/*": ["src/layouts/*"]
+      "$lib/*": ["./src/lib/*"],
+      "$components/*": ["./src/components/*"],
+      "$utils/*": ["./src/utils/*"],
+      "$types/*": ["./src/types/*"],
+      "$data/*": ["./src/data/*"],
+      "$layouts/*": ["./src/layouts/*"]
     }
   }
 }
