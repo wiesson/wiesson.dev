@@ -3,7 +3,7 @@
  * This generates the entire Typst document as a string, avoiding dictionary access issues
  */
 
-import type { TypstCvData } from "./cv-types.js";
+import type { TypstCvData, TypstWorkEntry } from "./cv-types.js";
 import { cvFooter } from "../lib/config/cv.js";
 
 /**
@@ -23,10 +23,7 @@ function escapeTypstString(str: string): string {
 /**
  * Generate Typst source for a work entry
  */
-function generateWorkEntryTypst(
-  entry: TypstCvData["mainWork"][0] | TypstCvData["sideWork"][0],
-  showDetails: boolean = false
-): string {
+function generateWorkEntryTypst(entry: TypstWorkEntry, showDetails: boolean = false): string {
   let result = `#block(breakable: false)[
     #grid(
       columns: (3.5cm, 1fr),
@@ -106,7 +103,7 @@ function generateWorkEntryTypst(
  */
 function generateEducationEntryTypst(
   entry: TypstCvData["education"][0],
-  showDetails: boolean = false
+  showDetails: boolean = false,
 ): string {
   let result = `#block(breakable: false)[
     #grid(
@@ -177,7 +174,7 @@ const sectionTitles = {
 export function generateCvTypstSource(
   data: TypstCvData,
   showDetails: boolean = false,
-  lang: string = "de"
+  lang: string = "de",
 ): string {
   const profile = data.profile;
   const titles = sectionTitles[lang as keyof typeof sectionTitles] || sectionTitles.de;

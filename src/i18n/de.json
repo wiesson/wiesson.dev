@@ -15,14 +15,16 @@
   },
   "sections": {
     "about": "Über mich",
-    "projects": "Kunden & Projekte",
     "technologies": "Technologien & Skills",
     "workExperience": "Projekte & Festanstellungen",
     "sideProjects": "Nebenprojekte",
     "education": "Ausbildung",
-    "services": "Leistungen",
-    "featuredProjects": "Eigene Projekte",
-    "viewAllProjects": "Alle Projekte"
+    "services": "Leistungen"
+  },
+  "products": {
+    "title": "Produkte",
+    "description": "Meine SaaS-Produkte entstehen im Studio Nordwerk. Auf dieser Seite bleibt der Fokus auf meiner Arbeit als freiberuflicher Entwickler.",
+    "linkLabel": "Studio Nordwerk öffnen"
   },
   "cv": {
     "technologies": "Technologien",
@@ -64,17 +66,6 @@
       "title": "MVP & SaaS",
       "description": "Entwicklung von Minimum Viable Products und SaaS-Erweiterungen: Von der Validierung bis zum zahlenden Kunden."
     }
-  },
-  "project": {
-    "backToProjects": "Projekte",
-    "problem": "Das Problem",
-    "solution": "Die Lösung",
-    "results": "Ergebnisse",
-    "architecture": "Architektur",
-    "challenges": "Herausforderungen",
-    "learnings": "Learnings",
-    "screenshots": "Screenshots",
-    "viewProject": "Projekt ansehen"
   },
   "meta": {
     "title": "Arne Wiese | Freier Entwickler für Web-Technologien, APIs und SaaS-Lösungen",

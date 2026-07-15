@@ -1,6 +1,4 @@
 export const onRequest: PagesFunction = async ({ request }) => {
-  const url = new URL(request.url);
-
   return fetch("https://plausible.io/api/event", {
     method: request.method,
     headers: {

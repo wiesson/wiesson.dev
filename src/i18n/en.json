@@ -15,14 +15,16 @@
   },
   "sections": {
     "about": "About",
-    "projects": "Clients & Projects",
     "technologies": "Technologies & Skills",
     "workExperience": "Projects & Full-time Positions",
     "sideProjects": "Side Projects",
     "education": "Education",
-    "services": "Services",
-    "featuredProjects": "Featured Projects",
-    "viewAllProjects": "All projects"
+    "services": "Services"
+  },
+  "products": {
+    "title": "Products",
+    "description": "My SaaS products are built at Studio Nordwerk. This site stays focused on my work as a freelance developer.",
+    "linkLabel": "Open Studio Nordwerk"
   },
   "cv": {
     "technologies": "Technologies",
@@ -64,17 +66,6 @@
       "title": "MVP & SaaS",
       "description": "Development of Minimum Viable Products and SaaS extensions: from validation to paying customer."
     }
-  },
-  "project": {
-    "backToProjects": "Projects",
-    "problem": "The Problem",
-    "solution": "The Solution",
-    "results": "Results",
-    "architecture": "Architecture",
-    "challenges": "Challenges",
-    "learnings": "Learnings",
-    "screenshots": "Screenshots",
-    "viewProject": "View project"
   },
   "meta": {
     "title": "Arne Wiese | Freelance Developer for Web Technologies, APIs and SaaS Solutions",

@@ -40,8 +40,8 @@ export const cvProfileEn: CvProfile = {
 /**
  * Get CV profile based on language
  */
-export function getCvProfile(lang: string = 'de'): CvProfile {
-  return lang === 'en' ? cvProfileEn : cvProfile;
+export function getCvProfile(lang: string = "de"): CvProfile {
+  return lang === "en" ? cvProfileEn : cvProfile;
 }
 
 export const cvFooter = {
