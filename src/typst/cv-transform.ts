@@ -41,10 +41,8 @@ function transformWorkEntry(
   entry: CollectionEntry<"work"> | CollectionEntry<"work-en">,
   lang: string = "de",
 ): TypstWorkEntry {
-  const now = new Date();
-  const toDate = entry.data.to === "now" ? now : entry.data.to;
   const fromFormatted = formatDate(entry.data.from, "days", lang);
-  const toFormatted = formatDate(toDate, "days", lang);
+  const toFormatted = formatDate(entry.data.to, "days", lang);
   const dates = fromFormatted === toFormatted ? fromFormatted : `${fromFormatted} - ${toFormatted}`;
 
   return {
