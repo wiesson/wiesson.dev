@@ -2,6 +2,7 @@
 import BaseLayout from "$layouts/base-layout.astro";
 import ServicesSection from "$components/sections/services-section.astro";
 import ProductsReferenceSection from "$components/sections/products-reference-section.astro";
+import ClientsSection from "$components/sections/clients-section.astro";
 import CvWorkListing from "$components/cv/cv-work-listing.astro";
 import TechnologiesSection from "$components/sections/technologies-section.astro";
 import { getCollection } from "astro:content";
@@ -79,6 +80,7 @@ const sideProjects = cvWork.filter((item) => item.data.type === "side");
 
   <ServicesSection lang={lang} />
   <ProductsReferenceSection lang={lang} />
+  <ClientsSection lang={lang} />
 
   <CvWorkListing
     title={t.sections.workExperience}
@@ -86,10 +88,6 @@ const sideProjects = cvWork.filter((item) => item.data.type === "side");
     lang={lang}
     showBadges
     showYearsOnly
-    viewAllLink={{
-      href: "/en/cv",
-      label: t.about.viewFullCv,
-    }}
   />
 
   <CvWorkListing

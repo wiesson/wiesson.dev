@@ -1,0 +1,18 @@
+---
+import ProjectLogoList from "$components/layout/project-logo-list.astro";
+import { getTranslations, type Locale } from "../../i18n";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "de" } = Astro.props;
+const t = getTranslations(lang);
+---
+
+<section id="clients" class="app-grid py-12 scroll-mt-16">
+  <div class="app-text-column">
+    <h2 class="cv-h2 mb-6">{t.sections.clients}</h2>
+    <ProjectLogoList />
+  </div>
+</section>
