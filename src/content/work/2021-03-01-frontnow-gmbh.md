@@ -1,5 +1,5 @@
 ---
-company: Frontnw GmbH
+company: Frontnow GmbH
 project:
 position: Lead Software Engineer
 location: Überwiegend remote, gelegentlich in Berlin

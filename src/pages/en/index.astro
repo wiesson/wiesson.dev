@@ -19,20 +19,11 @@ cvWork.sort((a, b) => {
   return toB.getTime() - toA.getTime();
 });
 
-const recentMainWork = cvWork
-  .filter((item) => item.data.type === "main")
-  .slice(0, 5);
+const mainWork = cvWork.filter((item) => item.data.type === "main");
+const sideProjects = cvWork.filter((item) => item.data.type === "side");
 ---
 
 <BaseLayout lang={lang}>
-  <!-- CV link - absolute top right -->
-  <a
-    href="/en/cv"
-    class="text-muted-foreground hover:text-foreground link-underline fixed top-4 right-4 z-50 text-sm font-medium transition-colors"
-  >
-    {t.nav.cv}
-  </a>
-
   <section class="app-grid hero-section">
     <article class="app-text-column">
       <div class="space-y-6">
@@ -91,15 +82,22 @@ const recentMainWork = cvWork
 
   <CvWorkListing
     title={t.sections.workExperience}
-    items={recentMainWork}
+    items={mainWork}
     lang={lang}
-    showIntro
-    showBadges={false}
-    showYearsOnly={true}
+    showBadges
+    showYearsOnly
     viewAllLink={{
       href: "/en/cv",
       label: t.about.viewFullCv,
     }}
+  />
+
+  <CvWorkListing
+    title={t.sections.sideProjects}
+    items={sideProjects}
+    lang={lang}
+    showBadges={false}
+    showYearsOnly
   />
 
   <TechnologiesSection lang={lang} />
