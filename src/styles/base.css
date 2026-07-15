@@ -187,7 +187,7 @@
 
 body {
   font-size: 1rem;
-  @apply py-6 md:py-12;
+  @apply pb-6 md:pb-12;
 }
 
 .app-grid {
@@ -233,6 +233,43 @@ body {
   font-family: var(--font-display);
   color: var(--foreground);
   letter-spacing: 0;
+}
+
+/* Unified section heading: accent tick + title, used by every section */
+.section-heading {
+  @apply text-lg font-semibold;
+  font-family: var(--font-display);
+  color: var(--foreground);
+}
+
+.section-heading::before {
+  content: "";
+  display: block;
+  width: 1.75rem;
+  height: 2px;
+  border-radius: 1px;
+  background-color: var(--personal-accent);
+  margin-bottom: 0.75rem;
+}
+
+/* Sticky site header with backdrop blur */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: color-mix(in oklab, var(--background) 85%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.site-header.is-scrolled {
+  border-bottom-color: var(--border);
+}
+
+.site-header-section {
+  transition: opacity 0.2s ease;
 }
 
 .heading {

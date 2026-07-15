@@ -83,10 +83,11 @@ const sideProjects = cvWork.filter((item) => item.data.type === "side");
   <ClientsSection lang={lang} />
 
   <CvWorkListing
-    title={t.sections.workExperience}
+    title={t.sections.experience}
+    subtitle={t.sections.experienceNote}
     items={mainWork}
     lang={lang}
-    showBadges
+    showBadges={false}
     showYearsOnly
   />
 

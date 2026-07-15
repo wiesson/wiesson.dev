@@ -8,8 +8,8 @@ interface Props {
 const { lang = "de" } = Astro.props;
 ---
 
-<header class="app-grid py-6">
-  <div class="app-text-column-left">
+<header class="app-grid site-header py-4">
+  <div class="app-text-column-left flex items-center justify-between gap-4">
     <a href={getLocalizedPath("/", lang)} class="flex items-center gap-3 group">
       <img
         src="/assets/arne-neu-quadratisch.jpeg"
@@ -18,5 +18,44 @@ const { lang = "de" } = Astro.props;
       />
       <span class="font-medium text-foreground">Arne Wiese</span>
     </a>
+
+    <span
+      class="site-header-section truncate text-sm text-muted-foreground"
+      aria-hidden="true"></span>
   </div>
 </header>
+
+<script>
+  const header = document.querySelector<HTMLElement>(".site-header");
+  const label = document.querySelector<HTMLElement>(".site-header-section");
+
+  if (header && label) {
+    const sections = [...document.querySelectorAll("main section")]
+      .map((el) => ({
+        el,
+        title: el.querySelector("h2")?.textContent?.trim() ?? "",
+      }))
+      .filter((s) => s.title);
+
+    let current = "";
+
+    const update = () => {
+      const line = header.getBoundingClientRect().bottom + 1;
+      let active = "";
+      for (const { el, title } of sections) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= line && rect.bottom > line) active = title;
+      }
+      if (active !== current) {
+        current = active;
+        label.style.opacity = active ? "1" : "0";
+        if (active) label.textContent = active;
+      }
+      header.classList.toggle("is-scrolled", window.scrollY > 8);
+    };
+
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+    update();
+  }
+</script>
