@@ -22,7 +22,7 @@ export const cvProfile: CvProfile = {
   intro:
     "10+ Jahre Full-Stack-Entwicklung – spezialisiert auf pragmatische Lösungen, schnelle MVPs und System-Architektur",
   email: "arne@wiese.me",
-  website: "wiesson.dev",
+  website: "arnewiese.de",
 };
 
 // English version
@@ -34,7 +34,7 @@ export const cvProfileEn: CvProfile = {
   intro:
     "10+ years of full-stack development – specialized in pragmatic solutions, rapid MVPs, and system architecture",
   email: "arne@wiese.me",
-  website: "wiesson.dev",
+  website: "arnewiese.de",
 };
 
 /**
