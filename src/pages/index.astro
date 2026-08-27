@@ -2,6 +2,7 @@
 import BaseLayout from "$layouts/base-layout.astro";
 import ServicesSection from "$components/sections/services-section.astro";
 import ProductsReferenceSection from "$components/sections/products-reference-section.astro";
+import AgentCheckSection from "$components/sections/agent-check-section.astro";
 import ClientsSection from "$components/sections/clients-section.astro";
 import CvWorkListing from "$components/cv/cv-work-listing.astro";
 import TechnologiesSection from "$components/sections/technologies-section.astro";
@@ -80,6 +81,7 @@ const sideProjects = cvWork.filter((item) => item.data.type === "side");
 
   <ServicesSection lang={lang} />
   <ProductsReferenceSection lang={lang} />
+  <AgentCheckSection lang={lang} />
   <ClientsSection lang={lang} />
 
   <CvWorkListing

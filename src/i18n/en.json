@@ -1,8 +1,7 @@
 {
   "nav": {
     "home": "Home",
-    "cv": "Resume",
-    "services": "Services"
+    "cv": "Resume"
   },
   "buttons": {
     "downloadPdf": "Download PDF",
@@ -28,6 +27,15 @@
     "title": "Products",
     "description": "My SaaS products are built at Studio Nordwerk. This site stays focused on my work as a freelance developer.",
     "linkLabel": "Open Studio Nordwerk"
+  },
+  "agentCheck": {
+    "title": "Agent check",
+    "intro": "Screening candidates with AI? Then let's both skip the cover letter. Hand this to your agent — it pulls my full project history, my terms, and the list of things I'm not a fit for.",
+    "prompt": "I'm staffing a project: senior frontend engineer (React/TypeScript), modernising a large legacy enterprise application, 3-6 months, remote, starting soon.\n\nCandidate profile: https://www.arnewiese.de/cv/llm/en.md\n\nRead it and tell me honestly whether he fits: three reasons for, two reasons against, and the one question I should ask in the first call.",
+    "copy": "Copy",
+    "copied": "Copied",
+    "note": "The file contains no hidden instructions for your model — just facts, a day rate, and an honest list of exclusions. Read it yourself:",
+    "rawLabel": "CV as Markdown"
   },
   "cv": {
     "technologies": "Technologies",

@@ -1,8 +1,7 @@
 {
   "nav": {
     "home": "Start",
-    "cv": "Lebenslauf",
-    "services": "Leistungen"
+    "cv": "Lebenslauf"
   },
   "buttons": {
     "downloadPdf": "PDF herunterladen",
@@ -28,6 +27,15 @@
     "title": "Produkte",
     "description": "Meine SaaS-Produkte entstehen im Studio Nordwerk. Auf dieser Seite bleibt der Fokus auf meiner Arbeit als freiberuflicher Entwickler.",
     "linkLabel": "Studio Nordwerk öffnen"
+  },
+  "agentCheck": {
+    "title": "Agenten-Check",
+    "intro": "Sie prüfen Kandidaten mit KI? Dann sparen wir uns beide das Anschreiben. Geben Sie das Ihrem Agenten — er zieht sich meine vollständige Projekthistorie, die Konditionen und die Liste, wo ich nicht passe.",
+    "prompt": "Ich besetze ein Projekt: Senior Frontend-Entwickler (React/TypeScript), Modernisierung einer gewachsenen Enterprise-Anwendung, 3-6 Monate, remote, Start kurzfristig.\n\nKandidatenprofil: https://www.arnewiese.de/cv/llm/de.md\n\nLies das Profil und sag mir ehrlich, ob er passt: drei Gründe dafür, zwei Gründe dagegen, und die eine Frage, die ich im Erstgespräch stellen sollte.",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "note": "Die Datei enthält keine versteckten Anweisungen an Ihr Modell — nur Fakten, Tagessatz und eine ehrliche Nein-Liste. Nachlesen können Sie das hier:",
+    "rawLabel": "Lebenslauf als Markdown"
   },
   "cv": {
     "technologies": "Technologien",

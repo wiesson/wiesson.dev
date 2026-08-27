@@ -2,6 +2,7 @@
  * Format CV data as markdown optimized for LLM consumption
  */
 
+import { renderAgentBrief } from "./agent-brief.js";
 import type {
   TypstCvData,
   TypstWorkEntry,
@@ -27,6 +28,10 @@ export function formatCvAsMarkdown(
   // Header
   lines.push(`# CV: ${profile.name}`);
   lines.push("");
+
+  // Terms, exclusions and the no-hidden-instructions note, for agents that
+  // pull this file on a recruiter's behalf.
+  lines.push(...renderAgentBrief(cvData.locale));
 
   // Profile section
   lines.push(...formatProfile(profile));
@@ -61,7 +66,7 @@ export function formatCvAsMarkdown(
   // Footer
   lines.push("---");
   lines.push("");
-  lines.push("*Generated from wiesson.dev*");
+  lines.push("*Generated from arnewiese.de*");
 
   return lines.join("\n");
 }
