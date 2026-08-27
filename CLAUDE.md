@@ -24,7 +24,7 @@ vp build         # Build via Vite+
 - Astro 6 (fully static output) on Cloudflare Pages
 - Svelte 5 for interactive components
 - Tailwind CSS v4 with shadcn-svelte UI components (bits-ui)
-- TypeScript with path aliases: `$lib`, `$components`, `$utils`, `$types`, `$data`, `$layouts`
+- TypeScript with path aliases: `$lib`, `$components`, `$utils`, `$types`, `$layouts`
 
 ### Project Structure
 
@@ -33,7 +33,6 @@ vp build         # Build via Vite+
 - `src/components/` - Mixed Astro and Svelte components
   - `cv/` - CV-related components
   - `sections/` - Page section components
-  - `marketing/` - Service/marketing components
   - `layout/` - Site header/footer
 - `src/lib/ui/` - shadcn-svelte UI component library
 - `src/content/` - Astro content collections (work, education with i18n variants)

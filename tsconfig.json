@@ -14,7 +14,6 @@
       "$components/*": ["./src/components/*"],
       "$utils/*": ["./src/utils/*"],
       "$types/*": ["./src/types/*"],
-      "$data/*": ["./src/data/*"],
       "$layouts/*": ["./src/layouts/*"]
     }
   }

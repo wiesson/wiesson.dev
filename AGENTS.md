@@ -19,7 +19,7 @@ pnpm run preview # Preview production build
 - Astro 6 (fully static output) on Cloudflare Pages
 - Svelte 5 for interactive components
 - Tailwind CSS v4 with shadcn-svelte UI components (bits-ui)
-- TypeScript with path aliases: `$lib`, `$components`, `$utils`, `$types`, `$data`, `$layouts`
+- TypeScript with path aliases: `$lib`, `$components`, `$utils`, `$types`, `$layouts`
 
 ### Project Structure
 - `src/pages/` - Astro pages. German routes at root, English under `/en/`
@@ -27,7 +27,6 @@ pnpm run preview # Preview production build
 - `src/components/` - Mixed Astro and Svelte components
   - `cv/` - CV-related components
   - `sections/` - Page section components
-  - `marketing/` - Service/marketing components
   - `blog/` - Blog components
   - `layout/` - Site header/footer
 - `src/lib/ui/` - shadcn-svelte UI component library
