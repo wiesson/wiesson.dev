@@ -204,13 +204,12 @@ body {
   grid-column: 2;
 }
 
-/* Text-optimized width: 65ch (~840px) for optimal readability - LEFT ALIGNED */
+/* Text-optimized width: 65ch (~840px) for optimal readability - CENTERED */
 .app-text-column,
 .app-text-column-left {
   width: 100%;
   max-width: 65ch;
-  margin-left: 0;
-  margin-right: auto;
+  margin-inline: auto;
 }
 
 /* Wide layout: 96ch (~1280px) for grids, cards, logo lists */
