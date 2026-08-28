@@ -28,6 +28,7 @@ const {
 } = Astro.props;
 const t = getTranslations(lang);
 const metaTitle = title ?? t.meta.title;
+const canonical = new URL(Astro.url.pathname, Astro.site);
 const metaDescription = description ?? t.meta.description;
 ---
 
@@ -36,6 +37,7 @@ const metaDescription = description ?? t.meta.description;
     <meta charset="utf-8" />
     <title>{metaTitle}</title>
     <meta name="description" content={metaDescription} />
+    <link rel="canonical" href={canonical.href} />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"

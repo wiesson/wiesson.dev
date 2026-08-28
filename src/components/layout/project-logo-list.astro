@@ -1,5 +1,6 @@
 ---
 const items = [
+  { class: "h-6", src: "exactag.svg", href: "https://www.exactag.com" },
   { class: "h-6", src: "tourvy.svg", href: "https://www.tourvy.de" },
   { class: "h-6", src: "douglas.svg", href: "https://www.douglas.de" },
   {
@@ -62,7 +63,7 @@ const items = [
         <img
           src={`/assets/customers/${item.src}`}
           alt={item.src.replace(".svg", "")}
-          class="block max-h-8 w-auto object-contain transition duration-300 ease-out group-hover:scale-105"
+          class="block max-h-8 max-w-full w-auto object-contain transition duration-300 ease-out group-hover:scale-105"
           loading="lazy"
         />
       </a>

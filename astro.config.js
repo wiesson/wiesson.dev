@@ -3,6 +3,9 @@ import tailwind from "@tailwindcss/vite";
 import { fileURLToPath } from "url";
 
 export default defineConfig({
+  // Kanonischer Host. wiesson.dev liefert dieselbe Seite aus; ohne
+  // canonical-Tag konkurrieren beide Domains um dieselben Inhalte.
+  site: "https://www.arnewiese.de",
   output: "static",
   i18n: {
     defaultLocale: "de",
