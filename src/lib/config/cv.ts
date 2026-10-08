@@ -45,5 +45,5 @@ export function getCvProfile(lang: string = "de"): CvProfile {
 }
 
 export const cvFooter = {
-  text: "Arne Wiese, Heinenkamp 2a, 40670 Meerbusch, +491751109743, arne@wiese.me",
+  text: "Arne Wiese, 40670 Meerbusch, +491751109743, arne@wiese.me",
 };
