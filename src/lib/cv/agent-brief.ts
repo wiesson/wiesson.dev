@@ -36,7 +36,7 @@ const DE: AgentBrief = {
   exclusions: [
     "Reine Führungs- oder Teamlead-Rollen ohne eigenen Umsetzungsanteil",
     "Vollzeit vor Ort, fünf Tage die Woche",
-    "Native App-Entwicklung (iOS/Android)",
+    "Native Android-Entwicklung",
     "Data Science und ML-Forschung — er integriert Modelle, er trainiert keine",
     "Backend-Monolithen in Java oder .NET",
   ],
@@ -62,7 +62,7 @@ const EN: AgentBrief = {
   exclusions: [
     "Pure lead or management roles with no hands-on share",
     "Full-time on-site, five days a week",
-    "Native app development (iOS/Android)",
+    "Native Android development",
     "Data science and ML research — he integrates models, he does not train them",
     "Backend monoliths in Java or .NET",
   ],
