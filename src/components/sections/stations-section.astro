@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+import { formatYear } from "$utils/dateFormat";
+import { getTranslations, getLocalizedPath, type Locale } from "../../i18n";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "de" } = Astro.props;
+const t = getTranslations(lang);
+
+const work = await getCollection(lang === "en" ? "work-en" : "work");
+const now = new Date();
+const endOf = (item: (typeof work)[number]) =>
+  item.data.to === "now" ? now : item.data.to;
+
+const stations = work
+  .filter((item) => item.data.type === "main")
+  .sort((a, b) => endOf(b).getTime() - endOf(a).getTime())
+  .slice(0, 6);
+---
+
+<section id="stations" class="app-grid py-12 scroll-mt-16">
+  <div class="app-text-column">
+    <h2 class="section-heading mb-8">{t.sections.stations}</h2>
+
+    <div class="space-y-4 text-sm">
+      {
+        stations.map(({ data }) => {
+          const from = formatYear(data.from);
+          const to =
+            data.to === "now" && lang === "en" ? "present" : formatYear(data.to);
+          return (
+            <div class="flex flex-col gap-1 sm:flex-row sm:gap-4">
+              <div class="shrink-0 sm:w-32 cv-text-meta">
+                {from === to ? from : `${from} - ${to}`}
+              </div>
+              <div>
+                <span class="cv-text-primary font-medium">{data.company}</span>
+                {data.position && (
+                  <span class="cv-text-meta"> · {data.position}</span>
+                )}
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+
+    <div class="mt-8">
+      <a
+        href={getLocalizedPath("cv", lang)}
+        class="text-foreground link-underline inline-flex items-center gap-1 text-sm font-medium"
+      >
+        {t.sections.fullCv}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>

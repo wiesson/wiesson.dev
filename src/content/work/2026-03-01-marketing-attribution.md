@@ -1,5 +1,5 @@
 ---
-company: Exactag GmbH
+company: Anbieter für Marketing-Attribution
 project:
 position: Senior Software Engineer
 location: Düsseldorf

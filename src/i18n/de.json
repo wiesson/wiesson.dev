@@ -21,12 +21,14 @@
     "sideProjects": "Nebenprojekte",
     "clients": "Kunden & Projekte",
     "education": "Ausbildung",
-    "services": "Leistungen"
+    "services": "Leistungen",
+    "stations": "Stationen",
+    "fullCv": "Ganzer Lebenslauf"
   },
   "products": {
     "title": "Produkte",
-    "description": "Meine SaaS-Produkte entstehen im Studio Nordwerk. Auf dieser Seite bleibt der Fokus auf meiner Arbeit als freiberuflicher Entwickler.",
-    "linkLabel": "Studio Nordwerk öffnen"
+    "description": "Meine eigenen Produkte stehen auf wiesson.dev. Auf dieser Seite geht es um meine Arbeit als freiberuflicher Entwickler.",
+    "linkLabel": "Produkte ansehen"
   },
   "agentCheck": {
     "title": "Agenten-Check",
@@ -79,7 +81,7 @@
     }
   },
   "meta": {
-    "title": "Arne Wiese | Freier Entwickler für Web-Technologien, APIs und SaaS-Lösungen",
-    "description": "Senior Software Engineer mit 10+ Jahren Erfahrung in Full-Stack-Entwicklung, spezialisiert auf pragmatische Lösungen, schnelle MVPs und System-Architektur"
+    "title": "Arne Wiese | Freiberuflicher Software Engineer für Web, iOS und KI-Agenten",
+    "description": "Seit 2019 freiberuflicher Software Engineer: Webanwendungen, native Apps für iPhone und Mac und Systeme mit KI-Agenten sowie Beratung zu Architektur, Audits und Modernisierung."
   }
 }

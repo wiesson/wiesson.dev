@@ -1,5 +1,5 @@
 ---
-company: Exactag GmbH
+company: Marketing attribution company
 project:
 position: External Senior Software Engineer
 location: Düsseldorf

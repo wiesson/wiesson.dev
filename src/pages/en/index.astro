@@ -1,57 +1,36 @@
 ---
 import BaseLayout from "$layouts/base-layout.astro";
+import Button from "$components/ui/button.astro";
 import ServicesSection from "$components/sections/services-section.astro";
 import ProductsReferenceSection from "$components/sections/products-reference-section.astro";
 import AgentCheckSection from "$components/sections/agent-check-section.astro";
 import ClientsSection from "$components/sections/clients-section.astro";
-import CvWorkListing from "$components/cv/cv-work-listing.astro";
+import StationsSection from "$components/sections/stations-section.astro";
 import TechnologiesSection from "$components/sections/technologies-section.astro";
-import { getCollection } from "astro:content";
-import { getTranslations } from "../../i18n";
 
 const lang = "en";
-const t = getTranslations(lang);
-const cvWork = await getCollection("work-en");
-
-const now = new Date();
-
-cvWork.sort((a, b) => {
-  const toA = a.data.to === "now" ? now : a.data.to;
-  const toB = b.data.to === "now" ? now : b.data.to;
-  return toB.getTime() - toA.getTime();
-});
-
-const mainWork = cvWork.filter((item) => item.data.type === "main");
-const sideProjects = cvWork.filter((item) => item.data.type === "side");
 ---
+
 
 <BaseLayout lang={lang}>
   <section class="app-grid hero-section">
     <article class="app-text-column">
       <div class="space-y-6">
         <h1 class="hero-title">
-          Freelance developer for web technologies, APIs, and AI solutions
+          Freelance software engineer for web, iOS and AI agents
         </h1>
 
         <div class="hero-copy space-y-5">
           <p>
-            I am a freelance Senior Software Engineer building web applications,
-            SaaS products, and AI solutions. Since February 2026, I have been
-            supporting Exactag in Düsseldorf as an external Senior Software
-            Engineer with a focus on AI.
+            I have been working as a freelance software engineer since 2019. I build web applications, native apps for iPhone and Mac, and systems with AI agents. I also advise on architecture decisions, technical audits and the modernisation of existing systems.
           </p>
 
           <p>
-            In recent years I've worked with <a
+            I currently work for a large European beauty retailer (retail media) and a marketing attribution company based in Düsseldorf. Before that, among others, for <a
               href="https://frontnow.com"
               target="_blank"
               rel="noopener"
               class="link-underline">Frontnow</a
-            >, <a
-              href="https://douglas.de"
-              target="_blank"
-              rel="noopener"
-              class="link-underline">Parfümerie Douglas</a
             >, <a
               href="https://energybox.com"
               target="_blank"
@@ -67,39 +46,32 @@ const sideProjects = cvWork.filter((item) => item.data.type === "side");
 
           <p>
             In late 2025 I founded <a
-              href="https://nordwerk.studio"
+              href="https://www.nordwerk.studio"
               target="_blank"
               rel="noopener"
               class="link-underline">Studio Nordwerk</a
-            >, an AI and software studio focused on pragmatic SaaS solutions and
-            rapid MVPs.
+            >. I continue to take on freelance projects. Alongside, the studio builds its own products and subscription websites.
           </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+          <Button href="mailto:arne@wiese.me?subject=Project%20request" size="lg">Request a project</Button>
+          <a
+            href="/en/cv"
+            class="text-foreground link-underline inline-flex items-center gap-1 text-sm font-medium"
+          >
+            View résumé
+            <span aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
     </article>
   </section>
 
   <ServicesSection lang={lang} />
-  <ProductsReferenceSection lang={lang} />
   <AgentCheckSection lang={lang} />
   <ClientsSection lang={lang} />
-
-  <CvWorkListing
-    title={t.sections.experience}
-    subtitle={t.sections.experienceNote}
-    items={mainWork}
-    lang={lang}
-    showBadges={false}
-    showYearsOnly
-  />
-
-  <CvWorkListing
-    title={t.sections.sideProjects}
-    items={sideProjects}
-    lang={lang}
-    showBadges={false}
-    showYearsOnly
-  />
-
+  <StationsSection lang={lang} />
   <TechnologiesSection lang={lang} />
+  <ProductsReferenceSection lang={lang} />
 </BaseLayout>

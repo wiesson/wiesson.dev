@@ -21,12 +21,14 @@
     "sideProjects": "Side Projects",
     "clients": "Clients & Projects",
     "education": "Education",
-    "services": "Services"
+    "services": "Services",
+    "stations": "Selected work",
+    "fullCv": "Full résumé"
   },
   "products": {
     "title": "Products",
-    "description": "My SaaS products are built at Studio Nordwerk. This site stays focused on my work as a freelance developer.",
-    "linkLabel": "Open Studio Nordwerk"
+    "description": "My own products are on wiesson.dev. This page is about my work as a freelance developer.",
+    "linkLabel": "View products"
   },
   "agentCheck": {
     "title": "Agent check",
@@ -79,7 +81,7 @@
     }
   },
   "meta": {
-    "title": "Arne Wiese | Freelance Developer for Web Technologies, APIs and SaaS Solutions",
-    "description": "Senior Software Engineer with 10+ years of experience in full-stack development, specialized in pragmatic solutions, rapid MVPs and system architecture"
+    "title": "Arne Wiese | Freelance software engineer for web, iOS and AI agents",
+    "description": "Freelance software engineer since 2019: web applications, native apps for iPhone and Mac, systems with AI agents, plus advice on architecture, audits and modernisation."
   }
 }

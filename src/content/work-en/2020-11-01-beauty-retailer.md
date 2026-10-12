@@ -1,5 +1,5 @@
 ---
-company: Parfümerie Douglas GmbH
+company: Large European beauty retailer
 project: Beautytester Service
 position:
 location:
